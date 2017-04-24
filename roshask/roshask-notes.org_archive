@@ -1,0 +1,83 @@
+#    -*- mode: org -*-
+
+
+Archived entries from file /Users/acowley/Documents/Projects/roshask/roshask-notes.org
+
+
+* DONE Investigate ROS Hydro paths
+  :PROPERTIES:
+  :ID:       EE33213B-DBF3-4CB4-813E-BAB5C277395A
+  :ARCHIVE_TIME: 2014-06-23 Mon 16:47
+  :ARCHIVE_FILE: ~/Documents/Projects/roshask/roshask-notes.org
+  :ARCHIVE_CATEGORY: roshask-notes
+  :ARCHIVE_TODO: DONE
+  :END:
+  Did things like =roscore=, =roslib=, and basic message definitions
+  (e.g. log messages) move or change?
+
+** Be wary of further changes!
+   I added preliminary support for the catkin build system's approach
+   to package description files (what were package manifests). We only
+   extract build dependency elements. Do the runtime dependencies
+   affect roshask?
+
+
+* DONE rostcp slave API requestTopic return type
+  :PROPERTIES:
+  :ID:       08B40EF7-25B4-42AE-B72B-C910016F95F6
+  :ARCHIVE_TIME: 2014-06-23 Mon 16:47
+  :ARCHIVE_FILE: ~/Documents/Projects/roshask/roshask-notes.org
+  :ARCHIVE_CATEGORY: roshask-notes
+  :ARCHIVE_TODO: DONE
+  :END:
+  It should return a list of triples for protocols. This seems to
+  cause a problem with interactions with roscpp.
+
+* DONE Handle empty message files
+  :PROPERTIES:
+  :ID:       445371C6-0975-43F6-8B45-51BDCD54D3C3
+  :ARCHIVE_TIME: 2014-06-23 Mon 16:47
+  :ARCHIVE_FILE: ~/Documents/Projects/roshask/roshask-notes.org
+  :ARCHIVE_CATEGORY: roshask-notes
+  :ARCHIVE_TODO: DONE
+  :END:
+
+* DONE Reorganize the source tree
+  :PROPERTIES:
+  :ID:       80B7083F-B685-4AF7-9BD5-5F25C1146661
+  :ARCHIVE_TIME: 2014-06-24 Tue 16:46
+  :ARCHIVE_FILE: ~/Documents/Projects/roshask/roshask-notes.org
+  :ARCHIVE_CATEGORY: roshask-notes
+  :ARCHIVE_TODO: DONE
+  :END:
+  It's too flat, making it hard to identify the key areas: talking to
+  a ROS master/leader, running a node, topics, and supporting
+  functionality.
+
+
+* DONE Find a place for the service API
+  :PROPERTIES:
+  :ID:       6BAD00E5-8A92-47C7-8662-C1309053C4E4
+  :ARCHIVE_TIME: 2014-06-24 Tue 16:46
+  :ARCHIVE_FILE: ~/Documents/Projects/roshask/roshask-notes.org
+  :ARCHIVE_CATEGORY: roshask-notes
+  :ARCHIVE_TODO: DONE
+  :END:
+  This should go in the Graph section.
+
+* DONE Update to newer Stackage release
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2016-11-07 Mon 10:39
+  :ARCHIVE_FILE: ~/Documents/Projects/roshask/roshask-notes.org
+  :ARCHIVE_CATEGORY: roshask
+  :ARCHIVE_TODO: DONE
+  :END:
+Resolve this [[https://github.com/acowley/roshask/issues/44][issue]]
+
+* DONE Bump version bounds to match current Stackage LTS
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2016-11-07 Mon 10:40
+  :ARCHIVE_FILE: ~/Documents/Projects/roshask/roshask-notes.org
+  :ARCHIVE_CATEGORY: roshask
+  :ARCHIVE_TODO: DONE
+  :END:

@@ -2,7 +2,7 @@ name:                improv
 version:             0.1.0.0
 -- synopsis:
 -- description:
-homepage:            https://github.com/githubuser/improv#readme
+homepage:            https://github.com/alexandroid000/improv
 license:             BSD3
 license-file:        LICENSE
 author:              Alli Nilles
@@ -16,6 +16,7 @@ library
   hs-source-dirs:      src
   exposed-modules:     Improv
   build-depends:       base >= 4.7 && < 5
+                     , numeric-prelude >= 0.4
   default-language:    Haskell2010
   other-extensions:    GADTs
 
@@ -25,6 +26,12 @@ executable improv-exe
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   build-depends:       base
                      , improv
+                     , roshask >= 0.4
+                     , ROS-geometry-msgs
+                     , ROS-std-msgs
+                     , data-default-generics
+                     , lens-family-core
+                     , time >= 1.6
   default-language:    Haskell2010
 
 test-suite improv-test
@@ -38,4 +45,4 @@ test-suite improv-test
 
 source-repository head
   type:     git
-  location: https://github.com/githubuser/improv
+  location: https://github.com/alexandroid000/improv

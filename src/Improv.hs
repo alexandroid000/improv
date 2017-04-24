@@ -3,6 +3,7 @@
 module Improv where
 
 import Prelude
+import Algebra.Ring (C)
         
 -- agent-centered vectors, composition is vector addition
 -- ie: Low :*: High = Mid
@@ -43,11 +44,17 @@ data Length = Zero | Quarter | Half | ThreeFourths | Full
 -- I thinks yes
 type Duration = Double
 
+data Origin = Origin
+    deriving (Show, Eq)
+
 -- needs work
-data Action = Move Direction -- end effector?
-            | Turn Angle -- rotate around axis: how to specify?
-            | Support -- physical constraint of not falling over
-        deriving (Show, Eq)
+-- data Action = Move Direction -- end effector?
+--             | Turn Angle -- rotate around axis: how to specify?
+--             | Support -- physical constraint of not falling over
+--         deriving (Show, Eq)
+
+data Action = A Origin Direction Length
+    deriving (Show, Eq)
 
 -- super: "to which b is attached"
 -- child: "parts attached to b"
@@ -59,11 +66,13 @@ class Parts b where
     symmetricPart :: b -> b
     size :: b -> XYZ
     jointAt :: b -> b -> Maybe (XYZ, XYZ)
+    origin :: b -> b
 
 -- should we use inductive graphs? yesss
--- right now is a binary tree with pointer to parent node
+-- binary tree with pointer to parent node
 data KineChain a = Link (KineChain a) a
                  | Joint (KineChain a) (KineChain a) (KineChain a)
+                 | Collection (KineChain a) (KineChain a)
      deriving (Show, Eq)
 
 -- can add more data constructors for different robot representations
@@ -85,7 +94,7 @@ type XYZ = (Double, Double, Double)
 -- every dance should be compilable to hardware
 -- so base case should involve a "Part"
 -- in general I don't like divorcing Actions from Parts
-data Dance b = Prim Action Duration
+data Dance b = Prim Action (Robot Int)
              | Rest Duration
              | WithPart b (Dance b)
              | Dance b :+: Dance b -- in series
@@ -95,17 +104,9 @@ data Dance b = Prim Action Duration
 -- combinators
 --------------
 
-newtype Par a = Par (Dance a) deriving (Show)
-
-instance (Parts a) => Monoid (Par a) where
-    mempty = Par (Rest 0)
-    mappend (Par x) (Par y) = Par (x :=: y)
-
-newtype Seq a = Seq (Dance a) deriving (Show)
-
-instance (Parts a) => Monoid (Seq a) where
-    mempty = Seq (Rest 0)
-    mappend (Seq x) (Seq y) = Seq (x :+: y)
+--instance C (Dance b) where
+--    d1 * d2 = d1 :=: d2
+--    one = Rest 0
 
 seqL, parL :: (Parts a) => [Dance a] -> Dance a
 seqL = foldr (:+:) (Rest 0)
@@ -135,8 +136,8 @@ transform f (Prim act dur) = Prim (f act) dur
 
 
 
-changeDir :: Direction -> Action -> Action
-changeDir dir (Move _) = Move dir
-changeDir _ act = act
+--changeDir :: Direction -> Action -> Action
+--changeDir dir (Move _) = Move dir
+--changeDir _ act = act
 
 
