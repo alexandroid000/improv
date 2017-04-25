@@ -47,11 +47,6 @@ type Duration = Double
 data Origin = Origin
     deriving (Show, Eq)
 
--- needs work
--- data Action = Move Direction -- end effector?
---             | Turn Angle -- rotate around axis: how to specify?
---             | Support -- physical constraint of not falling over
---         deriving (Show, Eq)
 
 data Action = A Origin Direction Length
     deriving (Show, Eq)
@@ -70,7 +65,8 @@ class Parts b where
 
 -- should we use inductive graphs? yesss
 -- binary tree with pointer to parent node
-data KineChain a = Link (KineChain a) a
+data KineChain a = Root a
+                 | Link (KineChain a) a
                  | Joint (KineChain a) (KineChain a) (KineChain a)
                  | Collection (KineChain a) (KineChain a)
      deriving (Show, Eq)
@@ -79,14 +75,6 @@ data KineChain a = Link (KineChain a) a
 -- ie: graphs, forests, fingertrees
 type Robot a = KineChain a
 
---instance Parts (Robot a) where
-    --contains (Link _ ln) = ln
-    --contains (Joint _ k1 k2) = (contains k1) ++ (contains k2)
-    --containedBy (Link parent _) = parent ++ (containedBy parent)
-    --containedBy (Joint parent _ _) = parent ++ (containedBy parent)
-    --symmetricPart = ?
-    --size =
-    --jointAt =
 
 type XYZ = (Double, Double, Double)
 
@@ -103,10 +91,6 @@ data Dance b = Prim Action (Robot Int)
 
 -- combinators
 --------------
-
---instance C (Dance b) where
---    d1 * d2 = d1 :=: d2
---    one = Rest 0
 
 seqL, parL :: (Parts a) => [Dance a] -> Dance a
 seqL = foldr (:+:) (Rest 0)

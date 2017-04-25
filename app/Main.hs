@@ -1,49 +1,32 @@
-import Improv
 import Ros.Geometry_msgs.Twist
-import qualified Ros.Std_msgs.String as S
 import qualified Ros.Geometry_msgs.Vector3 as V
 import Ros.Node
 import Ros.Topic (cons, repeatM)
-import Ros.Topic.Util (topicRate)
+import Ros.Topic.Util (topicRate, concats)
 import Data.Default.Generics (def)
 import Lens.Family ((.~), (&))
 import Data.Time.Clock (getCurrentTime)
 
--- roomba poses
--- l: limb
--- o: origin
--- d: direction
--- s: size
-
--- roomba only has core
--- to move in a direction, the roomba must first turn and face that direction
--- size of 0 means just face that direction, don't move
--- each incremented size beyond that means move in that direction 
-
-data Limb = C1
-
-
-type Size = Int
-
-
-moveToPose :: Limb -> Origin -> Direction -> Size -> (Double, Double)
-moveToPose C1 Origin Lef s = (0, size*pi/4)
-    where size = fromIntegral s
-
+import Improv
+import Roomba
 
 -- hacky extra parameter so we can map over getCurrentTime
-mkTwist :: (Double, Double) -> a -> Twist
-mkTwist (l,a) t = def & linear . V.x .~ l
-                      & angular . V.z .~ a
+mkTwist :: Config Double -> Twist
+mkTwist (Config r t) = def & linear . V.x .~ t
+                           & angular . V.z .~ r
 
 
-sayHello :: Topic IO S.String
-sayHello = repeatM (fmap mkMsg getCurrentTime)
-    where mkMsg = S.String . ("Hello world " ++) . show
-
+-- compile list of movements to a list of "moveToPose" functions
+-- zip with getCurrentTime
+-- publish at rate of 1Hz
 moveTopic :: Topic IO Twist
-moveTopic = repeatM $ fmap (mkTwist (moveToPose C1 Origin Lef 2)) getCurrentTime
+moveTopic = moveCommands [turnLeft, turnLeft, turnLeft]
+    where turnLeft = moveToPose roomba (A Origin Lef Quarter)
+
+moveCommands :: [Config Double] -> Topic IO Twist
+moveCommands cfs = concats $ repeatM $ twisties
+    where twisties = return $ (map mkTwist cfs) ++ (repeat $ mkTwist (Config 0 0))
 
 main =  runNode "HaskellTurtle" $
-        advertise "chatter" $ (topicRate 1 sayHello)
+        advertise "chatter" $ (topicRate 1 moveTopic) -- publish once per second
         
