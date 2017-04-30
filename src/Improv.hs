@@ -2,8 +2,7 @@
 
 module Improv where
 
-import Prelude
-import Algebra.Ring (C)
+import Prelude hiding (Left, Right)
         
 -- agent-centered vectors, composition is vector addition
 -- ie: Low :*: High = Mid
@@ -44,12 +43,18 @@ data Length = Zero | Quarter | Half | ThreeFourths | Full
 -- I thinks yes
 type Duration = Double
 
-data Origin = Origin
+-- origins indexed by integers
+data Origin = O Int
+            | MultOs Origins
     deriving (Show, Eq)
 
+type Origins = [Origin]
 
 data Action = A Origin Direction Length
+            | As Actions
     deriving (Show, Eq)
+
+type Actions = [Action]
 
 -- super: "to which b is attached"
 -- child: "parts attached to b"
@@ -57,24 +62,28 @@ data Action = A Origin Direction Length
 -- we really want a collection of parts to also be a part: contains/containedBy?
 class Parts b where
     contains :: b -> [b]
-    containedBy :: b -> [b]
-    symmetricPart :: b -> b
-    size :: b -> XYZ
-    jointAt :: b -> b -> Maybe (XYZ, XYZ)
-    origin :: b -> b
+    origin :: b -> Origin
 
 -- should we use inductive graphs? yesss
 -- binary tree with pointer to parent node
-data KineChain a = Root a
-                 | Link (KineChain a) a
-                 | Joint (KineChain a) (KineChain a) (KineChain a)
-                 | Collection (KineChain a) (KineChain a)
+data KineChain a = Joint Origin (KineChains a)
+                 | Link Origin a
+                 | Collection (KineChains a)
      deriving (Show, Eq)
+
+type KineChains a = [KineChain a]
 
 -- can add more data constructors for different robot representations
 -- ie: graphs, forests, fingertrees
 type Robot a = KineChain a
 
+instance Parts (KineChain a) where
+    contains (Link o n) = [Link o n]
+    contains (Joint o ks) = concatMap contains ks
+    contains (Collection ks) = concatMap contains ks
+    origin (Link o _) = o
+    origin (Joint o _) = o
+    origin (Collection ks) = MultOs $ map origin ks
 
 type XYZ = (Double, Double, Double)
 
@@ -82,11 +91,10 @@ type XYZ = (Double, Double, Double)
 -- every dance should be compilable to hardware
 -- so base case should involve a "Part"
 -- in general I don't like divorcing Actions from Parts
-data Dance b = Prim Action (Robot Int)
+data Dance b = Prim Action b
              | Rest Duration
-             | WithPart b (Dance b)
              | Dance b :+: Dance b -- in series
-             | Dance b :=: Dance b -- in parallel
+             | Dance b :||: Dance b -- in parallel
         deriving (Show, Eq)
 
 -- combinators
@@ -94,7 +102,7 @@ data Dance b = Prim Action (Robot Int)
 
 seqL, parL :: (Parts a) => [Dance a] -> Dance a
 seqL = foldr (:+:) (Rest 0)
-parL = foldr (:=:) (Rest 0)
+parL = foldr (:||:) (Rest 0)
 
 repeatn :: (Parts a) => Int -> Dance a -> Dance a
 repeatn n dance = seqL $ take n $ repeat dance
@@ -105,23 +113,17 @@ repeatn n dance = seqL $ take n $ repeat dance
 -- map over parts (for changing platforms)
 instance Functor Dance where
     fmap f (x :+: y) = (fmap f x) :+: (fmap f y)
-    fmap f (x :=: y) = (fmap f x) :=: (fmap f y)
-    fmap f (WithPart p dance) = WithPart (f p) (fmap f dance)
+    fmap f (x :||: y) = (fmap f x) :||: (fmap f y)
     fmap f (Rest dur) = Rest dur
-    fmap f (Prim act dur) = Prim act dur
+    fmap f (Prim act part) = Prim act (f part)
 
 -- map over all actions in a dance
 transform :: (Parts a) => (Action -> Action) -> Dance a -> Dance a
 transform f (x :+: y) = (transform f x) :+: (transform f y)
-transform f (x :=: y) = (transform f x) :=: (transform f y)
-transform f (WithPart p dance) = WithPart p (transform f dance)
+transform f (x :||: y) = (transform f x) :||: (transform f y)
 transform f (Rest dur) = Rest dur
 transform f (Prim act dur) = Prim (f act) dur
 
 
-
---changeDir :: Direction -> Action -> Action
---changeDir dir (Move _) = Move dir
---changeDir _ act = act
-
+-- (>>=) :: Monad m => m a -> (a -> m b) -> m b
 
