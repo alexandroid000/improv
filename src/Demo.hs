@@ -4,31 +4,37 @@ import RobotSpec
 import Improv
 
 left :: Action
-left = A o Lef Zero
-       where o = origin core
-right = A o Righ Zero
-    where o = origin core
-forward = A o Forward Quarter
-    where o = origin core
+left = A (origin core) Lef Quarter
+right = A (origin core) Righ Zero
+forward = A (origin core) Forward Quarter
 
-tree :: Double -> Int -> [VelCmd Double]
-tree len depth
-    | depth == 0 = (translate len)
-    | otherwise = concat
-                  [tree (len/3) (depth-1)
-                  , rotate (pi/3)
-                  , tree (len/3) (depth-1)
-                  , rotate (-2*pi/3)
-                  , tree (len/3) (depth-1)
-                  , rotate (pi/3)
-                  , tree (len/3) (depth-1)
-                  ]
+zig = [forward, left, forward, right]
 
+zag = map (refl YZ) zig
+
+moveTopic = moveCommands $ move core $ As [left, left, left]
+
+--moveTopic = moveCommands $ move core $ As (zig ++ zag)
+
+--tree :: Double -> Int -> [VelCmd Double]
+--tree len depth
+--    | depth == 0 = (translate len)
+--    | otherwise = concat
+--                  [tree (len/3) (depth-1)
+--                  , rotate (pi/3)
+--                  , tree (len/3) (depth-1)
+--                  , rotate (-2*pi/3)
+--                  , tree (len/3) (depth-1)
+--                  , rotate (pi/3)
+--                  , tree (len/3) (depth-1)
+--                  ]
+--
+--moveTopic = moveCommands $ tree 500 5
 
 --zig = [map (effort 3) left*3, right]
 --zag = map reverse zig
 --zigzag = [zig, zag] ++ zigzag
-outAndBack = As [forward, right, right, forward]
+--outAndBack = As [forward, right, right, forward]
 --moveTopic :: Topic IO Twist
 --moveTopic = moveCommands $ concat $ repeat $ concat  [
 --            move core outAndBack,
@@ -37,4 +43,3 @@ outAndBack = As [forward, right, right, forward]
 --            --, move core (take 10 $ mconcat zigzag)
 --            ]
 
-moveTopic = moveCommands (tree 100 4)

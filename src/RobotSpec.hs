@@ -45,26 +45,18 @@ instance Functor VelCmd where
 
 move :: Robot Double -> Action -> [VelCmd Double]
 -- Primitives
-move r (A o Center _) = replicate robotRate (VelCmd 0 0) -- no articulation
-move r (A o Lef Zero) = replicate robotRate (VelCmd 0 (pi/2)) -- rad/sec
-move r (A o Forward Zero) = replicate robotRate (VelCmd 0 0) -- meters/sec
-move r (A o Forward Quarter) = replicate robotRate (VelCmd 1 0) -- meters/sec
+move r (A o Center _) = [VelCmd 0 0] -- no articulation
+move r (A o Lef Zero) = [VelCmd 0 (pi/2)] -- rad/sec
+move r (A o Forward Zero) = [VelCmd 0 0] -- meters/sec
+move r (A o Forward Quarter) = [VelCmd 1 0] -- meters/sec
 move r (As []) = []
-move r (As acts)
-    | n < robotRate = move r (As $ concat $ zipWith replicate freqs acts)
-    | n == robotRate = concatMap (move r) acts
-    | n > robotRate = move r (As $ take robotRate acts) -- how to better "compress"?
-    where n = length acts
-          m = robotRate `div` n
-          k = robotRate `mod` n
-          freqs = (replicate k (m+1)) ++ (replicate (n-k) m)
+move r (As acts) = concatMap (move r) acts
 
 -- Derived from primitives
 move r (A o (d1 :*: d2) len) =
     let r1 = move r (A o d1 len)
         r2 = move r (A o d2 len)
-    in  [composeVels (head r1) (head r2)] -- have to unwrap/wrap :/
--- and now we have maps of fmaps... smells like a refactor
+    in  [composeVels (head r1) (head r2)]
 move r (A o Righ d) = map (fmap negate) (move r (A o Lef d))
 move r (A o Backward d) = map (fmap negate) (move r (A o Forward d))
 move r (A o d Half) = map (fmap (*2)) (move r (A o d Quarter))

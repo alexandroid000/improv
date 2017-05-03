@@ -11,5 +11,5 @@ import Demo
 
 main =  runNode "HaskellTurtle" $
         advertise "turtle1/cmd_vel" $
-        (topicRate (fromIntegral robotRate) moveTopic) -- publish once per second
+        (topicRate 1 moveTopic) -- publish once per second
         
