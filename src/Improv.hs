@@ -96,7 +96,7 @@ type XYZ = (Double, Double, Double)
 -- so base case should involve a "Part"
 -- in general I don't like divorcing Actions from Parts
 data Dance b = Prim Action b
-             | Rest Duration
+             | Rest
              | Dance b :+: Dance b -- in series
              | Dance b :||: Dance b -- in parallel
         deriving (Show, Eq)
@@ -105,8 +105,8 @@ data Dance b = Prim Action b
 --------------
 
 seqL, parL :: (Parts a) => [Dance a] -> Dance a
-seqL = foldr (:+:) (Rest 0)
-parL = foldr (:||:) (Rest 0)
+seqL = foldr (:+:) (Rest)
+parL = foldr (:||:) (Rest)
 
 repeatn :: (Parts a) => Int -> Dance a -> Dance a
 repeatn n dance = seqL $ take n $ repeat dance
@@ -118,14 +118,14 @@ repeatn n dance = seqL $ take n $ repeat dance
 instance Functor Dance where
     fmap f (x :+: y) = (fmap f x) :+: (fmap f y)
     fmap f (x :||: y) = (fmap f x) :||: (fmap f y)
-    fmap f (Rest dur) = Rest dur
+    fmap f (Rest) = Rest
     fmap f (Prim act part) = Prim act (f part)
 
 -- map over all actions in a dance
 transform :: (Parts a) => (Action -> Action) -> Dance a -> Dance a
 transform f (x :+: y) = (transform f x) :+: (transform f y)
 transform f (x :||: y) = (transform f x) :||: (transform f y)
-transform f (Rest dur) = Rest dur
+transform f (Rest) = Rest
 transform f (Prim act dur) = Prim (f act) dur
 
 

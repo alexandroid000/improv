@@ -17,7 +17,7 @@ library
   exposed-modules:     Improv
                      , RobotSpec
                      , Demo
-  build-depends:       base >= 4.7 && < 5
+  build-depends:       base >= 4.7 && < 6
                      , numeric-prelude >= 0.4
                      , roshask >= 0.4
                      , ROS-geometry-msgs
@@ -33,7 +33,7 @@ executable improv-exe
   hs-source-dirs:      app
   main-is:             Main.hs
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
-  build-depends:       base >= 4.7 && < 5
+  build-depends:       base >= 4.7 && < 6
                      , improv
                      , roshask >= 0.4
                      , ROS-geometry-msgs
