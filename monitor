@@ -19,7 +19,7 @@ case "$monitor_type" in
         diff_command=("cat" "$filename")
         ;;
     *)
-        recho "Unknown 'monitor_type': $monitor_type"
+        echo "Unknown 'monitor_type': $monitor_type"
         exit 1
         ;;
 esac
@@ -28,12 +28,12 @@ while true; do
     new_md5="$($diff_command | md5sum)"
     if [[ "$old_md5" != "$new_md5" ]]; then
         old_md5="$new_md5"
-        becho "Executing: $@"
+        echo "Executing: $@"
         $@
         if [[ "$?" == '0' ]]; then
-            becho "READY: $@"
+            echo "READY: $@"
         else
-            recho "READY: $@"
+            echo "READY: $@"
         fi
         while read -t 0; do :; done
     fi
