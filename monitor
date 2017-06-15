@@ -1,33 +1,20 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
-# source /home/ehildenb/.aliases
-old_md5=""
-new_md5=""
+OLD_MD5=""
+NEW_MD5=""
 
-monitor_type="$1" && shift
-
-case "$monitor_type" in
-    git)
-        diff_command=("git" "diff")
-        ;;
-    file)
-        filename="$1" && shift
-        if [[ ! -f "$filename" ]]; then
-             recho "No file: $filename"
-             exit 1
-        fi
-        diff_command=("cat" "$filename")
-        ;;
-    *)
-        echo "Unknown 'monitor_type': $monitor_type"
-        exit 1
-        ;;
-esac
+FILENAME="$1" && shift
+echo "$FILENAME"
+if [[ ! -f "$FILENAME" ]]; then
+     echo "No file: $FILENAME"
+     exit 1
+fi
+DIFF_COMMAND="cat "$FILENAME" | md5sum"
 
 while true; do
-    new_md5="$($diff_command | md5sum)"
-    if [[ "$old_md5" != "$new_md5" ]]; then
-        old_md5="$new_md5"
+    NEW_MD5=$(eval $DIFF_COMMAND)
+    if [[ "$OLD_MD5" != "$NEW_MD5" ]]; then
+        OLD_MD5="$NEW_MD5"
         echo "Executing: $@"
         $@
         if [[ "$?" == '0' ]]; then
@@ -35,22 +22,5 @@ while true; do
         else
             echo "READY: $@"
         fi
-        while read -t 0; do :; done
     fi
-    read -s -k 1 -t 2 input
-    case "$input" in
-        r)
-            old_md5=""
-            ;;
-        z)
-            tmux resize-pane -Z
-            read -s -k 1
-            tmux resize-pane -Z
-            tmux select-pane -t 0
-            new_md5="$($diff_command | md5sum)"
-            old_md5="$new_md5"
-            ;;
-    esac
-    read -s -t 0
-    input=""
 done

@@ -1,5 +1,6 @@
-#! /usr/bin/sh
+#! /usr/bin/env bash
 
 roslaunch turtle.launch &
 
-monitor file src/Demo.hs ./mkDance
+
+./monitor src/Demo.hs ./mkDance

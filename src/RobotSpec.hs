@@ -46,22 +46,22 @@ instance Functor VelCmd where
 move :: Robot Double -> Action -> [VelCmd Double]
 -- Primitives
 move r (A o Center _) = [VelCmd 0 0] -- no articulation
-move r (A o Lef Zero) = [VelCmd 0 (pi/2)] -- rad/sec
-move r (A o Forward Zero) = [VelCmd 0 0] -- meters/sec
+move r (A o _ Zero) = [VelCmd 0 0] -- no articulation
+move r (A o Lef Quarter) = [VelCmd 0 (pi/2)] -- rad/sec
 move r (A o Forward Quarter) = [VelCmd 1 0] -- meters/sec
 move r (As []) = []
 move r (As acts) = concatMap (move r) acts
 
 -- Derived from primitives
-move r (A o (d1 :*: d2) len) =
-    let r1 = move r (A o d1 len)
-        r2 = move r (A o d2 len)
-    in  [composeVels (head r1) (head r2)]
 move r (A o Righ d) = map (fmap negate) (move r (A o Lef d))
 move r (A o Backward d) = map (fmap negate) (move r (A o Forward d))
 move r (A o d Half) = map (fmap (*2)) (move r (A o d Quarter))
 move r (A o d ThreeFourths) = map (fmap (*3)) (move r (A o d Quarter))
 move r (A o d Full) = map (fmap (*4)) (move r (A o d Quarter))
+move r (A o (d1 :*: d2) len) =
+    let r1 = move r (A o d1 len)
+        r2 = move r (A o d2 len)
+    in  [composeVels (head r1) (head r2)]
 
 mkTwist :: VelCmd Double -> Twist
 mkTwist (VelCmd t r) = def  & angular . V.z .~ r
