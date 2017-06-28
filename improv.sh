@@ -3,4 +3,4 @@
 roslaunch turtle.launch &
 
 
-./monitor src/Demo.hs ./mkDance
+./monitor src/test.imp ./mkDance

@@ -2,8 +2,8 @@ module Parser where
 
 import RobotSpec
 import Improv
-import Data.List.Split
 import Data.Map (Map)
+import Data.List.Split
 import qualified Data.Map as Map
 import Ros.Geometry_msgs.Twist
 import Ros.Topic (Topic)
@@ -21,17 +21,16 @@ parseFile doc = parseLines (splitOn "\n" doc) (Map.fromList startenv) 1 >>= \act
 
 parseLines :: [String] -> Map String Actions -> Integer -> Either ParseErr Actions
 parseLines [] env linenum = Right []
-parseLines (line:lines) env linenum = aux (splitOn " " line) where
-    aux ("let":v:"=":words) =
-        case parseWords words env of
+parseLines (line:lines) env linenum = aux (words line) where
+    aux (v:"=":body) =
+        case parseWords body env of
             Just acts -> parseLines lines (Map.insert v acts env) (linenum + 1)
             Nothing -> Left $ ParseErr linenum line
-    aux words = 
-        case parseWords words env of
+    aux body = 
+        case parseWords body env of
             Just acts -> parseLines lines env (linenum + 1) >>= \rest -> return $ acts ++ rest
             Nothing -> Left $ ParseErr linenum line
 
 parseWords :: [String] -> Map String Actions -> Maybe Actions
 parseWords [] env = Just []
-parseWords ("":rest) env = parseWords rest env
-parseWords (word:rest) env = Map.lookup word env >>= \acts -> parseWords rest env >>= \restacts -> return $ acts ++ restacts
+parseWords (curr:rest) env = Map.lookup curr env >>= \acts -> parseWords rest env >>= \restacts -> return $ acts ++ restacts

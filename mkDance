@@ -2,8 +2,6 @@
 
 echo "killing old node"
 pkill improv-exe
-echo "recompiling"
-stack build
 echo "running new node"
 rosservice call /reset
 stack exec -- improv-exe &

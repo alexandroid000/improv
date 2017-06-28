@@ -16,7 +16,7 @@ library
   hs-source-dirs:      src
   exposed-modules:     Improv
                      , RobotSpec
-                     , Demo
+                     , Parser
   build-depends:       base >= 4.7 && < 6
                      , numeric-prelude >= 0.4
                      , roshask >= 0.4
@@ -26,6 +26,8 @@ library
                      , tls <= 1.3.9
                      , HsOpenSSL >= 0.11.4.8
                      , lens-family-core
+                     , split
+                     , containers
   default-language:    Haskell2010
   other-extensions:    GADTs
 
@@ -42,6 +44,8 @@ executable improv-exe
                      , ROS-std-msgs
                      , data-default-generics
                      , lens-family-core
+                     , split,
+                     containers
   default-language:    Haskell2010
 
 
