@@ -51,14 +51,12 @@ data Origin = O Int
 type Origins = [Origin]
 
 data Action = A Origin Direction Length
-            | As Actions
     deriving (Show, Eq)
 
 type Actions = [Action]
 
 instance Symmetric Action where
     refl pl (A o dir len) = A o (refl pl dir) len
-    refl pl (As acts) = As (map (refl pl) acts)
 
 -- super: "to which b is attached"
 -- child: "parts attached to b"

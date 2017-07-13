@@ -12,7 +12,7 @@ zig = [forward, left, forward, right]
 
 zag = map (refl YZ) zig
 
-moveTopic = moveCommands $ move core $ As [left, left, left]
+moveTopic = moveCommands $ map (move core) $ [left, left, left]
 
 --moveTopic = moveCommands $ move core $ As (zig ++ zag)
 

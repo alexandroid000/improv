@@ -36,45 +36,44 @@ type Rotation = Double
 -- for DDR: forward translation, yaw rotation
 data VelCmd a = VelCmd a a
 
+instance Functor VelCmd where
+    fmap f (VelCmd t r) = VelCmd (f t) (f r)
+
 -- average directions, allowing finer motor control
 composeVels :: (Fractional a) => VelCmd a -> VelCmd a -> VelCmd a
 composeVels (VelCmd t1 r1) (VelCmd t2 r2) = VelCmd ((t1+t2)/2) ((r1+r2)/2)
 
-instance Functor VelCmd where
-    fmap f (VelCmd t r) = VelCmd (f t) (f r)
 
-move :: Robot Double -> Action -> [VelCmd Double]
+move :: Robot Double -> Action -> VelCmd Double
 -- Primitives
-move r (A o Center _) = [VelCmd 0 0] -- no articulation
-move r (A o _ Zero) = [VelCmd 0 0] -- no articulation
-move r (A o Lef Quarter) = [VelCmd 0 (pi/2)] -- rad/sec
-move r (A o Forward Quarter) = [VelCmd 1 0] -- meters/sec
-move r (As []) = []
-move r (As acts) = concatMap (move r) acts
+move r (A o Center _) = VelCmd 0 0 -- no articulation
+move r (A o _ Zero) = VelCmd 0 0 -- no articulation
+move r (A o Lef Quarter) = VelCmd 0 (pi/2) -- rad/sec
+move r (A o Forward Quarter) = VelCmd 1 0 -- meters/sec
 
 -- Derived from primitives
-move r (A o Righ d) = map (fmap negate) (move r (A o Lef d))
-move r (A o Backward d) = map (fmap negate) (move r (A o Forward d))
-move r (A o d Half) = map (fmap (*2)) (move r (A o d Quarter))
-move r (A o d ThreeFourths) = map (fmap (*3)) (move r (A o d Quarter))
-move r (A o d Full) = map (fmap (*4)) (move r (A o d Quarter))
+move r (A o Righ d) = (fmap negate) (move r (A o Lef d))
+move r (A o Backward d) = (fmap negate) (move r (A o Forward d))
+move r (A o d Half) = (fmap (*2)) (move r (A o d Quarter))
+move r (A o d ThreeFourths) = (fmap (*3)) (move r (A o d Quarter))
+move r (A o d Full) = (fmap (*4)) (move r (A o d Quarter))
 move r (A o (d1 :*: d2) len) =
     let r1 = move r (A o d1 len)
         r2 = move r (A o d2 len)
-    in  [composeVels (head r1) (head r2)]
+    in  composeVels r1 r2
 
 mkTwist :: VelCmd Double -> Twist
 mkTwist (VelCmd t r) = def  & angular . V.z .~ r
                             & linear . V.x .~ t
 
 -- input in radians, ccw
-rotate :: Double -> [VelCmd Double]
+rotate :: Double -> VelCmd Double
 rotate ang =
     let a = (signum ang)*(mod' ang (2*pi))
-    in  [VelCmd 0 a]
+    in  VelCmd 0 a
 
-translate :: Double -> [VelCmd Double]
-translate d = [VelCmd d 0]
+translate :: Double -> VelCmd Double
+translate d = VelCmd d 0
 
 
 moveCommands :: [VelCmd Double] -> Topic IO Twist
