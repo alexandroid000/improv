@@ -24,7 +24,7 @@ axes = Map.fromList [("XZ", XZ), ("XY", XY), ("YZ", YZ)]
 
 parseFile :: String -> Either ParseErr (Topic IO Twist)
 parseFile doc = case parse parseDoc "lisp" doc of
-    Right tree -> parseLines tree startenv 1 >>= return . moveCommands . move core . As
+    Right tree -> parseLines tree startenv 1 >>= return . moveCommands . map (move core)
     Left err -> Left $ ParseErr 0 (show err)
 
 parseLines :: Tree -> Map String Actions -> Integer -> Either ParseErr Actions
