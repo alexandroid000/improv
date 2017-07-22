@@ -1,4 +1,3 @@
 x = left right forward left right forward forward
-x
-right
-right
+y = left right forward
+repeat 5 (x) (((reflect XY (left right forward))))

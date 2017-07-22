@@ -26,8 +26,9 @@ library
                      , tls <= 1.3.9
                      , HsOpenSSL >= 0.11.4.8
                      , lens-family-core
-                     , split
                      , containers
+                     , split
+                     , parsec
   default-language:    Haskell2010
   other-extensions:    GADTs
 
@@ -44,8 +45,10 @@ executable improv-exe
                      , ROS-std-msgs
                      , data-default-generics
                      , lens-family-core
-                     , split,
-                     containers
+                     , split
+                     , containers
+                     , split
+                     , parsec
   default-language:    Haskell2010
 
 

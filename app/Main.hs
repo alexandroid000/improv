@@ -1,3 +1,5 @@
+{-# LANGUAGE OverloadedStrings #-}
+
 import Ros.Node
 import Ros.Topic.Util (topicRate, concats)
 import Data.Default.Generics (def)
