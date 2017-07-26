@@ -29,6 +29,7 @@ library
                      , containers
                      , split
                      , parsec
+                     , mtl
   default-language:    Haskell2010
   other-extensions:    GADTs
 
@@ -49,6 +50,7 @@ executable improv-exe
                      , containers
                      , split
                      , parsec
+                     , mtl
   default-language:    Haskell2010
 
 

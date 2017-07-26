@@ -7,13 +7,14 @@ import Data.List.Split
 import qualified Data.Map as Map
 import Ros.Geometry_msgs.Twist
 import Ros.Topic (Topic)
-import Text.Read
 import Text.ParserCombinators.Parsec 
+import Control.Monad.State.Lazy as S
 
 data ParseErr = ParseErr Integer String -- line # and error string
 data Tree = Node [Tree]
           | Leaf [String]
     deriving Show
+
 
 left = A (origin core) Lef Quarter
 right = A (origin core) Righ Zero
@@ -23,20 +24,30 @@ startenv = Map.fromList [("left", [left]), ("right", [right]), ("forward", [forw
 axes = Map.fromList [("XZ", XZ), ("XY", XY), ("YZ", YZ)]
 
 parseFile :: String -> Either ParseErr (Topic IO Twist)
-parseFile doc = case parse parseDoc "lisp" doc of
-    Right tree -> parseLines tree startenv 1 >>= return . moveCommands . map (move core)
-    Left err -> Left $ ParseErr 0 (show err)
-
-parseLines :: Tree -> Map String Actions -> Integer -> Either ParseErr Actions
-parseLines (Node []) env linenum = Right []
-parseLines (Node (line:lines)) env linenum = case line of
-    Node [Leaf [v, "="], body]   -> parseWords body env linenum >>= \acts -> parseLines (Node lines) (Map.insert v acts env) (linenum + 1)
-    otherwise                    -> parseWords line env linenum >>= \acts -> parseLines (Node lines) env (linenum + 1) >>= \rest -> return $ acts ++ rest
-
-parseWords :: Tree -> Map String Actions -> Integer -> Either ParseErr Actions
-parseWords curr env linenum = case curr of
-    otherwise -> Right []
+parseFile doc = case parse parseDoc "" doc of
+    Right tree -> evalState (parseLines tree [] 1) startenv >>= return . moveCommands . map (move core)
+    Left err -> Left $ ParseErr (-1) (show err) -- Handling parsec error
     
+
+parseLines :: Tree -> Actions -> Integer -> S.State (Map String Actions) (Either ParseErr Actions)
+parseLines (Node []) acc linenum = return $ Right acc
+parseLines (Node (line:lines)) acc linenum = 
+    do env <- get
+       case line of
+           Node [Leaf [v, "="], body] -> case evalState (parseWords body) env of
+               Right acts -> do modify $ Map.insert v acts
+                                parseLines (Node lines) acc (linenum + 1)
+               Left err -> return $ Left $ ParseErr linenum err
+           otherwise -> case evalState (parseWords line) env of 
+               Right acts -> parseLines (Node lines) (acc ++ acts) (linenum + 1)
+               Left err -> return $ Left $ ParseErr linenum err
+               
+parseWords :: Tree -> S.State (Map String Actions) (Either String Actions) 
+parseWords curr = do env <- get --TEST CODE!!!!
+                     case Map.lookup "left" env of
+                        Just stuff -> return $ Right $ actrepeat stuff
+                        Nothing -> return $ Left ""
+
 --parseWords (Leaf ("":rest)) env linenum = parseWords (Leaf rest) env linenum
 --parseWords ("reflect":arg1:arg2:rest) env linenum = parseWords [arg2] env linenum >>= \acts -> 
 --    case Map.lookup arg1 axes of
