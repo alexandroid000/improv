@@ -3,7 +3,6 @@ module Parser where
 import RobotSpec
 import Improv
 import Data.Map (Map)
-import Data.List.Split
 import qualified Data.Map as Map
 import Ros.Geometry_msgs.Twist
 import Ros.Topic (Topic)
@@ -58,16 +57,19 @@ actrepeatn :: Int -> Actions -> Actions
 actrepeatn 0 acts = []
 actrepeatn n acts = acts ++ actrepeatn (n - 1) acts
 
+skipSpace :: Parser ()
+skipSpace = skipMany (char ' ')
+
 parseDoc :: Parser Tree
-parseDoc = Node <$> sepEndBy (try parseLet <|> parseLine) newline
-    where parseLine = Node <$> many (skipMany (char ' ') >> (parseLeaf <|> parseNode))
-          parseNode = between (char '(') (char ')') parseLine
-          parseLeaf = Leaf <$> many1 (digit <|> letter)
-          parseLet  = do v1 <- letter
-                         v2 <- many (digit <|> letter)
-                         skipMany (char ' ')
-                         char '='
-                         skipMany (char ' ')
-                         body <- parseLine
-                         return $ Node [Leaf (v1:v2), Leaf "=", body]
+parseDoc = Node <$> sepEndBy (skipSpace >> (try parseLet <|> parseLine)) newline where
+    parseLine = Node <$> many1 ((parseNode <|> parseLeaf) >>= \t -> skipSpace >> return t)
+    parseNode = between (char '(') (char ')') parseLine
+    parseLeaf = Leaf <$> many1 (digit <|> letter)
+    parseLet  = do v1 <- letter
+                   v2 <- many (digit <|> letter)
+                   skipSpace
+                   char '='
+                   skipSpace
+                   body <- parseLine
+                   return $ Node [Leaf (v1:v2), Leaf "=", body]
           
