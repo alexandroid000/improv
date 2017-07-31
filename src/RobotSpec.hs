@@ -26,6 +26,7 @@ import Data.Fixed
 robotRate = 100
 
 
+
 core :: KineChain Double
 core = Link (O 0) 0
 
@@ -44,22 +45,22 @@ composeVels :: (Fractional a) => VelCmd a -> VelCmd a -> VelCmd a
 composeVels (VelCmd t1 r1) (VelCmd t2 r2) = VelCmd ((t1+t2)/2) ((r1+r2)/2)
 
 
-move :: Robot Double -> Action -> VelCmd Double
+moveBase :: Action -> VelCmd Double
 -- Primitives
-move r (A o Center _) = VelCmd 0 0 -- no articulation
-move r (A o _ Zero) = VelCmd 0 0 -- no articulation
-move r (A o Lef Quarter) = VelCmd 0 (pi/2) -- rad/sec
-move r (A o Forward Quarter) = VelCmd 1 0 -- meters/sec
+moveBase (A Center _) = VelCmd 0 0 -- no articulation
+moveBase (A _ Zero) = VelCmd 0 0 -- no articulation
+moveBase (A Lef Quarter) = VelCmd 0 (pi/2) -- rad/sec
+moveBase (A Forward Quarter) = VelCmd 1 0 -- meters/sec
 
 -- Derived from primitives
-move r (A o Righ d) = (fmap negate) (move r (A o Lef d))
-move r (A o Backward d) = (fmap negate) (move r (A o Forward d))
-move r (A o d Half) = (fmap (*2)) (move r (A o d Quarter))
-move r (A o d ThreeFourths) = (fmap (*3)) (move r (A o d Quarter))
-move r (A o d Full) = (fmap (*4)) (move r (A o d Quarter))
-move r (A o (d1 :*: d2) len) =
-    let r1 = move r (A o d1 len)
-        r2 = move r (A o d2 len)
+moveBase (A Righ d) = (fmap negate) (moveBase (A Lef d))
+moveBase (A Backward d) = (fmap negate) (moveBase (A Forward d))
+moveBase (A d Half) = (fmap (*2)) (moveBase (A d Quarter))
+moveBase (A d ThreeFourths) = (fmap (*3)) (moveBase (A d Quarter))
+moveBase (A d Full) = (fmap (*4)) (moveBase (A d Quarter))
+moveBase (A (d1 :*: d2) len) =
+    let r1 = moveBase (A d1 len)
+        r2 = moveBase (A d2 len)
     in  composeVels r1 r2
 
 mkTwist :: VelCmd Double -> Twist

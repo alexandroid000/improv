@@ -10,7 +10,7 @@ import Ros.Topic (Topic)
 import Text.ParserCombinators.Parsec 
 import Control.Monad.State.Lazy as S
 
-type CommandState = Map String Actions
+type CommandState = Map String [Action]
 
 data ParseErr = ParseErr Integer String -- line # (-1 for parsec errors) and error string
 data Tree = Node [Tree]
@@ -18,19 +18,20 @@ data Tree = Node [Tree]
     deriving Show
 
 
-left = A (origin core) Lef Quarter
-right = A (origin core) Righ Zero
-forward = A (origin core) Forward Quarter
+left = A Lef Quarter
+right = A Righ Zero
+forward = A Forward Quarter
 
 startCommands = Map.fromList [("left", [left]), ("right", [right]), ("forward", [forward])]
 axes = Map.fromList [("XZ", XZ), ("XY", XY), ("YZ", YZ)]
 
 parseFile :: String -> Either ParseErr (Topic IO Twist)
 parseFile doc = case parse parseDoc "" doc of
-    Right tree -> evalState (parseLines tree [] 1) startCommands >>= return . moveCommands . map (move core)
+    Right tree -> evalState (parseLines tree [] 1) startCommands >>= return . moveCommands . map (moveBase)
     Left err -> Left $ ParseErr (-1) (show err) -- Handling parsec error
 
-parseLines :: Tree -> Actions -> Integer -> S.State CommandState (Either ParseErr Actions)
+parseLines :: Tree -> [Action] -> Integer ->
+                    S.State CommandState (Either ParseErr [Action])
 parseLines (Node []) acc linenum = return $ Right acc
 parseLines (Node (line:lines)) acc linenum = 
     do commands <- get
@@ -43,7 +44,7 @@ parseLines (Node (line:lines)) acc linenum =
                 Right acts -> parseLines (Node lines) (acc ++ acts) (linenum + 1)
                 Left err -> return $ Left $ ParseErr linenum err
                
-parseWords :: Tree -> S.State CommandState (Either String Actions) 
+parseWords :: Tree -> S.State CommandState (Either String [Action])
 parseWords curr = do env <- get --TEST CODE!!!!
                      case Map.lookup "left" env of
                         Just stuff -> return $ Right $ actrepeat stuff
@@ -51,10 +52,10 @@ parseWords curr = do env <- get --TEST CODE!!!!
 
 ----Helper Functions----
 
-actrepeat :: Actions -> Actions
+actrepeat :: [Action] -> [Action]
 actrepeat acts = acts ++ actrepeat acts
 
-actrepeatn :: Int -> Actions -> Actions
+actrepeatn :: Int -> [Action] ->[Action]
 actrepeatn 0 acts = []
 actrepeatn n acts = acts ++ actrepeatn (n - 1) acts
 

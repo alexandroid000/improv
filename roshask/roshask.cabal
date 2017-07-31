@@ -165,30 +165,30 @@ Library
 --                  Paths_roshask
 --  Hs-Source-Dirs: src/executable
 
-test-suite testexe
-  type: exitcode-stdio-1.0
-  hs-source-dirs: Tests, src/executable
-  main-is: AllTests.hs
-  ghc-options: -Wall -O0
-  default-language: Haskell2010
-  build-depends: base >= 4.6 && < 5, bytestring, tasty, tasty-hunit, roshask,
-                 containers, mtl,
-                 filepath, attoparsec, transformers,
-                 pureMD5 >= 2.1
-  other-modules: Analysis FieldImports Gen Instances.Binary Instances.Lens
-                 Instances.Storable MD5 MsgGen Parse ResolutionTypes
-                 TopicTest Types
-
-test-suite servicetest
-  type: exitcode-stdio-1.0
-  hs-source-dirs: Tests/ServiceClientTests
-  main-is: ServiceClientTest.hs
-  ghc-options: -Wall -O0
-  default-language: Haskell2010
-  build-depends: base >= 4.6 && < 5, bytestring, tasty, tasty-hunit, roshask,
-                 containers, mtl, filepath, attoparsec, transformers,
-                 pureMD5 >= 2.1,
-                 data-default-generics
-  other-modules: Ros.Test_srvs.AddTwoIntsRequest
-                 Ros.Test_srvs.AddTwoIntsResponse
-                 Ros.Test_srvs.EmptyRequest Ros.Test_srvs.EmptyResponse
+--test-suite testexe
+--  type: exitcode-stdio-1.0
+--  hs-source-dirs: Tests, src/executable
+--  main-is: AllTests.hs
+--  ghc-options: -Wall -O0
+--  default-language: Haskell2010
+--  build-depends: base >= 4.6 && < 5, bytestring, tasty, tasty-hunit, roshask,
+--                 containers, mtl,
+--                 filepath, attoparsec, transformers,
+--                 pureMD5 >= 2.1
+--  other-modules: Analysis FieldImports Gen Instances.Binary Instances.Lens
+--                 Instances.Storable MD5 MsgGen Parse ResolutionTypes
+--                 TopicTest Types
+--
+--test-suite servicetest
+--  type: exitcode-stdio-1.0
+--  hs-source-dirs: Tests/ServiceClientTests
+--  main-is: ServiceClientTest.hs
+--  ghc-options: -Wall -O0
+--  default-language: Haskell2010
+--  build-depends: base >= 4.6 && < 5, bytestring, tasty, tasty-hunit, roshask,
+--                 containers, mtl, filepath, attoparsec, transformers,
+--                 pureMD5 >= 2.1,
+--                 data-default-generics
+--  other-modules: Ros.Test_srvs.AddTwoIntsRequest
+--                 Ros.Test_srvs.AddTwoIntsResponse
+--                 Ros.Test_srvs.EmptyRequest Ros.Test_srvs.EmptyResponse

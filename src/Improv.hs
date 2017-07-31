@@ -1,8 +1,9 @@
 {-#LANGUAGE GADTs #-}
+{-#LANGUAGE DeriveFunctor #-}
 
 module Improv where
 
-import Prelude hiding (Left, Right)
+import Prelude
         
 -- agent-centered vectors, composition is vector addition
 -- ie: Low :*: High = Mid
@@ -10,13 +11,13 @@ data Direction = Lef | Righ | Forward
                | Backward | Center
                | Low | Mid | High
                | Direction :*: Direction
-     deriving (Show, Eq)
+     deriving (Show, Eq, Read)
 
 data Angle = Angle Double
-        deriving (Show, Eq)
+        deriving (Show, Eq, Read)
 
 data Plane = XY | YZ | XZ
-        deriving (Show, Eq)
+        deriving (Show, Eq, Read)
 
 class Symmetric a where
     refl :: Plane -> a -> a
@@ -37,7 +38,7 @@ instance Symmetric Angle where
     refl _ (Angle x) = Angle (-x)
 
 data Length = Zero | Quarter | Half | ThreeFourths | Full
-        deriving (Show, Eq)
+        deriving (Show, Eq, Read)
 
 -- should we have an inherent "rhythm" like Tidal does?
 -- I thinks yes
@@ -45,18 +46,14 @@ type Duration = Double
 
 -- origins indexed by integers
 data Origin = O Int
-            | MultOs Origins
-    deriving (Show, Eq)
+    deriving (Show, Eq, Read)
 
-type Origins = [Origin]
+data Action = A Direction Length
+    deriving (Show, Eq, Read)
 
-data Action = A Origin Direction Length
-    deriving (Show, Eq)
-
-type Actions = [Action]
 
 instance Symmetric Action where
-    refl pl (A o dir len) = A o (refl pl dir) len
+    refl pl (A dir len) = A (refl pl dir) len
 
 -- super: "to which b is attached"
 -- child: "parts attached to b"
@@ -66,11 +63,9 @@ class Parts b where
     contains :: b -> [b]
     origin :: b -> Origin
 
--- should we use inductive graphs? yesss
 -- binary tree with pointer to parent node
 data KineChain a = Joint Origin (KineChains a)
                  | Link Origin a
-                 | Collection (KineChains a)
      deriving (Show, Eq)
 
 type KineChains a = [KineChain a]
@@ -82,35 +77,19 @@ type Robot a = KineChain a
 instance Parts (KineChain a) where
     contains (Link o n) = [Link o n]
     contains (Joint o ks) = concatMap contains ks
-    contains (Collection ks) = concatMap contains ks
     origin (Link o _) = o
     origin (Joint o _) = o
-    origin (Collection ks) = MultOs $ map origin ks
-
-type XYZ = (Double, Double, Double)
 
 -- parameterized over parts, but we want to map over actions
 -- every dance should be compilable to hardware
 -- so base case should involve a "Part"
 -- in general I don't like divorcing Actions from Parts
 data Dance b = Prim Action b
-             | Rest
+             | Rest -- id for parallel
+             | Skip -- id for sequence
              | Dance b :+: Dance b -- in series
              | Dance b :||: Dance b -- in parallel
-        deriving (Show, Eq)
-
--- combinators
---------------
-
-seqL, parL :: (Parts a) => [Dance a] -> Dance a
-seqL = foldr (:+:) (Rest)
-parL = foldr (:||:) (Rest)
-
-repeatn :: (Parts a) => Int -> Dance a -> Dance a
-repeatn n dance = seqL $ take n $ repeat dance
-
--- transformers
----------------
+        deriving (Show, Eq, Read)
 
 -- map over parts (for changing platforms)
 instance Functor Dance where
@@ -118,6 +97,34 @@ instance Functor Dance where
     fmap f (x :||: y) = (fmap f x) :||: (fmap f y)
     fmap f (Rest) = Rest
     fmap f (Prim act part) = Prim act (f part)
+
+newtype ParDance a = ParDance { getPar :: Dance a }
+    deriving (Eq, Show, Read, Functor)
+
+instance (Parts a) => Monoid (ParDance a) where
+    mempty = ParDance Rest
+    ParDance x `mappend` ParDance y = ParDance (x :||: y)
+
+newtype SeqDance a = SeqDance { getSeq :: Dance a }
+    deriving (Eq, Show, Read, Functor)
+
+instance (Parts a) => Monoid (SeqDance a) where
+    mempty = SeqDance Skip
+    SeqDance x `mappend` SeqDance y = SeqDance (x :+: y)
+
+-- combinators
+--------------
+
+seqL, parL :: (Parts a) => [Dance a] -> Dance a
+seqL = getSeq . mconcat . map SeqDance
+parL = getPar . mconcat . map ParDance
+
+repeatn :: (Parts a) => Int -> Dance a -> Dance a
+repeatn n dance = seqL $ take n $ repeat dance
+
+-- transformers
+---------------
+
 
 -- map over all actions in a dance
 transform :: (Parts a) => (Action -> Action) -> Dance a -> Dance a
