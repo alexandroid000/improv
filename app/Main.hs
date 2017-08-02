@@ -6,6 +6,7 @@ import Ros.Topic.Util (topicRate)
 --import Lens.Family ((.~), (&))
 
 import Parser
+import RobotSpec
 --import qualified Control.Exception as E
 import System.Environment
 
@@ -16,7 +17,9 @@ main = do args <- getArgs
           case args of
               [] -> do doc <- readFile "./src/test.imp"
                        case parseFile doc of 
-                            Right moveTopic -> runNode "HaskellTurtle" $ advertise "turtle1/cmd_vel" $ topicRate 1 moveTopic
+                            Right moveTopic ->  runNode "HaskellTurtle" $
+                                                advertise "turtle1/cmd_vel" $
+                                                topicRate robotRes moveTopic
                             Left (ParseErr (-1) err) -> putStrLn $ "Parse error " ++ err
                             Left (ParseErr line err) -> putStrLn $ "Error (line " ++ (show line) ++ "):\n" ++ err
               _  -> putStrLn "Incorrect number of arguments: need file name"

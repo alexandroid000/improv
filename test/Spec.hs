@@ -27,7 +27,7 @@ main = hspec $ do
             (Prim (A Lef Quarter) 1 (Link (O 0) 0)    :||:
             (Prim (A Righ Zero) 1 (Link (O 0) 0)      :||:
             (Prim (A Lef Quarter) 1 (Link (O 0) 0)    :||:
-            Rest)))
+            Skip)))
         it "series" $
             (getSeq . mconcat $ map SeqDance dance)
             `shouldBe`

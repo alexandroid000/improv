@@ -80,12 +80,12 @@ instance Parts (KineChain a) where
     origin (Link o _) = o
     origin (Joint o _) = o
 
-type Mult = Int
+type Mult = Double
 
 -- what if we made this a bimonoid typeclass instead?
 data Dance b = Prim Action Mult b
-             | Rest -- id for parallel
-             | Skip -- id for series
+             | Rest Mult
+             | Skip -- id for series, parallel
              | Dance b :+: Dance b -- in series
              | Dance b :||: Dance b -- in parallel
         deriving (Show, Eq, Read)
@@ -94,16 +94,16 @@ data Dance b = Prim Action Mult b
 instance Functor Dance where
     fmap f (x :+: y) = (fmap f x) :+: (fmap f y)
     fmap f (x :||: y) = (fmap f x) :||: (fmap f y)
-    fmap f (Rest) = Rest
+    fmap f (Rest m) = Rest m
+    fmap f (Skip) = Skip
     fmap f (Prim act m part) = Prim act m (f part)
 
 newtype ParDance a = ParDance { getPar :: Dance a }
     deriving (Eq, Show, Read, Functor)
 
 instance (Parts a) => Monoid (ParDance a) where
-    mempty = ParDance Rest
+    mempty = ParDance Skip
     ParDance x `mappend` ParDance y = ParDance (x :||: y)
-
 
 newtype SeqDance a = SeqDance { getSeq :: Dance a }
     deriving (Eq, Show, Read, Functor)
@@ -117,19 +117,18 @@ instance (Parts a) => Monoid (SeqDance a) where
 
 seqL, parL :: (Parts a) => [Dance a] -> Dance a
 seqL ds =
-    let m = length ds
-        sped = map (speedUp m) ds
+    let m = fromIntegral $ length ds
+        sped = map (changeTiming m) ds
     in getSeq . mconcat $ map SeqDance sped
 
 parL = getPar . mconcat . map ParDance
 
-speedUp :: (Parts a) => Mult -> Dance a -> Dance a
-speedUp m (Prim a n b) = Prim a (m*n) b
-speedUp _ Rest = Rest
-speedUp _ Skip = Skip
-speedUp m (d1 :+: d2) = (speedUp m d1) :+: (speedUp m d2)
-speedUp m (d1 :||: d2) = (speedUp m d1) :||: (speedUp m d2)
-
+changeTiming :: (Parts a) => Mult -> Dance a -> Dance a
+changeTiming m (Prim a n b) = Prim a (m*n) b
+changeTiming m (Rest n) = Rest (m*n)
+changeTiming _ Skip = Skip
+changeTiming m (d1 :+: d2) = (changeTiming m d1) :+: (changeTiming m d2)
+changeTiming m (d1 :||: d2) = (changeTiming m d1) :||: (changeTiming m d2)
 
 repeatn :: (Parts a) => Int -> Dance a -> Dance a
 repeatn n dance = seqL $ take n $ repeat dance
@@ -142,7 +141,7 @@ repeatn n dance = seqL $ take n $ repeat dance
 transform :: (Parts a) => (Action -> Action) -> Dance a -> Dance a
 transform f (x :+: y) = (transform f x) :+: (transform f y)
 transform f (x :||: y) = (transform f x) :||: (transform f y)
-transform f (Rest) = Rest
+transform f (Rest m) = Rest m
 transform f (Prim act m dur) = Prim (f act) m dur
 
 
