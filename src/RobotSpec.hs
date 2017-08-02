@@ -21,11 +21,10 @@ import Data.Fixed
 -- each incremented size beyond that means move in that direction
 
 
--- resolution: can change action at most robotRate times per second
--- Actions will be stretched to fill 1 second
-robotRate = 100
-
-
+-- resolution: can change action at most robotRes times per second
+-- by default, primitives will take robotRate seconds
+robotRes = 100
+robotRate = 1
 
 core :: KineChain Double
 core = Link (O 0) 0
@@ -62,6 +61,11 @@ moveBase (A (d1 :*: d2) len) =
     let r1 = moveBase (A d1 len)
         r2 = moveBase (A d2 len)
     in  composeVels r1 r2
+
+increaseVel :: Int -> VelCmd Double -> VelCmd Double
+increaseVel mult vcmd =
+    let m = fromIntegral mult
+    in  fmap (*m) vcmd
 
 mkTwist :: VelCmd Double -> Twist
 mkTwist (VelCmd t r) = def  & angular . V.z .~ r

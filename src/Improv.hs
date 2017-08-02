@@ -80,13 +80,12 @@ instance Parts (KineChain a) where
     origin (Link o _) = o
     origin (Joint o _) = o
 
--- parameterized over parts, but we want to map over actions
--- every dance should be compilable to hardware
--- so base case should involve a "Part"
--- in general I don't like divorcing Actions from Parts
-data Dance b = Prim Action b
+type Mult = Int
+
+-- what if we made this a bimonoid typeclass instead?
+data Dance b = Prim Action Mult b
              | Rest -- id for parallel
-             | Skip -- id for sequence
+             | Skip -- id for series
              | Dance b :+: Dance b -- in series
              | Dance b :||: Dance b -- in parallel
         deriving (Show, Eq, Read)
@@ -96,7 +95,7 @@ instance Functor Dance where
     fmap f (x :+: y) = (fmap f x) :+: (fmap f y)
     fmap f (x :||: y) = (fmap f x) :||: (fmap f y)
     fmap f (Rest) = Rest
-    fmap f (Prim act part) = Prim act (f part)
+    fmap f (Prim act m part) = Prim act m (f part)
 
 newtype ParDance a = ParDance { getPar :: Dance a }
     deriving (Eq, Show, Read, Functor)
@@ -104,6 +103,7 @@ newtype ParDance a = ParDance { getPar :: Dance a }
 instance (Parts a) => Monoid (ParDance a) where
     mempty = ParDance Rest
     ParDance x `mappend` ParDance y = ParDance (x :||: y)
+
 
 newtype SeqDance a = SeqDance { getSeq :: Dance a }
     deriving (Eq, Show, Read, Functor)
@@ -116,8 +116,20 @@ instance (Parts a) => Monoid (SeqDance a) where
 --------------
 
 seqL, parL :: (Parts a) => [Dance a] -> Dance a
-seqL = getSeq . mconcat . map SeqDance
+seqL ds =
+    let m = length ds
+        sped = map (speedUp m) ds
+    in getSeq . mconcat $ map SeqDance sped
+
 parL = getPar . mconcat . map ParDance
+
+speedUp :: (Parts a) => Mult -> Dance a -> Dance a
+speedUp m (Prim a n b) = Prim a (m*n) b
+speedUp _ Rest = Rest
+speedUp _ Skip = Skip
+speedUp m (d1 :+: d2) = (speedUp m d1) :+: (speedUp m d2)
+speedUp m (d1 :||: d2) = (speedUp m d1) :||: (speedUp m d2)
+
 
 repeatn :: (Parts a) => Int -> Dance a -> Dance a
 repeatn n dance = seqL $ take n $ repeat dance
@@ -131,7 +143,7 @@ transform :: (Parts a) => (Action -> Action) -> Dance a -> Dance a
 transform f (x :+: y) = (transform f x) :+: (transform f y)
 transform f (x :||: y) = (transform f x) :||: (transform f y)
 transform f (Rest) = Rest
-transform f (Prim act dur) = Prim (f act) dur
+transform f (Prim act m dur) = Prim (f act) m dur
 
 
 -- (>>=) :: Monad m => m a -> (a -> m b) -> m b
