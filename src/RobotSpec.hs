@@ -21,10 +21,9 @@ import Data.Fixed
 -- each incremented size beyond that means move in that direction
 
 
--- resolution: can change action at most robotRate times per second
--- Actions will be stretched to fill 1 second
-robotRate = 100
-
+-- resolution: can change action at most robotRes times per second
+robotRes = 100 :: Mult -- messages/second, ROS publishing rate
+robotRate = 1 :: Mult -- seconds per primitive
 
 core :: KineChain Double
 core = Link (O 0) 0
@@ -40,27 +39,41 @@ instance Functor VelCmd where
     fmap f (VelCmd t r) = VelCmd (f t) (f r)
 
 -- average directions, allowing finer motor control
-composeVels :: (Fractional a) => VelCmd a -> VelCmd a -> VelCmd a
-composeVels (VelCmd t1 r1) (VelCmd t2 r2) = VelCmd ((t1+t2)/2) ((r1+r2)/2)
+averageVels :: (Fractional a) => VelCmd a -> VelCmd a -> VelCmd a
+averageVels (VelCmd t1 r1) (VelCmd t2 r2) = VelCmd ((t1+t2)/2) ((r1+r2)/2)
 
+addVels :: (Fractional a) => VelCmd a -> VelCmd a -> VelCmd a
+addVels (VelCmd t1 r1) (VelCmd t2 r2) = VelCmd (t1+t2) (r1+r2)
 
-move :: Robot Double -> Action -> VelCmd Double
+danceToMsg :: (Parts a) => Dance a -> [VelCmd Double]
+danceToMsg (Prim a m _) = map (increaseVel m) $
+                          take (round $ robotRes*robotRate*m) $
+                          repeat (moveBase a)
+danceToMsg Skip         = []
+danceToMsg (Rest m)     = take (round $ robotRes*robotRate*m) $ repeat (VelCmd 0 0)
+danceToMsg (d1 :||: d2) = zipWith (addVels) (danceToMsg d1) (danceToMsg d2)
+danceToMsg (d1 :+: d2)  = (danceToMsg d1) ++ (danceToMsg d2)
+
+moveBase :: Action -> VelCmd Double
 -- Primitives
-move r (A o Center _) = VelCmd 0 0 -- no articulation
-move r (A o _ Zero) = VelCmd 0 0 -- no articulation
-move r (A o Lef Quarter) = VelCmd 0 (pi/2) -- rad/sec
-move r (A o Forward Quarter) = VelCmd 1 0 -- meters/sec
+moveBase (A Center _)           = VelCmd 0 0 -- no articulation
+moveBase (A _ Zero)             = VelCmd 0 0 -- no articulation
+moveBase (A Lef Quarter)        = VelCmd 0 (pi/2) -- rad/sec
+moveBase (A Forward Quarter)    = VelCmd 1 0 -- meters/sec
 
 -- Derived from primitives
-move r (A o Righ d) = (fmap negate) (move r (A o Lef d))
-move r (A o Backward d) = (fmap negate) (move r (A o Forward d))
-move r (A o d Half) = (fmap (*2)) (move r (A o d Quarter))
-move r (A o d ThreeFourths) = (fmap (*3)) (move r (A o d Quarter))
-move r (A o d Full) = (fmap (*4)) (move r (A o d Quarter))
-move r (A o (d1 :*: d2) len) =
-    let r1 = move r (A o d1 len)
-        r2 = move r (A o d2 len)
-    in  composeVels r1 r2
+moveBase (A Righ d)             = (fmap negate) (moveBase (A Lef d))
+moveBase (A Backward d)         = (fmap negate) (moveBase (A Forward d))
+moveBase (A d Half)             = (fmap (*2)) (moveBase (A d Quarter))
+moveBase (A d ThreeFourths)     = (fmap (*3)) (moveBase (A d Quarter))
+moveBase (A d Full)             = (fmap (*4)) (moveBase (A d Quarter))
+moveBase (A (d1 :*: d2) len) =
+    let r1 = moveBase (A d1 len)
+        r2 = moveBase (A d2 len)
+    in  averageVels r1 r2
+
+increaseVel :: Mult -> VelCmd Double -> VelCmd Double
+increaseVel mult vcmd = fmap (*mult) vcmd
 
 mkTwist :: VelCmd Double -> Twist
 mkTwist (VelCmd t r) = def  & angular . V.z .~ r
