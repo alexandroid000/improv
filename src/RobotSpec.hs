@@ -34,6 +34,7 @@ type Rotation = Double
 -- define DOF
 -- for DDR: forward translation, yaw rotation
 data VelCmd a = VelCmd a a
+    deriving (Eq, Show)
 
 instance Functor VelCmd where
     fmap f (VelCmd t r) = VelCmd (f t) (f r)
@@ -51,6 +52,7 @@ danceToMsg (Prim a m _) = map (increaseVel m) $
                           repeat (moveBase a)
 danceToMsg Skip         = []
 danceToMsg (Rest m)     = take (round $ robotRes*robotRate*m) $ repeat (VelCmd 0 0)
+danceToMsg (d1 :||: Skip) = danceToMsg d1
 danceToMsg (d1 :||: d2) = zipWith (addVels) (danceToMsg d1) (danceToMsg d2)
 danceToMsg (d1 :+: d2)  = (danceToMsg d1) ++ (danceToMsg d2)
 
