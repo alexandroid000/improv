@@ -9,68 +9,88 @@ import Ros.Topic (Topic)
 import Text.ParserCombinators.Parsec 
 import Control.Monad.State.Lazy as S
 
-type CommandState = Map String [Action]
+type OurDance = Dance (KineChain Double)
+type CommandState = Map String OurDance
 
 data ParseErr = ParseErr Integer String -- line # (-1 for parsec errors) and error string
 data Tree = Node [Tree]
+          | Bracket [Tree]
           | Leaf String
     deriving Show
 
 
-left = A Lef Quarter
-right = A Righ Zero
-forward = A Forward Quarter
+left = Prim (A Lef Quarter) 1 core
+right = Prim (A Righ Zero) 1 core
+forward = Prim (A Forward Quarter) 1 core
 
-startCommands = Map.fromList [("left", [left]), ("right", [right]), ("forward", [forward])]
+startCommands = Map.fromList [("left", left), ("right", left), ("forward", forward)]
 axes = Map.fromList [("XZ", XZ), ("XY", XY), ("YZ", YZ)]
 
 parseFile :: String -> Either ParseErr (Topic IO Twist)
 parseFile doc = case parse parseDoc "" doc of
-    Right tree -> evalState (parseLines tree [] 1) startCommands >>= return . moveCommands . map (moveBase)
+    Right tree -> evalState (parseLines tree (Map.fromList []) 1) startCommands >>= return . moveCommands . danceToMsg
     Left err -> Left $ ParseErr (-1) (show err) -- Handling parsec error
 
-parseLines :: Tree -> [Action] -> Integer ->
-                    S.State CommandState (Either ParseErr [Action])
-parseLines (Node []) acc linenum = return $ Right acc
-parseLines (Node (line:lines)) acc linenum = 
+parseLines :: Tree -> Map String OurDance -> Integer ->
+                    S.State CommandState (Either ParseErr OurDance)
+parseLines (Node []) channels linenum = return $ Right $ parL $ Map.elems channels 
+parseLines (Node (line:lines)) channels linenum = 
     do commands <- get
        case line of
-            Node [Leaf v, Leaf "=", body] -> case evalState (parseWords body) commands of
-                Right acts -> do modify $ Map.insert v acts
-                                 parseLines (Node lines) acc (linenum + 1)
+            Node [Leaf "=", Leaf var, body] -> case evalState (parseWords body) commands of
+                Right dance -> do modify $ Map.insert var dance
+                                  parseLines (Node lines) channels (linenum + 1)
                 Left err -> return $ Left $ ParseErr linenum err
-            otherwise -> case evalState (parseWords line) commands of 
-                Right acts -> parseLines (Node lines) (acc ++ acts) (linenum + 1)
+            Node [Leaf "$", Leaf var, body] -> case evalState (parseWords body) commands of 
+                Right dance -> parseLines (Node lines) (Map.insert var dance channels) (linenum + 1)
                 Left err -> return $ Left $ ParseErr linenum err
+
                
-parseWords :: Tree -> S.State CommandState (Either String [Action])
-parseWords curr = do env <- get --TEST CODE!!!!
-                     case Map.lookup "left" env of
-                        Just stuff -> return $ Right $ actrepeat stuff
-                        Nothing -> return $ Left ""
+parseWords :: Tree -> S.State CommandState (Either String OurDance)
+----Single command lookup----
+parseWords (Leaf command) = do commands <- get --TEST CODE!!!!
+                               case Map.lookup command commands of
+                                   Just stuff -> return $ Right stuff
+                                   Nothing -> return $ Left ("Invalid command: " ++ command)
+----Node base cases----                                   
+parseWords (Node []) = return $ Right Skip
+parseWords (Node [x]) = parseWords x
+----Parallel dances----
+parseWords (Node (x : Leaf "||" : y : rest)) = mapM parseWords [x, Node (y:rest)] >>= \[e, e2] -> return $ e >>= \dance -> e2 >>= \dancerest -> return $ parL [dance, dancerest]
+parseWords (Node (Leaf "||":_)) = throwErr "Need first argument to ||."
+parseWords (Node [x, Leaf "||"]) = throwErr "Need second argument to ||."
+----repeat commands or repeat n commands
+parseWords (Node [Leaf "repeat", x]) = parseWords x >>= \e -> return $ e >>= return . seqL . repeat
+parseWords (Node [Leaf "repeat", Leaf numStr, x]) = case reads numStr of
+    [(num, [])] ->  parseWords x >>= \e -> return $ e >>= return . repeatn num
+    otherwise -> throwErr $ "Invalid argument to repeat: " ++ numStr
+parseWords (Node (Leaf "repeat":_)) = return $ Left "Incorrect number of arguments to repeat."
+----reflect axis commands----
+parseWords (Node [Leaf "reflect", Leaf ax, x]) = case Map.lookup ax axes of
+    Just axis -> parseWords x >>= \e -> return $ e >>= return --TEMP CODE: reflect does not currently work on dance
+    Nothing -> throwErr $ "Invalid argument to reflect: " ++ ax
+parseWords (Node (Leaf "reflect":_)) = return $ Left "Incorrect number of arguments to reflect."
+----Sequenced commands----
+parseWords (Bracket xx) = mapM parseWords xx >>= \ee -> return $ mapM id ee >>= return . seqL
+parseWords _ = throwErr "Invalid arguments."
 
-----Helper Functions----
+throwErr :: String -> S.State CommandState (Either String OurDance)
+throwErr err = return $ Left err
 
-actrepeat :: [Action] -> [Action]
-actrepeat acts = acts ++ actrepeat acts
-
-actrepeatn :: Int -> [Action] ->[Action]
-actrepeatn 0 acts = []
-actrepeatn n acts = acts ++ actrepeatn (n - 1) acts
-
+----Parsec parsers----
 skipSpace :: Parser ()
 skipSpace = skipMany (char ' ')
 
 parseDoc :: Parser Tree
-parseDoc = Node <$> sepEndBy (skipSpace >> (try parseLet <|> parseLine)) newline where
-    parseLine = Node <$> many1 ((parseNode <|> parseLeaf) >>= \t -> skipSpace >> return t)
-    parseNode = between (char '(') (char ')') parseLine
-    parseLeaf = Leaf <$> many1 (digit <|> letter)
-    parseLet  = do v1 <- letter
-                   v2 <- many (digit <|> letter)
-                   skipSpace
-                   char '='
-                   skipSpace
-                   body <- parseLine
-                   return $ Node [Leaf (v1:v2), Leaf "=", body]
-          
+parseDoc = Node <$> sepEndBy (skipSpace >> Node <$> parseLine) newline where
+    parseNode = many ((parseParens <|> parseBracket <|> parseLeaf) >>= \t -> skipSpace >> return t)
+    parseParens = Node <$> between (char '(') (char ')') parseNode
+    parseBracket = Bracket <$> between (char '[') (char ']') parseNode
+    parseLeaf = Leaf <$> (try (many1 (digit <|> letter)) <|> string "||")
+    parseLine  = do var1 <- letter
+                    var2 <- many (digit <|> letter)
+                    skipSpace
+                    opType <- oneOf "=$"
+                    skipSpace
+                    body <- parseNode
+                    return [Leaf [opType], Leaf (var1:var2), Node body]
