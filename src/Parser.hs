@@ -20,10 +20,10 @@ data Tree = Node [Tree]
 
 
 left = Prim (A Lef Quarter) 1 core
-right = Prim (A Righ Zero) 1 core
+right = Prim (A Righ Quarter) 1 core
 forward = Prim (A Forward Quarter) 1 core
 
-startCommands = Map.fromList [("left", left), ("right", left), ("forward", forward)]
+startCommands = Map.fromList [("left", left), ("right", right), ("forward", forward)]
 axes = Map.fromList [("XZ", XZ), ("XY", XY), ("YZ", YZ)]
 
 parseFile :: String -> Either ParseErr (Topic IO Twist)
