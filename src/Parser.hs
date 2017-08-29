@@ -54,7 +54,6 @@ parseWords (Leaf command) = do commands <- get --TEST CODE!!!!
                                    Nothing -> return $ Left ("Invalid command: " ++ command)
 ----Node base cases----                                   
 parseWords (Node []) = return $ Right Skip
-parseWords (Node [x]) = parseWords x
 ----Parallel dances----
 parseWords (Node (x : Leaf "||" : y : rest)) = mapM parseWords [x, Node (y:rest)] >>= \[e, e2] -> return $ e >>= \dance -> e2 >>= \dancerest -> return $ parL [dance, dancerest]
 parseWords (Node (Leaf "||":_)) = throwErr "Need first argument to ||."
@@ -70,6 +69,8 @@ parseWords (Node [Leaf "reflect", Leaf ax, x]) = case Map.lookup ax axes of
     Just axis -> parseWords x >>= \e -> return $ e >>= return --TEMP CODE: reflect does not currently work on dance
     Nothing -> throwErr $ "Invalid argument to reflect: " ++ ax
 parseWords (Node (Leaf "reflect":_)) = return $ Left "Incorrect number of arguments to reflect."
+----List of commands----
+parseWords (Node xx) = mapM parseWords xx >>= \ee -> return $ mapM id ee >>= return . foldr (:+:) Skip
 ----Sequenced commands----
 parseWords (Bracket xx) = mapM parseWords xx >>= \ee -> return $ mapM id ee >>= return . seqL
 parseWords _ = throwErr "Invalid arguments."
