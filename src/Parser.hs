@@ -55,7 +55,7 @@ parseWords (Leaf command) = do commands <- get --TEST CODE!!!!
                                    Nothing -> return $ Left ("Invalid command: " ++ command)
 ----Node base cases----                                   
 parseWords (Node []) = return $ Right Skip
-----repeat commands or repeat n commands----
+----repeat commands or repeat n commands
 parseWords (Node [Leaf "repeat", x]) = parseWords x >>= \e -> return $ e >>= return . seqL . repeat
 parseWords (Node [Leaf "repeat", Leaf numStr, x]) = case reads numStr of
     [(num, [])] ->  parseWords x >>= \e -> return $ e >>= return . repeatn num
@@ -68,7 +68,7 @@ parseWords (Node [Leaf "reflect", Leaf ax, x]) = case Map.lookup ax axes of
 parseWords (Node xx) = case Split.splitOn [Leaf "||"] xx of -- check if any parallel chunks
     [xx] -> mapM parseWords xx >>= \ee -> return $ mapM id ee >>= return . foldr (:+:) Skip
     xxs -> mapM parseWords (map Node xxs) >>= \ee -> return $ mapM id ee >>= return . parL
-----parL commands----
+----Sequenced commands----
 parseWords (Bracket xx) = mapM parseWords xx >>= \ee -> return $ mapM id ee >>= return . seqL
 parseWords _ = throwErr "Invalid arguments."
 
