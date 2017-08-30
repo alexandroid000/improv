@@ -131,7 +131,7 @@ changeTiming m (d1 :+: d2) = (changeTiming m d1) :+: (changeTiming m d2)
 changeTiming m (d1 :||: d2) = (changeTiming m d1) :||: (changeTiming m d2)
 
 repeatn :: (Parts a) => Int -> Dance a -> Dance a
-repeatn n dance = seqL $ take n $ repeat dance
+repeatn n dance = foldr (:+:) Skip $ take n $ repeat dance
 
 -- transformers
 ---------------
