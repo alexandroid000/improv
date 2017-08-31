@@ -48,10 +48,10 @@ addVels (VelCmd t1 r1) (VelCmd t2 r2) = VelCmd (t1+t2) (r1+r2)
 
 danceToMsg :: (Parts a) => Dance a -> [VelCmd Double]
 danceToMsg (Prim a m _) = map (increaseVel m) $
-                          take (round $ robotRes*robotRate*m) $
+                          take (round $ robotRes*robotRate/m) $
                           repeat (moveBase a)
 danceToMsg Skip         = []
-danceToMsg (Rest m)     = take (round $ robotRes*robotRate*m) $ repeat (VelCmd 0 0)
+danceToMsg (Rest m)     = take (round $ robotRes*robotRate/m) $ repeat (VelCmd 0 0)
 danceToMsg (d1 :||: Skip) = danceToMsg d1
 danceToMsg (d1 :||: d2) = zipWith (addVels) (danceToMsg d1) (danceToMsg d2)
 danceToMsg (d1 :+: d2)  = (danceToMsg d1) ++ (danceToMsg d2)
@@ -60,8 +60,8 @@ moveBase :: Action -> VelCmd Double
 -- Primitives
 moveBase (A Center _)           = VelCmd 0 0 -- no articulation
 moveBase (A _ Zero)             = VelCmd 0 0 -- no articulation
-moveBase (A Lef Quarter)        = VelCmd 0 (pi/2) -- rad/sec
-moveBase (A Forward Quarter)    = VelCmd 1 0 -- meters/sec
+moveBase (A Lef Quarter)        = VelCmd 0 (1.2*pi/2) -- rad/sec
+moveBase (A Forward Quarter)    = VelCmd 0.1 0 -- meters/sec
 
 -- Derived from primitives
 moveBase (A Righ d)             = (fmap negate) (moveBase (A Lef d))
