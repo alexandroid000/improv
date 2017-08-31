@@ -8,6 +8,7 @@ import Ros.Geometry_msgs.Twist
 import Ros.Topic (Topic)
 import Text.ParserCombinators.Parsec 
 import Control.Monad.State.Lazy as S
+import qualified Data.List.Split as Split
 
 type OurDance = Dance (KineChain Double)
 type CommandState = Map String OurDance
@@ -16,7 +17,7 @@ data ParseErr = ParseErr Integer String -- line # (-1 for parsec errors) and err
 data Tree = Node [Tree]
           | Bracket [Tree]
           | Leaf String
-    deriving Show
+    deriving (Show,Eq)
 
 
 left = Prim (A Lef Quarter) 1 core
@@ -56,23 +57,19 @@ parseWords (Leaf command) = do commands <- get --TEST CODE!!!!
                                    Nothing -> return $ Left ("Invalid command: " ++ command)
 ----Node base cases----                                   
 parseWords (Node []) = return $ Right Skip
-----Parallel dances----
-parseWords (Node (x : Leaf "||" : y : rest)) = mapM parseWords [x, Node (y:rest)] >>= \[e, e2] -> return $ e >>= \dance -> e2 >>= \dancerest -> return $ parL [dance, dancerest]
-parseWords (Node (Leaf "||":_)) = throwErr "Need first argument to ||."
-parseWords (Node [x, Leaf "||"]) = throwErr "Need second argument to ||."
 ----repeat commands or repeat n commands
 parseWords (Node [Leaf "repeat", x]) = parseWords x >>= \e -> return $ e >>= return . seqL . repeat
 parseWords (Node [Leaf "repeat", Leaf numStr, x]) = case reads numStr of
     [(num, [])] ->  parseWords x >>= \e -> return $ e >>= return . repeatn num
     otherwise -> throwErr $ "Invalid argument to repeat: " ++ numStr
-parseWords (Node (Leaf "repeat":_)) = return $ Left "Incorrect number of arguments to repeat."
 ----reflect axis commands----
 parseWords (Node [Leaf "reflect", Leaf ax, x]) = case Map.lookup ax axes of
     Just axis -> parseWords x >>= \e -> return $ e >>= return --TEMP CODE: reflect does not currently work on dance
     Nothing -> throwErr $ "Invalid argument to reflect: " ++ ax
-parseWords (Node (Leaf "reflect":_)) = return $ Left "Incorrect number of arguments to reflect."
 ----List of commands----
-parseWords (Node xx) = mapM parseWords xx >>= \ee -> return $ mapM id ee >>= return . foldr (:+:) Skip
+parseWords (Node xx) = case Split.splitOn [Leaf "||"] xx of -- check if any parallel chunks
+    [xx] -> mapM parseWords xx >>= \ee -> return $ mapM id ee >>= return . foldr (:+:) Skip
+    xxs -> mapM parseWords (map Node xxs) >>= \ee -> return $ mapM id ee >>= return . parL
 ----Sequenced commands----
 parseWords (Bracket xx) = mapM parseWords xx >>= \ee -> return $ mapM id ee >>= return . seqL
 parseWords _ = throwErr "Invalid arguments."
