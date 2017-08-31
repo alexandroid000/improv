@@ -31,7 +31,7 @@ axes = Map.fromList [("XZ", XZ), ("XY", XY), ("YZ", YZ)]
 
 parseFile :: String -> Either ParseErr (Topic IO Twist)
 parseFile doc = case parse parseDoc "" doc of
-    Right tree -> evalState (parseLines tree (Map.fromList []) 1) startCommands >>= return . moveCommands . danceToMsg
+    Right tree -> evalState (parseLines tree (Map.fromList []) 1) startCommands >>= return . moveCommands . danceToMsg . (rest :+:)
     Left err -> Left $ ParseErr (-1) (show err) -- Handling parsec error
 
 parseLines :: Tree -> Map String OurDance -> Integer ->
