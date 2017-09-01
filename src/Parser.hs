@@ -29,6 +29,8 @@ startCommands = Map.fromList [("left", left), ("right", right),
                                 ("forward", forward), ("rest", rest)]
 axes = Map.fromList [("XZ", XZ), ("XY", XY), ("YZ", YZ)]
 
+-- adds rest at beginning of dance to allow time for ROS to initialize
+-- could cause problem if overall RobotRate is too low (rest is too short)
 parseFile :: String -> Either ParseErr (Topic IO Twist)
 parseFile doc = case parse parseDoc "" doc of
     Right tree -> evalState (parseLines tree (Map.fromList []) 1) startCommands >>= return . moveCommands . danceToMsg . (rest :+:)
