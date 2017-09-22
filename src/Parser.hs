@@ -9,8 +9,10 @@ import Ros.Topic (Topic)
 import Text.ParserCombinators.Parsec 
 import Control.Monad.State.Lazy as S
 import qualified Data.List.Split as Split
+import Debug.Trace
 
-type OurDance = Dance (Robot Double)
+type OurRobot = Robot Double
+type OurDance = Dance (OurRobot)
 type CommandState = Map String Tree
 
 data ParseErr = ParseErr Integer String -- line # (-1 for parsec errors) and error string
@@ -29,11 +31,11 @@ startCommands = Map.fromList [("left", left), ("right", right),
                                 ("forward", forward), ("rest", rest)]
 multiFuncs = Map.fromList [("approach", approach)] -- Dictionary of names to multiFuncs
 axes = Map.fromList [("XZ", XZ), ("XY", XY), ("YZ", YZ)]
-channelNames = Map.fromList [("a1", core)] -- Dictionary of channel names to Robot Doubles
+channelNames = Map.fromList [("a1", core), ("a2", core)] -- Dictionary of channel names to OurRobots
 
 ---------------------------------------------------------------------------------------------
 
-approach :: (Robot Double) -> (Robot Double) -> OurDance
+approach :: (OurRobot) -> (OurRobot) -> OurDance
 approach x y = left x --PLACEHOLDER FOR MULTIFUNC
 
 -- adds rest at beginning of dance to allow time for ROS to initialize
@@ -45,26 +47,24 @@ convertFile doc = case parse parseDoc "" doc of
 
 convertLines :: Tree -> Map String OurDance -> Integer ->
                     S.State CommandState (Either ParseErr OurDance)
-convertLines (Node []) channels linenum = return $ Right $ parL $ Map.elems channels 
+convertLines (Node []) channels linenum = return $ Right $ parL $ Map.elems channels
 convertLines (Node (line:lines)) channels linenum = 
     let createErr err = return $ Left $ ParseErr linenum err in
     do commandDefs <- get
        case line of
-            Node [Leaf "=", Leaf var, body] -> do modify $ Map.insert var body
+            Node [] -> convertLines (Node lines) channels (linenum + 1) -- Empty line
+            Node [Leaf "=", Leaf var, body] -> do modify $ Map.insert var body -- Variable assignment
                                                   convertLines (Node lines) channels (linenum + 1)
-            Node [Leaf "$", Leaf var, body] -> case Map.lookup var channelNames of
-                Just robo -> case evalState (convertCommands robo body) commandDefs of 
-                      Right dance -> convertLines (Node lines) (Map.insert var dance channels) (linenum + 1)
-                      Left err -> createErr err
-                Nothing -> createErr $ "Could not find robot with name " ++ var
-            Node [] -> convertLines (Node lines) channels (linenum + 1)
-            otherwise -> createErr $ "Incorrect syntax on " ++ show linenum
-            --Node [multiFuncs] -> case convertMultiFuncs multiFuncs commandDefs of
-              --  Right newCommandDefs -> do put newCommandDefs
-                --Left err -> createErr err
+            Node [Leaf "$", Node [], body] -> convertLines (Node lines) channels (linenum + 1)
+            Node [Leaf "$", Node ((Leaf var):vars), body] -> case Map.lookup var channelNames of -- Recurse over all channels
+                Just robo -> case evalState (convertCommands robo body) commandDefs of
+                    Right dances -> convertLines (Node ((Node [Leaf "$", Node vars, body]):lines)) (Map.insert var dances channels) linenum
+                    Left err -> createErr err
+                Nothing -> createErr $ "Could not find robot with name: " ++ var
+            otherwise -> createErr $ "Could not pattern match syntax tree: " ++ show line
 
                
-convertCommands :: Robot Double -> Tree -> S.State CommandState (Either String OurDance)
+convertCommands :: OurRobot -> Tree -> S.State CommandState (Either String OurDance)
 ----Single command lookup----
 convertCommands robo (Leaf command) = do commandDefs <- get --TEST CODE!!!!
                                          case Map.lookup command startCommands of
@@ -101,19 +101,28 @@ throwErr err = return $ Left err
 skipSpace :: Parser ()
 skipSpace = skipMany (char ' ')
 
+skipNewline :: Parser ()
+skipNewline = skipMany (char '\n')
+
 varName :: Parser String
 varName = do var1 <- letter
              var2 <- many (digit <|> letter)
              return $ var1:var2
 
 parseDoc :: Parser Tree
-parseDoc = Node <$> sepEndBy (skipSpace >> Node <$> ((try parseLine) <|> parseNode)) newline where
+parseDoc = Node <$> many (skipSpace >> Node <$> ((try parseAssign) <|> parseLine) >>= \x -> skipNewline >> return x) where
     parseNode = many ((parseParens <|> parseBracket <|> parseLeaf) >>= \t -> skipSpace >> return t)
     parseParens = Node <$> between (char '(') (char ')') parseNode
     parseBracket = Bracket <$> between (char '[') (char ']') parseNode
     parseLeaf = Leaf <$> (try (many1 (digit <|> letter)) <|> string "||")
+    parseAssign = do var <- varName
+                     skipSpace
+                     char '='
+                     skipSpace
+                     body <- parseNode
+                     return $ [Leaf "=", Leaf var, Node body]
     parseLine  = do vars <- many1 (varName >>= \x -> skipSpace >> return x)
-                    opType <- oneOf "=$"
+                    char '$'
                     skipSpace
                     body <- parseNode
-                    return $ [Leaf [opType]] ++ (map Leaf vars) ++ [Node body]
+                    return $ [Leaf "$", Node (map Leaf vars), Node body]

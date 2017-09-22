@@ -1,4 +1,4 @@
 x = [left right forward left right forward forward]
 y = left right forward
 
-a1 $ (repeat 100 left) (repeat 100 right) (repeat 5 forward)
+a1 a2 $ (repeat 100 left) (repeat 100 right) (repeat 5 forward)
