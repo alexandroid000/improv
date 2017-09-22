@@ -36,9 +36,11 @@ channelNames = Map.fromList [("a1", core)] -- Dictionary of channel names to Rob
 approach :: (Robot Double) -> (Robot Double) -> OurDance
 approach x y = left x --PLACEHOLDER FOR MULTIFUNC
 
+-- adds rest at beginning of dance to allow time for ROS to initialize
+-- could cause problem if overall RobotRate is too low (rest is too short)
 convertFile :: String -> Either ParseErr (Topic IO Twist)
 convertFile doc = case parse parseDoc "" doc of
-    Right tree -> evalState (convertLines tree (Map.fromList []) 1) (Map.fromList []) >>= return . moveCommands . danceToMsg . (rest core :+:) -- rest core temporary
+    Right tree -> evalState (convertLines tree (Map.fromList []) 1) (Map.fromList []) >>= return . moveCommands . danceToMsg . (rest core :+:) 
     Left err -> Left $ ParseErr (-1) (show err) -- Handling parsec error
 
 convertLines :: Tree -> Map String OurDance -> Integer ->
