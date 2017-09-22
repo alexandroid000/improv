@@ -16,7 +16,7 @@ main :: IO ()
 main = do args <- getArgs
           case args of
               [] -> do doc <- readFile "./src/test.imp"
-                       case parseFile doc of 
+                       case convertFile doc of 
                             Right moveTopic ->  runNode "HaskellTurtle" $
                                                 advertise "turtle1/cmd_vel" $
                                                 topicRate robotRes moveTopic
