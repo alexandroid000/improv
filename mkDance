@@ -4,5 +4,6 @@ echo "killing old node"
 pkill improv-exe
 echo "running new node"
 rosservice call /reset
+rosservice call /spawn 3 3 0 "turtle2"
 stack exec -- improv-exe &
 
