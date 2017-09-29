@@ -1,5 +1,4 @@
 x = [left right forward left right forward forward]
 y = left right forward
 
-turtle1 $ (repeat 100 left) (repeat 100 right) (repeat 5 forward)
-turtle2 $ repeat 100 y
+turtle1 turtle2 $ (repeat 3 left) approach (repeat 3 right) (repeat 5 forward)
