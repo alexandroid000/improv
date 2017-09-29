@@ -31,7 +31,7 @@ startCommands = Map.fromList [("left", left), ("right", right),
                                 ("forward", forward), ("rest", rest)]
 multiFuncs = Map.fromList [("approach", approach)] -- Dictionary of names to multiFuncs
 axes = Map.fromList [("XZ", XZ), ("XY", XY), ("YZ", YZ)]
-channelNames = Map.fromList [("a1", core), ("a2", core)] -- Dictionary of channel names to OurRobots
+channelNames = Map.fromList [("turtle1", core), ("turtle2", core)] -- Dictionary of channel names to OurRobots
 
 ---------------------------------------------------------------------------------------------
 
@@ -40,14 +40,14 @@ approach x y = left x --PLACEHOLDER FOR MULTIFUNC
 
 -- adds rest at beginning of dance to allow time for ROS to initialize
 -- could cause problem if overall RobotRate is too low (rest is too short)
-convertFile :: String -> Either ParseErr (Topic IO Twist)
+convertFile :: String -> Either ParseErr (Map String (Topic IO Twist))
 convertFile doc = case parse parseDoc "" doc of
-    Right tree -> evalState (convertLines tree (Map.fromList []) 1) (Map.fromList []) >>= return . moveCommands . danceToMsg . (rest core :+:) 
+    Right tree -> evalState (convertLines tree (Map.fromList []) 1) (Map.fromList []) >>= return . Map.map moveCommands . Map.map danceToMsg . Map.map (rest core :+:)
     Left err -> Left $ ParseErr (-1) (show err) -- Handling parsec error
 
 convertLines :: Tree -> Map String OurDance -> Integer ->
-                    S.State CommandState (Either ParseErr OurDance)
-convertLines (Node []) channels linenum = return $ Right $ parL $ Map.elems channels
+                    S.State CommandState (Either ParseErr (Map String OurDance))
+convertLines (Node []) channels linenum = return $ Right channels
 convertLines (Node (line:lines)) channels linenum = 
     let createErr err = return $ Left $ ParseErr linenum err in
     do commandDefs <- get
