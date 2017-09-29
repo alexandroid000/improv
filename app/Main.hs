@@ -17,9 +17,7 @@ main = do args <- getArgs
           case args of
               [] -> do doc <- readFile "./src/test.imp"
                        case convertFile doc of 
-                            Right moveTopic ->  runNode "HaskellTurtle" $
-                                                advertise "turtle1/cmd_vel" $
-                                                topicRate robotRes moveTopic
+                            Right moveTopic ->  runNode "HaskellTurtle" $ mapM (\name -> advertise (name ++ "/cmd_vel") (topicRate robotRes moveTopic)) ["turtle1", "turtle2"]
                             Left (ParseErr (-1) err) -> putStrLn $ "Parse error " ++ err
                             Left (ParseErr line err) -> putStrLn $ "Error (line " ++ (show line) ++ "):\n" ++ err
               _  -> putStrLn "Incorrect number of arguments: need file name"
