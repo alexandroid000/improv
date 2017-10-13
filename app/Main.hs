@@ -22,7 +22,8 @@ main :: IO ()
 main = do doc <- readFile "./src/test.imp"
           case convertFile doc of 
                Right moveTopics -> runNode "HaskellTurtle" $
-                     do pose1 <- subscribe "/turtle1/pose"
+                     do pose1 <- subscribe "/turtle1/pose" 
+                        pose2 <- subscribe "/turtle2/pose"
                         mapM (\(name, twist) -> advertise (name ++ "/cmd_vel") (topicRate robotRes twist)) $ Map.toList moveTopics
                Left (ParseErr (-1) err) -> putStrLn $ "Parse error " ++ err
                Left (ParseErr line err) -> putStrLn $ "Error (line " ++ (show line) ++ "):\n" ++ err
