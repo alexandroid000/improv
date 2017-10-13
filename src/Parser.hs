@@ -93,7 +93,6 @@ convertCommands robos (Node xx) = case Split.splitOn [Leaf "||"] xx of -- check 
     xxs -> mapM (convertCommands robos) (map Node xxs) >>= \eitherDances -> return $ mapM id eitherDances >>= return . map parL
 ----Sequenced commands----
 convertCommands robos (Bracket xx) = mapM (convertCommands robos) xx >>= \eitherDances -> return $ mapM id eitherDances >>= return . map seqL
-convertCommands _ _ = throwErr "Invalid arguments."
 
 throwErr :: String -> S.State CommandState (Either String [OurDance])
 throwErr err = return $ Left err
