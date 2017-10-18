@@ -63,7 +63,8 @@ class Parts b where
     contains :: b -> [b]
     origin :: b -> Origin
 
--- binary tree with pointer to parent node
+-- kinematic chain for robot bodies
+-- they are either fixed links, or chains connected by joints
 data KineChain a = Joint Origin (KineChains a)
                  | Link Origin a
      deriving (Show, Eq)
