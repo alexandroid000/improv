@@ -37,7 +37,6 @@ axes = Map.fromList [("XZ", XZ), ("XY", XY), ("YZ", YZ)]
 channelNames = Map.fromList [("turtle1", core), ("turtle2", core), ("turtle3", core), ("turtle4", core)] -- Dictionary of channel names to OurRobots
 
 ---------------------------------------------------------------------------------------------
-
 approach :: [OurRobot] -> Either String [OurDance]
 approach [x, y] = Right [rest x :+: rest x :+: repeatn 10 (forward x), left y :+: left y :+: repeatn 10 (forward y)] --VERY BASIC MULTIFUNC
 
@@ -89,8 +88,8 @@ convertCommands robos (Node [Leaf "repeat", Leaf numStr, x]) = case reads numStr
 convertCommands robos (Node [Leaf "reflect", Leaf axStr, x]) = case Map.lookup axStr axes of
     Just axis -> convertCommands robos x >>= \eitherDances -> return $ eitherDances >>= return . map (transform (refl axis))
     Nothing -> throwErr $ "Invalid argument to reflect: " ++ axStr
-----mirror command: applies to multiple robots----
---convertcommands robo (Node [Leaf "mirror", x]) = convertCommands
+----Reverse dances----
+convertCommands robos (Node [Leaf "reverse", x])  = convertCommands robos x >>= \eitherDances -> return $ eitherDances >>= return . map reverseDance
 ----List of commands----
 convertCommands robos (Node xx) = case Split.splitOn [Leaf "||"] xx of -- check if any parallel chunks
     [comm] -> mapM (convertCommands robos) comm >>= \eitherDances -> return $ mapM id eitherDances >>= return . foldr (zipWith (:+:)) (take (length robos) (repeat Skip))

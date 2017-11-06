@@ -144,6 +144,7 @@ transform f (x :+: y) = (transform f x) :+: (transform f y)
 transform f (x :||: y) = (transform f x) :||: (transform f y)
 transform f (Rest m) = Rest m
 transform f (Prim act m dur) = Prim (f act) m dur
+transform f Skip = Skip
 
 
 -- (>>=) :: Monad m => m a -> (a -> m b) -> m b
