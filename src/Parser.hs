@@ -91,6 +91,8 @@ convertCommands robos (Node [Leaf "reflect", Leaf axStr, x]) = case Map.lookup a
     Just axis -> convertCommands robos x >>= \eitherDances -> return $ eitherDances >>= return . map (transform (refl axis))
     Nothing -> throwErr $ "Invalid argument to reflect: " ++ axStr
 ----Reverse dances----
+convertCommands robos (Node [Leaf "reverse", x])  = convertCommands robos x >>= \eitherDances -> return $ eitherDances >>= return . map reverseDance
+----Retrograde dances----
 convertCommands robos (Node [Leaf "retrograde", x])  = convertCommands robos x >>= \eitherDances -> return $ eitherDances >>= return . map retrogradeDance
 ----List of commands----
 convertCommands robos (Node xx) = case Split.splitOn [Leaf "||"] xx of -- check if any parallel chunks

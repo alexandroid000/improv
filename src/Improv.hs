@@ -131,6 +131,11 @@ changeTiming _ Skip = Skip
 changeTiming m (d1 :+: d2) = (changeTiming m d1) :+: (changeTiming m d2)
 changeTiming m (d1 :||: d2) = (changeTiming m d1) :||: (changeTiming m d2)
 
+reverseDance :: (Parts a) => Dance a -> Dance a
+reverseDance (d1 :+: d2) = (reverseDance d2) :+: (reverseDance d1)
+reverseDance (d1 :||: d2) = (reverseDance d1) :||: (reverseDance d2)
+reverseDance dance = dance
+
 repeatn :: (Parts a) => Int -> Dance a -> Dance a
 repeatn n dance = foldr (:+:) Skip $ take n $ repeat dance
 
