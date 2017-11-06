@@ -9,6 +9,7 @@ import Ros.Topic (Topic)
 import Text.ParserCombinators.Parsec 
 import Control.Monad.State.Lazy as S
 import qualified Data.List.Split as Split
+import Data.List
 import Debug.Trace
 
 type OurRobot = Robot Double
@@ -23,11 +24,13 @@ data Tree = Node [Tree]
 
 
 left = Prim (A Lef Quarter) 1
+halfleft = Prim (A Lef Eighth) 1
 right = Prim (A Righ Quarter) 1
-forward = Prim (A Forward Quarter) 1
+halfright = Prim (A Righ Eighth) 1
+forward = Prim (A Forward Full) 1
 rest = Prim (A Center Zero) 1
 
-startCommands = Map.fromList [("left", left), ("right", right),
+startCommands = Map.fromList [("left", left), ("right", right), ("halfleft", halfleft), ("halfright", halfright),
                                 ("forward", forward), ("rest", rest)]
 multiFuncs = Map.fromList [("approach", approach)] -- Dictionary of names to multiFuncs
 axes = Map.fromList [("XZ", XZ), ("XY", XY), ("YZ", YZ)]
@@ -48,6 +51,7 @@ convertFile doc = case parse parseDoc "" doc of
 convertLines :: Tree -> Map String OurDance -> Integer ->
                     S.State CommandState (Either ParseErr (Map String OurDance))
 convertLines (Node []) channels linenum = return $ Right channels
+	where test = parL [(right core), (forward core)]
 convertLines (Node (line:lines)) channels linenum = 
     let createErr err = return $ Left $ ParseErr linenum err in
     do commandDefs <- get
@@ -89,11 +93,10 @@ convertCommands robos (Node [Leaf "reflect", Leaf axStr, x]) = case Map.lookup a
 --convertcommands robo (Node [Leaf "mirror", x]) = convertCommands
 ----List of commands----
 convertCommands robos (Node xx) = case Split.splitOn [Leaf "||"] xx of -- check if any parallel chunks
-    [xx] -> mapM (convertCommands robos) xx >>= \eitherDances -> return $ mapM id eitherDances >>= return . foldr (zipWith (:+:)) (take (length robos) (repeat Skip))
-    xxs -> mapM (convertCommands robos) (map Node xxs) >>= \eitherDances -> return $ mapM id eitherDances >>= return . map parL
+    [comm] -> mapM (convertCommands robos) comm >>= \eitherDances -> return $ mapM id eitherDances >>= return . foldr (zipWith (:+:)) (take (length robos) (repeat Skip))
+    comms -> mapM (convertCommands robos) (map Node comms) >>= \eitherDances -> return $ mapM id eitherDances >>= return . map parL . transpose . map reverse
 ----Sequenced commands----
-convertCommands robos (Bracket xx) = mapM (convertCommands robos) xx >>= \eitherDances -> return $ mapM id eitherDances >>= return . map seqL
-
+convertCommands robos (Bracket xx) = mapM (convertCommands robos) xx >>= \eitherDances -> return $ mapM id eitherDances >>= return . map seqL . transpose . map reverse
 throwErr :: String -> S.State CommandState (Either String [OurDance])
 throwErr err = return $ Left err
 

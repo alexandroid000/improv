@@ -37,7 +37,7 @@ instance Symmetric Direction where
 instance Symmetric Angle where
     refl _ (Angle x) = Angle (-x)
 
-data Length = Zero | Quarter | Half | ThreeFourths | Full
+data Length = Zero | Eighth | Quarter | Half | ThreeFourths | Full
         deriving (Show, Eq, Read)
 
 -- should we have an inherent "rhythm" like Tidal does?

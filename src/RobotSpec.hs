@@ -60,6 +60,7 @@ moveBase :: Action -> VelCmd Double
 -- Primitives
 moveBase (A Center _)           = VelCmd 0 0 -- no articulation
 moveBase (A _ Zero)             = VelCmd 0 0 -- no articulation
+moveBase (A Lef Eighth)        = VelCmd 0 (pi/4) -- rad/sec
 moveBase (A Lef Quarter)        = VelCmd 0 (pi/2) -- rad/sec
 moveBase (A Forward Quarter)    = VelCmd 0.1 0 -- meters/sec
 

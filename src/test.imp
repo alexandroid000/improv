@@ -1,4 +1,3 @@
-x = [left right forward left right forward forward]
-y = left right forward
+x = repeat 3 forward
 
-turtle1 turtle2 $ (repeat 3 left) approach (repeat 3 right) (repeat 5 forward)
+turtle1 $ [(right left forward || forward) forward]
