@@ -81,7 +81,7 @@ convertCommands robos (Leaf commandStr) = do commandDefs <- get --TEST CODE!!!!
 ----Node base cases----                                   
 convertCommands robos (Node []) = return $ Right $ take (length robos) $ repeat Skip
 ----repeat commands or repeat n commands
-convertCommands robos (Node [Leaf "repeat", x])  = convertCommands robos x >>= \eitherDances -> return $ eitherDances >>= return . map seqL . map repeat
+convertCommands robos (Node [Leaf "repeat", x])  = convertCommands robos x >>= \eitherDances -> return $ eitherDances >>= return . map (foldr (:+:) Skip) . map repeat
 convertCommands robos (Node [Leaf "repeat", Leaf numStr, x]) = case reads numStr of
     [(num, [])] ->  convertCommands robos x >>= \eitherDances -> return $ eitherDances >>= return . map (repeatn num)
     otherwise -> throwErr $ "Invalid argument to repeat: " ++ numStr
@@ -97,6 +97,7 @@ convertCommands robos (Node xx) = case Split.splitOn [Leaf "||"] xx of -- check 
     comms -> mapM (convertCommands robos) (map Node comms) >>= \eitherDances -> return $ mapM id eitherDances >>= return . map parL . transpose . map reverse
 ----Sequenced commands----
 convertCommands robos (Bracket xx) = mapM (convertCommands robos) xx >>= \eitherDances -> return $ mapM id eitherDances >>= return . map seqL . transpose . map reverse
+
 throwErr :: String -> S.State CommandState (Either String [OurDance])
 throwErr err = return $ Left err
 
