@@ -56,6 +56,7 @@ danceToMsg (d1 :||: Skip) = danceToMsg d1
 danceToMsg (d1 :||: d2) = zipWith (addVels) (danceToMsg d1) (danceToMsg d2)
 danceToMsg (d1 :+: d2)  = (danceToMsg d1) ++ (danceToMsg d2)
 
+
 moveBase :: Action -> VelCmd Double
 -- Primitives
 moveBase (A Center _)           = VelCmd 0 0 -- no articulation
@@ -96,5 +97,5 @@ moveCommands :: [VelCmd Double] -> Topic IO Twist
 moveCommands cfs = concats $ repeatM $ twisties
     where twisties = return $ (map mkTwist cfs) ++ (repeat $ mkTwist (VelCmd 0 0))
 
-reverseDance :: Parts a => Dance a -> Dance a
-reverseDance = transform (refl YZ) . transform (refl XZ) . transform (refl XY)
+retrogradeDance :: Parts a => Dance a -> Dance a
+retrogradeDance = transform (refl YZ) . transform (refl XZ) . transform (refl XY)

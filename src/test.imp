@@ -1,3 +1,5 @@
+beat 60
+
 x = repeat 3 forward
 
-turtle1 $ reverse (repeat [(right left forward || forward)])
+turtle1 $ retrograde (repeat [(right || forward) (left || forward)])

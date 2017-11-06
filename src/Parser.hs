@@ -44,8 +44,10 @@ approach [x, y] = Right [rest x :+: rest x :+: repeatn 10 (forward x), left y :+
 -- could cause problem if overall RobotRate is too low (rest is too short)
 convertFile :: String -> Either ParseErr (Map String (Topic IO Twist))
 convertFile doc = case parse parseDoc "" doc of
-    Right tree -> evalState (convertLines tree (Map.fromList []) 1) (Map.fromList []) >>= return . Map.map moveCommands . Map.map danceToMsg . Map.map (rest core :+:)
+    Right (Node ((Leaf beatStr):tree)) -> aux (read beatStr :: Int) (Node tree)
     Left err -> Left $ ParseErr (-1) (show err) -- Handling parsec error
+    where aux beat tree = evalState (convertLines tree (Map.fromList []) 1) (Map.fromList []) >>= 
+              return . Map.map moveCommands . Map.map danceToMsg . Map.map (changeTiming ((fromIntegral beat) / 60.0)) . Map.map (rest core :+:)
 
 convertLines :: Tree -> Map String OurDance -> Integer ->
                     S.State CommandState (Either ParseErr (Map String OurDance))
@@ -89,7 +91,7 @@ convertCommands robos (Node [Leaf "reflect", Leaf axStr, x]) = case Map.lookup a
     Just axis -> convertCommands robos x >>= \eitherDances -> return $ eitherDances >>= return . map (transform (refl axis))
     Nothing -> throwErr $ "Invalid argument to reflect: " ++ axStr
 ----Reverse dances----
-convertCommands robos (Node [Leaf "reverse", x])  = convertCommands robos x >>= \eitherDances -> return $ eitherDances >>= return . map reverseDance
+convertCommands robos (Node [Leaf "retrograde", x])  = convertCommands robos x >>= \eitherDances -> return $ eitherDances >>= return . map retrogradeDance
 ----List of commands----
 convertCommands robos (Node xx) = case Split.splitOn [Leaf "||"] xx of -- check if any parallel chunks
     [comm] -> mapM (convertCommands robos) comm >>= \eitherDances -> return $ mapM id eitherDances >>= return . foldr (zipWith (:+:)) (take (length robos) (repeat Skip))
@@ -116,7 +118,10 @@ varName = do var1 <- letter
              return $ var1:var2
 
 parseDoc :: Parser Tree
-parseDoc = Node <$> many (skipSpace >> Node <$> ((try parseAssign) <|> parseLine) >>= \x -> skipNewline >> return x) where
+parseDoc = Node <$> do beat <- parseBeat
+                       tree <- many (skipNewline >> skipSpace >> Node <$> ((try parseAssign) <|> parseLine) >>= \x -> skipNewline >> return x)
+                       return (beat:tree)
+    where
     parseNode = many ((parseParens <|> parseBracket <|> parseLeaf) >>= \t -> skipSpace >> return t)
     parseParens = Node <$> between (char '(') (char ')') parseNode
     parseBracket = Bracket <$> between (char '[') (char ']') parseNode
@@ -127,8 +132,12 @@ parseDoc = Node <$> many (skipSpace >> Node <$> ((try parseAssign) <|> parseLine
                      skipSpace
                      body <- parseNode
                      return $ [Leaf "=", Leaf var, Node body]
-    parseLine  = do vars <- many1 (varName >>= \x -> skipSpace >> return x)
-                    char '$'
-                    skipSpace
-                    body <- parseNode
-                    return $ [Leaf "$", Node (map Leaf vars), Node body]
+    parseLine = do vars <- many1 (varName >>= \x -> skipSpace >> return x)
+                   char '$'
+                   skipSpace
+                   body <- parseNode
+                   return $ [Leaf "$", Node (map Leaf vars), Node body]
+    parseBeat = do string "beat"
+                   skipSpace
+                   beat <- many1 digit
+                   return $ Leaf beat
