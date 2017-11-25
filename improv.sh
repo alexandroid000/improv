@@ -1,6 +1,8 @@
 #! /usr/bin/env bash
 
-roslaunch turtle.launch &
+export IMPROV_DIR=${PWD}
 
+roslaunch turtlebot_world.launch &
+sleep 7s
 
 ./monitor src/test.imp ./mkDance
