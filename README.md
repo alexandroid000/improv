@@ -27,3 +27,6 @@ roscore, turtle simulator, and launch the monitoring script.
 Edit the file `src/test.imp`. When this file is saved, the monitoring script will
 detect a change and interpret the code, creating a ROS node which publishes commands
 to the simulator. You should see the effects in the simulator immediately.
+
+[Now you are ready to follow the tutorial to learn features of the improv
+language!](https://github.com/alexandroid000/improv/wiki/Tutorial)
