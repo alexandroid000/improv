@@ -96,6 +96,3 @@ translate d = VelCmd d 0
 moveCommands :: [VelCmd Double] -> Topic IO Twist
 moveCommands cfs = concats $ repeatM $ twisties
     where twisties = return $ (map mkTwist cfs) ++ (repeat $ mkTwist (VelCmd 0 0))
-
-retrogradeDance :: Parts a => Dance a -> Dance a
-retrogradeDance = transform (refl YZ) . transform (refl XZ) . transform (refl XY)
