@@ -37,7 +37,7 @@ instance Symmetric Direction where
 instance Symmetric Angle where
     refl _ (Angle x) = Angle (-x)
 
-data Length = Zero | Quarter | Half | ThreeFourths | Full
+data Length = Zero | Eighth | Quarter | Half | ThreeFourths | Full
         deriving (Show, Eq, Read)
 
 -- should we have an inherent "rhythm" like Tidal does?
@@ -63,7 +63,8 @@ class Parts b where
     contains :: b -> [b]
     origin :: b -> Origin
 
--- binary tree with pointer to parent node
+-- kinematic chain for robot bodies
+-- they are either fixed links, or chains connected by joints
 data KineChain a = Joint Origin (KineChains a)
                  | Link Origin a
      deriving (Show, Eq)
@@ -130,6 +131,11 @@ changeTiming _ Skip = Skip
 changeTiming m (d1 :+: d2) = (changeTiming m d1) :+: (changeTiming m d2)
 changeTiming m (d1 :||: d2) = (changeTiming m d1) :||: (changeTiming m d2)
 
+reverseDance :: (Parts a) => Dance a -> Dance a
+reverseDance (d1 :+: d2) = (reverseDance d2) :+: (reverseDance d1)
+reverseDance (d1 :||: d2) = (reverseDance d1) :||: (reverseDance d2)
+reverseDance dance = dance
+
 repeatn :: (Parts a) => Int -> Dance a -> Dance a
 repeatn n dance = foldr (:+:) Skip $ take n $ repeat dance
 
@@ -143,6 +149,7 @@ transform f (x :+: y) = (transform f x) :+: (transform f y)
 transform f (x :||: y) = (transform f x) :||: (transform f y)
 transform f (Rest m) = Rest m
 transform f (Prim act m dur) = Prim (f act) m dur
+transform f Skip = Skip
 
 
 -- (>>=) :: Monad m => m a -> (a -> m b) -> m b
