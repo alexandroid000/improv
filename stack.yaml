@@ -4,6 +4,8 @@ packages:
 - ./roshask
 - ./roshask/msgs/Geometry_msgs/
 - ./roshask/msgs/Std_msgs/
+- ./roshask/msgs/Std_srvs/
+- ./roshask/msgs/Turtlesim/
 - '.'
 extra-deps:
 - HsOpenSSL-0.11.4.8
