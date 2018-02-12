@@ -37,7 +37,7 @@ instance Symmetric Direction where
 instance Symmetric Angle where
     refl _ (Angle x) = Angle (-x)
 
-data Length = Zero | Eighth | Quarter | Half | ThreeFourths | Full
+data Length = Zero | Eighth | Quarter | Half | ThreeQuarter | Full
         deriving (Show, Eq, Read)
 
 -- should we have an inherent "rhythm" like Tidal does?
@@ -50,7 +50,6 @@ data Origin = O Int
 
 data Action = A Direction Length
     deriving (Show, Eq, Read)
-
 
 instance Symmetric Action where
     refl pl (A dir len) = A (refl pl dir) len
@@ -136,12 +135,14 @@ reverseDance (d1 :+: d2) = (reverseDance d2) :+: (reverseDance d1)
 reverseDance (d1 :||: d2) = (reverseDance d1) :||: (reverseDance d2)
 reverseDance dance = dance
 
+retrogradeDance :: Parts a => Dance a -> Dance a
+retrogradeDance = transform (refl YZ) . transform (refl XZ) . transform (refl XY)
+
 repeatn :: (Parts a) => Int -> Dance a -> Dance a
 repeatn n dance = foldr (:+:) Skip $ take n $ repeat dance
 
 -- transformers
 ---------------
-
 
 -- map over all actions in a dance
 transform :: (Parts a) => (Action -> Action) -> Dance a -> Dance a
@@ -150,7 +151,4 @@ transform f (x :||: y) = (transform f x) :||: (transform f y)
 transform f (Rest m) = Rest m
 transform f (Prim act m dur) = Prim (f act) m dur
 transform f Skip = Skip
-
-
--- (>>=) :: Monad m => m a -> (a -> m b) -> m b
 

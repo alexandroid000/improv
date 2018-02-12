@@ -15,3 +15,6 @@ extra-deps:
 - storable-tuple-0.0.3.2
 - uri-0.1.6.4
 resolver: lts-8.5
+nix:
+ enable: true
+ packages: [glpk, pcre, openssl.dev]
