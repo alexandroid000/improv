@@ -21,24 +21,24 @@ header-includes:
 \newcommand{\by}[1]{& \qquad \text{ #1 }}
 
 \abstract{
-We introduce a new software tool, Improv, for high-level description of robotic
-motion, along with immediate simulation of the resulting movement ("live-coding"
-for robots). The system is composed of a domain-specific language, which
-compiles to instructions in a Haskell client library for ROS, the "Robot
-Operating System," which controls the robot, either in simulation or reality.
-ROS is an open-source robot software framework which is widely used in academia
-and industry, and is supported by many commercially available robots. The
-compilation step is performed whenever the user saves changes to their program
-file, creating a "live-coding" interface which works with any text editor and
-provides immediate visual feedback in the robot simulator. The domain-specific
-language is inspired by abstractions from choreographic terminology. It allows
-for several ways of composing and transforming movement primitives, such as
-reversing movements in space and time, and changing the relative timing of
-movements. Currently, *Improv* can be used to control any robot which uses the
-`Twist` message type in ROS, and has been tested with TurtleBot robots in the
-Gazebo simulation engine. We hope this tool will be of interest to people
-looking for an accessible way to generate robot motion, such as educators,
-artists, and researchers.
+We introduce a new software tool, Improv, a programming language for high-level
+description of robot motion, integrated with immediate simulation of the
+resulting movement ("live-coding" for robots). The system is composed of a
+domain-specific language, which compiles to instructions which control the
+robot, either in simulation or reality. Simulation is done through a Haskell
+client for ROS. ROS ("Robot Operating System") is an open-source robot software
+framework which is widely used in academia and industry, and is supported by
+many commercially available robots. The compilation step is performed whenever
+the user saves changes to their program file, creating a "live-coding" interface
+which works with any text editor and provides immediate visual feedback in the
+robot simulator. The domain-specific language is inspired by 
+choreographic techniques, and allows for several ways of composing and
+transforming movement primitives, such as reversing movements in space and time,
+and changing the relative timing of movements. Currently, *Improv* can be used
+to control any robot which uses the `Twist` message type in ROS, and has been
+tested with TurtleBot robots in the Gazebo simulation engine. The intended
+users of this tool are anyone looking for an accessible way to generate robot
+motion, such as educators, artists, and researchers.
 }
 
 Introduction
@@ -155,9 +155,7 @@ types for planar translation and rotation have been implemented so far.]()
 Domain-Specific Language Design
 ------------
 
-- parallel-series
-- combinators (repeat, reflect, reverse, retrograde)
-- 
+ 
 The base type of the *Improv* language is a movement. Movements are discretized
 and can be combined with each other in various ways, forming different
 movements. The precise way in which this is interpreted on a robot platform is
@@ -190,20 +188,18 @@ example. In our implementation, bracketing $n$ movements causes each movement to
 be performed $n$ times faster, but for $1/n$ times as long, so the movement has
 the same extent but is performed faster.
 
-
 Movements can also be performed in parallel, such as `forward || right`, which
 will cause the robot to curve to the right as it moves forward. In our
 implementation, velocities in parallel are simply added, so `forward ||
-backward` would result in no movement.
+backward` would result in no movement. A movement which is two movements in
+parallel will terminate when the "shorter" movement ends, so the program
+`(forward right) || forward` will never turn right (parenthesis group movements
+into one movement without changing timing).
 
-With all of these implementation details, we would like to emphasize that the
-design decisions for how *Improv* programs are realized on robot platforms are
-relatively arbitrary and a single robot could have a multitude of different
-implementations. "It is not
-technological constraints that hold us back from using technology in new ways;
-technology changes at a tremendous rate. Our willingness to explore beyond the
-constraints of our imagination has the greatest effect" [@schiphorst].
+We have also implemented several transformations which map a function over a
+movement. For example, we have `reverse`, which will 
 
+- combinators (repeat, reflect, reverse, retrograde)
 
 ### Multiple Robots
 
@@ -213,10 +209,47 @@ constraints of our imagination has the greatest effect" [@schiphorst].
 
 ![The grammar of Improv.]()
 
+With all of these implementation details, we would like to emphasize that the
+design decisions for how *Improv* programs are realized on robot platforms are
+relatively arbitrary and a single robot could have a multitude of different
+implementations. "It is not
+technological constraints that hold us back from using technology in new ways;
+technology changes at a tremendous rate. Our willingness to explore beyond the
+constraints of our imagination has the greatest effect" [@schiphorst].
+
 Abstracting Movement in Haskell
 -----------------------
 
 - `Dance` and `Action` types
+
+```haskell 
+data Direction = Lef | Righ | Forward
+               | Backward | Center
+               | Low | Mid | High
+               | Direction :*: Direction
+               
+data Length = Zero | Eighth | Quarter 
+            | Half | ThreeQuarter | Full
+
+data Action = A Direction Length
+
+data Dance b = Prim Action Mult b
+             | Rest Mult
+             | Skip -- id for series, parallel
+             | Dance b :+: Dance b -- in series
+             | Dance b :||: Dance b -- in parallel
+```
+
+```haskell
+-- transforms actions (spatial)
+transform :: (Parts a) => (Action -> Action) -> Dance a -> Dance a
+transform f (x :+: y)      = (transform f x) :+: (transform f y)
+transform f (x :||: y)     = (transform f x) :||: (transform f y)
+transform f (Rest m)       = Rest m
+transform f (Prim act m b) = Prim (f act) m b
+transform f Skip           = Skip
+```
+
 - Propogating timing information down the tree
 
 
