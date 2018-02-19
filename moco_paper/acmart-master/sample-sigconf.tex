@@ -263,6 +263,27 @@ out!
 
 \section{Prototyping Movement Design in Embodied Improvisation}\label{embodied}
 
+\emph{Improv} is a tool for \emph{prototyping} robot motion. Put another way, it
+is a way to improvise movement on robot platforms. The authors have taken
+inspiration from their experiences with embodied improvisation, which is often
+used by choreographers and dancers as a way of understanding and creating human
+movement. Experts such as William Forsythe have analyzed strategies for
+improvisation for choreography and performance \cite{forsythe2004improvisation}.
+Improvisation helps the movement designer understand and explore the plethora of
+movement options that are available at any given time. This is especially useful
+in robotics applications as the field starts to explore stylized movement and
+the incorporation of robotic technology into homes and in performances.
+
+However, the time taken to set up environments and write, compile and
+execute code often negates the benefits of improvisational technologies. This is
+doubly true when working with robotic hardware, and these barriers especially
+affect those users who do not have a strong background in programming. This places
+some design constraints on the \emph{Improv} system - namely, the system
+(1) must have a near-imperceptible delay between writing instructions to the robot and
+seeing the effect of those instructions, and (2) must have minimal ``translation
+distance" between the user's mental model of the movement they want to try and
+the description in code.
+
 In designing this tool, the authors were inspired by several of the principles
 outlined in the `cognitive dimensions of notations' \cite{green1996usability}.
 There are eleven `cognitive dimensions,' or design principles, that the authors
@@ -276,6 +297,10 @@ describe but several are especially relevant to this work, such as
 \item \emph{Progressive evaluation}: Can a partially-complete program be executed to
 obtain feedback on `How am I doing'?
 \end{itemize}
+
+Designing \emph{Improv} with these principles in mind helps minimize the mental
+load of using the tool, and enables faster prototyping and a more
+nearly-improvisational workflow.
 
 \section{Improv Architecture and Features}\label{architecture-overview}
 
@@ -605,6 +630,8 @@ they must occur six times as fast as normal to allow the whole movement
 to occur in one ``beat.''
 
 \section{Interfacing with ROS}\label{interfacing-with-ros}
+
+
 
 {\color{red}benefits of interfacing with ROS}
 
