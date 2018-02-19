@@ -9,15 +9,7 @@
 PACKAGE=acmart
 
 SAMPLES = \
-	sample-manuscript.tex \
-	sample-acmsmall.tex \
-	sample-acmlarge.tex \
-	sample-acmtog.tex \
 	sample-sigconf.tex \
-	sample-sigconf-authordraft.tex \
-	sample-sigplan.tex \
-	sample-sigchi.tex \
-	sample-sigchi-a.tex
 
 
 PDF = $(PACKAGE).pdf ${SAMPLES:%.tex=%.pdf} acmguide.pdf
@@ -27,7 +19,7 @@ all:  ${PDF}
 
 %.pdf:  %.dtx   $(PACKAGE).cls
 	pdflatex $<
-	- bibtex $*
+	bibtex $*
 	pdflatex $<
 	- makeindex -s gind.ist -o $*.ind $*.idx
 	- makeindex -s gglo.ist -o $*.gls $*.glo
@@ -48,7 +40,7 @@ acmguide.pdf: $(PACKAGE).dtx $(PACKAGE).cls
 
 %.pdf:  %.tex   $(PACKAGE).cls ACM-Reference-Format.bst
 	pdflatex $<
-	- bibtex $*
+	bibtex $*
 	pdflatex $<
 	pdflatex $<
 	while ( grep -q '^LaTeX Warning: Label(s) may have changed' $*.log) \
