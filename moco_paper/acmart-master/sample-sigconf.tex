@@ -77,7 +77,7 @@ artists, and researchers. The system includes a domain-specific language,
 inspired by choreographic techniques, which allows for several ways of composing
 and transforming movements such as reversing movements in space and time and
 changing their relative timing. Instructions in the Improv programming language
-are then executed with roshask, a Haskell client for ROS ("Robot Operating
+are then executed with \emph{roshask}, a Haskell client for ROS ("Robot Operating
 System"). ROS is an open-source robot software framework which is widely used in
 academia and industry, and integrated with many commercially available robots.
 However, the ROS interface can be difficult to learn, especially for people
@@ -215,10 +215,13 @@ robots, while \emph{Improv} has so far targeted mobile robots, and
 not include the live coding interface of this work and predates ROS.
 \emph{Improv} has incorporated and adapted some of the data structures
 from \emph{Dance}, namely the \texttt{Action} and \texttt{Dance} data
-types.
+types. Another relevant project is \emph{roshask} \cite{cowley2011stream}, a Haskell client library for
+ROS, which this project uses as an interface between our domain-specific
+language and ROS. Some relevant design features of \emph{roshask} will be
+described in Section \ref{interfacing-with-ros}.
 
 This work is also influenced by live coding interfaces and programming languages
-for generating music, often part of the \emph{Algorave} performance movement
+for generating music, often part of the Algorave performance movement
 \cite{collins2014algorave}. In particular, the programming language TidalCycles
 \cite{mclean2010tidal} has had a strong influence on this work, both
 syntactically and in how relative timing of events is managed.
@@ -251,7 +254,7 @@ were made for the live coding interface. Section
 features of the high-level domain-specific language. Section
 \ref{modelling-movement-in-haskell} details the modelling choices made in the
 program which converts instructions in the domain-specific language to data
-structures in Haskell and roshask, a client library for ROS.
+structures in Haskell and \emph{roshask}, a client library for ROS.
 Section \ref{interfacing-with-ros} details more about how ROS messages are
 defined for specific robotic platforms. Finally, Section
 \ref{conclusions-and-future-work} summarizes the paper and outlines directions
@@ -287,11 +290,11 @@ some design constraints on the \emph{Improv} system - namely, the system must
 have:
 
 \begin{itemize}
-\item a near-imperceptible delay between writing instructions to the robot and
-seeing the effect of those instructions
 \item a minimal ``translation
 distance" between the user's mental model of the movement they want to try and
 the description in code
+\item a near-imperceptible delay between writing instructions to the robot and
+seeing the effect of those instructions
 \item a singular environment where the
 user interacts with the program (to avoid the user's attentional flow being
 broken by needing to switch between different interaction modalities)
@@ -318,35 +321,46 @@ improvisational workflow.
 
 \section{Improv Architecture and Features}\label{architecture-overview}
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=8.00000cm]{/home/alli/common/figs/flowchart.pdf}
-\caption{An illustration of how user input, written to a text file, is
-converted into a ROS node which publishes messages to a simulator or physical 
-robot.
-\label{flowchart}}
-\end{figure}
+The \emph{Improv} system has several design features which have been chosen to
+address the design constraints in Section \ref{embodied} (rapid development
+cycle, more natural translation of movement to code, and a single user environment).
+These design choices were made in part due to the usual workflow in ROS. For
+example, a beginner tutorial for ROS will have the user open at least three
+terminal windows (one for starting the ROS server, one for starting a
+publishing node, and one for starting a subscriber or simulator) and an editor,
+for a total of five windows (including a simulator). This process can be very
+intimidating for people who may not have experience with Linux or the command
+line, and the multitude of windows and interaction modalities make it difficult
+for the user to have a coherent mental model of information flow in the system.
+It is often not possible to see all the relevant windows at one time on a
+regular computer monitor.
 
-The \emph{Improv} system consists of the following components:
+Despite its lack of user amenities, ROS is a very powerful tool - it is
+integrated with many commercially available robot platforms, and includes many
+libraries for standard robot use cases. Thus, we have chosen to design
+\emph{Improv} as a wrapper around ROS. This gives us the benefits of ROS's
+infrastructure, but we exchange the power of the low-level control available in
+most ROS client libraries for the simplicity of a high-level representation of
+robot motion.
+
+To specifically address the design criteria in Section \ref{embodied}, we have
+included the following features in \emph{Improv}:
 
 \begin{itemize}
-\item
-  a live coding interface, where the user writes a program in any text
-  editor of their choosing. When they save changes to the file, they
-  observe the resulting movement pattern on a simulated robot
-\item
-  a shell script which monitors the user's file for changes, at which
-  point it resets the simulator, and executes a compiled Haskell program
-  which interprets the user code and starts a corresponding ROS node
-\item
-  the ROS node, created with roshask \cite{cowley2011stream}, which sends messages to
-  the simulator. Currently, only \texttt{Twist} messages can be created,
-  which contain linear and rotational velocity information.
-\item
-  A simulator (or actual robot), which recieves ROS messages and
-  executes movement on a robot platform. Currently, we have tested the
-  system with:
-  \begin{itemize}
+\item \emph{small representational distance between
+movement and code:} a domain-specific language, inspired by choreographic
+techniques such as spatial symmetries, relative timing changes, and body-centric
+coordinates
+\item 
+\emph{rapid movement prototyping:} changes to the user's file are interpreted by a 
+Haskell program that builds a ROS node for publishing messages to a
+simulator or physical robot. This process is nearly real time, allowing for a
+seamless user experience.
+\item \emph{workspace with few attentional switches:}
+a live coding interface with only two windows, one for editing the text file and
+one for observing effects on a simulated robot. Currently, we have tested the
+system with:
+\begin{itemize}
   \item
     TurtleSim: a two dimensional simulator with limited physics, where
     velocity commands are nearly exactly executed on an animated turtle.
@@ -359,6 +373,18 @@ The \emph{Improv} system consists of the following components:
 
 See Figure \ref{flowchart} for a diagrammatic representation of
 information flow in the system.
+
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=8.00000cm]{/home/alli/common/figs/flowchart.pdf}
+\caption{An illustration of how user input, written to a text file, is
+converted into a ROS node which publishes messages to a simulator or physical 
+robot.
+\label{flowchart}}
+\end{figure}
+
 
 
 \subsection{Example Programs}\label{example-programs}
@@ -651,8 +677,7 @@ to occur in one ``beat.''
 {\color{red}benefits of interfacing with ROS}
 
 
-\emph{Roshask} is a client library for ROS, written in Haskell
-\cite{cowley2011stream}. It treats streams of values (such as those published
+\emph{Roshask} is a client library for ROS, written in Haskell. It treats streams of values (such as those published
 and subscribed to by ROS nodes) as first class values, which allows for them to
 be combined and transformed in more natural ways than traditional ROS client
 libraries. For example, when we put `Dance`s in parallel, we wish to combine two
@@ -684,9 +709,9 @@ that a \texttt{Half} extent is twice as far as a \texttt{Quarter}, thus the
 robot must move twice as fast in the same direction to travel twice the distance
 in the same amount of time.
 
-Once this conversion (from a `Dance` data structure to a list of ROS messages)
+Once this conversion (from a \texttt{Dance} data structure to a list of ROS messages)
 has been completed, the list of ROS messages is given as an argument to a ROS
-node defined in roshask. This node publishes the commands over the ROS network.
+node defined in \emph{roshask}. This node publishes the commands over the ROS network.
 Even if multiple robots are controlled, the system still only uses one ROS node
 which publishes to multiple topics. Work is ongoing on whether to extend the
 system to control multiple ROS nodes, and if so, how best to implement this
@@ -696,13 +721,13 @@ feature.
 
 One important design decision for developers of interactive text-based
 programming tools is whether to tie their tool to a specific editor. For
-example, the Algorave live coding tool TidalCycles was originally
+example, the live coding tool TidalCycles was originally
 developed for Emacs, a powerful editor which has a notoriously steep
 learning curve {\color{red} cite}. Many people prefer to use simpler editors, so new
 live coding plug-ins have been developed for editors such as Atom and
 Sublime Text. This editor-based approach has advantages, such as a large
 degree of customizability and extensibility using the features of the
-editors. However, it also introduces challenges such as maintaining
+editor. However, it also introduces challenges such as maintaining
 feature parity between editors, as well as the up-front investment
 needed to interface with new editors. In our case, we are developing a
 tool that should be usable by artists, children, and programming
@@ -720,8 +745,8 @@ contributes minimally to the overall workload of using the system,
 especially when compared to the many steps required to test changes to
 traditional ROS programs. The delay between saving the file and observing the
 changes in the simulator is very short - while we have not done a formal timing
-analysis, the delay is a fraction of a second and not noticeably longer than the
-time it takes to shift attention from the text editor to the simulator.
+analysis, the delay is a small fraction of a second and not noticeably longer than the
+time it takes to look from the text editor to the simulator.
 
 \section{Conclusions and Future
 Work}\label{conclusions-and-future-work}
@@ -765,6 +790,11 @@ system for robots which have velocity controllers, and several aspects of the
 movement transformation model depend on this assumption. For some robots,
 especially commercially available models, position-based controllers may be the
 only option available.
+
+Many features and limitations of ROS are being improved with the ROS2 project,
+especially cross-platform functionality, ease of creating client libraries, and
+more robust network middleware libraries. However, as far as we are aware, there
+is no Haskell client library for ROS2.
 
 {\color{red}add uplifting good things, future work to address these limitatiions}
 
