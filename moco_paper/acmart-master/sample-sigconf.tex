@@ -350,7 +350,18 @@ included the following features in \emph{Improv}:
 \item \emph{small representational distance between
 movement and code:} a domain-specific language, inspired by choreographic
 techniques such as spatial symmetries, relative timing changes, and body-centric
-coordinates
+coordinates. Many domain-specific languages for robot programming exist; for example, a
+review in 2016 identified 137 relevant publications {\color{red} cite}. However, most model robotic
+systems from a control-flow perspective, and do not model motion directly. The
+desired language will depend heavily on the programmer's task, but undoubtably
+there are many applications where users would like to describe the robot's
+instructions directly in terms of movement. It then makes sense to directly use
+the expertise and terminology developed by choreographers and other movement
+experts. "The closer the programming world is to the problem world, the easier the
+problem-solving ought to be. Ideally, the problem entities in the user's task
+domain could be mapped directly onto task-specific program entities, and
+operations on those problem entities would likewise be mapped directly onto
+program operations" \cite{green1996usability}.
 \item 
 \emph{rapid movement prototyping:} changes to the user's file are interpreted by a 
 Haskell program that builds a ROS node for publishing messages to a
@@ -362,8 +373,8 @@ one for observing effects on a simulated robot. Currently, we have tested the
 system with:
 \begin{itemize}
   \item
-    TurtleSim: a two dimensional simulator with limited physics, where
-    velocity commands are nearly exactly executed on an animated turtle.
+    TurtleSim: a two dimensional simulator where
+    velocity commands nearly perfectly control an animated turtle.
   \item
     Gazebo with a TurtleBot robot model: a three-dimensional simulator
     with more realistic physics, where velocity commands control
@@ -393,11 +404,10 @@ Figures \ref{gedit} and \ref{vim} show examples of the system in use with two
 different text editors and two different simulators. Note that the choice of
 editor and the choice of simulator are decoupled, and \emph{Improv} is
 absolutely editor-agnostic, relying only on an operating-system level script
-which monitors a text file for changes to execute the interpretation and
-simulation process. \emph{Improv} is somewhat simulator-agnostic, although
-currently it is only possible to control robots which use a certain ROS message
-type for control (the Twist message, which sets desired linear and rotational
-velocity).
+to execute changes. \emph{Improv} is somewhat simulator-agnostic: 
+currently it is only possible to control robots which use a \texttt{Twist} ROS messages
+for control, which set desired linear and rotational
+velocities.
 
 \begin{figure}[h]
 \centering
@@ -418,60 +428,49 @@ simulated turtles.\label{vim}}
 \section{Domain-Specific Language
 Design}\label{domain-specific-language-design}
 
-Many domain-specific languages for robot programming exist; for example, a
-review in 2016 identified 137 relevant publications 
-
-"The closer the programming world is to the problem world, the easier the
-problem-solving ought to be. Ideally, the problem entities in the user's task
-domain could be mapped directly onto task-specific program entities, and
-operations on those problem entities would likewise be mapped directly onto
-program operations."
-
-
-{\color{red} justify making another one... or just take this number out and add
-other motivation}
 
 The base type of the \emph{Improv} language is a movement. Movements are
-discretized and can be combined with each other in various ways, forming
-different movements. The precise way in which this is interpreted on a
-robot platform is defined by the language's translation to Haskell and
-the commands sent to ROS for the particular robot in question.
+discretized and can be combined with each other in various ways, forming new
+movements, which can be in turn transformed and combined. The precise way in
+which this is interpreted on a robot platform is defined by the language's
+translation to Haskell and the resulting messages sent over the ROS network,
+which will be described further in Section \ref{interfacing-with-ros}.
+
+Figure \ref{grammar} shows the grammar of the \emph{Improv} language.
 
 \begin{figure}
 \centering
 \begin{verbatim}
+prim = rest  | forward 
+     | left  | halfleft
+     | right | halfright
+
+transformer = reverse  | retrograde 
+            | repeat n | reflect ax
+
 movement = prim
          | movement movement
-         | transformer movement
          | [movement]
          | (movement)
          | movement || movement 
+         | transformer movement
 
 exp = rs $ movement
     | var = movement
+    | beat n
 \end{verbatim}
 \caption{The grammar of Improv programs. \texttt{exp} represents top-level
 expressions, which execute movements on robot(s), or store movements in
 variables. \texttt{movement}s are converted into ROS message streams and can be
 composed and grouped in multiple ways. {\color{red} run past Mattox, see if he
-has an example I can emulate}}
+has an example I can emulate} \label{grammar}}
 
 \end{figure}
 
-The terminals in \emph{Improv}, such as \texttt{forward} or
-\texttt{right}, are mapped to streams of ROS messages. In our
-implementation so far, we have mapped to the \texttt{Twist} ROS message,
-which contains two three-dimensional vectors
-representing the robot's linear and angular velocity. Controllers, which often
-are included with commercial robots, are required to perform the low-level motor
-control to acheive and maintain the desired velocities.
-
-Here, we have simplified the language
-by varying only three of these values, the robots \(x,y-\)velocity in
-the plane and its angular velocity in the plane. Many ROS- and
-Gazebo-integrated robots have available velocity controllers. We have
-also discretized velocities, though users control velocity only relative
-to other movements, by specifying their relative timing.
+The language supports primitives such as \texttt{forward} and \texttt{right}
+corresponding to commands to the robot causing it to perform the expected
+motion. These primitives are composed in series, sequence and parallel, and
+transformed in time and space.
 
 Movements are organized in time into units, where each unit is performed in one
 ``beat.'' The base timing of beats (units per minute) can be specified by the
@@ -672,6 +671,20 @@ to occur in one ``beat.''
 
 \section{Interfacing with ROS}\label{interfacing-with-ros}
 
+The terminals in \emph{Improv}, such as \texttt{forward} or
+\texttt{right}, are mapped to streams of ROS messages. In our
+implementation so far, we have mapped to the \texttt{Twist} ROS message,
+which contains two three-dimensional vectors
+representing the robot's linear and angular velocity. Controllers, which often
+are included with commercial robots, are required to perform the low-level motor
+control to acheive and maintain the desired velocities.
+
+Here, we have simplified the language
+by varying only three of these values, the robots \(x,y-\)velocity in
+the plane and its angular velocity in the plane. Many ROS- and
+Gazebo-integrated robots have available velocity controllers. We have
+also discretized velocities, though users control velocity only relative
+to other movements, by specifying their relative timing.
 
 
 {\color{red}benefits of interfacing with ROS}
