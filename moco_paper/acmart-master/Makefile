@@ -5,14 +5,15 @@
 #
 # $Id: Makefile,v 1.10 2016/04/14 21:55:57 boris Exp $
 #
+# PDF = $(PACKAGE).pdf ${SAMPLES:%.tex=%.pdf}
 
 PACKAGE=acmart
 
 SAMPLES = \
-	sample-sigconf.tex \
+	NilGladMattLaV_18.tex \
 
+PDF = ${SAMPLES:%.tex=%.pdf}
 
-PDF = $(PACKAGE).pdf ${SAMPLES:%.tex=%.pdf} acmguide.pdf
 
 all:  ${PDF}
 
