@@ -3,7 +3,9 @@
 \usepackage{booktabs} % For formal tables
 \usepackage{framed}
 \usepackage{color}
+\usepackage{caption}
 \usepackage[font=small]{subcaption}
+\usepackage{multicol}
 
 % Copyright
 %\setcopyright{none}
@@ -24,8 +26,12 @@ Computing}{June 2018}{Genoa, Italy}
 
 \settopmatter{printacmref=false}
 
+\newenvironment{Figure}
+  {\par\medskip\noindent\minipage{\textwidth}}
+  {\endminipage\par\medskip}
 
 \begin{document}
+
 
 \title{Improv: Live Coding for Robot Motion Design}
 
@@ -127,7 +133,10 @@ problems. To address the first (mismatch between the problem and
 program domains), we introduce a small domain-specific programming language
 (DSL) with motion primitives and several operators which allow
 movements to be combined and transformed, in space and time. The transformations
-are inspired by choregraphic techniques. 
+are inspired by choregraphic techniques, such as those in
+\cite{laviers2017choreographic} \cite{cuykendall2014designing} \cite{alaoui2014choreography} and
+\cite{humphrey1959art}.
+
 
 For example, the following ROS Python client code will cause a
 mobile robot such as a Roomba or Turtlebot to follow a path that curves
@@ -251,6 +260,15 @@ for future work, including user studies.
 
 
 
+\begin{figure*}
+ \centering
+\includegraphics[width=0.9\textwidth]{/home/alli/common/figs/rosfig.jpg}
+\captionof{figure}{An example of a typical workflow in ROS, created by following a
+beginner tutorial. There are five overlapping terminal windows open, as well
+as the Gazebo simulator. \label{rosfig}}
+\end{figure*}
+
+
 
 \section{Prototyping Movement Design in Embodied Improvisation}\label{embodied}
 
@@ -309,6 +327,7 @@ Designing \emph{Improv} with these principles in mind has helped us minimize the
 load of using the tool, and enable faster prototyping and a more
 improvisational workflow.
 
+
 \section{Improv Architecture and Features}\label{architecture-overview}
 
 See Figure \ref{flowchart} for a diagrammatic representation of
@@ -326,7 +345,7 @@ intimidating for people who may not have experience with Linux or the command
 line, and the multitude of windows and interaction modalities make it difficult
 for the user to have a coherent mental model of information flow in the system.
 It is often not possible to see all the relevant windows at one time on a
-regular computer monitor.
+regular computer monitor. See Figure \ref{rosfig} for an example.
 
 Despite its lack of user amenities, ROS is a very powerful tool - it is
 integrated with many commercially available robot platforms, and includes many
@@ -335,16 +354,6 @@ libraries for standard robot use cases. Thus, we have chosen to design
 infrastructure, but we exchange the powerful low-level control available in
 most ROS client libraries for the simplicity of a high-level representation of
 robot motion.
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=8.00000cm]{/home/alli/common/figs/flowchart.pdf}
-\caption{An illustration of how user input, written to a text file, is
-converted into a ROS node which publishes messages to a simulator or physical 
-robot.
-\label{flowchart}}
-\end{figure}
-
 To specifically address the design criteria in Section \ref{embodied}, we have
 included the following features in \emph{Improv}:
 
@@ -380,6 +389,16 @@ system with:
     simulated motors.
   \end{itemize}
 \end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=8.00000cm]{/home/alli/common/figs/flowchart.pdf}
+\caption{An illustration of how user input, written to a text file, is
+converted into a ROS node which publishes messages to a simulator or physical 
+robot.
+\label{flowchart}}
+\end{figure}
+
 
 \begin{figure*}[h!]
     \begin{subfigure}{0.45\textwidth}
@@ -438,7 +457,6 @@ for control, which set desired linear and rotational
 velocities.
 
 
-
 \section{Domain Specific Language (DSL)
 Design}\label{domain-specific-language-design}
 
@@ -450,9 +468,8 @@ which this is interpreted on a robot platform is defined by the language's
 translation to Haskell and the resulting messages sent over the ROS network,
 which will be described further in Section \ref{interfacing-with-ros}.
 
-Figure \ref{grammar} shows the grammar of the \emph{Improv} language.
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \begin{verbatim}
 prim = rest  | forward 
@@ -477,9 +494,9 @@ exp = rs $ movement
 expressions, which execute movements on robot(s), or store movements in
 variables. \texttt{movement}s are converted into ROS message streams and can be
 composed and grouped in multiple ways. \label{grammar}}
-
 \end{figure}
 
+Figure \ref{grammar} shows the grammar of the \emph{Improv} language.
 The language supports primitives such as \texttt{forward} and \texttt{right}
 corresponding to commands to the robot causing it to perform the expected
 motion. These primitives are composed in series, sequence and parallel, and
@@ -790,7 +807,8 @@ include a range of participants in our study, including people with limited
 programming experience and no ROS experience, as well as people familiar with
 ROS. From our own explorations of the tool, we have found that the
 experience is quite engaging, especially when using the three-dimensional
-physical simulator. We are very interested in measuring the effects of different
+physical simulator. We have included a video as supplemental information of
+\emph{Improv} being used with Gazebo. We are very interested in measuring the effects of different
 editing and simulating environments on the user experience.
 
 The main limitation of \emph{Improv}, as compared to other live coding tools for
