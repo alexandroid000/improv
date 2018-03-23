@@ -17,4 +17,4 @@ extra-deps:
 resolver: lts-8.5
 nix:
  enable: true
- packages: [glpk, pcre, openssl.dev]
+ packages: [glpk, pcre, openssl.dev, openssl]

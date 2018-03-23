@@ -82,7 +82,6 @@ instance Parts (KineChain a) where
 
 type Mult = Double
 
--- what if we made this a bimonoid typeclass instead?
 data Dance b = Prim Action Mult b
              | Rest Mult
              | Skip -- id for series, parallel
@@ -123,6 +122,9 @@ seqL ds =
 
 parL = getPar . mconcat . map ParDance
 
+-- transformers
+---------------
+
 changeTiming :: (Parts a) => Mult -> Dance a -> Dance a
 changeTiming m (Prim a n b) = Prim a (m*n) b
 changeTiming m (Rest n) = Rest (m*n)
@@ -144,7 +146,7 @@ repeatn n dance = foldr (:+:) Skip $ take n $ repeat dance
 -- transformers
 ---------------
 
--- map over all actions in a dance
+-- map over all actions in a dance... TODO refactor to use functors?
 transform :: (Parts a) => (Action -> Action) -> Dance a -> Dance a
 transform f (x :+: y) = (transform f x) :+: (transform f y)
 transform f (x :||: y) = (transform f x) :||: (transform f y)

@@ -14,7 +14,6 @@ header-includes:
         - \graphicspath{{/home/alli/common/figs/}}
 ---
 
-
 \setlength{\parskip}{0em}
 \setlength{\parindent}{2em}
 
@@ -48,6 +47,7 @@ Introduction
 - what is it
 - possible audiences
 
+
 Related Work
 ------------
 
@@ -61,22 +61,22 @@ of this work and predates ROS. *Improv* has incorporated and adapted some of the
 data structures from *Dance*, namely the `Action` and `Dance` data types.
 
 This work is also influenced by live coding interfaces and programming languages
-for generating music, often part of the *Algorave* performance movement. In
+for generating music, often part of the *Algorave* performance movement
+[@collins2014algorave]. In
 particular, the programming language TidalCycles [@mclean2010tidal] has had a strong influence on
 this work, both syntactically and in how relative timing of events is managed.
 
 *Al Jazari* is a live-coding installation which uses a simple graphical language
-to allow people to control robots (in simulation). The language includes
-conditionals based on external state and communication between the bots.
-(\url{http://davesblog.fo.am/category/al-jazari/}) The program state of the
-robot is also visualized.
+to allow people to control robots (in simulation) [@mclean2010visualisation].
+The language includes conditionals based on external state and communication
+between the bots. The program state of the robot is also visualized.
 
 Especially when used with the two-dimensional Turtlesim, *Improv* is reminiscent
-of *Logo*, an interpreted dialect of Lisp that is often used in conjunction with a simulation of a
-two-dimensional turtle. Our programming language has different features than
-*Logo*, does not support recursion as *Logo* does, and most importantly is
-integrated with ROS and thus able to be used with three-dimensional simulators
-and actual robots.
+of *Logo* [@logo], an educational, interpreted dialect of Lisp that is often
+used in conjunction with a simulation of a two-dimensional turtle. Our
+programming language has different features than *Logo*, does not support
+recursion as *Logo* does, and most importantly is integrated with ROS and thus
+able to be used with three-dimensional simulators and actual robots.
 
 We know of two other projects have addressed the problem of the complex development cycle
 in ROS by creating tools for interactive or "live" programming. One such project
@@ -88,7 +88,7 @@ DSL is implemented as a library in Python, it inherits some of the opaque syntax
 of the Python ROS client. Improv has a simpler, albeit less powerful,
 programming language and models movement explicitly.
 Another closely related work to *Improv* is the Live Robot Programming
-(LRP) language and its integration with PhaROS, a client library for ROS written
+(LRP) language and its integration with PhaROS [@estefo2014towards], a client library for ROS written
 is Pharo, a dynamic programming language specialized for live updating and hot
 recompilation. This project allows for live-coding of ROS nodes and
 reconfiguration of the ROS network with a much shorter development cycle than
@@ -125,7 +125,7 @@ The *Improv* system consists of the following components:
       - Gazebo with a TurtleBot robot model: a three-dimensional simulator with more realistic
         physics, where velocity commands control simulated motors.
 
-See figure \ref{flowchart} for a diagrammatic representation of information flow
+See Figure \ref{flowchart} for a diagrammatic representation of information flow
 in the system.
 
 
