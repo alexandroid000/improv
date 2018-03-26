@@ -1,5 +1,3 @@
 beat 30
 
-x = repeat 3 forward
-
-turtle1 $ repeat (reverse ([right forward] || forward))
+turtle1 $ forward

@@ -7,8 +7,7 @@ echo "running new node"
 
 # examples commented of how to spawn and name more turtles
 
-rosservice call /spawn 5.5 5.5 0 "turtle2"
-#rosservice call /spawn 5.5 5.5 0 "turtle3"
-#rosservice call /spawn 5.5 5.5 0 "turtle4"
+rosservice call /spawn 5.5 5.5 0 "turtle1"
+#rosservice call /spawn 5.5 5.5 0 "turtle2"
 
 stack exec -- improv-exe &
