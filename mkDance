@@ -1,9 +1,6 @@
-#!/usr/bin/env bash
-
 echo "killing old node"
 pkill improv-exe
 echo "running new node"
 rosservice call /gazebo/reset_world
 rosservice call /gazebo/reset_simulation
 stack exec -- improv-exe &
-

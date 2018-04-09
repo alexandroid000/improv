@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
+LOG_DATA=true # set to false to not log data
+LOG_FILE="LOG_"$(date +%F)
+ATTEMPT=0
+
 OLD_MD5=""
 NEW_MD5=""
-
-stack build
 
 FILENAME="$1" && shift
 echo "$FILENAME"
@@ -12,6 +14,10 @@ if [[ ! -f "$FILENAME" ]]; then
      exit 1
 fi
 DIFF_COMMAND="cat "$FILENAME" | md5sum"
+
+if "$LOG_DATA"; then
+    touch "$LOG_FILE"
+fi
 
 while true; do
     NEW_MD5=$(eval $DIFF_COMMAND)
@@ -23,6 +29,12 @@ while true; do
             echo "READY: $@"
         else
             echo "READY: $@"
+        fi
+        if "$LOG_DATA"; then
+            printf "ATTEMPT $ATTEMPT\n=========\n\n" >> "$LOG_FILE"
+            cat "$FILENAME" >> "$LOG_FILE"
+            printf "\n\n" >> "$LOG_FILE"
+            ((++ATTEMPT))
         fi
     fi
 done
