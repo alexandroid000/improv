@@ -3,6 +3,6 @@
 export IMPROV_DIR=${PWD}
 
 roslaunch turtlebot_world.launch &
-sleep 7s
+sleep 15s
 
 ./monitor src/test.imp ./mkDance

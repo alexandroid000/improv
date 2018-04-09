@@ -56,12 +56,14 @@ danceToMsg (d1 :||: Skip) = danceToMsg d1
 danceToMsg (d1 :||: d2) = zipWith (addVels) (danceToMsg d1) (danceToMsg d2)
 danceToMsg (d1 :+: d2)  = (danceToMsg d1) ++ (danceToMsg d2)
 
+
 moveBase :: Action -> VelCmd Double
 -- Primitives
 moveBase (A Center _)           = VelCmd 0 0 -- no articulation
 moveBase (A _ Zero)             = VelCmd 0 0 -- no articulation
+moveBase (A Lef Eighth)        = VelCmd 0 (pi/4) -- rad/sec
 moveBase (A Lef Quarter)        = VelCmd 0 (pi/2) -- rad/sec
-moveBase (A Forward Quarter)    = VelCmd 0.1 0 -- meters/sec
+moveBase (A Forward Quarter)    = VelCmd 0.5 0 -- meters/sec
 
 -- Derived from primitives
 moveBase (A Righ d)             = (fmap negate) (moveBase (A Lef d))

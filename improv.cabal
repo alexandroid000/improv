@@ -22,6 +22,8 @@ library
                      , roshask >= 0.4
                      , ROS-geometry-msgs
                      , ROS-std-msgs
+                     , ROS-turtlesim-msgs
+                     , ROS-std-srvs-msgs
                      , data-default-generics
                      , tls <= 1.3.9
                      , HsOpenSSL >= 0.11.4.8
@@ -41,9 +43,11 @@ executable improv-exe
                      , improv
                      , roshask >= 0.4
                      , ROS-geometry-msgs
+                     , ROS-std-msgs
+                     , ROS-turtlesim-msgs
+                     , ROS-std-srvs-msgs
                      , tls <= 1.3.9
                      , HsOpenSSL >= 0.11.4.8
-                     , ROS-std-msgs
                      , data-default-generics
                      , lens-family-core
                      , split
