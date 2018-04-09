@@ -34,7 +34,12 @@ startCommands = Map.fromList [("left", left), ("right", right), ("halfleft", hal
                                 ("forward", forward), ("rest", rest)]
 multiFuncs = Map.fromList [("approach", approach)] -- Dictionary of names to multiFuncs
 axes = Map.fromList [("XZ", XZ), ("XY", XY), ("YZ", YZ)]
-channelNames = Map.fromList [("turtle1", core), ("turtle2", core), ("turtle3", core), ("turtle4", core)] -- Dictionary of channel names to OurRobots
+channelNames = Map.fromList [
+			  ("turtle1", core)
+			, ("turtle2", core)
+			, ("turtle3", core)
+			, ("turtle4", core)
+			, ("robot", core)] -- Dictionary of channel names to OurRobots
 
 ---------------------------------------------------------------------------------------------
 approach :: [OurRobot] -> Either String [OurDance]
