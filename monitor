@@ -3,8 +3,6 @@
 OLD_MD5=""
 NEW_MD5=""
 
-stack build
-
 FILENAME="$1" && shift
 echo "$FILENAME"
 if [[ ! -f "$FILENAME" ]]; then

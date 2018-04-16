@@ -23,7 +23,7 @@ get_pose :: Node ((Topic IO) Twist)
 get_pose = subscribe "/turtle1/pose"
 
 main :: IO ()
-main = do doc <- readFile "./src/test.imp"
+main = do doc <- readFile "./user_instructions.txt"
           case convertFile doc of 
                Right moveTopics -> runNode "HaskellTurtle" $
                      do mapM (\(name, twist) -> advertise (name ++ "/cmd_vel") (topicRate robotRes twist)) $ Map.toList moveTopics
