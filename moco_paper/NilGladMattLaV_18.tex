@@ -1,4 +1,4 @@
-\documentclass[sigconf]{acmart}
+\documentclass[sigchi-a]{acmart}
 
 \usepackage{booktabs} % For formal tables
 \usepackage{framed}
@@ -35,37 +35,34 @@ Computing}{June 2018}{Genoa, Italy}
 
 \title{Improv: Live Coding for Robot Motion Design}
 
+\author{Alexandra Q. Nilles}
+\affiliation{%
+  \institution{Department of Computer Science \\ University of Illinois at Urbana-Champaign}
+    }
+\email{nilles2@illinois.edu}
 
-%\author{Alexandra Q. Nilles}
-%\orcid{1234-5678-9012}
-%\affiliation{%
-%  \institution{Computer Science Department \\ University of Illinois at
-%Urbana-Champaign}
-%}
-%\email{nilles2@illinois.edu}
-%
-%\author{Chase Gladish}
-%\affiliation{%
-%  \institution{Computer Science Department \\ University of Illinois at
-%Urbana-Champaign}
-%}
-%\email{webmaster@marysville-ohio.com}
-%
-%\author{Mattox Beckman}
-%\affiliation{%
-%  \institution{Computer Science Department \\ University of Illinois at
-%Urbana-Champaign}
-%}
-%\email{larst@affiliation.org}
-%
-%\author{Amy LaViers}
-%\affiliation{%
-%  \institution{Mechanical Science and Engineering Department \\ University of Illinois at
-%Urbana-Champaign}
-%}
+\author{Chase Gladish}
+\affiliation{%
+  \institution{Department of Computer Science \\ University of Illinois at Urbana-Champaign}
+    }
+\email{gladish2@illinois.edu}
+
+\author{Mattox Beckman}
+\affiliation{%
+  \institution{Department of Computer Science \\ University of Illinois at Urbana-Champaign}
+    }
+\email{mattox@illinois.edu}
+
+\author{Amy LaViers}
+\affiliation{%
+  \institution{Mechanical Science and Engineering Department \\ University of Illinois at Urbana-Champaign}
+    }
+\email{alaviers@illinois.edu}
+
 
 % The default list of authors is too long for headers.
-%\renewcommand{\shortauthors}{A. Nilles et al.}
+\renewcommand{\shortauthors}{A. Nilles et al.}
+
 
 \begin{abstract}
 This paper introduces the Improv system, a programming language for high-level
@@ -74,8 +71,7 @@ resulting motion on a physical or simulated robot. The intended users of this
 tool are anyone looking to quickly generate robot motion, such as educators,
 artists, and researchers. The system includes a domain-specific language,
 inspired by choreographic techniques, which allows for several ways of composing
-and transforming movements such as reversing movements in space and time and
-changing their relative timing. Instructions in the Improv programming language
+and transforming movements in space and time. Instructions in the Improv programming language
 are then executed with \emph{roshask}, a Haskell client for ROS ("Robot Operating
 System"). ROS is an open-source robot software framework which is widely used in
 academia and industry, and integrated with many commercially available robots.
@@ -87,6 +83,48 @@ presents Improv implementations with the two-dimensional simulator
 Turtlesim, as well as three-dimensional TurtleBots in the Gazebo simulation
 engine.
 \end{abstract}
+
+
+
+\begin{marginfigure}
+\centering
+\includegraphics[width=\marginparwidth]{/home/alli/common/figs/flowchart.pdf}
+\caption{An illustration of how user input, written to a text file, is
+converted into a ROS node which publishes messages to a simulator or physical 
+robot.
+\label{flowchart}}
+\end{marginfigure}
+
+\begin{sidebar}
+For example, the following ROS Python client code will cause a
+mobile robot such as a Roomba or Turtlebot to follow a path that curves
+forward and left:
+\end{sidebar}
+
+\begin{margintable}
+\begin{tabular}[l]
+\texttt{if \_\_name\_\_ == '\_\_main\_\_':} \\ 
+\texttt{pub = rospy.Publisher('turtle1/cmd\_vel',Twist)} \\ 
+rospy.init\_node('publisher\_node') \\ 
+loop\_rate = rospy.Rate(5) \\ 
+while not rospy.is\_shutdown(): \\ 
+%        vel=Twist() \\
+%        vel.linear.x = 1.0 \\
+%        vel.angular.z = 1.0 \\
+%        pub.publish(vel) \\
+%        loop\_rate.sleep()
+\end{tabular}
+\end{margintable}
+
+\begin{sidebar}
+while the equivalent code in \emph{Improv} is
+
+\texttt{
+turtle1 \$ forward || left
+}
+
+where $||$ is an operator which combines movements in parallel.
+\end{sidebar}
 
 
 %
@@ -101,7 +139,27 @@ engine.
 \maketitle
 
 
+
 \section{Introduction}\label{introduction}
+
+\begin{marginfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\marginparwidth]{/home/alli/common/figs/improv_gedit_gazebo.png}
+        \captionof{figure}{A program as it appears in Gedit, a simple graphical text editor, with
+        the physics-based simulator Gazebo and a simulated
+        Turtlebot.\label{gedit}}
+    \end{subfigure}\hfill%
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\marginparwidth]{/home/alli/common/figs/termturtle.png}
+        \captionof{figure}{A program as it appears in vim, a terminal-based text editor, with the
+         resulting movement in TurtleSim on two
+        simulated turtles.\label{vim}}
+    \end{subfigure}
+    \caption{Examples of different text-editor and simulation environment
+configurations available to users of \emph{Improv}. Any text editor can be
+used, while simulators or robots must be compatible with the ROS message types
+implemented with the system.}
+\end{marginfigure}
 
 Robotic technology is becoming more commonly integrated into settings outside of
 the factory - including classrooms \cite{mataric2004robotics} and art installations
@@ -138,30 +196,6 @@ are inspired by choregraphic techniques, such as those in
 \cite{humphrey1959art}.
 
 
-For example, the following ROS Python client code will cause a
-mobile robot such as a Roomba or Turtlebot to follow a path that curves
-forward and left:
-
-\begin{verbatim}
-if __name__ == '__main__':
-    pub = rospy.Publisher('turtle1/cmd_vel',Twist)
-    rospy.init_node('publisher_node')
-    loop_rate = rospy.Rate(5)
-    while not rospy.is_shutdown():
-        vel=Twist()
-        vel.linear.x = 1.0
-        vel.angular.z = 1.0
-        pub.publish(vel)
-        loop_rate.sleep()
-\end{verbatim}
-
-while the equivalent code in \emph{Improv} is
-
-\begin{verbatim}
-turtle1 $ forward || left
-\end{verbatim}
-
-where $||$ is an operator which combines movements in parallel.
 
 To address the second obstacle to robot programming (the difficult
 process of evaluating code on a robot), we introduce a "live coding"
@@ -181,6 +215,8 @@ prototype robot motion patterns. \emph{Improv} is open-source and available at
 out!
 
 \subsubsection*{Related Work}
+
+
 
 We are aware of two other projects addressing the problem of the complex
 development cycle in ROS by creating tools for interactive or ``live''
@@ -390,34 +426,7 @@ system with:
   \end{itemize}
 \end{itemize}
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=8.00000cm]{/home/alli/common/figs/flowchart.pdf}
-\caption{An illustration of how user input, written to a text file, is
-converted into a ROS node which publishes messages to a simulator or physical 
-robot.
-\label{flowchart}}
-\end{figure}
 
-
-\begin{figure*}[h!]
-    \begin{subfigure}{0.45\textwidth}
-        \includegraphics[width=8cm]{/home/alli/common/figs/improv_gedit_gazebo.png}
-        \captionof{figure}{A program as it appears in Gedit, a simple graphical text editor, with
-        the physics-based simulator Gazebo and a simulated
-        Turtlebot.\label{gedit}}
-    \end{subfigure}\hfill%
-    \begin{subfigure}{0.45\textwidth}
-        \includegraphics[width=8cm]{/home/alli/common/figs/termturtle.png}
-        \captionof{figure}{A program as it appears in vim, a terminal-based text editor, with the
-         resulting movement in TurtleSim on two
-        simulated turtles.\label{vim}}
-    \end{subfigure}
-    \caption{Examples of different text-editor and simulation environment
-configurations available to users of \emph{Improv}. Any text editor can be
-used, while simulators or robots must be compatible with the ROS message types
-implemented with the system.}
-\end{figure*}
 
 
 
@@ -456,6 +465,37 @@ currently it is only possible to control robots which use a \texttt{Twist} ROS m
 for control, which set desired linear and rotational
 velocities.
 
+\begin{margintable}
+\begin{tabular}{rl}
+prim $\rightarrow$ & rest  \\
+     $|$ & forward \\
+     $|$ & left  \\
+     $|$ & halfleft\\
+     $|$ & right \\
+     $|$ & halfright \\
+\\
+movement $\rightarrow$ & prim \\
+         $|$ & movement movement \\
+         $|$ & [movement] \\
+         $|$ & (movement) \\
+         $|$ & movement $||$ movement  \\
+         $|$ & transformer movement \\
+\\
+transformer $\rightarrow$ & reverse \\
+  $|$ & retrograde \\
+  $|$ & repeat n \\
+  $|$ & reflect ax \\
+\\
+exp $\rightarrow$ & rs \$ movement \\
+    $|$ & var $=$ movement
+\end{tabular}
+
+\caption{The grammar of Improv programs. \texttt{exp} represents top-level
+expressions, which execute movements on robot(s), or store movements in
+variables. \texttt{movement}s are converted into ROS message streams and can be
+composed and grouped in multiple ways. \label{grammar}}
+\end{margintable}
+
 
 \section{Domain Specific Language (DSL)
 Design}\label{domain-specific-language-design}
@@ -469,32 +509,6 @@ translation to Haskell and the resulting messages sent over the ROS network,
 which will be described further in Section \ref{interfacing-with-ros}.
 
 
-\begin{figure}[h]
-\centering
-\begin{verbatim}
-prim = rest  | forward 
-     | left  | halfleft
-     | right | halfright
-
-transformer = reverse  | retrograde 
-            | repeat n | reflect ax
-
-movement = prim
-         | movement movement
-         | [movement]
-         | (movement)
-         | movement || movement 
-         | transformer movement
-
-exp = rs $ movement
-    | var = movement
-    | beat n
-\end{verbatim}
-\caption{The grammar of Improv programs. \texttt{exp} represents top-level
-expressions, which execute movements on robot(s), or store movements in
-variables. \texttt{movement}s are converted into ROS message streams and can be
-composed and grouped in multiple ways. \label{grammar}}
-\end{figure}
 
 Figure \ref{grammar} shows the grammar of the \emph{Improv} language.
 The language supports primitives such as \texttt{forward} and \texttt{right}
