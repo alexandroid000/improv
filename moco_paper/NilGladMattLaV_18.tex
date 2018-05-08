@@ -85,7 +85,7 @@ robotics</concept_desc>
 \begin{abstract}
 
 Often, people such as educators, artists, and researchers wish to quickly
-generate robot motion, but the tools available for programming robots can be difficult to
+generate robot motion. However, current toolchains for programming robots can be difficult to
 learn, especially for people without technical training.
 This paper presents the \emph{Improv} system, a programming language for
 high-level description of robot motion with immediate visualization of the
@@ -93,9 +93,9 @@ resulting motion on a physical or simulated robot. \emph{Improv} includes a
 "live coding" wrapper for ROS (``Robot Operating
 System", an open-source robot software framework which is widely used in
 academia and industry, and integrated with many commercially available robots).
-\emph{Improv} also includes a domain-specific language, which is compiled to ROS
-messages. The language is inspired by choreographic techniques, which allows for
-several ways of composing and transforming movements in space and time. In this
+Commands in \emph{Improv} are compiled to ROS
+messages. The language is inspired by choreographic techniques, and allows the
+user to compose and transform movements in space and time. In this
 paper, we present our work on \emph{Improv} so far, as well as the design decisions made
 throughout its creation.
 \end{abstract}
@@ -116,7 +116,7 @@ human-robot interaction}
 
 \begin{marginfigure}
 \centering
-\includegraphics[width=\marginparwidth]{/home/alli/common/figs/flowchart.png}
+\includegraphics[width=\marginparwidth]{flowchart.png}
 \caption{An illustration of how user input, written to a text file, is
 converted into a ROS node which publishes messages to a simulator or physical 
 robot.
@@ -132,8 +132,8 @@ robot.
 Robotic technology is becoming more commonly integrated into settings outside of
 the factory - including classrooms \cite{mataric2004robotics} and art
 installations \cite{kukaDance2017}. In many of these cases, users often do not
-have extensive programming experience, and the tasks required of the robots
-require only specific motion patters and perhaps simple reactivity. The time is
+have extensive programming experience, and only require the robot to follow specific motion
+patterns and perhaps have simple reactivity. The time is
 ripe for \emph{choreographic} methods of programming robots, which
 match our mental models of motion.
 
@@ -148,7 +148,8 @@ forward and left:
 \begin{margintable}
 \begin{tabular}{l}
 \texttt{if \_\_name$\_\_ ==$ '\_\_main\_\_':} \\ 
-\MyIndent \texttt{pub = rospy.Publisher('turtle1/cmd\_vel',Twist)} \\ 
+\MyIndent \texttt{pub = rospy.Publisher(} \\
+\MyIndent \MyIndent \texttt{'turtle1/cmd\_vel',Twist)} \\ 
 \MyIndent \texttt{rospy.init\_node('publisher\_node')} \\ 
 \MyIndent \texttt{loop\_rate = rospy.Rate(5)} \\ 
 \MyIndent \texttt{while not rospy.is\_shutdown():} \\ 
@@ -175,9 +176,9 @@ where $||$ is an operator which combines movements in parallel.
 \end{sidebar}
 
 Currently, many commercially available robots are programmed through interfaces
-created for each specific robot by the manufacturer (which may be graphical,
-text-based, or physically interactive) or through ROS (the "Robot Operating
-System," ) \cite{rossano2013easy} \cite{quigley2009ros}. We target an improved user experience for ROS, because it is a
+(which may be graphical, text-based, or physically interactive)
+created for each specific robot by the manufacturer or through ROS (the "Robot Operating
+System") \cite{rossano2013easy} \cite{quigley2009ros}. We target an improved user experience for ROS, because it is a
 free and open source toolset which is compatible with many platforms. \emph{Improv} is essentially a wrapper around ROS. This gives us the
 benefits of ROS's infrastructure, but we exchange the powerful low-level control
 available in most ROS client libraries for the simplicity of a high-level
@@ -213,8 +214,8 @@ languages for generating music and visuals, which are often associated with the
 algorave performance movement \cite{collins2014algorave}. In particular, the
 programming language TidalCycles \cite{mclean2010tidal} has had a strong
 influence on the structure of the \emph{Improv} programming language, both 
-syntactically and in how relative timing of events is managed. 
-\emph{Al Jazari} is a live coding installation which uses a simple
+syntactically and in how relative timing of events is managed. Also worth
+mentioning is \emph{Al Jazari}, a live coding installation which uses a simple
 graphical language to allow people to control robots (in simulation)
 \cite{mclean2010visualisation}. The language includes conditionals based on
 external state and communication between the bots. The program state of the
@@ -231,8 +232,7 @@ users flexibility to choose their editor of preference.
 Instead of creating an interface for each desired
 editor, we use a shell script which monitors the file that the user is
 editing for changes. Every time the user saves changes to the file, the
-program detects a change, interprets the user's new program, and resets
-the simulator and ROS node. This design choice circumvents the need to
+program detects a change, interprets the user's new program, and restarts the ROS node. This design choice circumvents the need to
 interface with specific editors. While we have not done a formal timing
 analysis, the delay is a small fraction of a second and not noticeably longer than the
 time it takes to look from the text editor to the simulator.
@@ -305,7 +305,7 @@ improvisation for choreography and performance \cite{forsythe2004improvisation}.
 Improvisation helps the movement designer understand and explore the plethora of
 movement options that are available at any given time. This is especially useful
 in robotics applications as the field starts to explore stylized movement and
-the incorporation of robotic technology into homes and artistic performances. 
+the incorporation of robotic technology into homes and art installations. 
 
 However, the time taken to set up environments and write, compile and
 execute code often negates the benefits of improvisational practice when done
@@ -317,8 +317,8 @@ have
 
 \begin{itemize}
 \item a minimal ``representational
-distance" between the user's mental model of the movement they want to try and
-the description in code, so there is minimal frustration and time wasted in
+distance" between the user's mental model of the movement and
+its description in code, so there is minimal frustration and time wasted in
 translation,
 \item a near-imperceptible delay between writing instructions to the robot and
 seeing the effect of those instructions, and
@@ -366,8 +366,7 @@ obtain feedback on `How am I doing'?
 To specifically address these design criteria, we have
 included the following features in \emph{Improv}.
 These features are intended to give the user a sense of \emph{flow}: a
-mental state of complete absorption in the activity. The fewer distractions and
-focus changes in the activity, whether it is improvisational dance or coding,
+mental state of complete absorption in the activity. The fewer distractions in the activity, whether it is improvisational dance or coding,
 the higher the chance of the participant becoming completely engaged and
 accessing all the available creative options.
 
@@ -432,18 +431,29 @@ Natural Language & Code & Comments \\
 
 \emph{move forward for one beat, turn right for one beat, move forward for one beat}  & \texttt{forward right forward} & performed in three beats \\
 
+\hline
+
 \emph{move forward, right, and forward, all in one beat} & \texttt{[forward right forward]} &
 performed in one beat - same spatial extent, but faster \\
 
+\hline
+
 \emph{curve right and forward} & \texttt{forward \textbar{}\textbar{} right} & \\
+
+\hline
 
 %\emph{move forward four times} & \texttt{repeat 4 forward} & \\
 
-\emph{do movement \texttt{x}, reflected across saggital plane} & \texttt{reflect YZ x} & \\
+
+%\emph{do movement \texttt{x}, reflected across saggital plane} & \texttt{reflect YZ x} & \\
 %
+%\hline
+
 \emph{reverse the movement "forward right left"} & \texttt{reverse (forward right left)} & same as \texttt{left\ right\ forward} - reverses the order of the primitives \\
 %
-%\emph{retrograde the movement "forward right left"} & \texttt{retrograde (forward right left)} & same as \texttt{right\ left\ backward} - reverses entire trajectory \\
+\hline
+
+\emph{retrograde the movement "forward right left"} & \texttt{retrograde (forward right left)} & same as \texttt{right\ left\ backward} - reverses entire trajectory \\
 
 \end{tabular}
 
@@ -696,7 +706,8 @@ physical simulator. We have included a video as supplemental information of
 \emph{Improv} being used with Gazebo.
 
 
-One major limitation of \emph{Improv} is that does not incorporate sensor
+One major limitation of \emph{Improv} is that the language does not allow the
+user to incorporate sensor
 feedback. An interesting future
 extension of this work would be to interface the
 \emph{Improv} DSL with ROS subscribers and include the ability to react to sensor readings and environment state.
@@ -705,9 +716,9 @@ simple, Roomba-like robots by setting linear and rotational
 velocities.
 Extending \emph{Improv} to more articulated robots requires defining the
 conversion from \emph{Improv} programs to ROS messages in Haskell, and may be
-especially tricky for robots with many body parts and degrees of freedom.
-Future work will involve extending the language and interface
-to more complicated robots and refactoring the code base as necessary to make
+especially tedious for robots with many body parts and degrees of freedom.
+Future work will involve using ongoing work in the RAD Lab on compactly
+describing patterns of robot body organization to make
 this extension process more accessible.
 
 
@@ -728,19 +739,19 @@ us back from using technology in new ways; technology changes at a tremendous
 rate. Our willingness to explore beyond the constraints of our imagination has
 the greatest effect'' \cite{schiphorst}. We hope that the implementation
 described here opens up new avenues of imagination for how robot programming can
-become more easily integrated into different forms of human expression.
+become more easily integrated into different forms of human movement expression.
 
 \section{Acknowledgements}
 
 
-This work is partially funded by \emph{[redacted]} and DARPA grant \#D16AP00001.
+This work is partially funded by NSF grant \#1328018 and DARPA grant \#D16AP00001.
 
 
 \bibliographystyle{ACM-Reference-Format}
-\bibliography{/home/alli/common/refs}
+\bibliography{refs}
 
 \begin{marginfigure}
-    \includegraphics[width=\marginparwidth]{/home/alli/common/figs/termturtle.png}
+    \includegraphics[width=\marginparwidth]{termturtle.png}
     %\captionof{figure}{A program as it appears in vim, a terminal-based text editor, with the
     % resulting movement in TurtleSim on two
     %simulated turtles.\label{vim}}
