@@ -15,6 +15,8 @@ Dependencies
 Install Instructions
 -------------------
 
+0. On a Linux computer (ideally Ubuntu distro), install dependencies above.
+
 In a command line:
 
 1. Clone repository (`git clone https://github.com/alexandroid000/improv.git`)
