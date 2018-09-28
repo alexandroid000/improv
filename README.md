@@ -9,7 +9,8 @@ Dependencies
 -------------
 
 -   [Stack (for managing Haskell dependencies and installation). Click here for installation instructions.](https://docs.haskellstack.org/en/stable/README/)
--   ROS + TurtleSim or Gazebo (tested with indigo and kinetic)
+-   ROS (Robot Operating System). [Click here for install instructions](http://wiki.ros.org/ROS/Installation). We recommend installing Kinetic version or Indigo.
+-   TurtleSim (will come with a full desktop ROS installation) or Gazebo ([click here for install instructions](http://gazebosim.org/tutorials?cat=install))
 -   some kind of shell (tested with zsh and bash)
 
 Install Instructions
@@ -29,7 +30,10 @@ Getting Started
 ---------------
 
 Run the script `improv.sh` in a terminal. If all goes well, this will launch
-roscore, the simulator, and start monitoring the user input file.
+a ROS server, the simulator, and start monitoring the user input file.
+
+If all does not go well, please check that you've installed all dependencies
+and submit a bug report!
 
 Edit the file `user_instructions.txt` in whatever text editor you prefer. When
 this file is saved, the monitoring script will detect a change and interpret the
