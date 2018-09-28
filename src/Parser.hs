@@ -23,18 +23,33 @@ data Tree = Node [Tree]
     deriving (Show,Eq)
 
 
-left = Prim (A Lef Quarter) 1
-halfleft = Prim (A Lef Eighth) 1
-right = Prim (A Righ Quarter) 1
+left      = Prim (A Lef Quarter) 1
+halfleft  = Prim (A Lef Eighth) 1
+right     = Prim (A Righ Quarter) 1
 halfright = Prim (A Righ Eighth) 1
-forward = Prim (A Forward Full) 1
-rest = Prim (A Center Zero) 1
+forward   = Prim (A Forward Full) 1
+backward  = reverseDance forward
+rest      = Prim (A Center Zero) 1
 
-startCommands = Map.fromList [("left", left), ("right", right), ("halfleft", halfleft), ("halfright", halfright),
-                                ("forward", forward), ("rest", rest)]
+-- motion primitives
+startCommands = Map.fromList [
+                    ("left", left)
+                  , ("right", right)
+                  , ("halfleft", halfleft)
+                  , ("halfright", halfright)
+                  , ("forward", forward)
+                  , ("backward", backward)
+                  , ("rest", rest)]
+
 multiFuncs = Map.fromList [("approach", approach)] -- Dictionary of names to multiFuncs
 axes = Map.fromList [("XZ", XZ), ("XY", XY), ("YZ", YZ)]
-channelNames = Map.fromList [("turtle1", core), ("turtle2", core), ("turtle3", core), ("turtle4", core)] -- Dictionary of channel names to OurRobots
+
+-- Dictionary of channel names to OurRobots
+channelNames = Map.fromList [
+                ("turtle1", core)
+              , ("turtle2", core)
+              , ("turtle3", core)
+              , ("turtle4", core)]
 
 ---------------------------------------------------------------------------------------------
 approach :: [OurRobot] -> Either String [OurDance]
