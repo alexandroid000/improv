@@ -28,7 +28,7 @@ halfleft  = Prim (A Lef Eighth) 1
 right     = Prim (A Righ Quarter) 1
 halfright = Prim (A Righ Eighth) 1
 forward   = Prim (A Forward Full) 1
-backward  = reverseDance forward
+backward  = Prim (A Backward Full) 1
 rest      = Prim (A Center Zero) 1
 
 -- motion primitives
@@ -67,7 +67,7 @@ convertFile doc = case parse parseDoc "" doc of
 convertLines :: Tree -> Map String OurDance -> Integer ->
                     S.State CommandState (Either ParseErr (Map String OurDance))
 convertLines (Node []) channels linenum = return $ Right channels
-	where test = parL [(right core), (forward core)]
+    where test = parL [(right core), (forward core)]
 convertLines (Node (line:lines)) channels linenum = 
     let createErr err = return $ Left $ ParseErr linenum err in
     do commandDefs <- get
@@ -75,25 +75,26 @@ convertLines (Node (line:lines)) channels linenum =
             Node [] -> convertLines (Node lines) channels (linenum + 1) -- Empty line
             Node [Leaf "=", Leaf var, body] -> do modify $ Map.insert var body -- Variable assignment
                                                   convertLines (Node lines) channels (linenum + 1)
-            Node [Leaf "$", Node vars, body] -> case mapM (\(Leaf var) -> Map.lookup var channelNames) vars of -- Recurse over all channels
+            Node [Leaf "$", Node vars, body] -> case mapM (\(Leaf var) -> Map.lookup var channelNames) vars of
                 Just robos -> case evalState (convertCommands robos body) commandDefs of
                     Right dances -> convertLines (Node lines) 
                         (Map.unionWith (\oldDance -> \newDance -> oldDance :+: newDance) (Map.fromList (zip (map (\(Leaf var) -> var) vars) dances)) channels) (linenum + 1)
                     Left err -> createErr err
-                Nothing -> createErr $ "Could not find robot with given name."
+                Nothing -> createErr $ "Could not find robot with given name in line " ++ show linenum
             otherwise -> createErr $ "Could not pattern match syntax tree: " ++ show line
 
                
 convertCommands :: [OurRobot] -> Tree -> S.State CommandState (Either String [OurDance])
 ----Single command lookup----
-convertCommands robos (Leaf commandStr) = do commandDefs <- get --TEST CODE!!!!
-                                             case Map.lookup commandStr startCommands of
-                                                  Just command -> return $ Right $ map command robos
-                                                  Nothing -> case Map.lookup commandStr commandDefs of
-                                                                  Just commands -> convertCommands robos commands
-                                                                  Nothing -> case Map.lookup commandStr multiFuncs of
-                                                                      Just multiFunc -> return $ multiFunc robos
-                                                                      Nothing -> return $ Left ("Invalid command: " ++ commandStr)
+convertCommands robos (Leaf commandStr) =
+    do commandDefs <- get --TEST CODE!!!!
+       case Map.lookup commandStr startCommands of
+            Just command -> return $ Right $ map command robos
+            Nothing -> case Map.lookup commandStr commandDefs of
+                Just commands -> convertCommands robos commands
+                Nothing -> case Map.lookup commandStr multiFuncs of
+                    Just multiFunc -> return $ multiFunc robos
+                    Nothing -> return $ Left ("Invalid command: " ++ commandStr)
 ----Node base cases----                                   
 convertCommands robos (Node []) = return $ Right $ take (length robos) $ repeat Skip
 ----repeat commands or repeat n commands
