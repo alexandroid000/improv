@@ -3,9 +3,9 @@ module Main where
 import Test.Hspec
 import Test.QuickCheck
 
-
 import Improv
 import RobotSpec
+import TestParser
 
 robot = Link (O 0) 0
 left = A Lef Quarter
@@ -44,4 +44,5 @@ main = hspec $ do
              (Prim (A Righ Zero) 3 (Link (O 0) 0)   :+:
              (Prim (A Lef Quarter) 3 (Link (O 0) 0) :+:
               Skip))]
+    parser_tests
 --    print $ mconcat $ map SeqDance dance
