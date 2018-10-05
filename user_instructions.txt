@@ -1,0 +1,5 @@
+beat 30
+
+x = [left right forward left right forward forward]
+y = left right forward
+turtle1 $ forward right left
