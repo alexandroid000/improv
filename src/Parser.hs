@@ -52,7 +52,7 @@ convertFile doc = case parse parseDoc "" doc of
     Right (Node ((Leaf beatStr):tree)) -> aux (read beatStr :: Int) (Node tree)
     Left err -> Left $ ParseErr (-1) (show err) -- Handling parsec error
     where aux beat tree = evalState (convertLines tree (Map.fromList []) 1) (Map.fromList []) >>= 
-              return . Map.map moveCommands . Map.map danceToMsg . Map.map (changeTiming ((fromIntegral beat) / 60.0)) . Map.map (rest core :+:)
+              return . Map.map moveCommands . Map.map danceToMsg . Map.map (changeTiming ((fromIntegral beat) / 60.0)) -- . Map.map (rest core :+:)
 
 convertLines :: Tree -> Map String OurDance -> Integer ->
                     S.State CommandState (Either ParseErr (Map String OurDance))
