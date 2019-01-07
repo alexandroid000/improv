@@ -1,0 +1,14 @@
+Configuring unordered-containers-0.2.7.2...
+Building unordered-containers-0.2.7.2...
+Preprocessing library unordered-containers-0.2.7.2...
+[1 of 8] Compiling Data.HashMap.UnsafeShift ( Data/HashMap/UnsafeShift.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/HashMap/UnsafeShift.o )
+[2 of 8] Compiling Data.HashMap.Unsafe ( Data/HashMap/Unsafe.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/HashMap/Unsafe.o )
+[3 of 8] Compiling Data.HashMap.PopCount ( Data/HashMap/PopCount.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/HashMap/PopCount.o )
+[4 of 8] Compiling Data.HashMap.Array ( Data/HashMap/Array.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/HashMap/Array.o )
+[5 of 8] Compiling Data.HashMap.Base ( Data/HashMap/Base.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/HashMap/Base.o )
+[6 of 8] Compiling Data.HashMap.Lazy ( Data/HashMap/Lazy.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/HashMap/Lazy.o )
+[7 of 8] Compiling Data.HashSet     ( Data/HashSet.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/HashSet.o )
+[8 of 8] Compiling Data.HashMap.Strict ( Data/HashMap/Strict.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/HashMap/Strict.o )
+Installing library in
+/home/thomas/.stack/snapshots/x86_64-linux/lts-8.5/8.0.2/lib/x86_64-linux-ghc-8.0.2/unordered-containers-0.2.7.2-8AmrySQXjRGF6VciYs51fM
+Registering unordered-containers-0.2.7.2...

@@ -1,0 +1,13 @@
+Configuring storable-record-0.0.3.1...
+Building storable-record-0.0.3.1...
+Preprocessing library storable-record-0.0.3.1...
+[1 of 7] Compiling Foreign.Storable.Newtype ( src/Foreign/Storable/Newtype.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Foreign/Storable/Newtype.o )
+[2 of 7] Compiling Foreign.Storable.FixedArray ( src/Foreign/Storable/FixedArray.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Foreign/Storable/FixedArray.o )
+[3 of 7] Compiling Foreign.Storable.Record ( src/Foreign/Storable/Record.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Foreign/Storable/Record.o )
+[4 of 7] Compiling Foreign.Storable.RecordMinimalSize ( src/Foreign/Storable/RecordMinimalSize.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Foreign/Storable/RecordMinimalSize.o )
+[5 of 7] Compiling Foreign.Storable.RecordReaderPtr ( src/Foreign/Storable/RecordReaderPtr.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Foreign/Storable/RecordReaderPtr.o )
+[6 of 7] Compiling Foreign.Storable.Traversable ( src/Foreign/Storable/Traversable.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Foreign/Storable/Traversable.o )
+[7 of 7] Compiling Foreign.Storable.TraversableUnequalSizes ( src/Foreign/Storable/TraversableUnequalSizes.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Foreign/Storable/TraversableUnequalSizes.o )
+Installing library in
+/home/thomas/.stack/snapshots/x86_64-linux/lts-8.5/8.0.2/lib/x86_64-linux-ghc-8.0.2/storable-record-0.0.3.1-ItZtoVhInjCK54XumJjnAY
+Registering storable-record-0.0.3.1...

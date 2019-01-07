@@ -1,0 +1,14 @@
+Configuring NumInstances-1.4...
+Warning: 'ghc-options: -prof' is not necessary and will lead to problems when
+used on a library. Use the configure flag --enable-library-profiling and/or
+--enable-profiling.
+Building NumInstances-1.4...
+Preprocessing library NumInstances-1.4...
+[1 of 5] Compiling Data.NumInstances.Util ( src/Data/NumInstances/Util.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/NumInstances/Util.o )
+[2 of 5] Compiling Data.NumInstances.Tuple ( src/Data/NumInstances/Tuple.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/NumInstances/Tuple.o )
+[3 of 5] Compiling Data.NumInstances.PreRequisites ( src-relaxed-Num/Data/NumInstances/PreRequisites.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/NumInstances/PreRequisites.o )
+[4 of 5] Compiling Data.NumInstances.Function ( src/Data/NumInstances/Function.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/NumInstances/Function.o )
+[5 of 5] Compiling Data.NumInstances ( src/Data/NumInstances.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/NumInstances.o )
+Installing library in
+/home/thomas/.stack/snapshots/x86_64-linux/lts-8.5/8.0.2/lib/x86_64-linux-ghc-8.0.2/NumInstances-1.4-DChjG3nybAvEzjDFb225Gz
+Registering NumInstances-1.4...

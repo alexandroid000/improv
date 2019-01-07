@@ -1,0 +1,14 @@
+Configuring vector-space-0.10.4...
+Building vector-space-0.10.4...
+Preprocessing library vector-space-0.10.4...
+[1 of 8] Compiling Data.AdditiveGroup ( src/Data/AdditiveGroup.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/AdditiveGroup.o )
+[2 of 8] Compiling Data.VectorSpace ( src/Data/VectorSpace.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/VectorSpace.o )
+[3 of 8] Compiling Data.AffineSpace ( src/Data/AffineSpace.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/AffineSpace.o )
+[4 of 8] Compiling Data.Basis       ( src/Data/Basis.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Basis.o )
+[5 of 8] Compiling Data.LinearMap   ( src/Data/LinearMap.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/LinearMap.o )
+[6 of 8] Compiling Data.Maclaurin   ( src/Data/Maclaurin.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Maclaurin.o )
+[7 of 8] Compiling Data.Derivative  ( src/Data/Derivative.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Derivative.o )
+[8 of 8] Compiling Data.Cross       ( src/Data/Cross.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Cross.o )
+Installing library in
+/home/thomas/.stack/snapshots/x86_64-linux/lts-8.5/8.0.2/lib/x86_64-linux-ghc-8.0.2/vector-space-0.10.4-K1jh5A5NiHbFdG9bAV0KZx
+Registering vector-space-0.10.4...

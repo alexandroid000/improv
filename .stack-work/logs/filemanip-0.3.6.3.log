@@ -1,0 +1,64 @@
+Configuring filemanip-0.3.6.3...
+Building filemanip-0.3.6.3...
+Preprocessing library filemanip-0.3.6.3...
+[1 of 4] Compiling System.FilePath.Manip ( System/FilePath/Manip.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/System/FilePath/Manip.o )
+[2 of 4] Compiling System.FilePath.GlobPattern ( System/FilePath/GlobPattern.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/System/FilePath/GlobPattern.o )
+
+System/FilePath/GlobPattern.hs:149:22: warning: [-Wname-shadowing]
+    This binding for ‘g’ shadows the existing binding
+      bound at System/FilePath/GlobPattern.hs:148:24
+[3 of 4] Compiling System.FilePath.Glob ( System/FilePath/Glob.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/System/FilePath/Glob.o )
+[4 of 4] Compiling System.FilePath.Find ( System/FilePath/Find.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/System/FilePath/Find.o )
+
+System/FilePath/Find.hs:227:20: warning: [-Wname-shadowing]
+    This binding for ‘depth’ shadows the existing binding
+      defined at System/FilePath/Find.hs:195:1
+
+System/FilePath/Find.hs:231:9: warning: [-Wname-shadowing]
+    This binding for ‘traverse’ shadows the existing binding
+      imported from ‘Prelude’ at System/FilePath/Find.hs:39:8-27
+      (and originally defined in ‘Data.Traversable’)
+
+System/FilePath/Find.hs:231:22: warning: [-Wname-shadowing]
+    This binding for ‘depth’ shadows the existing binding
+      defined at System/FilePath/Find.hs:195:1
+
+System/FilePath/Find.hs:238:25: warning: [-Wname-shadowing]
+    This binding for ‘depth’ shadows the existing binding
+      defined at System/FilePath/Find.hs:195:1
+
+System/FilePath/Find.hs:274:15: warning: [-Wname-shadowing]
+    This binding for ‘state’ shadows the existing binding
+      bound at System/FilePath/Find.hs:271:38
+
+System/FilePath/Find.hs:274:21: warning: [-Wname-shadowing]
+    This binding for ‘path’ shadows the existing binding
+      bound at System/FilePath/Find.hs:271:44
+
+System/FilePath/Find.hs:274:26: warning: [-Wname-shadowing]
+    This binding for ‘depth’ shadows the existing binding
+      defined at System/FilePath/Find.hs:195:1
+
+System/FilePath/Find.hs:279:9: warning: [-Wname-shadowing]
+    This binding for ‘traverse’ shadows the existing binding
+      imported from ‘Prelude’ at System/FilePath/Find.hs:39:8-27
+      (and originally defined in ‘Data.Traversable’)
+
+System/FilePath/Find.hs:279:18: warning: [-Wname-shadowing]
+    This binding for ‘state’ shadows the existing binding
+      bound at System/FilePath/Find.hs:271:38
+
+System/FilePath/Find.hs:279:28: warning: [-Wname-shadowing]
+    This binding for ‘depth’ shadows the existing binding
+      defined at System/FilePath/Find.hs:195:1
+
+System/FilePath/Find.hs:282:53: warning: [-Wname-shadowing]
+    This binding for ‘state’ shadows the existing binding
+      bound at System/FilePath/Find.hs:279:18
+
+System/FilePath/Find.hs:284:25: warning: [-Wname-shadowing]
+    This binding for ‘path’ shadows the existing binding
+      bound at System/FilePath/Find.hs:271:44
+Installing library in
+/home/thomas/.stack/snapshots/x86_64-linux/lts-8.5/8.0.2/lib/x86_64-linux-ghc-8.0.2/filemanip-0.3.6.3-39GGNCiHahb1wSL6fkG6wy
+Registering filemanip-0.3.6.3...

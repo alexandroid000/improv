@@ -1,0 +1,510 @@
+Configuring numeric-prelude-0.4.2...
+Building numeric-prelude-0.4.2...
+Preprocessing library numeric-prelude-0.4.2...
+[ 1 of 97] Compiling NumericPrelude.List ( src/NumericPrelude/List.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/NumericPrelude/List.o )
+[ 2 of 97] Compiling NumericPrelude.Elementwise ( src/NumericPrelude/Elementwise.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/NumericPrelude/Elementwise.o )
+[ 3 of 97] Compiling NumericPrelude.Base ( src/NumericPrelude/Base.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/NumericPrelude/Base.o )
+[ 4 of 97] Compiling MathObj.Permutation ( src/MathObj/Permutation.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/MathObj/Permutation.o )
+[ 5 of 97] Compiling MathObj.Permutation.Table ( src/MathObj/Permutation/Table.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/MathObj/Permutation/Table.o )
+[ 6 of 97] Compiling Algebra.RealRing98 ( src/Algebra/RealRing98.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/RealRing98.o )
+[ 7 of 97] Compiling Algebra.Laws     ( src/Algebra/Laws.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/Laws.o )
+[ 8 of 97] Compiling Algebra.Indexable ( src/Algebra/Indexable.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/Indexable.o )
+[ 9 of 97] Compiling Algebra.EqualityDecision ( src/Algebra/EqualityDecision.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/EqualityDecision.o )
+[10 of 97] Compiling Algebra.OrderDecision ( src/Algebra/OrderDecision.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/OrderDecision.o )
+[11 of 97] Compiling Algebra.DimensionTerm ( src/Algebra/DimensionTerm.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/DimensionTerm.o )
+[12 of 97] Compiling Algebra.Additive ( src/Algebra/Additive.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/Additive.o )
+[13 of 97] Compiling Algebra.Ring     ( src/Algebra/Ring.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/Ring.o )
+[14 of 97] Compiling Algebra.Differential ( src/Algebra/Differential.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/Differential.o )
+[15 of 97] Compiling Algebra.Monoid   ( src/Algebra/Monoid.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/Monoid.o )
+[16 of 97] Compiling Algebra.NonNegative ( src/Algebra/NonNegative.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/NonNegative.o )
+[17 of 97] Compiling Algebra.RightModule ( src/Algebra/RightModule.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/RightModule.o )
+[18 of 97] Compiling Algebra.Vector   ( src/Algebra/Vector.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/Vector.o )
+[19 of 97] Compiling Algebra.ZeroTestable ( src/Algebra/ZeroTestable.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/ZeroTestable.o )
+[20 of 97] Compiling Algebra.IntegralDomain ( src/Algebra/IntegralDomain.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/IntegralDomain.o )
+[21 of 97] Compiling Algebra.Units    ( src/Algebra/Units.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/Units.o )
+[22 of 97] Compiling Algebra.PrincipalIdealDomain ( src/Algebra/PrincipalIdealDomain.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/PrincipalIdealDomain.o )
+[23 of 97] Compiling MathObj.Algebra  ( src/MathObj/Algebra.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/MathObj/Algebra.o )
+[24 of 97] Compiling MathObj.Monoid   ( src/MathObj/Monoid.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/MathObj/Monoid.o )
+[25 of 97] Compiling Algebra.Absolute ( src/Algebra/Absolute.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/Absolute.o )
+[26 of 97] Compiling Algebra.RealIntegral ( src/Algebra/RealIntegral.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/RealIntegral.o )
+[27 of 97] Compiling Number.Ratio     ( src/Number/Ratio.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Number/Ratio.o )
+[28 of 97] Compiling Algebra.Field    ( src/Algebra/Field.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/Field.o )
+[29 of 97] Compiling Algebra.ToRational ( src/Algebra/ToRational.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/ToRational.o )
+
+src/Algebra/ToRational.hs:75:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.realToField :: Integer  -> Float " may never fire
+      because ‘realToField’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘realToField’
+
+src/Algebra/ToRational.hs:76:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.realToField :: Int      -> Float " may never fire
+      because ‘realToField’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘realToField’
+
+src/Algebra/ToRational.hs:77:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.realToField :: Int8     -> Float " may never fire
+      because ‘realToField’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘realToField’
+
+src/Algebra/ToRational.hs:78:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.realToField :: Int16    -> Float " may never fire
+      because ‘realToField’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘realToField’
+
+src/Algebra/ToRational.hs:79:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.realToField :: Int32    -> Float " may never fire
+      because ‘realToField’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘realToField’
+
+src/Algebra/ToRational.hs:80:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.realToField :: Int64    -> Float " may never fire
+      because ‘realToField’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘realToField’
+
+src/Algebra/ToRational.hs:81:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.realToField :: Word     -> Float " may never fire
+      because ‘realToField’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘realToField’
+
+src/Algebra/ToRational.hs:82:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.realToField :: Word8    -> Float " may never fire
+      because ‘realToField’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘realToField’
+
+src/Algebra/ToRational.hs:83:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.realToField :: Word16   -> Float " may never fire
+      because ‘realToField’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘realToField’
+
+src/Algebra/ToRational.hs:84:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.realToField :: Word32   -> Float " may never fire
+      because ‘realToField’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘realToField’
+
+src/Algebra/ToRational.hs:85:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.realToField :: Word64   -> Float " may never fire
+      because ‘realToField’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘realToField’
+
+src/Algebra/ToRational.hs:86:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.realToField :: Float    -> Float " may never fire
+      because ‘realToField’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘realToField’
+
+src/Algebra/ToRational.hs:87:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.realToField :: Double   -> Float " may never fire
+      because ‘realToField’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘realToField’
+
+src/Algebra/ToRational.hs:88:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.realToField :: Integer  -> Double" may never fire
+      because ‘realToField’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘realToField’
+
+src/Algebra/ToRational.hs:89:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.realToField :: Int      -> Double" may never fire
+      because ‘realToField’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘realToField’
+
+src/Algebra/ToRational.hs:90:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.realToField :: Int8     -> Double" may never fire
+      because ‘realToField’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘realToField’
+
+src/Algebra/ToRational.hs:91:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.realToField :: Int16    -> Double" may never fire
+      because ‘realToField’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘realToField’
+
+src/Algebra/ToRational.hs:92:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.realToField :: Int32    -> Double" may never fire
+      because ‘realToField’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘realToField’
+
+src/Algebra/ToRational.hs:93:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.realToField :: Int64    -> Double" may never fire
+      because ‘realToField’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘realToField’
+
+src/Algebra/ToRational.hs:94:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.realToField :: Word     -> Double" may never fire
+      because ‘realToField’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘realToField’
+
+src/Algebra/ToRational.hs:95:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.realToField :: Word8    -> Double" may never fire
+      because ‘realToField’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘realToField’
+
+src/Algebra/ToRational.hs:96:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.realToField :: Word16   -> Double" may never fire
+      because ‘realToField’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘realToField’
+
+src/Algebra/ToRational.hs:97:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.realToField :: Word32   -> Double" may never fire
+      because ‘realToField’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘realToField’
+
+src/Algebra/ToRational.hs:98:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.realToField :: Word64   -> Double" may never fire
+      because ‘realToField’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘realToField’
+
+src/Algebra/ToRational.hs:99:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.realToField :: Float    -> Double" may never fire
+      because ‘realToField’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘realToField’
+
+src/Algebra/ToRational.hs:100:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.realToField :: Double   -> Double" may never fire
+      because ‘realToField’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘realToField’
+[30 of 97] Compiling Algebra.ToInteger ( src/Algebra/ToInteger.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/ToInteger.o )
+
+src/Algebra/ToInteger.hs:58:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Integer -> Int" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:59:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Integer -> Integer" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:60:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Integer -> Float" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:61:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Integer -> Double" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:62:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Int -> Int" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:63:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Int -> Integer" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:64:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Int -> Float" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:65:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Int -> Double" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:66:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Int8 -> Int" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:67:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Int8 -> Integer" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:68:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Int8 -> Float" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:69:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Int8 -> Double" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:70:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Int16 -> Int" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:71:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Int16 -> Integer" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:72:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Int16 -> Float" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:73:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Int16 -> Double" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:74:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Int32 -> Int" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:75:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Int32 -> Integer" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:76:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Int32 -> Float" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:77:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Int32 -> Double" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:78:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Int64 -> Int" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:79:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Int64 -> Integer" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:80:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Int64 -> Float" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:81:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Int64 -> Double" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:82:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Word -> Int" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:83:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Word -> Integer" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:84:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Word -> Float" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:85:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Word -> Double" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:86:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Word8 -> Int" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:87:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Word8 -> Integer" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:88:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Word8 -> Float" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:89:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Word8 -> Double" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:90:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Word16 -> Int" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:91:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Word16 -> Integer" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:92:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Word16 -> Float" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:93:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Word16 -> Double" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:94:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Word32 -> Int" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:95:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Word32 -> Integer" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:96:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Word32 -> Float" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:97:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Word32 -> Double" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:98:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Word64 -> Int" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:99:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Word64 -> Integer" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:100:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Word64 -> Float" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+
+src/Algebra/ToInteger.hs:101:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.fromIntegral :: Word64 -> Double" may never fire
+      because ‘fromIntegral’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+[31 of 97] Compiling Algebra.Algebraic ( src/Algebra/Algebraic.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/Algebraic.o )
+[32 of 97] Compiling Algebra.Transcendental ( src/Algebra/Transcendental.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/Transcendental.o )
+[33 of 97] Compiling Algebra.Module   ( src/Algebra/Module.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/Module.o )
+[34 of 97] Compiling Algebra.ModuleBasis ( src/Algebra/ModuleBasis.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/ModuleBasis.o )
+[35 of 97] Compiling Algebra.RealRing ( src/Algebra/RealRing.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/RealRing.o )
+
+src/Algebra/RealRing.hs:328:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.roundSimple :: a -> Int8" may never fire
+      because ‘roundSimple’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘roundSimple’
+
+src/Algebra/RealRing.hs:333:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.roundSimple :: a -> Int16" may never fire
+      because ‘roundSimple’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘roundSimple’
+
+src/Algebra/RealRing.hs:338:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.roundSimple :: a -> Int32" may never fire
+      because ‘roundSimple’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘roundSimple’
+
+src/Algebra/RealRing.hs:343:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.roundSimple :: a -> Int64" may never fire
+      because ‘roundSimple’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘roundSimple’
+
+src/Algebra/RealRing.hs:348:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.roundSimple :: a -> Word" may never fire
+      because ‘roundSimple’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘roundSimple’
+
+src/Algebra/RealRing.hs:353:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.roundSimple :: a -> Word8" may never fire
+      because ‘roundSimple’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘roundSimple’
+
+src/Algebra/RealRing.hs:358:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.roundSimple :: a -> Word16" may never fire
+      because ‘roundSimple’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘roundSimple’
+
+src/Algebra/RealRing.hs:363:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.roundSimple :: a -> Word32" may never fire
+      because ‘roundSimple’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘roundSimple’
+
+src/Algebra/RealRing.hs:368:6: warning: [-Winline-rule-shadowing]
+    Rule "NP.roundSimple :: a -> Word64" may never fire
+      because ‘roundSimple’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘roundSimple’
+[36 of 97] Compiling Algebra.FloatingPoint ( src/Algebra/FloatingPoint.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/FloatingPoint.o )
+[37 of 97] Compiling Algebra.RealField ( src/Algebra/RealField.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/RealField.o )
+[38 of 97] Compiling Algebra.RealTranscendental ( src/Algebra/RealTranscendental.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/RealTranscendental.o )
+[39 of 97] Compiling NumericPrelude.List.Checked ( src/NumericPrelude/List/Checked.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/NumericPrelude/List/Checked.o )
+[40 of 97] Compiling NumericPrelude.List.Generic ( src/NumericPrelude/List/Generic.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/NumericPrelude/List/Generic.o )
+[41 of 97] Compiling Algebra.VectorSpace ( src/Algebra/VectorSpace.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/VectorSpace.o )
+[42 of 97] Compiling Algebra.DivisibleSpace ( src/Algebra/DivisibleSpace.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/DivisibleSpace.o )
+[43 of 97] Compiling MathObj.Wrapper.Haskell98 ( src/MathObj/Wrapper/Haskell98.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/MathObj/Wrapper/Haskell98.o )
+[44 of 97] Compiling NumericPrelude.Numeric ( src/NumericPrelude/Numeric.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/NumericPrelude/Numeric.o )
+[45 of 97] Compiling Algebra.Lattice  ( src/Algebra/Lattice.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/Lattice.o )
+[46 of 97] Compiling Algebra.NormedSpace.Euclidean ( src/Algebra/NormedSpace/Euclidean.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/NormedSpace/Euclidean.o )
+[47 of 97] Compiling Algebra.NormedSpace.Maximum ( src/Algebra/NormedSpace/Maximum.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/NormedSpace/Maximum.o )
+[48 of 97] Compiling Algebra.NormedSpace.Sum ( src/Algebra/NormedSpace/Sum.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/NormedSpace/Sum.o )
+[49 of 97] Compiling MathObj.DiscreteMap ( src/MathObj/DiscreteMap.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/MathObj/DiscreteMap.o )
+[50 of 97] Compiling Algebra.OccasionallyScalar ( src/Algebra/OccasionallyScalar.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/OccasionallyScalar.o )
+[51 of 97] Compiling MathObj.Wrapper.NumericPrelude ( src/MathObj/Wrapper/NumericPrelude.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/MathObj/Wrapper/NumericPrelude.o )
+[52 of 97] Compiling Number.DimensionTerm ( src/Number/DimensionTerm.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Number/DimensionTerm.o )
+[53 of 97] Compiling MathObj.Matrix   ( src/MathObj/Matrix.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/MathObj/Matrix.o )
+[54 of 97] Compiling MathObj.PartialFraction ( src/MathObj/PartialFraction.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/MathObj/PartialFraction.o )
+
+src/MathObj/PartialFraction.hs:210:13: warning: [-Wdeprecations]
+    In the use of ‘dropWhileRev’ (imported from Data.List.HT):
+    Deprecated: "Use dropWhile from Data.List.Reverse.StrictElement or Data.List.Reverse.StrictSpine instead"
+[55 of 97] Compiling MathObj.Permutation.CycleList ( src/MathObj/Permutation/CycleList.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/MathObj/Permutation/CycleList.o )
+[56 of 97] Compiling MathObj.Permutation.CycleList.Check ( src/MathObj/Permutation/CycleList/Check.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/MathObj/Permutation/CycleList/Check.o )
+[57 of 97] Compiling MathObj.Polynomial.Core ( src/MathObj/Polynomial/Core.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/MathObj/Polynomial/Core.o )
+
+src/MathObj/Polynomial/Core.hs:72:13: warning: [-Wdeprecations]
+    In the use of ‘dropWhileRev’ (imported from Data.List.HT):
+    Deprecated: "Use dropWhile from Data.List.Reverse.StrictElement or Data.List.Reverse.StrictSpine instead"
+[58 of 97] Compiling MathObj.Polynomial ( src/MathObj/Polynomial.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/MathObj/Polynomial.o )
+[59 of 97] Compiling MathObj.PowerSeries.Core ( src/MathObj/PowerSeries/Core.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/MathObj/PowerSeries/Core.o )
+[60 of 97] Compiling MathObj.PowerSeries ( src/MathObj/PowerSeries.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/MathObj/PowerSeries.o )
+[61 of 97] Compiling MathObj.PowerSeries2.Core ( src/MathObj/PowerSeries2/Core.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/MathObj/PowerSeries2/Core.o )
+[62 of 97] Compiling MathObj.PowerSeries.Example ( src/MathObj/PowerSeries/Example.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/MathObj/PowerSeries/Example.o )
+[63 of 97] Compiling MathObj.PowerSeries.DifferentialEquation ( src/MathObj/PowerSeries/DifferentialEquation.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/MathObj/PowerSeries/DifferentialEquation.o )
+[64 of 97] Compiling MathObj.PowerSeries2 ( src/MathObj/PowerSeries2.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/MathObj/PowerSeries2.o )
+[65 of 97] Compiling MathObj.PowerSeries.Mean ( src/MathObj/PowerSeries/Mean.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/MathObj/PowerSeries/Mean.o )
+[66 of 97] Compiling MathObj.PowerSum ( src/MathObj/PowerSum.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/MathObj/PowerSum.o )
+[67 of 97] Compiling MathObj.RefinementMask2 ( src/MathObj/RefinementMask2.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/MathObj/RefinementMask2.o )
+[68 of 97] Compiling MathObj.RootSet  ( src/MathObj/RootSet.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/MathObj/RootSet.o )
+[69 of 97] Compiling Number.Complex   ( src/Number/Complex.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Number/Complex.o )
+[70 of 97] Compiling Algebra.AffineSpace ( src/Algebra/AffineSpace.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Algebra/AffineSpace.o )
+[71 of 97] Compiling MathObj.LaurentPolynomial ( src/MathObj/LaurentPolynomial.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/MathObj/LaurentPolynomial.o )
+[72 of 97] Compiling Number.FixedPoint ( src/Number/FixedPoint.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Number/FixedPoint.o )
+
+src/Number/FixedPoint.hs:63:28: warning: [-Wdeprecations]
+    In the use of ‘dropWhileRev’ (imported from Data.List.HT):
+    Deprecated: "Use dropWhile from Data.List.Reverse.StrictElement or Data.List.Reverse.StrictSpine instead"
+[73 of 97] Compiling Number.FixedPoint.Check ( src/Number/FixedPoint/Check.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Number/FixedPoint/Check.o )
+[74 of 97] Compiling Number.NonNegative ( src/Number/NonNegative.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Number/NonNegative.o )
+[75 of 97] Compiling Number.NonNegativeChunky ( src/Number/NonNegativeChunky.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Number/NonNegativeChunky.o )
+[76 of 97] Compiling Number.OccasionallyScalarExpression ( src/Number/OccasionallyScalarExpression.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Number/OccasionallyScalarExpression.o )
+[77 of 97] Compiling Number.PartiallyTranscendental ( src/Number/PartiallyTranscendental.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Number/PartiallyTranscendental.o )
+[78 of 97] Compiling Number.Peano     ( src/Number/Peano.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Number/Peano.o )
+[79 of 97] Compiling Number.Physical.Unit ( src/Number/Physical/Unit.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Number/Physical/Unit.o )
+[80 of 97] Compiling Number.Physical  ( src/Number/Physical.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Number/Physical.o )
+[81 of 97] Compiling Number.Physical.UnitDatabase ( src/Number/Physical/UnitDatabase.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Number/Physical/UnitDatabase.o )
+[82 of 97] Compiling Number.Physical.Read ( src/Number/Physical/Read.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Number/Physical/Read.o )
+[83 of 97] Compiling Number.Physical.Show ( src/Number/Physical/Show.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Number/Physical/Show.o )
+[84 of 97] Compiling Number.Positional ( src/Number/Positional.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Number/Positional.o )
+[85 of 97] Compiling Number.Positional.Check ( src/Number/Positional/Check.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Number/Positional/Check.o )
+[86 of 97] Compiling Number.Quaternion ( src/Number/Quaternion.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Number/Quaternion.o )
+[87 of 97] Compiling Number.ResidueClass ( src/Number/ResidueClass.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Number/ResidueClass.o )
+[88 of 97] Compiling Number.GaloisField2p32m5 ( src/Number/GaloisField2p32m5.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Number/GaloisField2p32m5.o )
+[89 of 97] Compiling Number.ResidueClass.Check ( src/Number/ResidueClass/Check.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Number/ResidueClass/Check.o )
+[90 of 97] Compiling Number.ResidueClass.Func ( src/Number/ResidueClass/Func.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Number/ResidueClass/Func.o )
+[91 of 97] Compiling Number.ResidueClass.Maybe ( src/Number/ResidueClass/Maybe.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Number/ResidueClass/Maybe.o )
+[92 of 97] Compiling Number.ResidueClass.Reader ( src/Number/ResidueClass/Reader.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Number/ResidueClass/Reader.o )
+[93 of 97] Compiling Number.Root      ( src/Number/Root.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Number/Root.o )
+[94 of 97] Compiling Number.SI.Unit   ( src/Number/SI/Unit.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Number/SI/Unit.o )
+[95 of 97] Compiling Number.DimensionTerm.SI ( src/Number/DimensionTerm/SI.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Number/DimensionTerm/SI.o )
+[96 of 97] Compiling Number.SI        ( src/Number/SI.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Number/SI.o )
+[97 of 97] Compiling NumericPrelude   ( src/NumericPrelude.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/NumericPrelude.o )
+Installing library in
+/home/thomas/research_alli/improv/.stack-work/install/x86_64-linux/lts-8.5/8.0.2/lib/x86_64-linux-ghc-8.0.2/numeric-prelude-0.4.2-C00Q6i9BVbU28gKYwuyOJ9
+Registering numeric-prelude-0.4.2...

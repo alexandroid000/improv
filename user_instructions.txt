@@ -1,5 +1,9 @@
 beat 30
 
 x = [left right forward left right forward forward]
-y = left right forward
-turtle1 $ forward right left
+y = left right forward 
+z = left forward forward
+turtle1 $ forward right left y z 
+#turtle2 $ backward left right x z 
+#turtle3 $ left forward right z y
+

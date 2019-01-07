@@ -1,0 +1,17 @@
+Configuring improv-0.1.0.0...
+Preprocessing library improv-0.1.0.0...
+[1 of 3] Compiling Improv           ( src/Improv.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Improv.o )
+[2 of 3] Compiling RobotSpec        ( src/RobotSpec.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/RobotSpec.o )
+[3 of 3] Compiling Parser           ( src/Parser.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Parser.o )
+
+src/Parser.hs:55:1: warning: [-Wtabs]
+    Tab character found here.
+    Please use spaces instead.
+Preprocessing executable 'improv-exe' for improv-0.1.0.0...
+[1 of 1] Compiling Main             ( app/Main.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/improv-exe/improv-exe-tmp/Main.o )
+Linking .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/improv-exe/improv-exe ...
+Installing library in
+/home/thomas/research_alli/improv/.stack-work/install/x86_64-linux/lts-8.5/8.0.2/lib/x86_64-linux-ghc-8.0.2/improv-0.1.0.0-SK2koE1cQA7mN0X0IxqKL
+Installing executable(s) in
+/home/thomas/research_alli/improv/.stack-work/install/x86_64-linux/lts-8.5/8.0.2/bin
+Registering improv-0.1.0.0...

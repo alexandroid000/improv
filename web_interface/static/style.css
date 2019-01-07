@@ -1,0 +1,64 @@
+/* Make the body a flexbox */
+*{
+  box-sizing: border-box;
+}
+
+html, body{
+  margin: 0;
+  height: 100%;
+  font-family: 'Vollkorn', Georgia, Times, serif;
+  font-size: 16px;
+
+}
+.wrapper{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  text-align: center;
+}
+/* Make wrapper 100% width */
+.wrapper > * {
+  flex: 1 100%;
+}
+.header{
+  align-items: center;
+  margin: 0;
+  margin-bottom: 20px;
+  height: 10%;
+}
+
+.main{
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  height: 80%;
+}
+.footer{
+  padding: 0;
+  margin: 0;
+  height: 10%;
+}
+.square{
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#coding_box{
+  background-color: dimgray;
+  color: white;
+  font-weight: bold;
+  border-width: 20px;
+  border-color: dimgray;
+}
+#improv_box{
+  margin-left: -4px;
+}
+
+@media all and (min-width: 800px) {
+  .main    { flex: 3 0px; }
+  .main    { order: 1; }
+  .footer  { order: 2; }
+}

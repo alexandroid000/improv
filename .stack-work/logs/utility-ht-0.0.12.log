@@ -1,0 +1,37 @@
+Configuring utility-ht-0.0.12...
+Building utility-ht-0.0.12...
+Preprocessing library utility-ht-0.0.12...
+[ 1 of 31] Compiling Text.Show.HT     ( src/Text/Show/HT.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/Show/HT.o )
+[ 2 of 31] Compiling Text.Read.HT     ( src/Text/Read/HT.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/Read/HT.o )
+[ 3 of 31] Compiling Data.Tuple.Strict ( src/Data/Tuple/Strict.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Tuple/Strict.o )
+[ 4 of 31] Compiling Data.Tuple.Lazy  ( src/Data/Tuple/Lazy.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Tuple/Lazy.o )
+[ 5 of 31] Compiling Data.Tuple.HT    ( src/Data/Tuple/HT.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Tuple/HT.o )
+[ 6 of 31] Compiling Data.Strictness.HT ( src/Data/Strictness/HT.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Strictness/HT.o )
+[ 7 of 31] Compiling Data.Monoid.HT   ( src/Data/Monoid/HT.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Monoid/HT.o )
+[ 8 of 31] Compiling Data.Maybe.HT    ( src/Data/Maybe/HT.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Maybe/HT.o )
+[ 9 of 31] Compiling Data.List.Reverse.StrictSpine ( src/Data/List/Reverse/StrictSpine.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/List/Reverse/StrictSpine.o )
+[10 of 31] Compiling Data.String.HT   ( src/Data/String/HT.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/String/HT.o )
+[11 of 31] Compiling Data.List.Reverse.StrictElement ( src/Data/List/Reverse/StrictElement.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/List/Reverse/StrictElement.o )
+[12 of 31] Compiling Data.Ix.Enum     ( src/Data/Ix/Enum.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Ix/Enum.o )
+[13 of 31] Compiling Data.Function.HT.Private ( src/Data/Function/HT/Private.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Function/HT/Private.o )
+[14 of 31] Compiling Data.Function.HT ( src/Data/Function/HT.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Function/HT.o )
+[15 of 31] Compiling Data.List.Key.Private ( src/Data/List/Key/Private.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/List/Key/Private.o )
+[16 of 31] Compiling Data.List.Key    ( src/Data/List/Key.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/List/Key.o )
+[17 of 31] Compiling Data.Ord.HT      ( src/Data/Ord/HT.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Ord/HT.o )
+[18 of 31] Compiling Data.Eq.HT       ( src/Data/Eq/HT.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Eq/HT.o )
+[19 of 31] Compiling Data.Bool.HT.Private ( src/Data/Bool/HT/Private.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Bool/HT/Private.o )
+[20 of 31] Compiling Data.Bool.HT     ( src/Data/Bool/HT.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Bool/HT.o )
+[21 of 31] Compiling Data.Bits.HT     ( src/Data/Bits/HT.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Bits/HT.o )
+[22 of 31] Compiling Control.Monad.HT ( src/Control/Monad/HT.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Control/Monad/HT.o )
+[23 of 31] Compiling Control.Functor.HT ( src/Control/Functor/HT.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Control/Functor/HT.o )
+[24 of 31] Compiling Data.List.Match.Private ( src/Data/List/Match/Private.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/List/Match/Private.o )
+[25 of 31] Compiling Data.List.HT.Private ( src/Data/List/HT/Private.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/List/HT/Private.o )
+[26 of 31] Compiling Data.List.HT     ( src/Data/List/HT.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/List/HT.o )
+[27 of 31] Compiling Data.Record.HT.Private ( src/Data/Record/HT/Private.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Record/HT/Private.o )
+[28 of 31] Compiling Data.Record.HT   ( src/Data/Record/HT.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Record/HT.o )
+[29 of 31] Compiling Data.Tuple.Example ( src/Data/Tuple/Example.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Tuple/Example.o )
+[30 of 31] Compiling Data.List.Match  ( src/Data/List/Match.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/List/Match.o )
+[31 of 31] Compiling Control.Applicative.HT ( src/Control/Applicative/HT.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Control/Applicative/HT.o )
+Installing library in
+/home/thomas/.stack/snapshots/x86_64-linux/lts-8.5/8.0.2/lib/x86_64-linux-ghc-8.0.2/utility-ht-0.0.12-Fnn9WgGbiem6G1X7619o8t
+Registering utility-ht-0.0.12...

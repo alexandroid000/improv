@@ -1,0 +1,14 @@
+Configuring pem-0.2.2...
+Building pem-0.2.2...
+Preprocessing library pem-0.2.2...
+[1 of 4] Compiling Data.PEM.Types   ( Data/PEM/Types.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/PEM/Types.o )
+[2 of 4] Compiling Data.PEM.Writer  ( Data/PEM/Writer.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/PEM/Writer.o )
+[3 of 4] Compiling Data.PEM.Parser  ( Data/PEM/Parser.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/PEM/Parser.o )
+[4 of 4] Compiling Data.PEM         ( Data/PEM.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/PEM.o )
+
+Data/PEM.hs:11:1: warning: [-Wtabs]
+    Tab character found here, and in one further location.
+    Please use spaces instead.
+Installing library in
+/home/thomas/.stack/snapshots/x86_64-linux/lts-8.5/8.0.2/lib/x86_64-linux-ghc-8.0.2/pem-0.2.2-CkEwei5500yF2642aAaOAi
+Registering pem-0.2.2...

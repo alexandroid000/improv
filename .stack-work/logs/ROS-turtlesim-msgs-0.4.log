@@ -1,0 +1,17 @@
+Configuring ROS-turtlesim-msgs-0.4...
+Preprocessing library ROS-turtlesim-msgs-0.4...
+[ 1 of 12] Compiling Ros.Turtlesim.TeleportRelativeResponse ( Ros/Turtlesim/TeleportRelativeResponse.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Turtlesim/TeleportRelativeResponse.o )
+[ 2 of 12] Compiling Ros.Turtlesim.TeleportRelativeRequest ( Ros/Turtlesim/TeleportRelativeRequest.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Turtlesim/TeleportRelativeRequest.o )
+[ 3 of 12] Compiling Ros.Turtlesim.TeleportAbsoluteResponse ( Ros/Turtlesim/TeleportAbsoluteResponse.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Turtlesim/TeleportAbsoluteResponse.o )
+[ 4 of 12] Compiling Ros.Turtlesim.TeleportAbsoluteRequest ( Ros/Turtlesim/TeleportAbsoluteRequest.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Turtlesim/TeleportAbsoluteRequest.o )
+[ 5 of 12] Compiling Ros.Turtlesim.SpawnResponse ( Ros/Turtlesim/SpawnResponse.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Turtlesim/SpawnResponse.o )
+[ 6 of 12] Compiling Ros.Turtlesim.SpawnRequest ( Ros/Turtlesim/SpawnRequest.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Turtlesim/SpawnRequest.o )
+[ 7 of 12] Compiling Ros.Turtlesim.SetPenResponse ( Ros/Turtlesim/SetPenResponse.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Turtlesim/SetPenResponse.o )
+[ 8 of 12] Compiling Ros.Turtlesim.SetPenRequest ( Ros/Turtlesim/SetPenRequest.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Turtlesim/SetPenRequest.o )
+[ 9 of 12] Compiling Ros.Turtlesim.Pose ( Ros/Turtlesim/Pose.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Turtlesim/Pose.o )
+[10 of 12] Compiling Ros.Turtlesim.KillResponse ( Ros/Turtlesim/KillResponse.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Turtlesim/KillResponse.o )
+[11 of 12] Compiling Ros.Turtlesim.KillRequest ( Ros/Turtlesim/KillRequest.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Turtlesim/KillRequest.o )
+[12 of 12] Compiling Ros.Turtlesim.Color ( Ros/Turtlesim/Color.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Turtlesim/Color.o )
+Installing library in
+/home/thomas/research_alli/improv/.stack-work/install/x86_64-linux/lts-8.5/8.0.2/lib/x86_64-linux-ghc-8.0.2/ROS-turtlesim-msgs-0.4-FIgnwn57wlgC978pxCOZu1
+Registering ROS-turtlesim-msgs-0.4...

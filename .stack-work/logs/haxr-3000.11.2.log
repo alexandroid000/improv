@@ -1,0 +1,22 @@
+Configuring haxr-3000.11.2...
+Building haxr-3000.11.2...
+Preprocessing library haxr-3000.11.2...
+
+on the commandline: warning:
+    -XOverlappingInstances is deprecated: instead use per-instance pragmas OVERLAPPING/OVERLAPPABLE/OVERLAPS
+[1 of 8] Compiling Network.XmlRpc.Pretty ( Network/XmlRpc/Pretty.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Network/XmlRpc/Pretty.o )
+[2 of 8] Compiling Network.XmlRpc.DTD_XMLRPC ( Network/XmlRpc/DTD_XMLRPC.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Network/XmlRpc/DTD_XMLRPC.o )
+[3 of 8] Compiling Network.XmlRpc.Base64 ( Network/XmlRpc/Base64.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Network/XmlRpc/Base64.o )
+[4 of 8] Compiling Network.XmlRpc.Internals ( Network/XmlRpc/Internals.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Network/XmlRpc/Internals.o )
+
+Network/XmlRpc/Internals.hs:522:10: warning: [-Wdeprecations]
+    In the use of ‘parseTime’
+    (imported from Data.Time.Format, but defined in time-1.6.0.1:Data.Time.Format.Parse):
+    Deprecated: "use "parseTimeM True" instead"
+[5 of 8] Compiling Network.XmlRpc.Client ( Network/XmlRpc/Client.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Network/XmlRpc/Client.o )
+[6 of 8] Compiling Network.XmlRpc.Introspect ( Network/XmlRpc/Introspect.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Network/XmlRpc/Introspect.o )
+[7 of 8] Compiling Network.XmlRpc.Server ( Network/XmlRpc/Server.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Network/XmlRpc/Server.o )
+[8 of 8] Compiling Network.XmlRpc.THDeriveXmlRpcType ( Network/XmlRpc/THDeriveXmlRpcType.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Network/XmlRpc/THDeriveXmlRpcType.o )
+Installing library in
+/home/thomas/research_alli/improv/.stack-work/install/x86_64-linux/lts-8.5/8.0.2/lib/x86_64-linux-ghc-8.0.2/haxr-3000.11.2-HkIvnlCK4SqAH3GCUWmKln
+Registering haxr-3000.11.2...

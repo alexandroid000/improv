@@ -1,0 +1,712 @@
+
+==================== FINAL INTERFACE ====================
+2018-09-28 14:21:50.87418234 UTC
+
+interface improv-0.1.0.0-SK2koE1cQA7mN0X0IxqKL:RobotSpec 8002
+  interface hash: 5b07206fd25f72d6316476a3afa765e8
+  ABI hash: 888507c401d2c0dc7a90071f917a434c
+  export-list hash: 799b714b0be6ab7978d9268f7086b7ad
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: ab396f11155bd696ab63895436e6f1df
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  RobotSpec.addVels
+  RobotSpec.averageVels
+  RobotSpec.core
+  RobotSpec.danceToMsg
+  RobotSpec.increaseVel
+  RobotSpec.mkTwist
+  RobotSpec.moveBase
+  RobotSpec.moveCommands
+  RobotSpec.robotRate
+  RobotSpec.robotRes
+  RobotSpec.rotate
+  RobotSpec.translate
+  RobotSpec.Rotation
+  RobotSpec.Translation
+  RobotSpec.VelCmd{RobotSpec.VelCmd}
+module dependencies: Improv
+package dependencies: BoundedChan-1.0.3.0@BoundedChan-1.0.3.0-4JzWP3OklUcCneRsi7r5OJ
+                      HaXml-1.25.3@HaXml-1.25.3-FWQAuB12BJOFPkTQ2EGoJq
+                      HsOpenSSL-0.11.4.8@HsOpenSSL-0.11.4.8-1oNCsrDcNP77diHIz2jQJU
+                      MemoTrie-0.6.7@MemoTrie-0.6.7-BQ9xkZLBNYcCjvEu2ePp3B
+                      ROS-geometry-msgs-0.4@ROS-geometry-msgs-0.4-8VAt8iGbBsDDns5dVZ9ia0
+                      SafeSemaphore-0.10.1@SafeSemaphore-0.10.1-JDvItKST9nQJl8OwRKYJEJ
+                      aeson-1.0.2.1@aeson-1.0.2.1-1PgNnQdZpa7BG8cq9P3bMU
+                      array-0.5.1.1@array-0.5.1.1
+                      attoparsec-0.13.1.0@attoparsec-0.13.1.0-HCAgpBrKCLJ5li8FbfXxE1
+                      base-4.9.1.0
+                      base-compat-0.9.1@base-compat-0.9.1-B9geVZFtCvE8ERS7UcvkRz
+                      base-orphans-0.5.4@base-orphans-0.5.4-ABoxiBf7nXc7Qqh66CgYc9
+                      base64-bytestring-1.0.0.1@base64-bytestring-1.0.0.1-4O9TExPPz6eI82Yj7L4SIj
+                      binary-0.8.3.0@binary-0.8.3.0
+                      blaze-builder-0.4.0.2@blaze-builder-0.4.0.2-CGB8BvrFgghHy5bLy0SFOg
+                      bytestring-0.10.8.1@bytestring-0.10.8.1
+                      case-insensitive-1.2.0.8@case-insensitive-1.2.0.8-JH9TmxTHpl01TJ0h86Xqcf
+                      clock-0.7.2@clock-0.7.2-8dRNleB7rysIZAOReuhpZA
+                      containers-0.5.7.1@containers-0.5.7.1
+                      data-default-generics-0.3@data-default-generics-0.3-B8BhuwTGVQrEVu284UH2Kt
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 directory-1.3.0.0@directory-1.3.0.0
+                      dlist-0.8.0.2@dlist-0.8.0.2-6Wnps4GD7EFnRucVzXIFD
+                      filepath-1.4.1.1@filepath-1.4.1.1
+                      ghc-boot-th-8.0.2@ghc-boot-th-8.0.2 ghc-prim-0.5.0.0
+                      hashable-1.2.5.0@hashable-1.2.5.0-F4MWeNuv2sjJRqBd2T5ul4
+                      haxr-3000.11.2@haxr-3000.11.2-HkIvnlCK4SqAH3GCUWmKln
+                      http-common-0.8.2.0@http-common-0.8.2.0-CJXewAwxX1jDNjAwLVJIOr
+                      http-streams-0.8.4.0@http-streams-0.8.4.0-EzrO9cAwKtVFPzrqi5IFkE
+                      integer-gmp-1.0.0.1
+                      integer-logarithms-1.0.1@integer-logarithms-1.0.1-IEHCuEd5sG4JjSjlx7m5JF
+                      io-streams-1.3.6.0@io-streams-1.3.6.0-4EVWBhw25UlK3e8khXUkTI
+                      io-streams-haproxy-1.0.0.1@io-streams-haproxy-1.0.0.1-EBBsK59yHH2GeORnTu1SiT
+                      lens-family-core-1.2.1@lens-family-core-1.2.1-LZ6TX4t6mGs5hzfIChMtCb
+                      lens-family-th-0.5.0.0@lens-family-th-0.5.0.0-6sfnzsvKPA98SHzs8eB6Wj
+                      lifted-base-0.2.3.10@lifted-base-0.2.3.10-BoEavBFIcriDza63doCjS2
+                      monad-control-1.0.1.0@monad-control-1.0.1.0-LQwQ0Hi5p0oAccTfTzbfD5
+                      mtl-2.2.1@mtl-2.2.1-BLKBelFsPB3BoFeSWSOYj6
+                      network-2.6.3.1@network-2.6.3.1-ABFtZSq90Z9BfMXNiqgBoe
+                      network-uri-2.6.1.0@network-uri-2.6.1.0-EwGrJ9bdUqR1E7dAIJ4cwF
+                      newtype-generics-0.5@newtype-generics-0.5-9eIKAb10zDILJBpr5WYetq
+                      old-locale-1.0.0.7@old-locale-1.0.0.7-KGBP1BSKxH5GCm0LnZP04j
+                      old-time-1.1.0.3@old-time-1.1.0.3-KWRsMSdY26c2L27Y9n9cyq
+                      openssl-streams-1.2.1.0@openssl-streams-1.2.1.0-3Ux15Db9t1MHPUzXCgGk0S
+                      parsec-3.1.11@parsec-3.1.11-113irVHGgd88sRnywByDNw
+                      polyparse-1.12@polyparse-1.12-Ee2dhxWFCj0JUfsZIQidEE
+                      pretty-1.1.3.3@pretty-1.1.3.3
+                      primitive-0.6.1.0@primitive-0.6.1.0-6AbSTw9JXz141LE5p6LGH
+                      process-1.4.3.0@process-1.4.3.0
+                      readable-0.3.1@readable-0.3.1-8piNgty2EAr2CxSq7XRfFV
+                      roshask-0.4@roshask-0.4-DpdaNjEsTp5rMH1y98Ib7
+                      safe-0.3.14@safe-0.3.14-GsbXn9D9F3BDazVNcErzdQ
+                      scientific-0.3.4.10@scientific-0.3.4.10-HRQd1hS6vMV6hvjSlMi8B0
+                      snap-core-1.0.1.0@snap-core-1.0.1.0-11Mpk6zV2N15wYaqOD968C
+                      snap-server-1.0.1.1@snap-server-1.0.1.1-K1IxR57mi8gLGN9lNfAdia
+                      stm-2.4.4.1@stm-2.4.4.1-JQn4hNPyYjP5m9AcbI88Ve
+                      storable-record-0.0.3.1@storable-record-0.0.3.1-ItZtoVhInjCK54XumJjnAY
+                      storable-tuple-0.0.3.2@storable-tuple-0.0.3.2-LUAQRJAYsGb4GXYXG8nvOt
+                      tagged-0.8.5@tagged-0.8.5-1mTloBSoUxv8dqUr8XBGBt
+                      template-haskell-2.11.1.0
+                      text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR
+                      time-1.6.0.1@time-1.6.0.1
+                      time-locale-compat-0.1.1.3@time-locale-compat-0.1.1.3-KZ1jqNx8uhlHjmuPPj6V1Y
+                      transformers-0.5.2.0@transformers-0.5.2.0
+                      transformers-base-0.4.4@transformers-base-0.4.4-GKSs0LKukAL8ymq2naFmrH
+                      unix-2.7.2.1@unix-2.7.2.1
+                      unix-compat-0.4.3.1@unix-compat-0.4.3.1-Ausmw6d7KIwA7sl52mzqxC
+                      unordered-containers-0.2.7.2@unordered-containers-0.2.7.2-8AmrySQXjRGF6VciYs51fM
+                      uri-0.1.6.4@uri-0.1.6.4-LqRXktAqt8X5nxsrOgiNDF
+                      utf8-string-1.0.1.1@utf8-string-1.0.1.1-1DpjxLeTvGg7ttZZojxJR5
+                      utility-ht-0.0.12@utility-ht-0.0.12-Fnn9WgGbiem6G1X7619o8t
+                      vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG
+                      vector-space-0.10.4@vector-space-0.10.4-K1jh5A5NiHbFdG9bAV0KZx
+                      zlib-0.6.1.2@zlib-0.6.1.2-7negTfm2ujt1gW4wr40MUp
+                      zlib-bindings-0.1.1.5@zlib-bindings-0.1.1.5-4AFfs0NmxaYKZpHnixldSp
+orphans: HaXml-1.25.3@HaXml-1.25.3-FWQAuB12BJOFPkTQ2EGoJq:Text.XML.HaXml.XmlContent
+         HsOpenSSL-0.11.4.8@HsOpenSSL-0.11.4.8-1oNCsrDcNP77diHIz2jQJU:OpenSSL.EVP.PKey
+         attoparsec-0.13.1.0@attoparsec-0.13.1.0-HCAgpBrKCLJ5li8FbfXxE1:Data.Attoparsec.ByteString.Char8
+         attoparsec-0.13.1.0@attoparsec-0.13.1.0-HCAgpBrKCLJ5li8FbfXxE1:Data.Attoparsec.Text.Internal
+         base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+         binary-0.8.3.0@binary-0.8.3.0:Data.Binary.Generic
+         bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Builder
+         hashable-1.2.5.0@hashable-1.2.5.0-F4MWeNuv2sjJRqBd2T5ul4:Data.Hashable.Generic
+         network-2.6.3.1@network-2.6.3.1-ABFtZSq90Z9BfMXNiqgBoe:Network.Socket
+         snap-core-1.0.1.0@snap-core-1.0.1.0-11Mpk6zV2N15wYaqOD968C:Snap.Internal.Instances
+         stm-2.4.4.1@stm-2.4.4.1-JQn4hNPyYjP5m9AcbI88Ve:Control.Monad.STM
+         storable-tuple-0.0.3.2@storable-tuple-0.0.3.2-LUAQRJAYsGb4GXYXG8nvOt:Foreign.Storable.Tuple
+         text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text
+         text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text.Lazy
+         text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text.Show
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+         vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector.Fusion.Bundle
+         vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector.Unboxed
+family instance modules: MemoTrie-0.6.7@MemoTrie-0.6.7-BQ9xkZLBNYcCjvEu2ePp3B:Data.MemoTrie
+                         ROS-geometry-msgs-0.4@ROS-geometry-msgs-0.4-8VAt8iGbBsDDns5dVZ9ia0:Ros.Geometry_msgs.Twist
+                         ROS-geometry-msgs-0.4@ROS-geometry-msgs-0.4-8VAt8iGbBsDDns5dVZ9ia0:Ros.Geometry_msgs.Vector3
+                         attoparsec-0.13.1.0@attoparsec-0.13.1.0-HCAgpBrKCLJ5li8FbfXxE1:Data.Attoparsec.Internal.Types
+                         base-4.9.1.0:Control.Applicative base-4.9.1.0:Data.Complex
+                         base-4.9.1.0:Data.Either base-4.9.1.0:Data.Functor.Compose
+                         base-4.9.1.0:Data.Functor.Const base-4.9.1.0:Data.Functor.Identity
+                         base-4.9.1.0:Data.Functor.Product base-4.9.1.0:Data.Functor.Sum
+                         base-4.9.1.0:Data.List.NonEmpty base-4.9.1.0:Data.Monoid
+                         base-4.9.1.0:Data.Semigroup base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:Data.Version base-4.9.1.0:Data.Void
+                         base-4.9.1.0:GHC.Exts base-4.9.1.0:GHC.Generics
+                         base-4.9.1.0:GHC.IO.Exception base-4.9.1.0:GHC.TypeLits
+                         clock-0.7.2@clock-0.7.2-8dRNleB7rysIZAOReuhpZA:System.Clock
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntMap.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntSet.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         dlist-0.8.0.2@dlist-0.8.0.2-6Wnps4GD7EFnRucVzXIFD:Data.DList
+                         ghc-boot-th-8.0.2@ghc-boot-th-8.0.2:GHC.LanguageExtensions.Type
+                         monad-control-1.0.1.0@monad-control-1.0.1.0-LQwQ0Hi5p0oAccTfTzbfD5:Control.Monad.Trans.Control
+                         network-uri-2.6.1.0@network-uri-2.6.1.0-EwGrJ9bdUqR1E7dAIJ4cwF:Network.URI
+                         newtype-generics-0.5@newtype-generics-0.5-9eIKAb10zDILJBpr5WYetq:Control.Newtype
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.Annotated.HughesPJ
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.HughesPJ
+                         primitive-0.6.1.0@primitive-0.6.1.0-6AbSTw9JXz141LE5p6LGH:Control.Monad.Primitive
+                         snap-core-1.0.1.0@snap-core-1.0.1.0-11Mpk6zV2N15wYaqOD968C:Snap.Internal.Core
+                         tagged-0.8.5@tagged-0.8.5-1mTloBSoUxv8dqUr8XBGBt:Data.Tagged
+                         template-haskell-2.11.1.0:Language.Haskell.TH.Syntax
+                         text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text
+                         text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text.Lazy
+                         unordered-containers-0.2.7.2@unordered-containers-0.2.7.2-8AmrySQXjRGF6VciYs51fM:Data.HashMap.Base
+                         unordered-containers-0.2.7.2@unordered-containers-0.2.7.2-8AmrySQXjRGF6VciYs51fM:Data.HashSet
+                         vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector
+                         vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector.Primitive
+                         vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector.Storable
+                         vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector.Unboxed
+                         vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector.Unboxed.Base
+                         zlib-0.6.1.2@zlib-0.6.1.2-7negTfm2ujt1gW4wr40MUp:Codec.Compression.Zlib.Stream
+import  -/  ROS-geometry-msgs-0.4@ROS-geometry-msgs-0.4-8VAt8iGbBsDDns5dVZ9ia0:Ros.Geometry_msgs.Twist 7d87c9e8cac68e79f04543d0115a317c
+import  -/  ROS-geometry-msgs-0.4@ROS-geometry-msgs-0.4-8VAt8iGbBsDDns5dVZ9ia0:Ros.Geometry_msgs.Vector3 c43a8a062c4526775c42b43e79137aaa
+import  -/  base-4.9.1.0:Data.Fixed b80105ba94244c515fc7e741d2a7c501
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:GHC.Float 33e2b9ffe427edd6a5c2fd6a3b26703c
+import  -/  base-4.9.1.0:GHC.List ab8c4e523e6c479c549d3bcd5fc4a439
+import  -/  base-4.9.1.0:GHC.Num 00bfaa7b2f9d6084913c0697a8a49ec8
+import  -/  base-4.9.1.0:GHC.Real 82e4e59051a13dba1da63e1e970a69e6
+import  -/  base-4.9.1.0:GHC.Show a027f5ac24879eaba752f44aa90fe511
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  data-default-generics-0.3@data-default-generics-0.3-B8BhuwTGVQrEVu284UH2Kt:Data.Default.Generics 888fb830a538ec43ecc3a2f916989bc6
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
+import  -/  Improv 2f26aa05a3be0240b20300b42cb8b232
+  exports: b3baf8a7121f260c766f8067834ab887
+  :*: ef61f989841c58aa3d411f4d0c3c8065
+  :+: aa241486d1b02a723ae328cd0f59e33e
+  :||: b4d2ca5016322ae61b17f5198b596ef2
+  A a3060e772176174da81c2811e01dcba5
+  Action b3c40b8773f2ae772d2a3855f77a04be
+  Backward da6a19c9cc7820e5b16f362b1c89f804
+  Center eaeb3841c01913c11c0c9f598439f604
+  Dance 5992ffb4256db90148fe6d921f18ab3e
+  Eighth 4570b60af114d9bfdcd4adb3d31de057
+  Forward d6e9889aa23452cc297d4d9c9e7f7621
+  Full 22ca6b23c73366dfe7c43b71489730ba
+  Half 0f752958a8164e2541f4db2ce1cff9df
+  KineChain 3617223d3d7e4df57a39d0937c26b626
+  Lef 5e9d35432f826594e74597ed825b4f76
+  Link 520335e4e634cb344ba4cf93ed29b761
+  Mult 283745cc931d9bef7940ffc468560ac8
+  O 24093a4a134fea6ef836ca484f598dcd
+  Parts cfcc186c82ad96d72dd4088c87950f9a
+  Prim aa9b69c40dfdcef3a244a6636bb70001
+  Quarter 66be0a8974ed9d13029227188de6b152
+  Rest 12d5580c4513b214a89ca904581f1c87
+  Righ edcc95b455d9bc5df390c76072e862ef
+  Skip d6fffa6b8d1b35325c76d0b032b2d07e
+  ThreeFourths 0d70c388ab394e641f635d773da80ec1
+  Zero 04ce9c794ed65503dc688666afb3bbd8
+import  -/  lens-family-core-1.2.1@lens-family-core-1.2.1-LZ6TX4t6mGs5hzfIChMtCb:Lens.Family bfa90f48d8a81eb9907682d0767a41e4
+import  -/  roshask-0.4@roshask-0.4-DpdaNjEsTp5rMH1y98Ib7:Ros.Node 1ae8fbb417e9ecbb59e1fdfe17129992
+import  -/  roshask-0.4@roshask-0.4-DpdaNjEsTp5rMH1y98Ib7:Ros.Topic e98c1137b40ea518b356b3d54fb0041b
+import  -/  roshask-0.4@roshask-0.4-DpdaNjEsTp5rMH1y98Ib7:Ros.Topic.Util 2935b56b1030fa61bb6f94a25b24718e
+61931c99a776b8142f82b2d2f8eb2e2c
+  $fEqVelCmd ::
+    GHC.Classes.Eq a => GHC.Classes.Eq (RobotSpec.VelCmd a)
+  DFunId
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(C(C1(U)),A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a ($dEq :: GHC.Classes.Eq a).
+                  @ (RobotSpec.VelCmd a)
+                  (RobotSpec.$fEqVelCmd_$c== @ a $dEq)
+                  (RobotSpec.$fEqVelCmd_$c/= @ a $dEq) -}
+61931c99a776b8142f82b2d2f8eb2e2c
+  $fEqVelCmd_$c/= ::
+    GHC.Classes.Eq a =>
+    RobotSpec.VelCmd a -> RobotSpec.VelCmd a -> GHC.Types.Bool
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(C(C(S))L),U(C(C1(U)),A)><S,1*U(U,U)><S,1*U(U,U)>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   ($dEq :: GHC.Classes.Eq a)
+                   (a1 :: RobotSpec.VelCmd a)
+                   (b :: RobotSpec.VelCmd a) ->
+                 case RobotSpec.$fEqVelCmd_$c== @ a $dEq a1 b of wild {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True -> GHC.Types.False }) -}
+61931c99a776b8142f82b2d2f8eb2e2c
+  $fEqVelCmd_$c== ::
+    GHC.Classes.Eq a =>
+    RobotSpec.VelCmd a -> RobotSpec.VelCmd a -> GHC.Types.Bool
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(C(C(S))L),U(C(C1(U)),A)><S,1*U(U,U)><S,1*U(U,U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   (w :: GHC.Classes.Eq a)
+                   (w1 :: RobotSpec.VelCmd a)
+                   (w2 :: RobotSpec.VelCmd a) ->
+                 case w1 of ww { RobotSpec.VelCmd ww1 ww2 ->
+                 case w2 of ww3 { RobotSpec.VelCmd ww4 ww5 ->
+                 RobotSpec.$w$c== @ a w ww1 ww2 ww4 ww5 } }) -}
+61931c99a776b8142f82b2d2f8eb2e2c
+  $fFunctorVelCmd :: GHC.Base.Functor RobotSpec.VelCmd
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ RobotSpec.VelCmd
+                  RobotSpec.$fFunctorVelCmd_$cfmap
+                  RobotSpec.$fFunctorVelCmd_$c<$ -}
+61931c99a776b8142f82b2d2f8eb2e2c
+  $fFunctorVelCmd_$c<$ ::
+    a -> RobotSpec.VelCmd b -> RobotSpec.VelCmd a
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*H>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a @ b (eta :: a) (eta1 :: RobotSpec.VelCmd b) ->
+                 case eta1 of wild { RobotSpec.VelCmd t r ->
+                 RobotSpec.VelCmd @ a eta eta }) -}
+61931c99a776b8142f82b2d2f8eb2e2c
+  $fFunctorVelCmd_$cfmap ::
+    (a -> b) -> RobotSpec.VelCmd a -> RobotSpec.VelCmd b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,C(U)><S,1*U(U,U)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a @ b (f :: a -> b) (ds :: RobotSpec.VelCmd a) ->
+                 case ds of wild { RobotSpec.VelCmd t r ->
+                 RobotSpec.VelCmd @ b (f t) (f r) }) -}
+61931c99a776b8142f82b2d2f8eb2e2c
+  $fShowVelCmd ::
+    GHC.Show.Show a => GHC.Show.Show (RobotSpec.VelCmd a)
+  DFunId
+  {- Arity: 1, Strictness: <L,U(C(C1(U)),A,A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a ($dShow :: GHC.Show.Show a).
+                  @ (RobotSpec.VelCmd a)
+                  (RobotSpec.$fShowVelCmd_$cshowsPrec @ a $dShow)
+                  (RobotSpec.$fShowVelCmd_$cshow @ a $dShow)
+                  (RobotSpec.$fShowVelCmd_$cshowList @ a $dShow) -}
+04d93e986cb3fcde2d37a1f57ed36303
+  $fShowVelCmd1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
+0e71bafdaa1eb857d42d395399fa14be
+  $fShowVelCmd2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "VelCmd "#) -}
+5dfba48ff614e7effea66b176f010d11
+  $fShowVelCmd3 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 11#) -}
+61931c99a776b8142f82b2d2f8eb2e2c
+  $fShowVelCmd_$cshow ::
+    GHC.Show.Show a => RobotSpec.VelCmd a -> GHC.Base.String
+  {- Arity: 2, Strictness: <L,U(C(C1(U)),A,A)><S,1*U(U,U)>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a ($dShow :: GHC.Show.Show a) (x4 :: RobotSpec.VelCmd a) ->
+                 RobotSpec.$fShowVelCmd_$cshowsPrec
+                   @ a
+                   $dShow
+                   GHC.Show.shows22
+                   x4
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+61931c99a776b8142f82b2d2f8eb2e2c
+  $fShowVelCmd_$cshowList ::
+    GHC.Show.Show a => [RobotSpec.VelCmd a] -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><S,1*U><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   ($dShow :: GHC.Show.Show a)
+                   (eta :: [RobotSpec.VelCmd a])
+                   (eta1 :: GHC.Base.String) ->
+                 GHC.Show.showList__
+                   @ (RobotSpec.VelCmd a)
+                   (RobotSpec.$fShowVelCmd_$cshowsPrec
+                      @ a
+                      $dShow
+                      RobotSpec.$fShowVelCmd1)
+                   eta
+                   eta1) -}
+61931c99a776b8142f82b2d2f8eb2e2c
+  $fShowVelCmd_$cshowsPrec ::
+    GHC.Show.Show a =>
+    GHC.Types.Int -> RobotSpec.VelCmd a -> GHC.Show.ShowS
+  {- Arity: 3,
+     Strictness: <L,U(C(C1(U)),A,A)><S(S),1*U(U)><S,1*U(U,U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   (w :: GHC.Show.Show a)
+                   (w1 :: GHC.Types.Int)
+                   (w2 :: RobotSpec.VelCmd a) ->
+                 case w1 of ww { GHC.Types.I# ww1 ->
+                 case w2 of ww2 { RobotSpec.VelCmd ww3 ww4 ->
+                 RobotSpec.$w$cshowsPrec @ a w ww1 ww3 ww4 } }) -}
+821a805e390976f15d201e8e59e05f38
+  $tc'VelCmd :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   10843910464747771702##
+                   1147588028420830664##
+                   RobotSpec.$trModule
+                   RobotSpec.$tc'VelCmd1) -}
+6be9b6e30880dd168c3d2e734849f391
+  $tc'VelCmd1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'VelCmd"#) -}
+e03faf83df7ccf444dbcbb3a3ee08ac0
+  $tcVelCmd :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   553379905931118900##
+                   8823370361285891357##
+                   RobotSpec.$trModule
+                   RobotSpec.$tcVelCmd1) -}
+a49dd21f1a85be6b64d1b0a6fc02b48e
+  $tcVelCmd1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "VelCmd"#) -}
+ca2122024e412011523d7295e1ffa0b7
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   RobotSpec.$trModule2
+                   RobotSpec.$trModule1) -}
+593dbf3dfec12e882afb455d2bf66a73
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "RobotSpec"#) -}
+63de4d8356df339ab182c16516f5592a
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "improv-0.1.0.0-SK2koE1cQA7mN0X0IxqKL"#) -}
+66490cdcb3dfe852b257460aa4da9434
+  $w$c== :: GHC.Classes.Eq a => a -> a -> a -> a -> GHC.Types.Bool
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <S(C(C(S))L),U(C(C1(U)),A)><L,U><L,U><L,U><L,U>,
+     Inline: [0],
+     Unfolding: (\ @ a
+                   (w :: GHC.Classes.Eq a)
+                   (ww :: a)
+                   (ww1 :: a)
+                   (ww2 :: a)
+                   (ww3 :: a) ->
+                 case GHC.Classes.== @ a w ww ww2 of wild {
+                   GHC.Types.False -> GHC.Types.False
+                   GHC.Types.True -> GHC.Classes.== @ a w ww1 ww3 }) -}
+f5cf17c2bd4303e2f6fd0ddb5a17eaac
+  $w$cshowsPrec ::
+    GHC.Show.Show a => GHC.Prim.Int# -> a -> a -> GHC.Show.ShowS
+  {- Arity: 4, Strictness: <L,U(C(C1(U)),A,A)><S,U><L,U><L,U>,
+     Inline: [0],
+     Unfolding: (\ @ a
+                   (w :: GHC.Show.Show a)
+                   (ww :: GHC.Prim.Int#)
+                   (ww1 :: a)
+                   (ww2 :: a) ->
+                 let {
+                   f :: GHC.Base.String -> GHC.Base.String
+                   = GHC.Show.showsPrec @ a w RobotSpec.$fShowVelCmd3 ww1
+                 } in
+                 let {
+                   g :: GHC.Base.String -> GHC.Base.String
+                   = GHC.Show.showsPrec @ a w RobotSpec.$fShowVelCmd3 ww2
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11#) of wild {
+                   GHC.Types.False
+                   -> \ (x4 :: GHC.Base.String) ->
+                      GHC.Base.++
+                        @ GHC.Types.Char
+                        RobotSpec.$fShowVelCmd2
+                        (f (GHC.Types.: @ GHC.Types.Char GHC.Show.showSpace1 (g x4)))
+                   GHC.Types.True
+                   -> \ (x4 :: GHC.Base.String) ->
+                      GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows7
+                        (GHC.Base.++
+                           @ GHC.Types.Char
+                           RobotSpec.$fShowVelCmd2
+                           (f (GHC.Types.:
+                                 @ GHC.Types.Char
+                                 GHC.Show.showSpace1
+                                 (g (GHC.Types.: @ GHC.Types.Char GHC.Show.shows4 x4))))) }) -}
+d87762aff3633771b74f5dace0af6b7f
+  $waverageVels ::
+    GHC.Real.Fractional a => a -> a -> a -> a -> (# a, a #)
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <L,U(1*U,C(C1(U)),A,A)><L,U><L,U><L,U><L,U>,
+     Inline: [0],
+     Unfolding: (\ @ a
+                   (w :: GHC.Real.Fractional a)
+                   (ww :: a)
+                   (ww1 :: a)
+                   (ww2 :: a)
+                   (ww3 :: a) ->
+                 let {
+                   $dNum :: GHC.Num.Num a = GHC.Real.$p1Fractional @ a w
+                 } in
+                 (# GHC.Real./
+                      @ a
+                      w
+                      (GHC.Num.+ @ a $dNum ww ww2)
+                      (GHC.Num.fromInteger @ a $dNum RobotSpec.averageVels1),
+                    GHC.Real./
+                      @ a
+                      w
+                      (GHC.Num.+ @ a $dNum ww1 ww3)
+                      (GHC.Num.fromInteger @ a $dNum RobotSpec.averageVels1) #)) -}
+1e6d6c017c11e4a239274e60fd7a35ca
+  $wdanceToMsg ::
+    Improv.Dance a -> [RobotSpec.VelCmd GHC.Types.Double]
+  {- Arity: 1, Strictness: <S,1*U>, Inline: [0] -}
+4f3007420096f465dd632e8472c72142
+  $wmoveBase ::
+    Improv.Direction
+    -> Improv.Length -> (# GHC.Types.Double, GHC.Types.Double #)
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0] -}
+19339673b8f6edfbd96811b305e4e83e
+  $wrotate ::
+    GHC.Types.Double -> (# GHC.Types.Double, GHC.Types.Double #)
+  {- Arity: 1, Strictness: <L,1*U(U)>, Inline: [0],
+     Unfolding: (\ (w :: GHC.Types.Double) ->
+                 (# RobotSpec.core1,
+                    case w of wild { GHC.Types.D# x4 ->
+                    case GHC.Prim.tagToEnum#
+                           @ GHC.Types.Bool
+                           (GHC.Prim.>## x4 0.0##) of wild1 {
+                      GHC.Types.False
+                      -> case GHC.Prim.tagToEnum#
+                                @ GHC.Types.Bool
+                                (GHC.Prim.<## x4 0.0##) of wild2 {
+                           GHC.Types.False
+                           -> case Data.Fixed.mod'
+                                     @ GHC.Types.Double
+                                     GHC.Float.$fRealDouble
+                                     wild
+                                     RobotSpec.rotate1 of wild4 { GHC.Types.D# y ->
+                              GHC.Types.D# (GHC.Prim.*## x4 y) }
+                           GHC.Types.True
+                           -> case Data.Fixed.mod'
+                                     @ GHC.Types.Double
+                                     GHC.Float.$fRealDouble
+                                     wild
+                                     RobotSpec.rotate1 of wild4 { GHC.Types.D# y ->
+                              GHC.Types.D# (GHC.Prim.*## -1.0## y) } }
+                      GHC.Types.True
+                      -> Data.Fixed.mod'
+                           @ GHC.Types.Double
+                           GHC.Float.$fRealDouble
+                           wild
+                           RobotSpec.rotate1 } } #)) -}
+a4415dc550f7930c3ca0f89ad73ba137
+  type Rotation = GHC.Types.Double
+d45b19ea616076c8e70312d762c932d2
+  type Translation = GHC.Types.Double
+61931c99a776b8142f82b2d2f8eb2e2c
+  data VelCmd a = VelCmd a a
+72240cf7e8f8a6fcda3dfb144f7e51a7
+  addVels ::
+    GHC.Real.Fractional a =>
+    RobotSpec.VelCmd a -> RobotSpec.VelCmd a -> RobotSpec.VelCmd a
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,1*U(1*U,A,A,A)><S,1*U(U,U)><S,1*U(U,U)>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   (w :: GHC.Real.Fractional a)
+                   (w1 :: RobotSpec.VelCmd a)
+                   (w2 :: RobotSpec.VelCmd a) ->
+                 case w1 of ww { RobotSpec.VelCmd ww1 ww2 ->
+                 case w2 of ww3 { RobotSpec.VelCmd ww4 ww5 ->
+                 let {
+                   $dNum :: GHC.Num.Num a = GHC.Real.$p1Fractional @ a w
+                 } in
+                 RobotSpec.VelCmd
+                   @ a
+                   (GHC.Num.+ @ a $dNum ww1 ww4)
+                   (GHC.Num.+ @ a $dNum ww2 ww5) } }) -}
+52f05ff3a80f515963c5d64ba1d237a7
+  addVels_$saddVels ::
+    RobotSpec.VelCmd GHC.Types.Double
+    -> RobotSpec.VelCmd GHC.Types.Double
+    -> RobotSpec.VelCmd GHC.Types.Double
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S,1*U(1*U(U),1*U(U))><S,1*U(1*U(U),1*U(U))>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ (eta :: RobotSpec.VelCmd GHC.Types.Double)
+                   (eta1 :: RobotSpec.VelCmd GHC.Types.Double) ->
+                 case eta of wild { RobotSpec.VelCmd t1 r1 ->
+                 case eta1 of wild1 { RobotSpec.VelCmd t2 r2 ->
+                 RobotSpec.VelCmd
+                   @ GHC.Types.Double
+                   (GHC.Float.plusDouble t1 t2)
+                   (GHC.Float.plusDouble r1 r2) } }) -}
+2d6bff93066bb9f22b2fd72935c8b1f8
+  averageVels ::
+    GHC.Real.Fractional a =>
+    RobotSpec.VelCmd a -> RobotSpec.VelCmd a -> RobotSpec.VelCmd a
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U(1*U,C(C1(U)),A,A)><S,1*U(U,U)><S,1*U(U,U)>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   (w :: GHC.Real.Fractional a)
+                   (w1 :: RobotSpec.VelCmd a)
+                   (w2 :: RobotSpec.VelCmd a) ->
+                 case w1 of ww { RobotSpec.VelCmd ww1 ww2 ->
+                 case w2 of ww3 { RobotSpec.VelCmd ww4 ww5 ->
+                 case RobotSpec.$waverageVels
+                        @ a
+                        w
+                        ww1
+                        ww2
+                        ww4
+                        ww5 of ww6 { (#,#) ww7 ww8 ->
+                 RobotSpec.VelCmd @ a ww7 ww8 } } }) -}
+f3db777b46cf2625cb531d7d737d2b88
+  averageVels1 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (2) -}
+c451f027c33b5df144461786ce22ef9b
+  core :: Improv.KineChain GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (Improv.Link
+                   @ GHC.Types.Double
+                   RobotSpec.core2
+                   RobotSpec.core1) -}
+7fc9c39e2bccfed2074a1ecebea4f2bd
+  core1 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 0.0##) -}
+5be08dcb74146c97febe2d676153facc
+  core2 :: Improv.Origin
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Improv.O RobotSpec.$fShowVelCmd1) -}
+6d9189755de242b8a0363cc420c78b16
+  danceToMsg ::
+    Improv.Parts a =>
+    Improv.Dance a -> [RobotSpec.VelCmd GHC.Types.Double]
+  {- Arity: 2, Strictness: <L,A><S,1*U>, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, True)
+                (\ @ a (w :: Improv.Parts a) (w1 :: Improv.Dance a) ->
+                 RobotSpec.$wdanceToMsg @ a w1) -}
+7283b555d34abe9e084634cd48be2369
+  increaseVel ::
+    Improv.Mult
+    -> RobotSpec.VelCmd GHC.Types.Double
+    -> RobotSpec.VelCmd GHC.Types.Double
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,U(U)><S,1*U(1*U(U),1*U(U))>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ (mult :: Improv.Mult)
+                   (vcmd :: RobotSpec.VelCmd GHC.Types.Double) ->
+                 case vcmd of wild { RobotSpec.VelCmd t r ->
+                 RobotSpec.VelCmd
+                   @ Improv.Mult
+                   (GHC.Float.timesDouble t mult)
+                   (GHC.Float.timesDouble r mult) }) -}
+8f5021651fd8de3820664850975e4bea
+  mkTwist ::
+    RobotSpec.VelCmd GHC.Types.Double -> Ros.Geometry_msgs.Twist.Twist
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U(U,U)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: RobotSpec.VelCmd GHC.Types.Double) ->
+                 case ds of wild { RobotSpec.VelCmd t r ->
+                 Ros.Geometry_msgs.Twist.Twist
+                   (Ros.Geometry_msgs.Vector3.Vector3
+                      t
+                      Data.Default.Generics.$fDefaultCDouble_$cdef1
+                      Data.Default.Generics.$fDefaultCDouble_$cdef1)
+                   (Ros.Geometry_msgs.Vector3.Vector3
+                      Data.Default.Generics.$fDefaultCDouble_$cdef1
+                      Data.Default.Generics.$fDefaultCDouble_$cdef1
+                      r) }) -}
+0ed10a85a5c364777af540d156d17911
+  moveBase :: Improv.Action -> RobotSpec.VelCmd GHC.Types.Double
+  {- Arity: 1, Strictness: <S(SL),1*U(1*U,1*U)>m, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Improv.Action) ->
+                 case w of ww { Improv.A ww1 ww2 ->
+                 case RobotSpec.$wmoveBase ww1 ww2 of ww3 { (#,#) ww4 ww5 ->
+                 RobotSpec.VelCmd @ GHC.Types.Double ww4 ww5 } }) -}
+6eaf6ef122fd8d298e6cb2ce17417761
+  moveCommands ::
+    [RobotSpec.VelCmd GHC.Types.Double]
+    -> Ros.Topic.Topic GHC.Types.IO Ros.Geometry_msgs.Twist.Twist
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: (\ (cfs :: [RobotSpec.VelCmd GHC.Types.Double]) ->
+                 Ros.Topic.Util.concats
+                   @ GHC.Types.IO
+                   @ []
+                   @ Ros.Geometry_msgs.Twist.Twist
+                   GHC.Base.$fMonadIO
+                   Data.Foldable.$fFoldable[]
+                   (\ (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                    letrec {
+                      go :: GHC.Prim.State# GHC.Prim.RealWorld
+                            -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                  ([Ros.Geometry_msgs.Twist.Twist],
+                                   Ros.Topic.Topic GHC.Types.IO [Ros.Geometry_msgs.Twist.Twist]) #)
+                        {- Arity: 1, Strictness: <S,U> -}
+                      = \ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                        (# s,
+                           (RobotSpec.moveCommands_go cfs,
+                            go
+                              `cast`
+                            (Trans
+                                 (Sym (GHC.Types.N:IO[0]
+                                           <([Ros.Geometry_msgs.Twist.Twist],
+                                             Ros.Topic.Topic
+                                               GHC.Types.IO [Ros.Geometry_msgs.Twist.Twist])>_R))
+                                 (Sym (Ros.Topic.N:Topic[0]
+                                           <GHC.Types.IO>_N
+                                           <[Ros.Geometry_msgs.Twist.Twist]>_N)))) #)
+                    } in
+                    go eta)
+                     `cast`
+                   (Trans
+                        (Sym (GHC.Types.N:IO[0]
+                                  <([Ros.Geometry_msgs.Twist.Twist],
+                                    Ros.Topic.Topic
+                                      GHC.Types.IO [Ros.Geometry_msgs.Twist.Twist])>_R))
+                        (Sym (Ros.Topic.N:Topic[0]
+                                  <GHC.Types.IO>_N <[Ros.Geometry_msgs.Twist.Twist]>_N)))) -}
+2ecee4c00da7f548b98ea025845a7fc3
+  moveCommands_go ::
+    [RobotSpec.VelCmd GHC.Types.Double]
+    -> [Ros.Geometry_msgs.Twist.Twist]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+f836899d0ccc296912c944001f5be396
+  robotRate :: Improv.Mult
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 1.0##) -}
+5abde1cc64f045f8b3438b5fcc3a267b
+  robotRes :: Improv.Mult
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.D# 100.0##) -}
+e75c085cb31eff025403499c22ad7603
+  rotate :: GHC.Types.Double -> RobotSpec.VelCmd GHC.Types.Double
+  {- Arity: 1, Strictness: <L,1*U(U)>m, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: GHC.Types.Double) ->
+                 case RobotSpec.$wrotate w of ww { (#,#) ww1 ww2 ->
+                 RobotSpec.VelCmd @ GHC.Types.Double ww1 ww2 }) -}
+3d5b30baf36bff3a5639521299cb285c
+  rotate1 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.D# 6.283185307179586##) -}
+ba3ebe7990341c8fd4ae8300298683fe
+  translate :: GHC.Types.Double -> RobotSpec.VelCmd GHC.Types.Double
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (d :: GHC.Types.Double) ->
+                 RobotSpec.VelCmd @ GHC.Types.Double d RobotSpec.core1) -}
+instance GHC.Classes.Eq [RobotSpec.VelCmd] = RobotSpec.$fEqVelCmd
+instance GHC.Base.Functor [RobotSpec.VelCmd]
+  = RobotSpec.$fFunctorVelCmd
+instance GHC.Show.Show [RobotSpec.VelCmd] = RobotSpec.$fShowVelCmd
+"SPEC addVels @ Double" [ALWAYS] forall ($dFractional :: GHC.Real.Fractional
+                                                           GHC.Types.Double)
+  RobotSpec.addVels @ GHC.Types.Double $dFractional
+  = RobotSpec.addVels_$saddVels
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

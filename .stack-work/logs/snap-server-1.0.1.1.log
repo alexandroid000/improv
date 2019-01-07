@@ -1,0 +1,42 @@
+Configuring snap-server-1.0.1.1...
+Building snap-server-1.0.1.1...
+Preprocessing library snap-server-1.0.1.1...
+[ 1 of 20] Compiling System.SendFile.Linux ( .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/System/SendFile/Linux.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/System/SendFile/Linux.o )
+[ 2 of 20] Compiling System.SendFile  ( .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/System/SendFile.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/System/SendFile.o )
+[ 3 of 20] Compiling Snap.Internal.Http.Server.Types ( src/Snap/Internal/Http/Server/Types.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Snap/Internal/Http/Server/Types.o )
+[ 4 of 20] Compiling Snap.Internal.Http.Server.TLS ( src/Snap/Internal/Http/Server/TLS.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Snap/Internal/Http/Server/TLS.o )
+[ 5 of 20] Compiling Snap.Internal.Http.Server.Parser ( src/Snap/Internal/Http/Server/Parser.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Snap/Internal/Http/Server/Parser.o )
+[ 6 of 20] Compiling Snap.Internal.Http.Server.Date ( src/Snap/Internal/Http/Server/Date.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Snap/Internal/Http/Server/Date.o )
+[ 7 of 20] Compiling Snap.Internal.Http.Server.Config ( src/Snap/Internal/Http/Server/Config.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Snap/Internal/Http/Server/Config.o )
+[ 8 of 20] Compiling Snap.Internal.Http.Server.Common ( src/Snap/Internal/Http/Server/Common.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Snap/Internal/Http/Server/Common.o )
+[ 9 of 20] Compiling Snap.Internal.Http.Server.Clock ( src/Snap/Internal/Http/Server/Clock.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Snap/Internal/Http/Server/Clock.o )
+[10 of 20] Compiling Snap.Internal.Http.Server.Address ( src/Snap/Internal/Http/Server/Address.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Snap/Internal/Http/Server/Address.o )
+[11 of 20] Compiling Snap.Internal.Http.Server.Socket ( src/Snap/Internal/Http/Server/Socket.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Snap/Internal/Http/Server/Socket.o )
+
+src/Snap/Internal/Http/Server/Socket.hs:51:45: warning: [-Wdeprecations]
+    In the use of ‘bindSocket’ (imported from Network.Socket):
+    Deprecated: "use 'bind'"
+
+src/Snap/Internal/Http/Server/Socket.hs:82:21: warning: [-Wdeprecations]
+    In the use of ‘bindSocket’ (imported from Network.Socket):
+    Deprecated: "use 'bind'"
+
+src/Snap/Internal/Http/Server/Socket.hs:85:40: warning: [-Wdeprecations]
+    In the use of ‘bindSocket’ (imported from Network.Socket):
+    Deprecated: "use 'bind'"
+[12 of 20] Compiling Snap.Http.Server.Types ( src/Snap/Http/Server/Types.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Snap/Http/Server/Types.o )
+[13 of 20] Compiling Snap.Http.Server.Config ( src/Snap/Http/Server/Config.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Snap/Http/Server/Config.o )
+[14 of 20] Compiling Paths_snap_server ( .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/autogen/Paths_snap_server.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Paths_snap_server.o )
+[15 of 20] Compiling Control.Concurrent.Extended ( src/Control/Concurrent/Extended.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Control/Concurrent/Extended.o )
+[16 of 20] Compiling Snap.Internal.Http.Server.Thread ( src/Snap/Internal/Http/Server/Thread.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Snap/Internal/Http/Server/Thread.o )
+[17 of 20] Compiling Snap.Internal.Http.Server.TimeoutManager ( src/Snap/Internal/Http/Server/TimeoutManager.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Snap/Internal/Http/Server/TimeoutManager.o )
+[18 of 20] Compiling Snap.Internal.Http.Server.Session ( src/Snap/Internal/Http/Server/Session.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Snap/Internal/Http/Server/Session.o )
+[19 of 20] Compiling System.FastLogger ( src/System/FastLogger.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/System/FastLogger.o )
+[20 of 20] Compiling Snap.Http.Server ( src/Snap/Http/Server.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Snap/Http/Server.o )
+
+src/Snap/Http/Server.hs:108:31: warning: [-Wdeprecations]
+    In the use of ‘sClose’ (imported from Network.Socket):
+    Deprecated: "use 'close'"
+Installing library in
+/home/thomas/.stack/snapshots/x86_64-linux/lts-8.5/8.0.2/lib/x86_64-linux-ghc-8.0.2/snap-server-1.0.1.1-K1IxR57mi8gLGN9lNfAdia
+Registering snap-server-1.0.1.1...

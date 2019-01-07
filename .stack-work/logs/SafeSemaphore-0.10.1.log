@@ -1,0 +1,14 @@
+Configuring SafeSemaphore-0.10.1...
+Building SafeSemaphore-0.10.1...
+Preprocessing library SafeSemaphore-0.10.1...
+[1 of 8] Compiling Control.Concurrent.STM.SSemInternals ( src/Control/Concurrent/STM/SSemInternals.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Control/Concurrent/STM/SSemInternals.o )
+[2 of 8] Compiling Control.Concurrent.STM.SSem ( src/Control/Concurrent/STM/SSem.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Control/Concurrent/STM/SSem.o )
+[3 of 8] Compiling Control.Concurrent.SSem ( src/Control/Concurrent/SSem.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Control/Concurrent/SSem.o )
+[4 of 8] Compiling Control.Concurrent.MSemN2 ( src/Control/Concurrent/MSemN2.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Control/Concurrent/MSemN2.o )
+[5 of 8] Compiling Control.Concurrent.MSemN ( src/Control/Concurrent/MSemN.lhs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Control/Concurrent/MSemN.o )
+[6 of 8] Compiling Control.Concurrent.MSem ( src/Control/Concurrent/MSem.lhs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Control/Concurrent/MSem.o )
+[7 of 8] Compiling Control.Concurrent.MSampleVar ( src/Control/Concurrent/MSampleVar.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Control/Concurrent/MSampleVar.o )
+[8 of 8] Compiling Control.Concurrent.FairRWLock ( src/Control/Concurrent/FairRWLock.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Control/Concurrent/FairRWLock.o )
+Installing library in
+/home/thomas/.stack/snapshots/x86_64-linux/lts-8.5/8.0.2/lib/x86_64-linux-ghc-8.0.2/SafeSemaphore-0.10.1-JDvItKST9nQJl8OwRKYJEJ
+Registering SafeSemaphore-0.10.1...

@@ -1,0 +1,81 @@
+Configuring roshask-0.4...
+Preprocessing library roshask-0.4...
+[ 1 of 38] Compiling Ros.Util.PID     ( src/Ros/Util/PID.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Util/PID.o )
+[ 2 of 38] Compiling Ros.Topic        ( src/Ros/Topic.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Topic.o )
+[ 3 of 38] Compiling Ros.Topic.Transformers ( src/Ros/Topic/Transformers.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Topic/Transformers.o )
+[ 4 of 38] Compiling Ros.Service.ServiceTypes ( src/Ros/Service/ServiceTypes.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Service/ServiceTypes.o )
+[ 5 of 38] Compiling Ros.Rate         ( src/Ros/Rate.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Rate.o )
+[ 6 of 38] Compiling Ros.Topic.Util   ( src/Ros/Topic/Util.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Topic/Util.o )
+
+src/Ros/Topic/Util.hs:6:1: warning: [-Wunused-imports]
+    The import of ‘Control.Applicative’ is redundant
+      except perhaps to import instances from ‘Control.Applicative’
+    To import instances alone, use: import Control.Applicative()
+[ 7 of 38] Compiling Ros.Topic.PID    ( src/Ros/Topic/PID.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Topic/PID.o )
+
+src/Ros/Topic/PID.hs:3:1: warning: [-Wunused-imports]
+    The import of ‘Control.Applicative’ is redundant
+      except perhaps to import instances from ‘Control.Applicative’
+    To import instances alone, use: import Control.Applicative()
+[ 8 of 38] Compiling Ros.Node.ConnectionHeader ( src/Ros/Node/ConnectionHeader.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Node/ConnectionHeader.o )
+[ 9 of 38] Compiling Ros.Internal.Util.StorableMonad ( src/Ros/Internal/Util/StorableMonad.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Internal/Util/StorableMonad.o )
+[10 of 38] Compiling Ros.Internal.Util.RingChan ( src/Ros/Internal/Util/RingChan.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Internal/Util/RingChan.o )
+[11 of 38] Compiling Ros.Internal.Util.BytesToVector ( src/Ros/Internal/Util/BytesToVector.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Internal/Util/BytesToVector.o )
+[12 of 38] Compiling Ros.Internal.Util.ArgRemapping ( src/Ros/Internal/Util/ArgRemapping.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Internal/Util/ArgRemapping.o )
+[13 of 38] Compiling Ros.Internal.Util.AppConfig ( src/Ros/Internal/Util/AppConfig.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Internal/Util/AppConfig.o )
+[14 of 38] Compiling Ros.Internal.RosTypes ( src/Ros/Internal/RosTypes.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Internal/RosTypes.o )
+[15 of 38] Compiling Ros.Topic.Stats  ( src/Ros/Topic/Stats.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Topic/Stats.o )
+[16 of 38] Compiling Ros.Internal.RosTime ( src/Ros/Internal/RosTime.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Internal/RosTime.o )
+[17 of 38] Compiling Ros.Internal.RosBinary ( src/Ros/Internal/RosBinary.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Internal/RosBinary.o )
+[18 of 38] Compiling Ros.Node.BinaryIter ( src/Ros/Node/BinaryIter.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Node/BinaryIter.o )
+
+src/Ros/Node/BinaryIter.hs:5:1: warning: [-Wunused-imports]
+    The import of ‘Control.Applicative’ is redundant
+      except perhaps to import instances from ‘Control.Applicative’
+    To import instances alone, use: import Control.Applicative()
+[19 of 38] Compiling Ros.Internal.Msg.SrvInfo ( src/Ros/Internal/Msg/SrvInfo.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Internal/Msg/SrvInfo.o )
+[20 of 38] Compiling Ros.Internal.Msg.MsgInfo ( src/Ros/Internal/Msg/MsgInfo.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Internal/Msg/MsgInfo.o )
+[21 of 38] Compiling Ros.Internal.Msg.HeaderSupport ( src/Ros/Internal/Msg/HeaderSupport.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Internal/Msg/HeaderSupport.o )
+[22 of 38] Compiling Ros.Topic.Stamped ( src/Ros/Topic/Stamped.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Topic/Stamped.o )
+[23 of 38] Compiling Ros.Internal.Header ( src/Ros/Internal/Header.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Internal/Header.o )
+[24 of 38] Compiling Ros.Internal.Log ( src/Ros/Internal/Log.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Internal/Log.o )
+[25 of 38] Compiling Ros.Internal.DepFinder ( src/Ros/Internal/DepFinder.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Internal/DepFinder.o )
+[26 of 38] Compiling Ros.Internal.SetupUtil ( src/Ros/Internal/SetupUtil.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Internal/SetupUtil.o )
+[27 of 38] Compiling Ros.Graph.ParameterServer ( src/Ros/Graph/ParameterServer.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Graph/ParameterServer.o )
+[28 of 38] Compiling Ros.Graph.Master ( src/Ros/Graph/Master.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Graph/Master.o )
+[29 of 38] Compiling Ros.Graph.Slave  ( src/Ros/Graph/Slave.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Graph/Slave.o )
+
+src/Ros/Graph/Slave.hs:4:1: warning: [-Wunused-imports]
+    The import of ‘Control.Applicative’ is redundant
+      except perhaps to import instances from ‘Control.Applicative’
+    To import instances alone, use: import Control.Applicative()
+
+src/Ros/Graph/Slave.hs:178:19: warning: [-Wdeprecations]
+    In the use of ‘bindSocket’ (imported from Network.Socket):
+    Deprecated: "use 'bind'"
+
+src/Ros/Graph/Slave.hs:180:19: warning: [-Wdeprecations]
+    In the use of ‘sClose’ (imported from Network.Socket):
+    Deprecated: "use 'close'"
+[30 of 38] Compiling Ros.Node.Type    ( src/Ros/Node/Type.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Node/Type.o )
+[31 of 38] Compiling Ros.Node.RosTcp  ( src/Ros/Node/RosTcp.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Node/RosTcp.o )
+
+src/Ros/Node/RosTcp.hs:131:1: warning: [-Wunused-top-binds]
+    Defined but not used: ‘pubStreamIO’
+
+src/Ros/Node/RosTcp.hs:303:26: warning: [-Wdeprecations]
+    In the use of ‘bindSocket’ (imported from Network.Socket):
+    Deprecated: "use 'bind'"
+
+src/Ros/Node/RosTcp.hs:348:1: warning: [-Wunused-top-binds]
+    Defined but not used: ‘feedTopic’
+[32 of 38] Compiling Ros.Service      ( src/Ros/Service.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Service.o )
+[33 of 38] Compiling Ros.Node.RunNode ( src/Ros/Node/RunNode.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Node/RunNode.o )
+[34 of 38] Compiling Ros.Node         ( src/Ros/Node.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Node.o )
+[35 of 38] Compiling Ros.Logging      ( src/Ros/Logging.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Logging.o )
+[36 of 38] Compiling Ros.Topic.Arrow  ( src/Ros/Topic/Arrow.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Topic/Arrow.o )
+[37 of 38] Compiling Paths_roshask    ( .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/autogen/Paths_roshask.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Paths_roshask.o )
+[38 of 38] Compiling Ros.Internal.PathUtil ( src/Ros/Internal/PathUtil.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Internal/PathUtil.o )
+Installing library in
+/home/thomas/research_alli/improv/.stack-work/install/x86_64-linux/lts-8.5/8.0.2/lib/x86_64-linux-ghc-8.0.2/roshask-0.4-DpdaNjEsTp5rMH1y98Ib7
+Registering roshask-0.4...

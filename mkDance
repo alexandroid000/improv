@@ -8,6 +8,7 @@ rosservice call /reset
 # examples commented of how to spawn and name more turtles
 
 rosservice call /spawn 5.5 5.5 0 "turtle1"
-#rosservice call /spawn 5.5 5.5 0 "turtle2"
+rosservice call /spawn 5.5 7 1.57 "turtle2"
+rosservice call /spawn 5.5 8.5 3.14 "turtle3"
 
 stack exec -- improv-exe &

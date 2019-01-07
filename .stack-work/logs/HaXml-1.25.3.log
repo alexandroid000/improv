@@ -1,0 +1,207 @@
+Configuring HaXml-1.25.3...
+Building HaXml-1.25.3...
+Preprocessing library HaXml-1.25.3...
+[ 1 of 42] Compiling Text.XML.HaXml.Xtract.Lex ( src/Text/XML/HaXml/Xtract/Lex.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/Xtract/Lex.o )
+
+src/Text/XML/HaXml/Xtract/Lex.hs:21:19: warning: [-Wtabs]
+    Tab character found here, and in five further locations.
+    Please use spaces instead.
+[ 2 of 42] Compiling Text.XML.HaXml.Types ( src/Text/XML/HaXml/Types.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/Types.o )
+[ 3 of 42] Compiling Text.XML.HaXml.Schema.XSDTypeModel ( src/Text/XML/HaXml/Schema/XSDTypeModel.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/Schema/XSDTypeModel.o )
+
+src/Text/XML/HaXml/Schema/XSDTypeModel.hs:305:19: warning: [-Wmissing-fields]
+    • Fields of ‘Schema’ not initialised: schema_elementFormDefault,
+                                          schema_attributeFormDefault, schema_finalDefault,
+                                          schema_blockDefault, schema_targetNamespace,
+                                          schema_version, schema_namespaces
+    • In the expression: Schema {schema_items = []}
+      In an equation for ‘mempty’: mempty = Schema {schema_items = []}
+      In the instance declaration for ‘Monoid Schema’
+[ 4 of 42] Compiling Text.XML.HaXml.Schema.PrimitiveTypes ( src/Text/XML/HaXml/Schema/PrimitiveTypes.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/Schema/PrimitiveTypes.o )
+
+src/Text/XML/HaXml/Schema/PrimitiveTypes.hs:132:40: warning: [-Wtabs]
+    Tab character found here, and in five further locations.
+    Please use spaces instead.
+[ 5 of 42] Compiling Text.XML.HaXml.Posn ( src/Text/XML/HaXml/Posn.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/Posn.o )
+[ 6 of 42] Compiling Text.XML.HaXml.Namespaces ( src/Text/XML/HaXml/Namespaces.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/Namespaces.o )
+[ 7 of 42] Compiling Text.XML.HaXml.Pretty ( src/Text/XML/HaXml/Pretty.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/Pretty.o )
+[ 8 of 42] Compiling Text.XML.HaXml.TypeMapping ( src/Text/XML/HaXml/TypeMapping.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/TypeMapping.o )
+
+src/Text/XML/HaXml/TypeMapping.hs:4:18: warning: [-Wtabs]
+    Tab character found here, and in 12 further locations.
+    Please use spaces instead.
+[ 9 of 42] Compiling Text.XML.HaXml.Schema.NameConversion ( src/Text/XML/HaXml/Schema/NameConversion.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/Schema/NameConversion.o )
+[10 of 42] Compiling Text.XML.HaXml.Verbatim ( src/Text/XML/HaXml/Verbatim.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/Verbatim.o )
+[11 of 42] Compiling Text.XML.HaXml.Util ( src/Text/XML/HaXml/Util.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/Util.o )
+[12 of 42] Compiling Text.XML.HaXml.XmlContent.Parser ( src/Text/XML/HaXml/XmlContent/Parser.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/XmlContent/Parser.o )
+[13 of 42] Compiling Text.XML.HaXml.Schema.Parse ( src/Text/XML/HaXml/Schema/Parse.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/Schema/Parse.o )
+[14 of 42] Compiling Text.XML.HaXml.Schema.Environment ( src/Text/XML/HaXml/Schema/Environment.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/Schema/Environment.o )
+
+src/Text/XML/HaXml/Schema/Environment.hs:88:39: warning: [-Wtabs]
+    Tab character found here.
+    Please use spaces instead.
+[15 of 42] Compiling Text.XML.HaXml.Schema.HaskellTypeModel ( src/Text/XML/HaXml/Schema/HaskellTypeModel.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/Schema/HaskellTypeModel.o )
+[16 of 42] Compiling Text.XML.HaXml.Schema.PrettyHaskell ( src/Text/XML/HaXml/Schema/PrettyHaskell.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/Schema/PrettyHaskell.o )
+
+src/Text/XML/HaXml/Schema/PrettyHaskell.hs:547:1: warning: [-Wtabs]
+    Tab character found here, and in one further location.
+    Please use spaces instead.
+[17 of 42] Compiling Text.XML.HaXml.Schema.PrettyHsBoot ( src/Text/XML/HaXml/Schema/PrettyHsBoot.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/Schema/PrettyHsBoot.o )
+[18 of 42] Compiling Text.XML.HaXml.Schema.TypeConversion ( src/Text/XML/HaXml/Schema/TypeConversion.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/Schema/TypeConversion.o )
+
+src/Text/XML/HaXml/Schema/TypeConversion.hs:298:1: warning: [-Wtabs]
+    Tab character found here, and in 8 further locations.
+    Please use spaces instead.
+[19 of 42] Compiling Text.XML.HaXml.Lex ( src/Text/XML/HaXml/Lex.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/Lex.o )
+
+src/Text/XML/HaXml/Lex.hs:41:21: warning: [-Wtabs]
+    Tab character found here, and in 146 further locations.
+    Please use spaces instead.
+[20 of 42] Compiling Text.XML.HaXml.Parse ( src/Text/XML/HaXml/Parse.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/Parse.o )
+
+src/Text/XML/HaXml/Parse.hs:108:11: warning: [-Wtabs]
+    Tab character found here.
+    Please use spaces instead.
+[21 of 42] Compiling Text.XML.HaXml.ParseLazy ( src/Text/XML/HaXml/ParseLazy.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/ParseLazy.o )
+
+src/Text/XML/HaXml/ParseLazy.hs:112:11: warning: [-Wtabs]
+    Tab character found here.
+    Please use spaces instead.
+[22 of 42] Compiling Text.XML.HaXml.SAX ( src/Text/XML/HaXml/SAX.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/SAX.o )
+
+src/Text/XML/HaXml/SAX.hs:8:1: warning: [-Wtabs]
+    Tab character found here, and in 43 further locations.
+    Please use spaces instead.
+[23 of 42] Compiling Text.XML.HaXml.Html.Pretty ( src/Text/XML/HaXml/Html/Pretty.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/Html/Pretty.o )
+
+src/Text/XML/HaXml/Html/Pretty.hs:147:12: warning: [-Wtabs]
+    Tab character found here, and in 42 further locations.
+    Please use spaces instead.
+[24 of 42] Compiling Text.XML.HaXml.Html.ParseLazy ( src/Text/XML/HaXml/Html/ParseLazy.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/Html/ParseLazy.o )
+
+src/Text/XML/HaXml/Html/ParseLazy.hs:331:30: warning: [-Wtabs]
+    Tab character found here, and in five further locations.
+    Please use spaces instead.
+[25 of 42] Compiling Text.XML.HaXml.Html.Parse ( src/Text/XML/HaXml/Html/Parse.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/Html/Parse.o )
+
+src/Text/XML/HaXml/Html/Parse.hs:332:30: warning: [-Wtabs]
+    Tab character found here, and in five further locations.
+    Please use spaces instead.
+[26 of 42] Compiling Text.XML.HaXml.Escape ( src/Text/XML/HaXml/Escape.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/Escape.o )
+[27 of 42] Compiling Text.XML.HaXml.DtdToHaskell.TypeDef ( src/Text/XML/HaXml/DtdToHaskell/TypeDef.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/DtdToHaskell/TypeDef.o )
+
+src/Text/XML/HaXml/DtdToHaskell/TypeDef.hs:48:18: warning: [-Wtabs]
+    Tab character found here, and in six further locations.
+    Please use spaces instead.
+[28 of 42] Compiling Text.XML.HaXml.DtdToHaskell.Instance ( src/Text/XML/HaXml/DtdToHaskell/Instance.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/DtdToHaskell/Instance.o )
+[29 of 42] Compiling Text.XML.HaXml.DtdToHaskell.Convert ( src/Text/XML/HaXml/DtdToHaskell/Convert.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/DtdToHaskell/Convert.o )
+[30 of 42] Compiling Text.XML.HaXml.Combinators ( src/Text/XML/HaXml/Combinators.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/Combinators.o )
+
+src/Text/XML/HaXml/Combinators.hs:59:39: warning: [-Wtabs]
+    Tab character found here, and in 7 further locations.
+    Please use spaces instead.
+[31 of 42] Compiling Text.XML.HaXml.Html.Generate ( src/Text/XML/HaXml/Html/Generate.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/Html/Generate.o )
+[32 of 42] Compiling Text.XML.HaXml.Wrappers ( src/Text/XML/HaXml/Wrappers.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/Wrappers.o )
+[33 of 42] Compiling Text.XML.HaXml.Xtract.Combinators ( src/Text/XML/HaXml/Xtract/Combinators.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/Xtract/Combinators.o )
+
+src/Text/XML/HaXml/Xtract/Combinators.hs:70:26: warning: [-Wtabs]
+    Tab character found here, and in one further location.
+    Please use spaces instead.
+[34 of 42] Compiling Text.XML.HaXml.Xtract.Parse ( src/Text/XML/HaXml/Xtract/Parse.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/Xtract/Parse.o )
+
+src/Text/XML/HaXml/Xtract/Parse.hs:231:42: warning: [-Wtabs]
+    Tab character found here, and in three further locations.
+    Please use spaces instead.
+[35 of 42] Compiling Text.XML.HaXml.ByteStringPP ( src/Text/XML/HaXml/ByteStringPP.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/ByteStringPP.o )
+[36 of 42] Compiling Text.XML.HaXml.XmlContent ( src/Text/XML/HaXml/XmlContent.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/XmlContent.o )
+[37 of 42] Compiling Text.XML.HaXml.OneOfN ( src/Text/XML/HaXml/OneOfN.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/OneOfN.o )
+[38 of 42] Compiling Text.XML.HaXml.Schema.Schema ( src/Text/XML/HaXml/Schema/Schema.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/Schema/Schema.o )
+[39 of 42] Compiling Text.XML.HaXml.ShowXmlLazy ( src/Text/XML/HaXml/ShowXmlLazy.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/ShowXmlLazy.o )
+[40 of 42] Compiling Text.XML.HaXml.Validate ( src/Text/XML/HaXml/Validate.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/Validate.o )
+
+src/Text/XML/HaXml/Validate.hs:39:48: warning: [-Wtabs]
+    Tab character found here, and in five further locations.
+    Please use spaces instead.
+[41 of 42] Compiling Text.XML.HaXml.XmlContent.Haskell ( src/Text/XML/HaXml/XmlContent/Haskell.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml/XmlContent/Haskell.o )
+[42 of 42] Compiling Text.XML.HaXml   ( src/Text/XML/HaXml.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/XML/HaXml.o )
+
+src/Text/XML/HaXml.hs:37:1: warning: [-Wtabs]
+    Tab character found here, and in one further location.
+    Please use spaces instead.
+Preprocessing executable 'Canonicalise' for HaXml-1.25.3...
+[1 of 1] Compiling Main             ( src/tools/Canonicalise.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Canonicalise/Canonicalise-tmp/Main.o )
+Linking .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Canonicalise/Canonicalise ...
+Preprocessing executable 'CanonicaliseLazy' for HaXml-1.25.3...
+[1 of 1] Compiling Main             ( src/tools/CanonicaliseLazy.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/CanonicaliseLazy/CanonicaliseLazy-tmp/Main.o )
+Linking .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/CanonicaliseLazy/CanonicaliseLazy ...
+Preprocessing executable 'Xtract' for HaXml-1.25.3...
+[1 of 1] Compiling Main             ( src/tools/Xtract.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Xtract/Xtract-tmp/Main.o )
+
+src/tools/Xtract.hs:32:1: warning: [-Wmissing-signatures]
+    Top-level binding with no type signature: defaultOptions :: Opts
+
+src/tools/Xtract.hs:51:23: warning: [-Wunused-local-binds]
+    Defined but not used: ‘errs’
+Linking .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Xtract/Xtract ...
+Preprocessing executable 'Validate' for HaXml-1.25.3...
+[1 of 1] Compiling Main             ( src/tools/Validate.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Validate/Validate-tmp/Main.o )
+Linking .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Validate/Validate ...
+Preprocessing executable 'MkOneOf' for HaXml-1.25.3...
+[1 of 1] Compiling Main             ( src/tools/MkOneOf.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/MkOneOf/MkOneOf-tmp/Main.o )
+
+src/tools/MkOneOf.hs:92:14: warning: [-Wtabs]
+    Tab character found here, and in 8 further locations.
+    Please use spaces instead.
+Linking .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/MkOneOf/MkOneOf ...
+Preprocessing executable 'DtdToHaskell' for HaXml-1.25.3...
+[1 of 1] Compiling Main             ( src/tools/DtdToHaskell.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/DtdToHaskell/DtdToHaskell-tmp/Main.o )
+
+src/tools/DtdToHaskell.hs:20:1: warning: [-Wunused-imports]
+    The import of ‘TypeDef’
+    from module ‘Text.XML.HaXml.DtdToHaskell.TypeDef’ is redundant
+Linking .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/DtdToHaskell/DtdToHaskell ...
+Preprocessing executable 'XsdToHaskell' for HaXml-1.25.3...
+[1 of 1] Compiling Main             ( src/tools/XsdToHaskell.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/XsdToHaskell/XsdToHaskell-tmp/Main.o )
+
+src/tools/XsdToHaskell.hs:32:1: warning: [-Wunused-imports]
+    The import of ‘vcat’
+    from module ‘Text.PrettyPrint.HughesPJ’ is redundant
+Linking .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/XsdToHaskell/XsdToHaskell ...
+Preprocessing executable 'FpMLToHaskell' for HaXml-1.25.3...
+[1 of 1] Compiling Main             ( src/tools/FpMLToHaskell.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/FpMLToHaskell/FpMLToHaskell-tmp/Main.o )
+
+src/tools/FpMLToHaskell.hs:40:1: warning: [-Wunused-imports]
+    The import of ‘vcat’
+    from module ‘Text.PrettyPrint.HughesPJ’ is redundant
+
+src/tools/FpMLToHaskell.hs:71:3: warning: [-Wname-shadowing]
+    This binding for ‘wordsBy’ shadows the existing binding
+      imported from ‘Text.XML.HaXml.Schema.NameConversion’ at src/tools/FpMLToHaskell.hs:33:1-43
+
+src/tools/FpMLToHaskell.hs:77:37: warning: [-Wunused-matches]
+    Defined but not used: ‘outf’
+
+src/tools/FpMLToHaskell.hs:174:9: warning: [-Wname-shadowing]
+    This binding for ‘name’ shadows the existing binding
+      imported from ‘Text.XML.HaXml.Schema.Parse’ at src/tools/FpMLToHaskell.hs:31:1-34
+
+src/tools/FpMLToHaskell.hs:180:5: warning: [-Wname-shadowing]
+    This binding for ‘traverse’ shadows the existing binding
+      imported from ‘Prelude’ at src/tools/FpMLToHaskell.hs:2:8-11
+      (and originally defined in ‘Data.Traversable’)
+
+src/tools/FpMLToHaskell.hs:188:12: warning: [-Wname-shadowing]
+    This binding for ‘name’ shadows the existing binding
+      imported from ‘Text.XML.HaXml.Schema.Parse’ at src/tools/FpMLToHaskell.hs:31:1-34
+
+src/tools/FpMLToHaskell.hs:203:12: warning: [-Wunused-matches]
+    Defined but not used: ‘proj’
+
+src/tools/FpMLToHaskell.hs:203:17: warning: [-Wunused-matches]
+    Defined but not used: ‘x’
+Linking .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/FpMLToHaskell/FpMLToHaskell ...
+Installing library in
+/home/thomas/.stack/snapshots/x86_64-linux/lts-8.5/8.0.2/lib/x86_64-linux-ghc-8.0.2/HaXml-1.25.3-FWQAuB12BJOFPkTQ2EGoJq
+Installing executable(s) in
+/home/thomas/.stack/snapshots/x86_64-linux/lts-8.5/8.0.2/bin
+Registering HaXml-1.25.3...

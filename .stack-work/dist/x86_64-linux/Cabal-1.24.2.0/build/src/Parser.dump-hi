@@ -1,0 +1,1465 @@
+
+==================== FINAL INTERFACE ====================
+2018-09-28 14:21:51.647042718 UTC
+
+interface improv-0.1.0.0-SK2koE1cQA7mN0X0IxqKL:Parser 8002
+  interface hash: 605d96e7b2d78eeceba35a3b8df33795
+  ABI hash: 52c38452cd595eea90f404a2013102be
+  export-list hash: 58ec50cfd705f3fb29c91dee94d30bb3
+  orphan hash: 21c5f4b0277dfd1aabb2ee640ee271fa
+  flag hash: ab396f11155bd696ab63895436e6f1df
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Parser.approach
+  Parser.axes
+  Parser.channelNames
+  Parser.convertCommands
+  Parser.convertFile
+  Parser.convertLines
+  Parser.forward
+  Parser.halfleft
+  Parser.halfright
+  Parser.left
+  Parser.multiFuncs
+  Parser.parseDoc
+  Parser.rest
+  Parser.right
+  Parser.skipNewline
+  Parser.skipSpace
+  Parser.startCommands
+  Parser.throwErr
+  Parser.varName
+  Parser.CommandState
+  Parser.OurDance
+  Parser.OurRobot
+  Parser.ParseErr{Parser.ParseErr}
+  Parser.Tree{Parser.Bracket Parser.Leaf Parser.Node}
+module dependencies: Improv RobotSpec
+package dependencies: BoundedChan-1.0.3.0@BoundedChan-1.0.3.0-4JzWP3OklUcCneRsi7r5OJ
+                      HaXml-1.25.3@HaXml-1.25.3-FWQAuB12BJOFPkTQ2EGoJq
+                      HsOpenSSL-0.11.4.8@HsOpenSSL-0.11.4.8-1oNCsrDcNP77diHIz2jQJU
+                      MemoTrie-0.6.7@MemoTrie-0.6.7-BQ9xkZLBNYcCjvEu2ePp3B
+                      ROS-geometry-msgs-0.4@ROS-geometry-msgs-0.4-8VAt8iGbBsDDns5dVZ9ia0
+                      SafeSemaphore-0.10.1@SafeSemaphore-0.10.1-JDvItKST9nQJl8OwRKYJEJ
+                      aeson-1.0.2.1@aeson-1.0.2.1-1PgNnQdZpa7BG8cq9P3bMU
+                      array-0.5.1.1@array-0.5.1.1
+                      attoparsec-0.13.1.0@attoparsec-0.13.1.0-HCAgpBrKCLJ5li8FbfXxE1
+                      base-4.9.1.0
+                      base-compat-0.9.1@base-compat-0.9.1-B9geVZFtCvE8ERS7UcvkRz
+                      base-orphans-0.5.4@base-orphans-0.5.4-ABoxiBf7nXc7Qqh66CgYc9
+                      base64-bytestring-1.0.0.1@base64-bytestring-1.0.0.1-4O9TExPPz6eI82Yj7L4SIj
+                      binary-0.8.3.0@binary-0.8.3.0
+                      blaze-builder-0.4.0.2@blaze-builder-0.4.0.2-CGB8BvrFgghHy5bLy0SFOg
+                      bytestring-0.10.8.1@bytestring-0.10.8.1
+                      case-insensitive-1.2.0.8@case-insensitive-1.2.0.8-JH9TmxTHpl01TJ0h86Xqcf
+                      clock-0.7.2@clock-0.7.2-8dRNleB7rysIZAOReuhpZA
+                      containers-0.5.7.1@containers-0.5.7.1
+                      data-default-generics-0.3@data-default-generics-0.3-B8BhuwTGVQrEVu284UH2Kt
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 directory-1.3.0.0@directory-1.3.0.0
+                      dlist-0.8.0.2@dlist-0.8.0.2-6Wnps4GD7EFnRucVzXIFD
+                      filepath-1.4.1.1@filepath-1.4.1.1
+                      ghc-boot-th-8.0.2@ghc-boot-th-8.0.2 ghc-prim-0.5.0.0
+                      hashable-1.2.5.0@hashable-1.2.5.0-F4MWeNuv2sjJRqBd2T5ul4
+                      haxr-3000.11.2@haxr-3000.11.2-HkIvnlCK4SqAH3GCUWmKln
+                      http-common-0.8.2.0@http-common-0.8.2.0-CJXewAwxX1jDNjAwLVJIOr
+                      http-streams-0.8.4.0@http-streams-0.8.4.0-EzrO9cAwKtVFPzrqi5IFkE
+                      integer-gmp-1.0.0.1
+                      integer-logarithms-1.0.1@integer-logarithms-1.0.1-IEHCuEd5sG4JjSjlx7m5JF
+                      io-streams-1.3.6.0@io-streams-1.3.6.0-4EVWBhw25UlK3e8khXUkTI
+                      io-streams-haproxy-1.0.0.1@io-streams-haproxy-1.0.0.1-EBBsK59yHH2GeORnTu1SiT
+                      lens-family-core-1.2.1@lens-family-core-1.2.1-LZ6TX4t6mGs5hzfIChMtCb
+                      lens-family-th-0.5.0.0@lens-family-th-0.5.0.0-6sfnzsvKPA98SHzs8eB6Wj
+                      lifted-base-0.2.3.10@lifted-base-0.2.3.10-BoEavBFIcriDza63doCjS2
+                      monad-control-1.0.1.0@monad-control-1.0.1.0-LQwQ0Hi5p0oAccTfTzbfD5
+                      mtl-2.2.1@mtl-2.2.1-BLKBelFsPB3BoFeSWSOYj6
+                      network-2.6.3.1@network-2.6.3.1-ABFtZSq90Z9BfMXNiqgBoe
+                      network-uri-2.6.1.0@network-uri-2.6.1.0-EwGrJ9bdUqR1E7dAIJ4cwF
+                      newtype-generics-0.5@newtype-generics-0.5-9eIKAb10zDILJBpr5WYetq
+                      old-locale-1.0.0.7@old-locale-1.0.0.7-KGBP1BSKxH5GCm0LnZP04j
+                      old-time-1.1.0.3@old-time-1.1.0.3-KWRsMSdY26c2L27Y9n9cyq
+                      openssl-streams-1.2.1.0@openssl-streams-1.2.1.0-3Ux15Db9t1MHPUzXCgGk0S
+                      parsec-3.1.11@parsec-3.1.11-113irVHGgd88sRnywByDNw
+                      polyparse-1.12@polyparse-1.12-Ee2dhxWFCj0JUfsZIQidEE
+                      pretty-1.1.3.3@pretty-1.1.3.3
+                      primitive-0.6.1.0@primitive-0.6.1.0-6AbSTw9JXz141LE5p6LGH
+                      process-1.4.3.0@process-1.4.3.0
+                      readable-0.3.1@readable-0.3.1-8piNgty2EAr2CxSq7XRfFV
+                      roshask-0.4@roshask-0.4-DpdaNjEsTp5rMH1y98Ib7
+                      safe-0.3.14@safe-0.3.14-GsbXn9D9F3BDazVNcErzdQ
+                      scientific-0.3.4.10@scientific-0.3.4.10-HRQd1hS6vMV6hvjSlMi8B0
+                      snap-core-1.0.1.0@snap-core-1.0.1.0-11Mpk6zV2N15wYaqOD968C
+                      snap-server-1.0.1.1@snap-server-1.0.1.1-K1IxR57mi8gLGN9lNfAdia
+                      split-0.2.3.1@split-0.2.3.1-FWyXC6nhV0H3AfM8IzrEFk
+                      stm-2.4.4.1@stm-2.4.4.1-JQn4hNPyYjP5m9AcbI88Ve
+                      storable-record-0.0.3.1@storable-record-0.0.3.1-ItZtoVhInjCK54XumJjnAY
+                      storable-tuple-0.0.3.2@storable-tuple-0.0.3.2-LUAQRJAYsGb4GXYXG8nvOt
+                      tagged-0.8.5@tagged-0.8.5-1mTloBSoUxv8dqUr8XBGBt
+                      template-haskell-2.11.1.0
+                      text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR
+                      time-1.6.0.1@time-1.6.0.1
+                      time-locale-compat-0.1.1.3@time-locale-compat-0.1.1.3-KZ1jqNx8uhlHjmuPPj6V1Y
+                      transformers-0.5.2.0@transformers-0.5.2.0
+                      transformers-base-0.4.4@transformers-base-0.4.4-GKSs0LKukAL8ymq2naFmrH
+                      unix-2.7.2.1@unix-2.7.2.1
+                      unix-compat-0.4.3.1@unix-compat-0.4.3.1-Ausmw6d7KIwA7sl52mzqxC
+                      unordered-containers-0.2.7.2@unordered-containers-0.2.7.2-8AmrySQXjRGF6VciYs51fM
+                      uri-0.1.6.4@uri-0.1.6.4-LqRXktAqt8X5nxsrOgiNDF
+                      utf8-string-1.0.1.1@utf8-string-1.0.1.1-1DpjxLeTvGg7ttZZojxJR5
+                      utility-ht-0.0.12@utility-ht-0.0.12-Fnn9WgGbiem6G1X7619o8t
+                      vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG
+                      vector-space-0.10.4@vector-space-0.10.4-K1jh5A5NiHbFdG9bAV0KZx
+                      zlib-0.6.1.2@zlib-0.6.1.2-7negTfm2ujt1gW4wr40MUp
+                      zlib-bindings-0.1.1.5@zlib-bindings-0.1.1.5-4AFfs0NmxaYKZpHnixldSp
+orphans: HaXml-1.25.3@HaXml-1.25.3-FWQAuB12BJOFPkTQ2EGoJq:Text.XML.HaXml.XmlContent
+         HsOpenSSL-0.11.4.8@HsOpenSSL-0.11.4.8-1oNCsrDcNP77diHIz2jQJU:OpenSSL.EVP.PKey
+         attoparsec-0.13.1.0@attoparsec-0.13.1.0-HCAgpBrKCLJ5li8FbfXxE1:Data.Attoparsec.ByteString.Char8
+         attoparsec-0.13.1.0@attoparsec-0.13.1.0-HCAgpBrKCLJ5li8FbfXxE1:Data.Attoparsec.Text.Internal
+         base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+         binary-0.8.3.0@binary-0.8.3.0:Data.Binary.Generic
+         bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Builder
+         hashable-1.2.5.0@hashable-1.2.5.0-F4MWeNuv2sjJRqBd2T5ul4:Data.Hashable.Generic
+         network-2.6.3.1@network-2.6.3.1-ABFtZSq90Z9BfMXNiqgBoe:Network.Socket
+         snap-core-1.0.1.0@snap-core-1.0.1.0-11Mpk6zV2N15wYaqOD968C:Snap.Internal.Instances
+         stm-2.4.4.1@stm-2.4.4.1-JQn4hNPyYjP5m9AcbI88Ve:Control.Monad.STM
+         storable-tuple-0.0.3.2@storable-tuple-0.0.3.2-LUAQRJAYsGb4GXYXG8nvOt:Foreign.Storable.Tuple
+         text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text
+         text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text.Lazy
+         text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text.Show
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+         vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector.Fusion.Bundle
+         vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector.Unboxed
+family instance modules: MemoTrie-0.6.7@MemoTrie-0.6.7-BQ9xkZLBNYcCjvEu2ePp3B:Data.MemoTrie
+                         ROS-geometry-msgs-0.4@ROS-geometry-msgs-0.4-8VAt8iGbBsDDns5dVZ9ia0:Ros.Geometry_msgs.Twist
+                         ROS-geometry-msgs-0.4@ROS-geometry-msgs-0.4-8VAt8iGbBsDDns5dVZ9ia0:Ros.Geometry_msgs.Vector3
+                         attoparsec-0.13.1.0@attoparsec-0.13.1.0-HCAgpBrKCLJ5li8FbfXxE1:Data.Attoparsec.Internal.Types
+                         base-4.9.1.0:Control.Applicative base-4.9.1.0:Data.Complex
+                         base-4.9.1.0:Data.Either base-4.9.1.0:Data.Functor.Compose
+                         base-4.9.1.0:Data.Functor.Const base-4.9.1.0:Data.Functor.Identity
+                         base-4.9.1.0:Data.Functor.Product base-4.9.1.0:Data.Functor.Sum
+                         base-4.9.1.0:Data.List.NonEmpty base-4.9.1.0:Data.Monoid
+                         base-4.9.1.0:Data.Semigroup base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:Data.Version base-4.9.1.0:Data.Void
+                         base-4.9.1.0:GHC.Exts base-4.9.1.0:GHC.Generics
+                         base-4.9.1.0:GHC.IO.Exception base-4.9.1.0:GHC.TypeLits
+                         clock-0.7.2@clock-0.7.2-8dRNleB7rysIZAOReuhpZA:System.Clock
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntMap.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntSet.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         dlist-0.8.0.2@dlist-0.8.0.2-6Wnps4GD7EFnRucVzXIFD:Data.DList
+                         ghc-boot-th-8.0.2@ghc-boot-th-8.0.2:GHC.LanguageExtensions.Type
+                         monad-control-1.0.1.0@monad-control-1.0.1.0-LQwQ0Hi5p0oAccTfTzbfD5:Control.Monad.Trans.Control
+                         network-uri-2.6.1.0@network-uri-2.6.1.0-EwGrJ9bdUqR1E7dAIJ4cwF:Network.URI
+                         newtype-generics-0.5@newtype-generics-0.5-9eIKAb10zDILJBpr5WYetq:Control.Newtype
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.Annotated.HughesPJ
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.HughesPJ
+                         primitive-0.6.1.0@primitive-0.6.1.0-6AbSTw9JXz141LE5p6LGH:Control.Monad.Primitive
+                         snap-core-1.0.1.0@snap-core-1.0.1.0-11Mpk6zV2N15wYaqOD968C:Snap.Internal.Core
+                         tagged-0.8.5@tagged-0.8.5-1mTloBSoUxv8dqUr8XBGBt:Data.Tagged
+                         template-haskell-2.11.1.0:Language.Haskell.TH.Syntax
+                         text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text
+                         text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text.Lazy
+                         unordered-containers-0.2.7.2@unordered-containers-0.2.7.2-8AmrySQXjRGF6VciYs51fM:Data.HashMap.Base
+                         unordered-containers-0.2.7.2@unordered-containers-0.2.7.2-8AmrySQXjRGF6VciYs51fM:Data.HashSet
+                         vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector
+                         vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector.Primitive
+                         vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector.Storable
+                         vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector.Unboxed
+                         vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector.Unboxed.Base
+                         zlib-0.6.1.2@zlib-0.6.1.2-7negTfm2ujt1gW4wr40MUp:Codec.Compression.Zlib.Stream
+import  -/  ROS-geometry-msgs-0.4@ROS-geometry-msgs-0.4-8VAt8iGbBsDDns5dVZ9ia0:Ros.Geometry_msgs.Twist 7d87c9e8cac68e79f04543d0115a317c
+import  -/  base-4.9.1.0:Data.Either 20b09ef8d0a5b74fdec011c40c1587f5
+import  -/  base-4.9.1.0:Data.Foldable 3e0b6967a1da89945d0e2d47266337a2
+import  -/  base-4.9.1.0:Data.Functor 5ab1dc703df5b482e77efb697833ca3c
+import  -/  base-4.9.1.0:Data.List 07ae2acca6538aa0800bd0a993ac6ac1
+import  -/  base-4.9.1.0:Data.OldList 27987919d8da2f92e3f472ca81f730f8
+import  -/  base-4.9.1.0:Data.Traversable 556020d7cf3c4a34a774600512918a37
+import  -/  base-4.9.1.0:Debug.Trace a9edf3aec504f4423d8ba829ab373a25
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:GHC.List ab8c4e523e6c479c549d3bcd5fc4a439
+import  -/  base-4.9.1.0:GHC.Num 00bfaa7b2f9d6084913c0697a8a49ec8
+import  -/  base-4.9.1.0:GHC.Real 82e4e59051a13dba1da63e1e970a69e6
+import  -/  base-4.9.1.0:GHC.Show a027f5ac24879eaba752f44aa90fe511
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  base-4.9.1.0:Text.Read 75c59863e882ebaec4532e9465e2ee9b
+import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Map 20d4ffbee41965d03d6a989425473dc4
+import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base a29df8c78ba14cbcd4d90f97bd8d22e9
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
+import  -/  Improv 2f26aa05a3be0240b20300b42cb8b232
+  exports: b3baf8a7121f260c766f8067834ab887
+  :+: aa241486d1b02a723ae328cd0f59e33e
+  A a3060e772176174da81c2811e01dcba5
+  Center eaeb3841c01913c11c0c9f598439f604
+  Dance 5992ffb4256db90148fe6d921f18ab3e
+  Eighth 4570b60af114d9bfdcd4adb3d31de057
+  Forward d6e9889aa23452cc297d4d9c9e7f7621
+  Full 22ca6b23c73366dfe7c43b71489730ba
+  Lef 5e9d35432f826594e74597ed825b4f76
+  Prim aa9b69c40dfdcef3a244a6636bb70001
+  Quarter 66be0a8974ed9d13029227188de6b152
+  Righ edcc95b455d9bc5df390c76072e862ef
+  Robot 7e73e49dc3d60b376052d80c7904ec2c
+  Skip d6fffa6b8d1b35325c76d0b032b2d07e
+  XY be825fdfacb69042d38b8df37ac308f0
+  XZ a44cb4115082edaff6832fd62078255d
+  YZ 567757b7df0ca4553fb717059f32bfc3
+  Zero 04ce9c794ed65503dc688666afb3bbd8
+  changeTiming a6efcfa51ff27529e285813e940e5a21
+  parL 82fce940ddf84363393acdb8becc1f7e
+  refl 33ba2d14de457ff321838c9d6212f4fc
+  repeatn a40287e39c7e0b8e671cc3e63604f62e
+  retrogradeDance e3c81014724d7b48f4952723977121d2
+  reverseDance 9b230f3081551683f5296068e56e2de1
+  seqL 617c2544894192868b0523bab0f001fc
+  transform c2ca1c37b275fa7dce4f60c51bf38f85
+import  -/  RobotSpec 888507c401d2c0dc7a90071f917a434c
+  exports: 799b714b0be6ab7978d9268f7086b7ad
+  core c451f027c33b5df144461786ce22ef9b
+  danceToMsg 6d9189755de242b8a0363cc420c78b16
+  moveCommands 6eaf6ef122fd8d298e6cb2ce17417761
+import  -/  integer-gmp-1.0.0.1:GHC.Integer.Type 318df275d77dcdb18e0006d8d7870c2a
+import  -/  mtl-2.2.1@mtl-2.2.1-BLKBelFsPB3BoFeSWSOYj6:Control.Monad.State.Class 6d31234b0a911b56412061943d18b89e
+import  -/  mtl-2.2.1@mtl-2.2.1-BLKBelFsPB3BoFeSWSOYj6:Control.Monad.State.Lazy 3bce07487954e2c74715e207af0f6091
+import  -/  parsec-3.1.11@parsec-3.1.11-113irVHGgd88sRnywByDNw:Text.Parsec.Char 2b9bca237c3b7e82098d0cd07b8812e3
+import  -/  parsec-3.1.11@parsec-3.1.11-113irVHGgd88sRnywByDNw:Text.Parsec.Combinator 7725ce1f17c763bbab0ea685170a3175
+import  -/  parsec-3.1.11@parsec-3.1.11-113irVHGgd88sRnywByDNw:Text.Parsec.Prim a034413522a78da9a0699f67939bcb44
+import  -/  parsec-3.1.11@parsec-3.1.11-113irVHGgd88sRnywByDNw:Text.Parsec.String fa416f505e5e8d6c3735a3e567cb1399
+import  -/  parsec-3.1.11@parsec-3.1.11-113irVHGgd88sRnywByDNw:Text.ParserCombinators.Parsec 09138eb929906f6c6f6f40463cb9c077
+import  -/  parsec-3.1.11@parsec-3.1.11-113irVHGgd88sRnywByDNw:Text.ParserCombinators.Parsec.Prim 7b1aadb29fe2a78079ba5a7807289071
+import  -/  roshask-0.4@roshask-0.4-DpdaNjEsTp5rMH1y98Ib7:Ros.Topic e98c1137b40ea518b356b3d54fb0041b
+import  -/  split-0.2.3.1@split-0.2.3.1-FWyXC6nhV0H3AfM8IzrEFk:Data.List.Split c60198a427bfd51d9fb4562c059ec1d2
+import  -/  split-0.2.3.1@split-0.2.3.1-FWyXC6nhV0H3AfM8IzrEFk:Data.List.Split.Internals 25dced234ed01c9c803d678763a4d772
+import  -/  transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.State.Lazy 371607e50dde46b5f4103b3ab334a497
+776f2db41ebaeeb837c929a738c35d7f
+  $fEqTree :: GHC.Classes.Eq Parser.Tree
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Parser.Tree Parser.$fEqTree_$c== Parser.$fEqTree_$c/= -}
+776f2db41ebaeeb837c929a738c35d7f
+  $fEqTree_$c/= :: Parser.Tree -> Parser.Tree -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (a :: Parser.Tree) (b :: Parser.Tree) ->
+                 case Parser.$fEqTree_$c== a b of wild {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True -> GHC.Types.False }) -}
+776f2db41ebaeeb837c929a738c35d7f
+  $fEqTree_$c== :: Parser.Tree -> Parser.Tree -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U> -}
+776f2db41ebaeeb837c929a738c35d7f
+  $fShowTree :: GHC.Show.Show Parser.Tree
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Parser.Tree
+                  Parser.$fShowTree_$cshowsPrec
+                  Parser.$fShowTree_$cshow
+                  Parser.$fShowTree_$cshowList -}
+776f2db41ebaeeb837c929a738c35d7f
+  $fShowTree1 :: Parser.Tree -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ (w :: Parser.Tree) (w1 :: GHC.Base.String) ->
+                 Parser.$w$cshowsPrec 0# w w1) -}
+776f2db41ebaeeb837c929a738c35d7f
+  $fShowTree_$cshow :: Parser.Tree -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Parser.Tree) ->
+                 Parser.$fShowTree_$cshowsPrec
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+776f2db41ebaeeb837c929a738c35d7f
+  $fShowTree_$cshowList :: [Parser.Tree] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Parser.Tree
+                   Parser.$fShowTree1) -}
+776f2db41ebaeeb837c929a738c35d7f
+  $fShowTree_$cshowsPrec ::
+    GHC.Types.Int -> Parser.Tree -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <S(S),1*U(U)><S,1*U><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: Parser.Tree)
+                   (w2 :: GHC.Base.String) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 Parser.$w$cshowsPrec ww1 w1 w2 }) -}
+63a1f57e9f48370b9dcb8a703f957821
+  $s$fStream[]mtok ::
+    Text.Parsec.Prim.Stream [tok] Data.Functor.Identity.Identity tok
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ tok.
+                  @ [tok]
+                  @ Data.Functor.Identity.Identity
+                  @ tok
+                  (Parser.$s$fStream[]mtok_$s$fStream[]mtok_$cp1Stream @ tok)
+                  (Parser.$s$fStream[]mtok_$s$fStream[]mtok_$cuncons @ tok) -}
+ff4c35f9e5da5d057699255b4f3db84f
+  $s$fStream[]mtok_$s$fStream[]mtok_$cp1Stream ::
+    GHC.Base.Monad Data.Functor.Identity.Identity
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True)
+                (\ @ tok -> Data.Functor.Identity.$fMonadIdentity) -}
+472ac5d68625c0b04c267c5d044d9369
+  $s$fStream[]mtok_$s$fStream[]mtok_$cuncons ::
+    [tok]
+    -> Data.Functor.Identity.Identity (GHC.Base.Maybe (tok, [tok]))
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Inline: INLINE (sat-args=1),
+     Unfolding: InlineRule (1, False, False)
+                (\ @ tok (ds :: [tok]) ->
+                 case ds of wild {
+                   []
+                   -> GHC.Base.$
+                        @ 'GHC.Types.PtrRepLifted
+                        @ (GHC.Base.Maybe (tok, [tok]))
+                        @ (Data.Functor.Identity.Identity (GHC.Base.Maybe (tok, [tok])))
+                        (Data.Functor.Identity.$fApplicativeIdentity_$cpure
+                           @ (GHC.Base.Maybe (tok, [tok])))
+                        (GHC.Base.Nothing @ (tok, [tok]))
+                   : t ts
+                   -> GHC.Base.$
+                        @ 'GHC.Types.PtrRepLifted
+                        @ (GHC.Base.Maybe (tok, [tok]))
+                        @ (Data.Functor.Identity.Identity (GHC.Base.Maybe (tok, [tok])))
+                        (Data.Functor.Identity.$fApplicativeIdentity_$cpure
+                           @ (GHC.Base.Maybe (tok, [tok])))
+                        (GHC.Base.Just @ (tok, [tok]) (t, ts)) }) -}
+e4dba0357366dea7e84973662dff62a6
+  $sfilterGt1 ::
+    GHC.Base.String
+    -> Data.Map.Base.Map GHC.Base.String v
+    -> Data.Map.Base.Map GHC.Base.String v
+  {- Arity: 2, Strictness: <L,U><S,1*U> -}
+6cc24f00382d78240be61a318c6c0cb7
+  $sfilterLt1 ::
+    GHC.Base.String
+    -> Data.Map.Base.Map GHC.Base.String v
+    -> Data.Map.Base.Map GHC.Base.String v
+  {- Arity: 2, Strictness: <L,U><S,1*U> -}
+d05eb82f693a4796551447362c84659f
+  $sfromList ::
+    [(GHC.Base.String, a)] -> Data.Map.Base.Map GHC.Base.String a
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ @ a (ds :: [(GHC.Base.String, a)]) ->
+                 case ds of wild {
+                   [] -> Data.Map.Base.Tip @ GHC.Base.String @ a
+                   : ds1 ds2
+                   -> case ds1 of wild1 { (,) kx x ->
+                      case ds2 of wild2 {
+                        []
+                        -> case kx of dt { DEFAULT ->
+                           Data.Map.Base.Bin
+                             @ GHC.Base.String
+                             @ a
+                             1#
+                             dt
+                             x
+                             (Data.Map.Base.Tip @ GHC.Base.String @ a)
+                             (Data.Map.Base.Tip @ GHC.Base.String @ a) }
+                        : ipv ipv1
+                        -> case ipv of wild3 { (,) ky ds3 ->
+                           case GHC.Classes.$fOrd[]_$s$ccompare1 kx ky of wild4 {
+                             DEFAULT
+                             -> case kx of dt { DEFAULT ->
+                                Parser.$sfromList1
+                                  @ a
+                                  (Data.Map.Base.Bin
+                                     @ GHC.Base.String
+                                     @ a
+                                     1#
+                                     dt
+                                     x
+                                     (Data.Map.Base.Tip @ GHC.Base.String @ a)
+                                     (Data.Map.Base.Tip @ GHC.Base.String @ a))
+                                  wild2 }
+                             GHC.Types.LT
+                             -> case kx of dt { DEFAULT ->
+                                Parser.$wpoly_go10
+                                  @ a
+                                  1#
+                                  (Data.Map.Base.Bin
+                                     @ GHC.Base.String
+                                     @ a
+                                     1#
+                                     dt
+                                     x
+                                     (Data.Map.Base.Tip @ GHC.Base.String @ a)
+                                     (Data.Map.Base.Tip @ GHC.Base.String @ a))
+                                  wild2 } } } } } }) -}
+28c5c797c5f0739178ab92eacccc3e2c
+  $sfromList1 ::
+    Data.Map.Base.Map GHC.Base.String a1
+    -> [(GHC.Base.String, a1)] -> Data.Map.Base.Map GHC.Base.String a1
+  {- Arity: 2, Strictness: <S,1*U><S,1*U> -}
+a089b8375d863a11cbc1f82fdf222fe2
+  $sinsert_$sgo10 ::
+    GHC.Base.String
+    -> a1
+    -> Data.Map.Base.Map GHC.Base.String a1
+    -> Data.Map.Base.Map GHC.Base.String a1
+  {- Arity: 3, Strictness: <S,1*U><L,U><S,1*U> -}
+257bbf20ae65384ec4c42cdf515f5f0a
+  $slookup1 ::
+    GHC.Base.String
+    -> Data.Map.Base.Map GHC.Base.String a -> GHC.Base.Maybe a
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U> -}
+453eac38323165d4f6c7b903c33ead27
+  $strim1 ::
+    GHC.Base.String
+    -> GHC.Base.String
+    -> Data.Map.Base.Map GHC.Base.String a
+    -> Data.Map.Base.Map GHC.Base.String a
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,U><L,U><S,1*U> -}
+ce8639eef902983bcf0bead097da9531
+  $strim3 ::
+    GHC.Base.String
+    -> Data.Map.Base.Map GHC.Base.String a
+    -> Data.Map.Base.Map GHC.Base.String a
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U> -}
+2a13368d88c9328927254f0d3cfbc223
+  $sunionWith_$sunionWithKey ::
+    (GHC.Base.String -> a -> a -> a)
+    -> Data.Map.Base.Map GHC.Base.String a
+    -> Data.Map.Base.Map GHC.Base.String a
+    -> Data.Map.Base.Map GHC.Base.String a
+  {- Arity: 3, Strictness: <L,C(C1(C1(U)))><S,1*U><S,1*U> -}
+2977f29b212ed9add88dd4f2dd1abe2c
+  $tc'Bracket :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   14683789332998040792##
+                   6488627153171954322##
+                   Parser.$trModule
+                   Parser.$tc'Bracket1) -}
+dc08268be0d8ac093b5c8cd3f3f2cd05
+  $tc'Bracket1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Bracket"#) -}
+e7b2f499b16081d38ef30d051e19fcc0
+  $tc'Leaf :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   4772114587260627##
+                   6112143168663944267##
+                   Parser.$trModule
+                   Parser.$tc'Leaf1) -}
+b6421ed107c5218d3fd41ccf83790404
+  $tc'Leaf1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Leaf"#) -}
+13196b8ea8cd02a6b210ae59254dfaf4
+  $tc'Node :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   812066285676849771##
+                   12642426226688877184##
+                   Parser.$trModule
+                   Parser.$tc'Node1) -}
+56d3df99516025b956fbbc47801ee31e
+  $tc'Node1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Node"#) -}
+9da4fb4d96a6c6985f20a37fa05ded68
+  $tc'ParseErr :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   14621459783782706806##
+                   8207760707792322321##
+                   Parser.$trModule
+                   Parser.$tc'ParseErr1) -}
+55372b144cc8a1a9ad553022a7a23dbe
+  $tc'ParseErr1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'ParseErr"#) -}
+8e0624c3609431e0f8fb6cea456dd701
+  $tcParseErr :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   12176085053525339367##
+                   16782414623161701519##
+                   Parser.$trModule
+                   Parser.$tcParseErr1) -}
+d3d143eeeb2b55a6bab6fadbdeafa1b4
+  $tcParseErr1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "ParseErr"#) -}
+b983933aa337732efb78672c335ac81e
+  $tcTree :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   12451711160950512188##
+                   4004207737548120818##
+                   Parser.$trModule
+                   Parser.$tcTree1) -}
+27ba65132c32e6d7cb0e8571f46993f8
+  $tcTree1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Tree"#) -}
+d41cff50498b2ac07cc1743e3b56f0ac
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Parser.$trModule2
+                   Parser.$trModule1) -}
+1a323b05ebd8d5b3997e710389be6106
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Parser"#) -}
+b24369bbf15cc1e1618e354f7250ae08
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "improv-0.1.0.0-SK2koE1cQA7mN0X0IxqKL"#) -}
+776f2db41ebaeeb837c929a738c35d7f
+  $w$cshowsPrec ::
+    GHC.Prim.Int# -> Parser.Tree -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 3, Strictness: <S,U><S,1*U><L,U>, Inline: [0] -}
+1de0483f95c329a48a6a0b47e70d3f23
+  $w$sgreater ::
+    GHC.Base.String
+    -> Data.Map.Base.Map GHC.Base.String a1
+    -> (# GHC.Base.Maybe a1, Data.Map.Base.Map GHC.Base.String a1 #)
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U>, Inline: [0] -}
+19d41201e70ff395b6b1e17efebbb8c1
+  $w$smiddle ::
+    GHC.Base.String
+    -> GHC.Base.String
+    -> Data.Map.Base.Map GHC.Base.String a1
+    -> (# GHC.Base.Maybe a1, Data.Map.Base.Map GHC.Base.String a1 #)
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,U><L,U><S,1*U>,
+     Inline: [0] -}
+00423a2302eaf852692cb1752ec1bb36
+  $wapproach :: [Parser.OurRobot] -> (# [Parser.OurDance] #)
+  {- Arity: 1, Strictness: <S,1*U>, Inline: [0],
+     Unfolding: (\ (w :: [Parser.OurRobot]) ->
+                 case w of wild {
+                   [] -> case Parser.approach5 ret_ty (# [Parser.OurDance] #) of {}
+                   : x ds
+                   -> case ds of wild1 {
+                        [] -> case Parser.approach5 ret_ty (# [Parser.OurDance] #) of {}
+                        : y ds1
+                        -> case ds1 of wild2 {
+                             []
+                             -> (# GHC.Types.:
+                                     @ (Improv.Dance Parser.OurRobot)
+                                     (Improv.:+:
+                                        @ Parser.OurRobot
+                                        (Improv.:+:
+                                           @ Parser.OurRobot
+                                           (Improv.Prim
+                                              @ Parser.OurRobot
+                                              Parser.approach4
+                                              Parser.approach3
+                                              x)
+                                           (Improv.Prim
+                                              @ Parser.OurRobot
+                                              Parser.approach4
+                                              Parser.approach3
+                                              x))
+                                        (Improv.$wrepeatn
+                                           @ Parser.OurRobot
+                                           10#
+                                           (Improv.Prim
+                                              @ Parser.OurRobot
+                                              Parser.approach2
+                                              Parser.approach3
+                                              x)))
+                                     (GHC.Types.:
+                                        @ (Improv.Dance Parser.OurRobot)
+                                        (Improv.:+:
+                                           @ Parser.OurRobot
+                                           (Improv.:+:
+                                              @ Parser.OurRobot
+                                              (Improv.Prim
+                                                 @ Parser.OurRobot
+                                                 Parser.approach1
+                                                 Parser.approach3
+                                                 y)
+                                              (Improv.Prim
+                                                 @ Parser.OurRobot
+                                                 Parser.approach1
+                                                 Parser.approach3
+                                                 y))
+                                           (Improv.$wrepeatn
+                                              @ Parser.OurRobot
+                                              10#
+                                              (Improv.Prim
+                                                 @ Parser.OurRobot
+                                                 Parser.approach2
+                                                 Parser.approach3
+                                                 y)))
+                                        (GHC.Types.[] @ (Improv.Dance Parser.OurRobot))) #)
+                             : ipv ipv1
+                             -> case Parser.approach5
+                                ret_ty (# [Parser.OurDance] #)
+                                of {} } } }) -}
+8b6c437dadd6823b2e7d174d3f9abb42
+  $wpoly_go10 ::
+    GHC.Prim.Int#
+    -> Data.Map.Base.Map GHC.Base.String a
+    -> [(GHC.Base.String, a)]
+    -> Data.Map.Base.Map GHC.Base.String a
+  {- Arity: 3, Strictness: <L,U><S,1*U><S,1*U>, Inline: [0] -}
+8e7a23fc84027369269194367cacf369
+  $wvarName ::
+    [GHC.Types.Char]
+    -> Text.Parsec.Pos.SourceName
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> ()
+    -> (GHC.Base.String
+        -> Text.Parsec.Prim.State [GHC.Types.Char] ()
+        -> Text.Parsec.Error.ParseError
+        -> Data.Functor.Identity.Identity b1)
+    -> (Text.Parsec.Error.ParseError
+        -> Data.Functor.Identity.Identity b1)
+    -> (Text.Parsec.Error.ParseError
+        -> Data.Functor.Identity.Identity b1)
+    -> Data.Functor.Identity.Identity b1
+  {- Arity: 8,
+     Strictness: <L,U><L,U><S,U><S,U><S,U><L,C(C1(C1(U)))><L,U><L,C(U)>,
+     Inline: [0] -}
+6eff65bd5e2dac691d9109e76e7a9d20
+  type CommandState = Data.Map.Base.Map GHC.Base.String Parser.Tree
+a648e9f1c6ff65bd734450637e779394
+  type OurDance = Improv.Dance Parser.OurRobot
+7cc43107c534be9a02b853ad995bfe6b
+  type OurRobot = Improv.Robot GHC.Types.Double
+f89b977216dd4a959fe6e0b29ee6532d
+  data ParseErr = ParseErr GHC.Integer.Type.Integer GHC.Base.String
+776f2db41ebaeeb837c929a738c35d7f
+  data Tree
+    = Node [Parser.Tree] | Bracket [Parser.Tree] | Leaf GHC.Base.String
+4a03a1848e62565bc44e7fd6105f3775
+  approach ::
+    [Parser.OurRobot]
+    -> Data.Either.Either GHC.Base.String [Parser.OurDance]
+  {- Arity: 1, Strictness: <S,1*U>m2, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: [Parser.OurRobot]) ->
+                 case Parser.$wapproach w of ww { Unit# ww1 ->
+                 Data.Either.Right @ GHC.Base.String @ [Parser.OurDance] ww1 }) -}
+01536baead03cbec454b489f29c7eb88
+  approach1 :: Improv.Action
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Improv.A Improv.Lef Improv.Quarter) -}
+0326b0b5ac804993c6a3ba32596270ff
+  approach2 :: Improv.Action
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Improv.A Improv.Forward Improv.Full) -}
+454736eb0fc834f6ed78c2659ab6db3d
+  approach3 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 1.0##) -}
+c88f69877e59e571deab6391d5a79571
+  approach4 :: Improv.Action
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Improv.A Improv.Center Improv.Zero) -}
+7be8fe5f32352fb95d409a9fdaaf1076
+  approach5 :: Data.Either.Either GHC.Base.String [Parser.OurDance]
+  {- Strictness: x -}
+ac03977fb7ebfa063fe2ee757e2499f1
+  axes :: Data.Map.Base.Map [GHC.Types.Char] Improv.Plane
+  {- Unfolding: (Parser.$sfromList @ Improv.Plane Parser.axes1) -}
+a28e6465f29e43aaee4b9b45fb6895b2
+  axes1 :: [([GHC.Types.Char], Improv.Plane)]
+  {- Unfolding: (GHC.Types.:
+                   @ ([GHC.Types.Char], Improv.Plane)
+                   Parser.axes8
+                   Parser.axes2) -}
+c0488d28ced637ffa7f12712fd7281d0
+  axes2 :: [([GHC.Types.Char], Improv.Plane)]
+  {- Unfolding: (GHC.Types.:
+                   @ ([GHC.Types.Char], Improv.Plane)
+                   Parser.axes6
+                   Parser.axes3) -}
+b0eaa7c7d5b3b2cfb8713a7d3da7fdcf
+  axes3 :: [([GHC.Types.Char], Improv.Plane)]
+  {- Unfolding: (GHC.Types.:
+                   @ ([GHC.Types.Char], Improv.Plane)
+                   Parser.axes4
+                   (GHC.Types.[] @ ([GHC.Types.Char], Improv.Plane))) -}
+7bc143edb8de4040d25f2710b3f9de19
+  axes4 :: ([GHC.Types.Char], Improv.Plane)
+  {- Unfolding: ((Parser.axes5, Improv.YZ)) -}
+819a873a077a8faafcc2b0fe9acacd41
+  axes5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "YZ"#) -}
+a791d04efd69f1f4eff702cf8419c042
+  axes6 :: ([GHC.Types.Char], Improv.Plane)
+  {- Unfolding: ((Parser.axes7, Improv.XY)) -}
+81d0e5c28896fb0b5654b737e8e01d5c
+  axes7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "XY"#) -}
+a560fe11944d82a0b75de84c6f5f5475
+  axes8 :: ([GHC.Types.Char], Improv.Plane)
+  {- Unfolding: ((Parser.axes9, Improv.XZ)) -}
+9346ad9e9b6653ecaeb89decd6cbe75a
+  axes9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "XZ"#) -}
+9b2176250d2855a4a4feafb7df5697e2
+  channelNames ::
+    Data.Map.Base.Map
+      [GHC.Types.Char] (Improv.KineChain GHC.Types.Double)
+  {- Unfolding: (Parser.$sfromList
+                   @ (Improv.KineChain GHC.Types.Double)
+                   Parser.channelNames1) -}
+3759b85edf663df8b6b1fbe4d36e093b
+  channelNames1 ::
+    [([GHC.Types.Char], Improv.KineChain GHC.Types.Double)]
+  {- Unfolding: (GHC.Types.:
+                   @ ([GHC.Types.Char], Improv.KineChain GHC.Types.Double)
+                   Parser.channelNames11
+                   Parser.channelNames2) -}
+841be41fbaaffbc60ee3584e7135c66d
+  channelNames10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "turtle2"#) -}
+fe19c26ac716d91893c32bea6f3b0a9b
+  channelNames11 ::
+    ([GHC.Types.Char], Improv.KineChain GHC.Types.Double)
+  {- Unfolding: ((Parser.channelNames12, RobotSpec.core)) -}
+7374ad79879134ccb9e0f11d3aa7e7dc
+  channelNames12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "turtle1"#) -}
+c18baea6fa6f2e00211faf33cea4262a
+  channelNames2 ::
+    [([GHC.Types.Char], Improv.KineChain GHC.Types.Double)]
+  {- Unfolding: (GHC.Types.:
+                   @ ([GHC.Types.Char], Improv.KineChain GHC.Types.Double)
+                   Parser.channelNames9
+                   Parser.channelNames3) -}
+f3b2651188fcf6b1775fbdef071a8fd6
+  channelNames3 ::
+    [([GHC.Types.Char], Improv.KineChain GHC.Types.Double)]
+  {- Unfolding: (GHC.Types.:
+                   @ ([GHC.Types.Char], Improv.KineChain GHC.Types.Double)
+                   Parser.channelNames7
+                   Parser.channelNames4) -}
+c5efa2b54c4edf2397fbc0505422deae
+  channelNames4 ::
+    [([GHC.Types.Char], Improv.KineChain GHC.Types.Double)]
+  {- Unfolding: (GHC.Types.:
+                   @ ([GHC.Types.Char], Improv.KineChain GHC.Types.Double)
+                   Parser.channelNames5
+                   (GHC.Types.[]
+                      @ ([GHC.Types.Char], Improv.KineChain GHC.Types.Double))) -}
+49862db7e1739a1768ef7e1d213a3211
+  channelNames5 ::
+    ([GHC.Types.Char], Improv.KineChain GHC.Types.Double)
+  {- Unfolding: ((Parser.channelNames6, RobotSpec.core)) -}
+403524f10274948fb96517f79bfb6114
+  channelNames6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "turtle4"#) -}
+66712f9231ccb9ce69893d9b40efffb6
+  channelNames7 ::
+    ([GHC.Types.Char], Improv.KineChain GHC.Types.Double)
+  {- Unfolding: ((Parser.channelNames8, RobotSpec.core)) -}
+104843945ac8b0402246e12522d7d72f
+  channelNames8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "turtle3"#) -}
+6fddb0dd70708bd6ddda75e0e05bc12b
+  channelNames9 ::
+    ([GHC.Types.Char], Improv.KineChain GHC.Types.Double)
+  {- Unfolding: ((Parser.channelNames10, RobotSpec.core)) -}
+f2e7053248fa002e7158b350fdb8bd6e
+  convertCommands ::
+    [Parser.OurRobot]
+    -> Parser.Tree
+    -> Control.Monad.Trans.State.Lazy.State
+         Parser.CommandState
+         (Data.Either.Either GHC.Base.String [Parser.OurDance])
+  {- Arity: 2, Strictness: <L,U><S,1*U> -}
+a3b51601571c9984deec131604347132
+  convertFile ::
+    GHC.Base.String
+    -> Data.Either.Either
+         Parser.ParseErr
+         (Data.Map.Base.Map
+            GHC.Base.String
+            (Ros.Topic.Topic GHC.Types.IO Ros.Geometry_msgs.Twist.Twist))
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: (\ (doc :: GHC.Base.String) ->
+                 case (Text.Parsec.Prim.runPT
+                         @ GHC.Base.String
+                         @ Data.Functor.Identity.Identity
+                         @ GHC.Types.Char
+                         @ ()
+                         @ Parser.Tree
+                         (Parser.$s$fStream[]mtok @ GHC.Types.Char)
+                         Parser.convertFile10
+                           `cast`
+                         (Sym (Text.Parsec.Prim.N:ParsecT[0]
+                                   <[GHC.Types.Char]>_R
+                                   <()>_R
+                                   <Data.Functor.Identity.Identity>_R
+                                   <Parser.Tree>_R))
+                         GHC.Tuple.()
+                         (GHC.Types.[] @ GHC.Types.Char)
+                         doc)
+                        `cast`
+                      (Data.Functor.Identity.N:Identity[0]
+                           <Data.Either.Either
+                              Text.Parsec.Error.ParseError Parser.Tree>_R) of wild {
+                   Data.Either.Left err
+                   -> Data.Either.Left
+                        @ Parser.ParseErr
+                        @ (Data.Map.Base.Map
+                             GHC.Base.String
+                             (Ros.Topic.Topic GHC.Types.IO Ros.Geometry_msgs.Twist.Twist))
+                        (Parser.ParseErr
+                           Parser.convertFile9
+                           (Text.Parsec.Error.$fShowParseError_$cshow err))
+                   Data.Either.Right ds
+                   -> case ds of wild1 {
+                        DEFAULT -> Parser.convertFile8
+                        Parser.Node ds1
+                        -> case ds1 of wild2 {
+                             [] -> Parser.convertFile8
+                             : ds2 tree
+                             -> case ds2 of wild3 {
+                                  DEFAULT -> Parser.convertFile8
+                                  Parser.Leaf beatStr
+                                  -> case ((Parser.convertLines
+                                              (Parser.Node tree)
+                                              Parser.convertFile7
+                                              Parser.convertFile6)
+                                             `cast`
+                                           (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                <Parser.CommandState>_N
+                                                <Data.Functor.Identity.Identity>_R
+                                                <Data.Either.Either
+                                                   Parser.ParseErr
+                                                   (Data.Map.Base.Map
+                                                      GHC.Base.String Parser.OurDance)>_N)
+                                             Parser.convertFile5)
+                                            `cast`
+                                          (Data.Functor.Identity.N:Identity[0]
+                                               <(Data.Either.Either
+                                                   Parser.ParseErr
+                                                   (Data.Map.Base.Map
+                                                      GHC.Base.String Parser.OurDance),
+                                                 Parser.CommandState)>_R) of wild4 { (,) x ds3 ->
+                                     case x of wild5 {
+                                       Data.Either.Left l
+                                       -> Data.Either.Left
+                                            @ Parser.ParseErr
+                                            @ (Data.Map.Base.Map
+                                                 GHC.Base.String
+                                                 (Ros.Topic.Topic
+                                                    GHC.Types.IO Ros.Geometry_msgs.Twist.Twist))
+                                            l
+                                       Data.Either.Right r
+                                       -> Data.Either.Right
+                                            @ Parser.ParseErr
+                                            @ (Data.Map.Base.Map
+                                                 GHC.Base.String
+                                                 (Ros.Topic.Topic
+                                                    GHC.Types.IO Ros.Geometry_msgs.Twist.Twist))
+                                            (Data.Map.Base.map
+                                               @ (Improv.Dance (Improv.KineChain GHC.Types.Double))
+                                               @ (Ros.Topic.Topic
+                                                    GHC.Types.IO Ros.Geometry_msgs.Twist.Twist)
+                                               @ [GHC.Types.Char]
+                                               (let {
+                                                  f :: Improv.Mult
+                                                  = case Text.Read.readEither6
+                                                           @ GHC.Types.Int
+                                                           (Text.ParserCombinators.ReadP.run
+                                                              @ GHC.Types.Int
+                                                              Parser.convertFile4
+                                                              beatStr) of wild6 {
+                                                      []
+                                                      -> case Parser.convertFile3
+                                                         ret_ty Improv.Mult
+                                                         of {}
+                                                      : x1 ds4
+                                                      -> case ds4 of wild7 {
+                                                           []
+                                                           -> case x1 of wild8 { GHC.Types.I# i ->
+                                                              GHC.Types.D#
+                                                                (GHC.Prim./##
+                                                                   (GHC.Prim.int2Double# i)
+                                                                   60.0##) }
+                                                           : ipv ipv1
+                                                           -> case Parser.convertFile2
+                                                              ret_ty Improv.Mult
+                                                              of {} } }
+                                                } in
+                                                \ (x1 :: Improv.Dance
+                                                           (Improv.KineChain GHC.Types.Double)) ->
+                                                Ros.Topic.Util.concats
+                                                  @ GHC.Types.IO
+                                                  @ []
+                                                  @ Ros.Geometry_msgs.Twist.Twist
+                                                  GHC.Base.$fMonadIO
+                                                  Data.Foldable.$fFoldable[]
+                                                  (\ (eta :: GHC.Prim.State#
+                                                               GHC.Prim.RealWorld)[OneShot] ->
+                                                   letrec {
+                                                     go6 :: GHC.Prim.State# GHC.Prim.RealWorld
+                                                            -> (# GHC.Prim.State#
+                                                                    GHC.Prim.RealWorld,
+                                                                  ([Ros.Geometry_msgs.Twist.Twist],
+                                                                   Ros.Topic.Topic
+                                                                     GHC.Types.IO
+                                                                     [Ros.Geometry_msgs.Twist.Twist]) #)
+                                                       {- Arity: 1, Strictness: <S,U> -}
+                                                     = \ (s :: GHC.Prim.State#
+                                                                 GHC.Prim.RealWorld)[OneShot] ->
+                                                       (# s,
+                                                          (RobotSpec.moveCommands_go
+                                                             (RobotSpec.$wdanceToMsg
+                                                                @ (Improv.KineChain
+                                                                     GHC.Types.Double)
+                                                                (Improv.$wchangeTiming
+                                                                   @ (Improv.KineChain
+                                                                        GHC.Types.Double)
+                                                                   f
+                                                                   (Improv.:+:
+                                                                      @ (Improv.KineChain
+                                                                           GHC.Types.Double)
+                                                                      Parser.convertFile1
+                                                                      x1))),
+                                                           go6
+                                                             `cast`
+                                                           (Trans
+                                                                (Sym (GHC.Types.N:IO[0]
+                                                                          <([Ros.Geometry_msgs.Twist.Twist],
+                                                                            Ros.Topic.Topic
+                                                                              GHC.Types.IO
+                                                                              [Ros.Geometry_msgs.Twist.Twist])>_R))
+                                                                (Sym (Ros.Topic.N:Topic[0]
+                                                                          <GHC.Types.IO>_N
+                                                                          <[Ros.Geometry_msgs.Twist.Twist]>_N)))) #)
+                                                   } in
+                                                   go6 eta)
+                                                    `cast`
+                                                  (Trans
+                                                       (Sym (GHC.Types.N:IO[0]
+                                                                 <([Ros.Geometry_msgs.Twist.Twist],
+                                                                   Ros.Topic.Topic
+                                                                     GHC.Types.IO
+                                                                     [Ros.Geometry_msgs.Twist.Twist])>_R))
+                                                       (Sym (Ros.Topic.N:Topic[0]
+                                                                 <GHC.Types.IO>_N
+                                                                 <[Ros.Geometry_msgs.Twist.Twist]>_N))))
+                                               r) } } } } } }) -}
+c04cf35fa1464023b3ab7a4631bf1549
+  convertFile1 :: Improv.Dance (Improv.KineChain GHC.Types.Double)
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (Improv.Prim
+                   @ (Improv.KineChain GHC.Types.Double)
+                   Parser.approach4
+                   Parser.approach3
+                   RobotSpec.core) -}
+96e33dcabd924f75fa56e4ce6f7bdfbe
+  convertFile10 ::
+    Text.Parsec.Prim.State [GHC.Types.Char] ()
+    -> (Parser.Tree
+        -> Text.Parsec.Prim.State [GHC.Types.Char] ()
+        -> Text.Parsec.Error.ParseError
+        -> Data.Functor.Identity.Identity b1)
+    -> (Text.Parsec.Error.ParseError
+        -> Data.Functor.Identity.Identity b1)
+    -> (Parser.Tree
+        -> Text.Parsec.Prim.State [GHC.Types.Char] ()
+        -> Text.Parsec.Error.ParseError
+        -> Data.Functor.Identity.Identity b1)
+    -> (Text.Parsec.Error.ParseError
+        -> Data.Functor.Identity.Identity b1)
+    -> Data.Functor.Identity.Identity b1
+  {- Arity: 5,
+     Strictness: <L,U(U,U(U,U,U),U)><L,C(U)><L,U><L,C(C1(C1(U)))><L,C(U)> -}
+6e7902f8b45a2da22007ba1fb1206620
+  convertFile2 :: GHC.Types.Int
+  {- Strictness: x -}
+b8b2e28b5f17d7d7c566ce1ffbd322a0
+  convertFile3 :: GHC.Types.Int
+  {- Strictness: x -}
+bc84917f02ea48782bf4210a840473c0
+  convertFile4 :: Text.ParserCombinators.ReadP.P GHC.Types.Int
+  {- Unfolding: (GHC.Read.$fReadInt3
+                   GHC.Read.$fReadInt_$sconvertInt
+                   Text.ParserCombinators.ReadPrec.minPrec
+                   @ GHC.Types.Int
+                   (Text.Read.readEither5 @ GHC.Types.Int)) -}
+8a65e33151b2a872c4a82d65ad7ec82e
+  convertFile5 :: Data.Map.Base.Map GHC.Base.String Parser.Tree
+  {- Unfolding: (Parser.$sfromList
+                   @ Parser.Tree
+                   (GHC.Types.[] @ (GHC.Base.String, Parser.Tree))) -}
+5f0c9473f0ba48da7613e795c7adfecd
+  convertFile6 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (1) -}
+a2e2c2f71206b72ab14ed286362d088f
+  convertFile7 :: Data.Map.Base.Map GHC.Base.String Parser.OurDance
+  {- Unfolding: (Parser.$sfromList
+                   @ (Improv.Dance Parser.OurRobot)
+                   (GHC.Types.[] @ (GHC.Base.String, Parser.OurDance))) -}
+96224dec5747d634928d5ac421bd8a76
+  convertFile8 ::
+    Data.Either.Either
+      Parser.ParseErr
+      (Data.Map.Base.Map
+         GHC.Base.String
+         (Ros.Topic.Topic GHC.Types.IO Ros.Geometry_msgs.Twist.Twist))
+  {- Strictness: x -}
+81965fd403c89a7f5229a05ac199dd44
+  convertFile9 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (-1) -}
+63a32785ead9408fb6c3b3f827ad2fec
+  convertLines ::
+    Parser.Tree
+    -> Data.Map.Base.Map GHC.Base.String Parser.OurDance
+    -> GHC.Integer.Type.Integer
+    -> Control.Monad.Trans.State.Lazy.State
+         Parser.CommandState
+         (Data.Either.Either
+            Parser.ParseErr
+            (Data.Map.Base.Map GHC.Base.String Parser.OurDance))
+  {- Arity: 3, Strictness: <S,1*U><L,U><L,U> -}
+43f5ae7a6ff74c631adc5182761a1aef
+  forward :: b -> Improv.Dance b
+  {- Arity: 1, HasNoCafRefs,
+     Unfolding: (\ @ b ->
+                 Improv.Prim @ b Parser.approach2 Parser.approach3) -}
+5de00bc667ba2d9bb387324eea668219
+  halfleft :: b -> Improv.Dance b
+  {- Arity: 1, HasNoCafRefs,
+     Unfolding: (\ @ b ->
+                 Improv.Prim @ b Parser.halfleft1 Parser.approach3) -}
+441aa3b085f5c7cd8e32484c575c31f6
+  halfleft1 :: Improv.Action
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Improv.A Improv.Lef Improv.Eighth) -}
+9374f473a21aebfa2c1b4c12440cd384
+  halfright :: b -> Improv.Dance b
+  {- Arity: 1, HasNoCafRefs,
+     Unfolding: (\ @ b ->
+                 Improv.Prim @ b Parser.halfright1 Parser.approach3) -}
+f6aedb91aefd0ec66a42c5211a484257
+  halfright1 :: Improv.Action
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Improv.A Improv.Righ Improv.Eighth) -}
+5d19dcbe907346034aa5a465c6f0fe85
+  left :: b -> Improv.Dance b
+  {- Arity: 1, HasNoCafRefs,
+     Unfolding: (\ @ b ->
+                 Improv.Prim @ b Parser.approach1 Parser.approach3) -}
+6afbaceda53623dd491f95b5a590ef07
+  multiFuncs ::
+    Data.Map.Base.Map
+      [GHC.Types.Char]
+      ([Parser.OurRobot]
+       -> Data.Either.Either GHC.Base.String [Parser.OurDance])
+  {- Unfolding: (Parser.$sfromList
+                   @ ([Parser.OurRobot]
+                      -> Data.Either.Either GHC.Base.String [Parser.OurDance])
+                   Parser.multiFuncs1) -}
+fbc5c768b1aa7395c601b86099b58a2d
+  multiFuncs1 ::
+    [([GHC.Types.Char],
+      [Parser.OurRobot]
+      -> Data.Either.Either GHC.Base.String [Parser.OurDance])]
+  {- Unfolding: (GHC.Types.:
+                   @ ([GHC.Types.Char],
+                      [Parser.OurRobot]
+                      -> Data.Either.Either GHC.Base.String [Parser.OurDance])
+                   Parser.multiFuncs2
+                   (GHC.Types.[]
+                      @ ([GHC.Types.Char],
+                         [Parser.OurRobot]
+                         -> Data.Either.Either GHC.Base.String [Parser.OurDance]))) -}
+5d3d001968bfff2dbcf8614802599ef1
+  multiFuncs2 ::
+    ([GHC.Types.Char],
+     [Parser.OurRobot]
+     -> Data.Either.Either GHC.Base.String [Parser.OurDance])
+  {- Unfolding: ((Parser.multiFuncs3, Parser.approach)) -}
+8923f1739896478ad222ece03d0f1509
+  multiFuncs3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "approach"#) -}
+78ff9be2552a81c5ea71c193a3d666bd
+  parseDoc :: Text.Parsec.String.Parser Parser.Tree
+  {- Arity: 5,
+     Strictness: <L,U(U,U(U,U,U),U)><L,C(U)><L,U><L,C(C1(C1(U)))><L,C(U)>,
+     Unfolding: InlineRule (0, True, True)
+                Parser.convertFile10
+                  `cast`
+                (Sym (Text.Parsec.Prim.N:ParsecT[0]
+                          <[GHC.Types.Char]>_R
+                          <()>_R
+                          <Data.Functor.Identity.Identity>_R
+                          <Parser.Tree>_R)) -}
+02e202ff98d47bf0673bd495e23c814a
+  rest :: b -> Improv.Dance b
+  {- Arity: 1, HasNoCafRefs,
+     Unfolding: (\ @ b ->
+                 Improv.Prim @ b Parser.approach4 Parser.approach3) -}
+09ae11e26d68cc6820d6bab40f61ec67
+  right :: b -> Improv.Dance b
+  {- Arity: 1, HasNoCafRefs,
+     Unfolding: (\ @ b ->
+                 Improv.Prim @ b Parser.right1 Parser.approach3) -}
+35a1fad85308d6f1907fdcd130ac6995
+  right1 :: Improv.Action
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Improv.A Improv.Righ Improv.Quarter) -}
+dd37ff9e8d3506dc4e6519e73a5145b3
+  skipNewline :: Text.Parsec.String.Parser ()
+  {- Arity: 5,
+     Strictness: <L,U(U,U(U,U,U),U)><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))><L,A>,
+     Unfolding: InlineRule (0, True, True)
+                Parser.skipNewline1
+                  `cast`
+                (Sym (Text.Parsec.Prim.N:ParsecT[0]
+                          <GHC.Base.String>_R
+                          <()>_R
+                          <Data.Functor.Identity.Identity>_R
+                          <()>_R)) -}
+295bd8b20443d96caba549136ce2037b
+  skipNewline1 ::
+    Text.Parsec.Prim.State GHC.Base.String ()
+    -> (()
+        -> Text.Parsec.Prim.State GHC.Base.String ()
+        -> Text.Parsec.Error.ParseError
+        -> Data.Functor.Identity.Identity b)
+    -> (Text.Parsec.Error.ParseError
+        -> Data.Functor.Identity.Identity b)
+    -> (()
+        -> Text.Parsec.Prim.State GHC.Base.String ()
+        -> Text.Parsec.Error.ParseError
+        -> Data.Functor.Identity.Identity b)
+    -> (Text.Parsec.Error.ParseError
+        -> Data.Functor.Identity.Identity b)
+    -> Data.Functor.Identity.Identity b
+  {- Arity: 5,
+     Strictness: <L,U(U,U(U,U,U),U)><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))><L,A>,
+     Unfolding: InlineRule (5, True, True)
+                (\ @ b
+                   (w1 :: Text.Parsec.Prim.State GHC.Base.String ())
+                   (w2 :: ()
+                          -> Text.Parsec.Prim.State GHC.Base.String ()
+                          -> Text.Parsec.Error.ParseError
+                          -> Data.Functor.Identity.Identity b)
+                   (w3 :: Text.Parsec.Error.ParseError
+                          -> Data.Functor.Identity.Identity b)
+                   (w4 :: ()
+                          -> Text.Parsec.Prim.State GHC.Base.String ()
+                          -> Text.Parsec.Error.ParseError
+                          -> Data.Functor.Identity.Identity b)
+                   (w5 :: Text.Parsec.Error.ParseError
+                          -> Data.Functor.Identity.Identity b) ->
+                 Text.Parsec.Prim.$wskipMany
+                   @ GHC.Base.String
+                   @ ()
+                   @ Data.Functor.Identity.Identity
+                   @ GHC.Types.Char
+                   Parser.skipNewline2
+                   @ b
+                   w1
+                   w2
+                   w3
+                   w4) -}
+cb1441f7e88e98774b1e6058b6ebd3cc
+  skipNewline2 ::
+    Text.Parsec.Prim.ParsecT
+      GHC.Base.String () Data.Functor.Identity.Identity GHC.Types.Char
+  {- Unfolding: (Text.Parsec.Char.char
+                   @ GHC.Base.String
+                   @ Data.Functor.Identity.Identity
+                   @ ()
+                   (Parser.$s$fStream[]mtok @ GHC.Types.Char)
+                   Parser.skipNewline3) -}
+fbbebadbc9d23205ee2359c03667f985
+  skipNewline3 :: GHC.Types.Char
+  {- HasNoCafRefs, Unfolding: (GHC.Types.C# '\n'#) -}
+b74b0f352cdaad078d5adf215bcebe42
+  skipSpace :: Text.Parsec.String.Parser ()
+  {- Arity: 5,
+     Strictness: <L,U(U,U(U,U,U),U)><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))><L,A>,
+     Unfolding: InlineRule (0, True, True)
+                Parser.skipSpace1
+                  `cast`
+                (Sym (Text.Parsec.Prim.N:ParsecT[0]
+                          <GHC.Base.String>_R
+                          <()>_R
+                          <Data.Functor.Identity.Identity>_R
+                          <()>_R)) -}
+ff81d04351a3b728b8e564f32b7d66c7
+  skipSpace1 ::
+    Text.Parsec.Prim.State GHC.Base.String ()
+    -> (()
+        -> Text.Parsec.Prim.State GHC.Base.String ()
+        -> Text.Parsec.Error.ParseError
+        -> Data.Functor.Identity.Identity b)
+    -> (Text.Parsec.Error.ParseError
+        -> Data.Functor.Identity.Identity b)
+    -> (()
+        -> Text.Parsec.Prim.State GHC.Base.String ()
+        -> Text.Parsec.Error.ParseError
+        -> Data.Functor.Identity.Identity b)
+    -> (Text.Parsec.Error.ParseError
+        -> Data.Functor.Identity.Identity b)
+    -> Data.Functor.Identity.Identity b
+  {- Arity: 5,
+     Strictness: <L,U(U,U(U,U,U),U)><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))><L,A>,
+     Unfolding: InlineRule (5, True, True)
+                (\ @ b
+                   (w1 :: Text.Parsec.Prim.State GHC.Base.String ())
+                   (w2 :: ()
+                          -> Text.Parsec.Prim.State GHC.Base.String ()
+                          -> Text.Parsec.Error.ParseError
+                          -> Data.Functor.Identity.Identity b)
+                   (w3 :: Text.Parsec.Error.ParseError
+                          -> Data.Functor.Identity.Identity b)
+                   (w4 :: ()
+                          -> Text.Parsec.Prim.State GHC.Base.String ()
+                          -> Text.Parsec.Error.ParseError
+                          -> Data.Functor.Identity.Identity b)
+                   (w5 :: Text.Parsec.Error.ParseError
+                          -> Data.Functor.Identity.Identity b) ->
+                 Text.Parsec.Prim.$wskipMany
+                   @ GHC.Base.String
+                   @ ()
+                   @ Data.Functor.Identity.Identity
+                   @ GHC.Types.Char
+                   Parser.skipSpace2
+                   @ b
+                   w1
+                   w2
+                   w3
+                   w4) -}
+691b62bb416ea2b59479946c7e1921de
+  skipSpace2 ::
+    Text.Parsec.Prim.ParsecT
+      GHC.Base.String () Data.Functor.Identity.Identity GHC.Types.Char
+  {- Unfolding: (Text.Parsec.Char.char
+                   @ GHC.Base.String
+                   @ Data.Functor.Identity.Identity
+                   @ ()
+                   (Parser.$s$fStream[]mtok @ GHC.Types.Char)
+                   Parser.skipSpace3) -}
+ae4eddf8a6f7e570dfb0cf0772a7e8bd
+  skipSpace3 :: GHC.Types.Char
+  {- HasNoCafRefs, Unfolding: (GHC.Types.C# ' '#) -}
+3eac466125ced7a8027b5971c845c75c
+  startCommands ::
+    Data.Map.Base.Map [GHC.Types.Char] (b -> Improv.Dance b)
+  {- Unfolding: (\ @ b ->
+                 Parser.$sfromList
+                   @ (b -> Improv.Dance b)
+                   (Parser.startCommands1 @ b)) -}
+5f5583d0cc92fb04a466fb358b9b5cab
+  startCommands1 :: [([GHC.Types.Char], b -> Improv.Dance b)]
+  {- Unfolding: (\ @ b ->
+                 GHC.Types.:
+                   @ ([GHC.Types.Char], b -> Improv.Dance b)
+                   (Parser.startCommands17 @ b)
+                   (Parser.startCommands2 @ b)) -}
+ccecebe9c9687b710303b50e40d1abe5
+  startCommands10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "forward"#) -}
+3d55fdb6d041568b251e7bd24e8082ee
+  startCommands11 :: ([GHC.Types.Char], b -> Improv.Dance b)
+  {- Unfolding: (\ @ b ->
+                 (Parser.startCommands12, Parser.halfright @ b)) -}
+9af378d9a5fb85a5a01a0fde34fa1cc5
+  startCommands12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "halfright"#) -}
+f9fc7bc0d005bb59b75920cf23152892
+  startCommands13 :: ([GHC.Types.Char], b -> Improv.Dance b)
+  {- Unfolding: (\ @ b ->
+                 (Parser.startCommands14, Parser.halfleft @ b)) -}
+cde37eee7756f507536e17d8f7f2e576
+  startCommands14 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "halfleft"#) -}
+946dda2ab72fbaea19837cdf35ab1532
+  startCommands15 :: ([GHC.Types.Char], b -> Improv.Dance b)
+  {- Unfolding: (\ @ b ->
+                 (Parser.startCommands16, Parser.right @ b)) -}
+645c8975f84c455c2eeaecf3dc193afa
+  startCommands16 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "right"#) -}
+07354f3118ade331ecbffda834c8692e
+  startCommands17 :: ([GHC.Types.Char], b -> Improv.Dance b)
+  {- Unfolding: (\ @ b ->
+                 (Parser.startCommands18, Parser.left @ b)) -}
+83bb906af58d6672d9955d9b3e6e18cc
+  startCommands18 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "left"#) -}
+47b47e36b1a995be62f99646a94187d0
+  startCommands2 :: [([GHC.Types.Char], b -> Improv.Dance b)]
+  {- Unfolding: (\ @ b ->
+                 GHC.Types.:
+                   @ ([GHC.Types.Char], b -> Improv.Dance b)
+                   (Parser.startCommands15 @ b)
+                   (Parser.startCommands3 @ b)) -}
+b54aabdc502ffcecb0e59d26b0a04fd1
+  startCommands3 :: [([GHC.Types.Char], b -> Improv.Dance b)]
+  {- Unfolding: (\ @ b ->
+                 GHC.Types.:
+                   @ ([GHC.Types.Char], b -> Improv.Dance b)
+                   (Parser.startCommands13 @ b)
+                   (Parser.startCommands4 @ b)) -}
+cff0c14872aa536b58cd382205f0bbca
+  startCommands4 :: [([GHC.Types.Char], b -> Improv.Dance b)]
+  {- Unfolding: (\ @ b ->
+                 GHC.Types.:
+                   @ ([GHC.Types.Char], b -> Improv.Dance b)
+                   (Parser.startCommands11 @ b)
+                   (Parser.startCommands5 @ b)) -}
+43d4e19d3d788af4c1111a485081db61
+  startCommands5 :: [([GHC.Types.Char], b -> Improv.Dance b)]
+  {- Unfolding: (\ @ b ->
+                 GHC.Types.:
+                   @ ([GHC.Types.Char], b -> Improv.Dance b)
+                   (Parser.startCommands9 @ b)
+                   (Parser.startCommands6 @ b)) -}
+b60d2ffa270dc0e99de091f72c71622e
+  startCommands6 :: [([GHC.Types.Char], b -> Improv.Dance b)]
+  {- Unfolding: (\ @ b ->
+                 GHC.Types.:
+                   @ ([GHC.Types.Char], b -> Improv.Dance b)
+                   (Parser.startCommands7 @ b)
+                   (GHC.Types.[] @ ([GHC.Types.Char], b -> Improv.Dance b))) -}
+fd6233da138153d28300bcfc20dbad1d
+  startCommands7 :: ([GHC.Types.Char], b -> Improv.Dance b)
+  {- Unfolding: (\ @ b ->
+                 (Parser.startCommands8, Parser.rest @ b)) -}
+cee0943f0ea95d6ee27d80272cbb5b5c
+  startCommands8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "rest"#) -}
+758124e8fe2911fad722afb336078988
+  startCommands9 :: ([GHC.Types.Char], b -> Improv.Dance b)
+  {- Unfolding: (\ @ b ->
+                 (Parser.startCommands10, Parser.forward @ b)) -}
+b3302b01e36ba543717b079a77d92b4e
+  throwErr ::
+    GHC.Base.String
+    -> Control.Monad.Trans.State.Lazy.State
+         Parser.CommandState
+         (Data.Either.Either GHC.Base.String [Parser.OurDance])
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><L,U>m,
+     Unfolding: InlineRule (0, True, True)
+                Parser.throwErr1
+                  `cast`
+                (<GHC.Base.String>_R
+                 ->_R Trans
+                          (<Data.Map.Base.Map GHC.Base.String Parser.Tree>_R
+                           ->_R Sym (Data.Functor.Identity.N:Identity[0]
+                                         <(Data.Either.Either GHC.Base.String [Parser.OurDance],
+                                           Data.Map.Base.Map GHC.Base.String Parser.Tree)>_R))
+                          (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                    <Data.Map.Base.Map GHC.Base.String Parser.Tree>_N
+                                    <Data.Functor.Identity.Identity>_R
+                                    <Data.Either.Either GHC.Base.String [Parser.OurDance]>_N))) -}
+838a1dce3b4246ff9f51550ea3ab5c71
+  throwErr1 ::
+    GHC.Base.String
+    -> Data.Map.Base.Map GHC.Base.String Parser.Tree
+    -> (Data.Either.Either GHC.Base.String [Parser.OurDance],
+        Data.Map.Base.Map GHC.Base.String Parser.Tree)
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><L,U>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ (err :: GHC.Base.String)
+                   (eta :: Data.Map.Base.Map GHC.Base.String Parser.Tree) ->
+                 (Data.Either.Left @ GHC.Base.String @ [Parser.OurDance] err,
+                  eta)) -}
+794134404acd0b49578a3b26d2a711dc
+  varName :: Text.Parsec.String.Parser GHC.Base.String
+  {- Arity: 5,
+     Strictness: <S(LS(LSS)S),1*U(U,U(U,U,U),U)><L,C(C1(C1(U)))><L,U><L,A><L,C(U)>,
+     Unfolding: InlineRule (0, True, True)
+                Parser.varName1
+                  `cast`
+                (Sym (Text.Parsec.Prim.N:ParsecT[0]
+                          <[GHC.Types.Char]>_R
+                          <()>_R
+                          <Data.Functor.Identity.Identity>_R
+                          <GHC.Base.String>_R)) -}
+a57f75405ace9590d24db467d4f31709
+  varName1 ::
+    Text.Parsec.Prim.State [GHC.Types.Char] ()
+    -> (GHC.Base.String
+        -> Text.Parsec.Prim.State [GHC.Types.Char] ()
+        -> Text.Parsec.Error.ParseError
+        -> Data.Functor.Identity.Identity b1)
+    -> (Text.Parsec.Error.ParseError
+        -> Data.Functor.Identity.Identity b1)
+    -> (GHC.Base.String
+        -> Text.Parsec.Prim.State [GHC.Types.Char] ()
+        -> Text.Parsec.Error.ParseError
+        -> Data.Functor.Identity.Identity b1)
+    -> (Text.Parsec.Error.ParseError
+        -> Data.Functor.Identity.Identity b1)
+    -> Data.Functor.Identity.Identity b1
+  {- Arity: 5,
+     Strictness: <S(LS(LSS)S),1*U(U,U(U,U,U),U)><L,C(C1(C1(U)))><L,U><L,A><L,C(U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (5, True, False)
+                (\ @ b1
+                   (w :: Text.Parsec.Prim.State [GHC.Types.Char] ())
+                   (w1 :: GHC.Base.String
+                          -> Text.Parsec.Prim.State [GHC.Types.Char] ()
+                          -> Text.Parsec.Error.ParseError
+                          -> Data.Functor.Identity.Identity b1)
+                   (w2 :: Text.Parsec.Error.ParseError
+                          -> Data.Functor.Identity.Identity b1)
+                   (w3 :: GHC.Base.String
+                          -> Text.Parsec.Prim.State [GHC.Types.Char] ()
+                          -> Text.Parsec.Error.ParseError
+                          -> Data.Functor.Identity.Identity b1)
+                   (w4 :: Text.Parsec.Error.ParseError
+                          -> Data.Functor.Identity.Identity b1) ->
+                 case w of ww { Text.Parsec.Prim.State ww1 ww2 ww3 ->
+                 case ww2 of ww4 { Text.Parsec.Pos.SourcePos ww5 ww6 ww7 ->
+                 Parser.$wvarName @ b1 ww1 ww5 ww6 ww7 ww3 w1 w2 w4 } }) -}
+instance GHC.Classes.Eq [Parser.Tree] = Parser.$fEqTree
+instance GHC.Show.Show [Parser.Tree] = Parser.$fShowTree
+"SPEC/Parser $fStream[]mtok @ Identity _" [ALWAYS] forall @ tok
+                                                          ($dMonad :: GHC.Base.Monad
+                                                                        Data.Functor.Identity.Identity)
+  Text.Parsec.Prim.$fStream[]mtok @ Data.Functor.Identity.Identity
+                                  @ tok
+                                  $dMonad
+  = Parser.$s$fStream[]mtok @ tok
+"SPEC/Parser $fStream[]mtok_$cp1Stream @ Identity _" [ALWAYS] forall @ tok
+                                                                     ($dMonad :: GHC.Base.Monad
+                                                                                   Data.Functor.Identity.Identity)
+  Text.Parsec.Prim.$fStream[]mtok_$cp1Stream @ Data.Functor.Identity.Identity
+                                             @ tok
+                                             $dMonad
+  = Parser.$s$fStream[]mtok_$s$fStream[]mtok_$cp1Stream @ tok
+"SPEC/Parser $fStream[]mtok_$cuncons @ Identity _" [ALWAYS] forall @ tok
+                                                                   ($dMonad :: GHC.Base.Monad
+                                                                                 Data.Functor.Identity.Identity)
+  Text.Parsec.Prim.$fStream[]mtok_$cuncons @ Data.Functor.Identity.Identity
+                                           @ tok
+                                           $dMonad
+  = Parser.$s$fStream[]mtok_$s$fStream[]mtok_$cuncons @ tok
+"SPEC/Parser fromList @ String _" [ALWAYS] forall @ a
+                                                  ($dOrd :: GHC.Classes.Ord GHC.Base.String)
+  Data.Map.Base.fromList @ [GHC.Types.Char] @ a $dOrd
+  = Parser.$sfromList @ a
+"SPEC/Parser unionWithKey @ String _" [ALWAYS] forall @ a
+                                                      ($dOrd :: GHC.Classes.Ord GHC.Base.String)
+  Data.Map.Base.unionWithKey @ [GHC.Types.Char] @ a $dOrd
+  = Parser.$sunionWith_$sunionWithKey @ a
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

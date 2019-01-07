@@ -1,0 +1,11 @@
+Configuring ROS-std-srvs-msgs-0.4...
+Preprocessing library ROS-std-srvs-msgs-0.4...
+[1 of 6] Compiling Ros.Std_srvs.TriggerResponse ( Ros/Std_srvs/TriggerResponse.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Std_srvs/TriggerResponse.o )
+[2 of 6] Compiling Ros.Std_srvs.TriggerRequest ( Ros/Std_srvs/TriggerRequest.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Std_srvs/TriggerRequest.o )
+[3 of 6] Compiling Ros.Std_srvs.SetBoolResponse ( Ros/Std_srvs/SetBoolResponse.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Std_srvs/SetBoolResponse.o )
+[4 of 6] Compiling Ros.Std_srvs.SetBoolRequest ( Ros/Std_srvs/SetBoolRequest.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Std_srvs/SetBoolRequest.o )
+[5 of 6] Compiling Ros.Std_srvs.EmptyResponse ( Ros/Std_srvs/EmptyResponse.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Std_srvs/EmptyResponse.o )
+[6 of 6] Compiling Ros.Std_srvs.EmptyRequest ( Ros/Std_srvs/EmptyRequest.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Ros/Std_srvs/EmptyRequest.o )
+Installing library in
+/home/thomas/research_alli/improv/.stack-work/install/x86_64-linux/lts-8.5/8.0.2/lib/x86_64-linux-ghc-8.0.2/ROS-std-srvs-msgs-0.4-BJ4JNJHgKakIeCrIl0ycsr
+Registering ROS-std-srvs-msgs-0.4...

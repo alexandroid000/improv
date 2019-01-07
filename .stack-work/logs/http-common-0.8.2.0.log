@@ -1,0 +1,17 @@
+Configuring http-common-0.8.2.0...
+Warning: 'ghc-options: -prof' is not necessary and will lead to problems when
+used on a library. Use the configure flag --enable-library-profiling and/or
+--enable-profiling.
+Building http-common-0.8.2.0...
+Preprocessing library http-common-0.8.2.0...
+[1 of 3] Compiling Network.Http.Internal ( lib/Network/Http/Internal.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Network/Http/Internal.o )
+[2 of 3] Compiling Network.Http.RequestBuilder ( lib/Network/Http/RequestBuilder.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Network/Http/RequestBuilder.o )
+
+lib/Network/Http/RequestBuilder.hs:38:1: warning: [-Wunused-imports]
+    The import of ‘Control.Applicative’ is redundant
+      except perhaps to import instances from ‘Control.Applicative’
+    To import instances alone, use: import Control.Applicative()
+[3 of 3] Compiling Network.Http.Types ( lib/Network/Http/Types.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Network/Http/Types.o )
+Installing library in
+/home/thomas/.stack/snapshots/x86_64-linux/lts-8.5/8.0.2/lib/x86_64-linux-ghc-8.0.2/http-common-0.8.2.0-CJXewAwxX1jDNjAwLVJIOr
+Registering http-common-0.8.2.0...

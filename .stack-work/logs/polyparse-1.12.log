@@ -1,0 +1,68 @@
+Configuring polyparse-1.12...
+Building polyparse-1.12...
+Preprocessing library polyparse-1.12...
+[ 1 of 18] Compiling Text.ParserCombinators.Poly.Result ( src/Text/ParserCombinators/Poly/Result.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/ParserCombinators/Poly/Result.o )
+
+src/Text/ParserCombinators/Poly/Result.hs:3:15: warning: [-Wtabs]
+    Tab character found here.
+    Please use spaces instead.
+[ 2 of 18] Compiling Text.ParserCombinators.Poly.Base ( src/Text/ParserCombinators/Poly/Base.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/ParserCombinators/Poly/Base.o )
+
+src/Text/ParserCombinators/Poly/Base.hs:3:19: warning: [-Wtabs]
+    Tab character found here, and in 14 further locations.
+    Please use spaces instead.
+[ 3 of 18] Compiling Text.ParserCombinators.Poly.ByteString ( src/Text/ParserCombinators/Poly/ByteString.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/ParserCombinators/Poly/ByteString.o )
+[ 4 of 18] Compiling Text.ParserCombinators.Poly.ByteStringChar ( src/Text/ParserCombinators/Poly/ByteStringChar.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/ParserCombinators/Poly/ByteStringChar.o )
+[ 5 of 18] Compiling Text.ParserCombinators.Poly.Lex ( src/Text/ParserCombinators/Poly/Lex.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/ParserCombinators/Poly/Lex.o )
+
+src/Text/ParserCombinators/Poly/Lex.hs:89:18: warning: [-Wtabs]
+    Tab character found here.
+    Please use spaces instead.
+[ 6 of 18] Compiling Text.ParserCombinators.Poly.Parser ( src/Text/ParserCombinators/Poly/Parser.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/ParserCombinators/Poly/Parser.o )
+
+src/Text/ParserCombinators/Poly/Parser.hs:7:14: warning: [-Wtabs]
+    Tab character found here, and in 8 further locations.
+    Please use spaces instead.
+[ 7 of 18] Compiling Text.ParserCombinators.Poly.Lazy ( src/Text/ParserCombinators/Poly/Lazy.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/ParserCombinators/Poly/Lazy.o )
+
+src/Text/ParserCombinators/Poly/Lazy.hs:4:14: warning: [-Wtabs]
+    Tab character found here, and in 8 further locations.
+    Please use spaces instead.
+[ 8 of 18] Compiling Text.ParserCombinators.Poly.Plain ( src/Text/ParserCombinators/Poly/Plain.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/ParserCombinators/Poly/Plain.o )
+
+src/Text/ParserCombinators/Poly/Plain.hs:3:14: warning: [-Wtabs]
+    Tab character found here, and in 9 further locations.
+    Please use spaces instead.
+[ 9 of 18] Compiling Text.ParserCombinators.Poly.StateParser ( src/Text/ParserCombinators/Poly/StateParser.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/ParserCombinators/Poly/StateParser.o )
+
+src/Text/ParserCombinators/Poly/StateParser.hs:7:14: warning: [-Wtabs]
+    Tab character found here, and in 7 further locations.
+    Please use spaces instead.
+[10 of 18] Compiling Text.ParserCombinators.Poly.State ( src/Text/ParserCombinators/Poly/State.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/ParserCombinators/Poly/State.o )
+
+src/Text/ParserCombinators/Poly/State.hs:3:14: warning: [-Wtabs]
+    Tab character found here, and in 8 further locations.
+    Please use spaces instead.
+[11 of 18] Compiling Text.ParserCombinators.Poly.StateLazy ( src/Text/ParserCombinators/Poly/StateLazy.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/ParserCombinators/Poly/StateLazy.o )
+
+src/Text/ParserCombinators/Poly/StateLazy.hs:4:14: warning: [-Wtabs]
+    Tab character found here, and in 8 further locations.
+    Please use spaces instead.
+[12 of 18] Compiling Text.ParserCombinators.Poly.StateText ( src/Text/ParserCombinators/Poly/StateText.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/ParserCombinators/Poly/StateText.o )
+[13 of 18] Compiling Text.ParserCombinators.Poly.Text ( src/Text/ParserCombinators/Poly/Text.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/ParserCombinators/Poly/Text.o )
+[14 of 18] Compiling Text.ParserCombinators.Poly ( src/Text/ParserCombinators/Poly.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/ParserCombinators/Poly.o )
+[15 of 18] Compiling Text.ParserCombinators.HuttonMeijerWallace ( src/Text/ParserCombinators/HuttonMeijerWallace.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/ParserCombinators/HuttonMeijerWallace.o )
+[16 of 18] Compiling Text.ParserCombinators.HuttonMeijer ( src/Text/ParserCombinators/HuttonMeijer.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/ParserCombinators/HuttonMeijer.o )
+[17 of 18] Compiling Text.Parse.ByteString ( src/Text/Parse/ByteString.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/Parse/ByteString.o )
+
+src/Text/Parse/ByteString.hs:5:15: warning: [-Wtabs]
+    Tab character found here, and in 13 further locations.
+    Please use spaces instead.
+[18 of 18] Compiling Text.Parse       ( src/Text/Parse.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Text/Parse.o )
+
+src/Text/Parse.hs:4:15: warning: [-Wtabs]
+    Tab character found here, and in 12 further locations.
+    Please use spaces instead.
+Installing library in
+/home/thomas/.stack/snapshots/x86_64-linux/lts-8.5/8.0.2/lib/x86_64-linux-ghc-8.0.2/polyparse-1.12-Ee2dhxWFCj0JUfsZIQidEE
+Registering polyparse-1.12...

@@ -1,0 +1,21 @@
+Configuring lens-family-core-1.2.1...
+Building lens-family-core-1.2.1...
+Preprocessing library lens-family-core-1.2.1...
+[ 1 of 10] Compiling Lens.Family.State.Zoom ( src/Lens/Family/State/Zoom.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Lens/Family/State/Zoom.o )
+[ 2 of 10] Compiling Lens.Family.Phantom ( src/Lens/Family/Phantom.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Lens/Family/Phantom.o )
+[ 3 of 10] Compiling Lens.Family.Identical ( src/Lens/Family/Identical.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Lens/Family/Identical.o )
+
+src/Lens/Family/Identical.hs:3:1: warning: [-Wunused-imports]
+    The import of ‘Control.Applicative’ is redundant
+      except perhaps to import instances from ‘Control.Applicative’
+    To import instances alone, use: import Control.Applicative()
+[ 4 of 10] Compiling Lens.Family.Unchecked ( src/Lens/Family/Unchecked.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Lens/Family/Unchecked.o )
+[ 5 of 10] Compiling Lens.Family      ( src/Lens/Family.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Lens/Family.o )
+[ 6 of 10] Compiling Lens.Family.Clone ( src/Lens/Family/Clone.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Lens/Family/Clone.o )
+[ 7 of 10] Compiling Lens.Family.State.Lazy ( src/Lens/Family/State/Lazy.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Lens/Family/State/Lazy.o )
+[ 8 of 10] Compiling Lens.Family.State ( src/Lens/Family/State.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Lens/Family/State.o )
+[ 9 of 10] Compiling Lens.Family.State.Strict ( src/Lens/Family/State/Strict.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Lens/Family/State/Strict.o )
+[10 of 10] Compiling Lens.Family.Stock ( src/Lens/Family/Stock.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Lens/Family/Stock.o )
+Installing library in
+/home/thomas/.stack/snapshots/x86_64-linux/lts-8.5/8.0.2/lib/x86_64-linux-ghc-8.0.2/lens-family-core-1.2.1-LZ6TX4t6mGs5hzfIChMtCb
+Registering lens-family-core-1.2.1...

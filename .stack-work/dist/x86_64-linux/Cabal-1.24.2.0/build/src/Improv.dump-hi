@@ -1,0 +1,3885 @@
+
+==================== FINAL INTERFACE ====================
+2018-09-28 14:21:49.705169228 UTC
+
+interface improv-0.1.0.0-SK2koE1cQA7mN0X0IxqKL:Improv 8002
+  interface hash: cafdd374f1f901e9d286a0106a204cf6
+  ABI hash: 2f26aa05a3be0240b20300b42cb8b232
+  export-list hash: b3baf8a7121f260c766f8067834ab887
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 0f9e96139dd0cea450b716d4e8c82520
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Improv.changeTiming
+  Improv.parL
+  Improv.repeatn
+  Improv.retrogradeDance
+  Improv.reverseDance
+  Improv.seqL
+  Improv.transform
+  Improv.Action{Improv.A}
+  Improv.Angle{Improv.Angle}
+  Improv.Dance{Improv.:+: Improv.:||: Improv.Prim Improv.Rest Improv.Skip}
+  Improv.Direction{Improv.:*: Improv.Backward Improv.Center Improv.Forward Improv.High Improv.Lef Improv.Low Improv.Mid Improv.Righ}
+  Improv.Duration
+  Improv.KineChain{Improv.Joint Improv.Link}
+  Improv.KineChains
+  Improv.Length{Improv.Eighth Improv.Full Improv.Half Improv.Quarter Improv.ThreeFourths Improv.Zero}
+  Improv.Mult
+  Improv.Origin{Improv.O}
+  Improv.ParDance{Improv.ParDance getPar}
+  Improv.Parts{Improv.contains Improv.origin}
+  Improv.Plane{Improv.XY Improv.XZ Improv.YZ}
+  Improv.Robot
+  Improv.SeqDance{Improv.SeqDance getSeq}
+  Improv.Symmetric{Improv.refl}
+module dependencies:
+package dependencies: base-4.9.1.0* ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Either base-4.9.1.0:Data.Functor.Const
+                         base-4.9.1.0:Data.Monoid base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:GHC.Generics base-4.9.1.0:GHC.IO.Exception
+                         base-4.9.1.0:GHC.TypeLits
+import  -/  base-4.9.1.0:Data.Foldable 3e0b6967a1da89945d0e2d47266337a2
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:GHC.List ab8c4e523e6c479c549d3bcd5fc4a439
+import  -/  base-4.9.1.0:GHC.Num 00bfaa7b2f9d6084913c0697a8a49ec8
+import  -/  base-4.9.1.0:GHC.Read b6821365d2d5fa2155c9e910160e7f57
+import  -/  base-4.9.1.0:GHC.Real 82e4e59051a13dba1da63e1e970a69e6
+import  -/  base-4.9.1.0:GHC.Show a027f5ac24879eaba752f44aa90fe511
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  base-4.9.1.0:Text.ParserCombinators.ReadPrec 5a182a8d6deb0f7d67aed5fab08a5cc0
+import  -/  base-4.9.1.0:Text.Read.Lex 16199fac3c6c2d64cc7c268f3c0d2269
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+b3c40b8773f2ae772d2a3855f77a04be
+  $fEqAction :: GHC.Classes.Eq Improv.Action
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Improv.Action Improv.$fEqAction_$c==1 Improv.$fEqAction_$c/= -}
+b3c40b8773f2ae772d2a3855f77a04be
+  $fEqAction_$c/= :: Improv.Action -> Improv.Action -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(SL),1*U(1*U,1*U)><S(SL),1*U(1*U,1*U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Improv.Action) (w1 :: Improv.Action) ->
+                 case w of ww { Improv.A ww1 ww2 ->
+                 case w1 of ww3 { Improv.A ww4 ww5 ->
+                 Improv.$w$c/= ww1 ww2 ww4 ww5 } }) -}
+cd42d7a3ee7c839c253418ccc6375089
+  $fEqAction_$c== ::
+    Improv.Direction -> Improv.Direction -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U> -}
+b3c40b8773f2ae772d2a3855f77a04be
+  $fEqAction_$c==1 ::
+    Improv.Action -> Improv.Action -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(SL),1*U(1*U,1*U)><S(SL),1*U(1*U,1*U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Improv.Action) (w1 :: Improv.Action) ->
+                 case w of ww { Improv.A ww1 ww2 ->
+                 case w1 of ww3 { Improv.A ww4 ww5 ->
+                 Improv.$w$c== ww1 ww2 ww4 ww5 } }) -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fEqAction_$c==2 ::
+    Improv.Length -> Improv.Length -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (ds :: Improv.Length) (ds2 :: Improv.Length) ->
+                 case ds of wild {
+                   Improv.Zero
+                   -> case ds2 of wild1 {
+                        DEFAULT -> GHC.Types.False Improv.Zero -> GHC.Types.True }
+                   Improv.Eighth
+                   -> case ds2 of wild1 {
+                        DEFAULT -> GHC.Types.False Improv.Eighth -> GHC.Types.True }
+                   Improv.Quarter
+                   -> case ds2 of wild1 {
+                        DEFAULT -> GHC.Types.False Improv.Quarter -> GHC.Types.True }
+                   Improv.Half
+                   -> case ds2 of wild1 {
+                        DEFAULT -> GHC.Types.False Improv.Half -> GHC.Types.True }
+                   Improv.ThreeFourths
+                   -> case ds2 of wild1 {
+                        DEFAULT -> GHC.Types.False Improv.ThreeFourths -> GHC.Types.True }
+                   Improv.Full
+                   -> case ds2 of wild1 {
+                        DEFAULT -> GHC.Types.False Improv.Full -> GHC.Types.True } }) -}
+3885da4b4dd77c01efb721818c148a35
+  $fEqAngle :: GHC.Classes.Eq Improv.Angle
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Improv.Angle Improv.$fEqAngle_$c== Improv.$fEqAngle_$c/= -}
+3885da4b4dd77c01efb721818c148a35
+  $fEqAngle_$c/= :: Improv.Angle -> Improv.Angle -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(S)),1*U(1*U(U))><S(S(S)),1*U(1*U(U))>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (a :: Improv.Angle) (b :: Improv.Angle) ->
+                 case a of wild { Improv.Angle a1 ->
+                 case b of wild1 { Improv.Angle b1 ->
+                 case a1 of wild2 { GHC.Types.D# x ->
+                 case b1 of wild3 { GHC.Types.D# y ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.==## x y) of wild4 {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True -> GHC.Types.False } } } } }) -}
+3885da4b4dd77c01efb721818c148a35
+  $fEqAngle_$c== :: Improv.Angle -> Improv.Angle -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(S)),1*U(1*U(U))><S(S(S)),1*U(1*U(U))>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: Improv.Angle) (ds2 :: Improv.Angle) ->
+                 case ds of wild { Improv.Angle a1 ->
+                 case ds2 of wild1 { Improv.Angle b1 ->
+                 GHC.Classes.eqDouble a1 b1 } }) -}
+5992ffb4256db90148fe6d921f18ab3e
+  $fEqDance :: GHC.Classes.Eq b => GHC.Classes.Eq (Improv.Dance b)
+  DFunId
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(C(C1(U)),A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ b ($dEq :: GHC.Classes.Eq b).
+                  @ (Improv.Dance b)
+                  (Improv.$fEqDance_$c== @ b $dEq)
+                  (Improv.$fEqDance_$c/= @ b $dEq) -}
+5992ffb4256db90148fe6d921f18ab3e
+  $fEqDance_$c/= ::
+    GHC.Classes.Eq b =>
+    Improv.Dance b -> Improv.Dance b -> GHC.Types.Bool
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U(C(C1(U)),A)><S,1*U><S,1*U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ b
+                   ($dEq :: GHC.Classes.Eq b)
+                   (a :: Improv.Dance b)
+                   (b1 :: Improv.Dance b) ->
+                 case Improv.$fEqDance_$c== @ b $dEq a b1 of wild {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True -> GHC.Types.False }) -}
+5992ffb4256db90148fe6d921f18ab3e
+  $fEqDance_$c== ::
+    GHC.Classes.Eq b =>
+    Improv.Dance b -> Improv.Dance b -> GHC.Types.Bool
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U(C(C1(U)),A)><S,1*U><S,1*U> -}
+cd42d7a3ee7c839c253418ccc6375089
+  $fEqDirection :: GHC.Classes.Eq Improv.Direction
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Improv.Direction
+                  Improv.$fEqAction_$c==
+                  Improv.$fEqDirection_$c/= -}
+cd42d7a3ee7c839c253418ccc6375089
+  $fEqDirection_$c/= ::
+    Improv.Direction -> Improv.Direction -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (a :: Improv.Direction) (b :: Improv.Direction) ->
+                 case Improv.$fEqAction_$c== a b of wild {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True -> GHC.Types.False }) -}
+3617223d3d7e4df57a39d0937c26b626
+  $fEqKineChain ::
+    GHC.Classes.Eq a => GHC.Classes.Eq (Improv.KineChain a)
+  DFunId
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(C(C1(U)),A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a ($dEq :: GHC.Classes.Eq a).
+                  @ (Improv.KineChain a)
+                  (Improv.$fEqKineChain_$c== @ a $dEq)
+                  (Improv.$fEqKineChain_$c/= @ a $dEq) -}
+3617223d3d7e4df57a39d0937c26b626
+  $fEqKineChain_$c/= ::
+    GHC.Classes.Eq a =>
+    Improv.KineChain a -> Improv.KineChain a -> GHC.Types.Bool
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U(C(C1(U)),A)><L,U><L,U> -}
+3617223d3d7e4df57a39d0937c26b626
+  $fEqKineChain_$c== ::
+    GHC.Classes.Eq a =>
+    Improv.KineChain a -> Improv.KineChain a -> GHC.Types.Bool
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(C(C1(U)),A)> -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fEqLength :: GHC.Classes.Eq Improv.Length
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Improv.Length Improv.$fEqAction_$c==2 Improv.$fEqLength_$c/= -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fEqLength_$c/= :: Improv.Length -> Improv.Length -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (a :: Improv.Length) (b :: Improv.Length) ->
+                 case a of wild {
+                   Improv.Zero
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True Improv.Zero -> GHC.Types.False }
+                   Improv.Eighth
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True Improv.Eighth -> GHC.Types.False }
+                   Improv.Quarter
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True Improv.Quarter -> GHC.Types.False }
+                   Improv.Half
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True Improv.Half -> GHC.Types.False }
+                   Improv.ThreeFourths
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True Improv.ThreeFourths -> GHC.Types.False }
+                   Improv.Full
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True Improv.Full -> GHC.Types.False } }) -}
+74b1087099ab52ae48273444c7d8e08f
+  $fEqOrigin :: GHC.Classes.Eq Improv.Origin
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Improv.Origin Improv.$fEqOrigin_$c== Improv.$fEqOrigin_$c/= -}
+74b1087099ab52ae48273444c7d8e08f
+  $fEqOrigin_$c/= :: Improv.Origin -> Improv.Origin -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(S)),1*U(1*U(U))><S(S(S)),1*U(1*U(U))>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (a :: Improv.Origin) (b :: Improv.Origin) ->
+                 case a of wild { Improv.O a1 ->
+                 case b of wild1 { Improv.O b1 ->
+                 case a1 of wild2 { GHC.Types.I# x ->
+                 case b1 of wild3 { GHC.Types.I# y ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.==# x y) of wild4 {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True -> GHC.Types.False } } } } }) -}
+74b1087099ab52ae48273444c7d8e08f
+  $fEqOrigin_$c== :: Improv.Origin -> Improv.Origin -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(S)),1*U(1*U(U))><S(S(S)),1*U(1*U(U))>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: Improv.Origin) (ds2 :: Improv.Origin) ->
+                 case ds of wild { Improv.O a1 ->
+                 case ds2 of wild1 { Improv.O b1 -> GHC.Classes.eqInt a1 b1 } }) -}
+80ae00fe9ba36e92197d4d00e34f39b3
+  $fEqParDance ::
+    GHC.Classes.Eq a => GHC.Classes.Eq (Improv.ParDance a)
+  DFunId
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(C(C1(U)),A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a ($dEq :: GHC.Classes.Eq a).
+                  @ (Improv.ParDance a)
+                  (Improv.$fEqParDance_$c== @ a $dEq)
+                  (Improv.$fEqParDance_$c/= @ a $dEq) -}
+80ae00fe9ba36e92197d4d00e34f39b3
+  $fEqParDance_$c/= ::
+    GHC.Classes.Eq a =>
+    Improv.ParDance a -> Improv.ParDance a -> GHC.Types.Bool
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U(C(C1(U)),A)><S,1*U><S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Improv.$fEqDance_$c/=
+                  `cast`
+                (forall (a :: <*>_N).
+                 <GHC.Classes.Eq a>_R
+                 ->_R Sym (Improv.N:ParDance[0]) <a>_N
+                 ->_R Sym (Improv.N:ParDance[0]) <a>_N
+                 ->_R <GHC.Types.Bool>_R) -}
+80ae00fe9ba36e92197d4d00e34f39b3
+  $fEqParDance_$c== ::
+    GHC.Classes.Eq a =>
+    Improv.ParDance a -> Improv.ParDance a -> GHC.Types.Bool
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U(C(C1(U)),A)><S,1*U><S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Improv.$fEqDance_$c==
+                  `cast`
+                (forall (a :: <*>_N).
+                 <GHC.Classes.Eq a>_R
+                 ->_R Sym (Improv.N:ParDance[0]) <a>_N
+                 ->_R Sym (Improv.N:ParDance[0]) <a>_N
+                 ->_R <GHC.Types.Bool>_R) -}
+a6f94362a12c590afaec989b2af33551
+  $fEqPlane :: GHC.Classes.Eq Improv.Plane
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Improv.Plane Improv.$fEqPlane_$c== Improv.$fEqPlane_$c/= -}
+a6f94362a12c590afaec989b2af33551
+  $fEqPlane_$c/= :: Improv.Plane -> Improv.Plane -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (a :: Improv.Plane) (b :: Improv.Plane) ->
+                 case a of wild {
+                   Improv.XY
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True Improv.XY -> GHC.Types.False }
+                   Improv.YZ
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True Improv.YZ -> GHC.Types.False }
+                   Improv.XZ
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True Improv.XZ -> GHC.Types.False } }) -}
+a6f94362a12c590afaec989b2af33551
+  $fEqPlane_$c== :: Improv.Plane -> Improv.Plane -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: Improv.Plane) (ds2 :: Improv.Plane) ->
+                 case ds of wild {
+                   Improv.XY
+                   -> case ds2 of wild1 {
+                        DEFAULT -> GHC.Types.False Improv.XY -> GHC.Types.True }
+                   Improv.YZ
+                   -> case ds2 of wild1 {
+                        DEFAULT -> GHC.Types.False Improv.YZ -> GHC.Types.True }
+                   Improv.XZ
+                   -> case ds2 of wild1 {
+                        DEFAULT -> GHC.Types.False Improv.XZ -> GHC.Types.True } }) -}
+c0bb006f64ec903783409ef3ce75af18
+  $fEqSeqDance ::
+    GHC.Classes.Eq a => GHC.Classes.Eq (Improv.SeqDance a)
+  DFunId
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(C(C1(U)),A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a ($dEq :: GHC.Classes.Eq a).
+                  @ (Improv.SeqDance a)
+                  (Improv.$fEqSeqDance_$c== @ a $dEq)
+                  (Improv.$fEqSeqDance_$c/= @ a $dEq) -}
+c0bb006f64ec903783409ef3ce75af18
+  $fEqSeqDance_$c/= ::
+    GHC.Classes.Eq a =>
+    Improv.SeqDance a -> Improv.SeqDance a -> GHC.Types.Bool
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U(C(C1(U)),A)><S,1*U><S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Improv.$fEqDance_$c/=
+                  `cast`
+                (forall (a :: <*>_N).
+                 <GHC.Classes.Eq a>_R
+                 ->_R Sym (Improv.N:SeqDance[0]) <a>_N
+                 ->_R Sym (Improv.N:SeqDance[0]) <a>_N
+                 ->_R <GHC.Types.Bool>_R) -}
+c0bb006f64ec903783409ef3ce75af18
+  $fEqSeqDance_$c== ::
+    GHC.Classes.Eq a =>
+    Improv.SeqDance a -> Improv.SeqDance a -> GHC.Types.Bool
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U(C(C1(U)),A)><S,1*U><S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Improv.$fEqDance_$c==
+                  `cast`
+                (forall (a :: <*>_N).
+                 <GHC.Classes.Eq a>_R
+                 ->_R Sym (Improv.N:SeqDance[0]) <a>_N
+                 ->_R Sym (Improv.N:SeqDance[0]) <a>_N
+                 ->_R <GHC.Types.Bool>_R) -}
+5992ffb4256db90148fe6d921f18ab3e
+  $fFunctorDance :: GHC.Base.Functor Improv.Dance
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Improv.Dance
+                  Improv.$fFunctorDance_$cfmap
+                  Improv.$fFunctorDance_$c<$ -}
+5992ffb4256db90148fe6d921f18ab3e
+  $fFunctorDance_$c<$ :: a -> Improv.Dance b -> Improv.Dance a
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a @ b (eta :: a) (eta1 :: Improv.Dance b) ->
+                 Improv.$fFunctorDance_$cfmap @ b @ a (\ (ds :: b) -> eta) eta1) -}
+5992ffb4256db90148fe6d921f18ab3e
+  $fFunctorDance_$cfmap ::
+    (a -> b) -> Improv.Dance a -> Improv.Dance b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,C(U)><S,1*U> -}
+80ae00fe9ba36e92197d4d00e34f39b3
+  $fFunctorParDance :: GHC.Base.Functor Improv.ParDance
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Improv.ParDance
+                  Improv.$fFunctorParDance_$cfmap
+                  Improv.$fFunctorParDance_$c<$ -}
+80ae00fe9ba36e92197d4d00e34f39b3
+  $fFunctorParDance1 :: a -> Improv.ParDance b -> Improv.Dance a
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a @ b (eta :: a) (eta1 :: Improv.ParDance b) ->
+                 Improv.$fFunctorDance_$cfmap
+                   @ b
+                   @ a
+                   (\ (ds :: b) -> eta)
+                   eta1 `cast` (Improv.N:ParDance[0] <b>_N)) -}
+80ae00fe9ba36e92197d4d00e34f39b3
+  $fFunctorParDance2 ::
+    (a -> b) -> Improv.ParDance a -> Improv.Dance b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,C(U)><S,1*U>,
+     Unfolding: InlineRule (2, True, True)
+                (\ @ a @ b (f :: a -> b) (ds :: Improv.ParDance a) ->
+                 Improv.$fFunctorDance_$cfmap
+                   @ a
+                   @ b
+                   f
+                   ds `cast` (Improv.N:ParDance[0] <a>_N)) -}
+80ae00fe9ba36e92197d4d00e34f39b3
+  $fFunctorParDance_$c<$ ::
+    a -> Improv.ParDance b -> Improv.ParDance a
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Improv.$fFunctorParDance1
+                  `cast`
+                (forall (a :: <*>_N) (b :: <*>_N).
+                 <a>_R
+                 ->_R <Improv.ParDance b>_R
+                 ->_R Sym (Improv.N:ParDance[0]) <a>_N) -}
+80ae00fe9ba36e92197d4d00e34f39b3
+  $fFunctorParDance_$cfmap ::
+    (a -> b) -> Improv.ParDance a -> Improv.ParDance b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,C(U)><S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Improv.$fFunctorParDance2
+                  `cast`
+                (forall (a :: <*>_N) (b :: <*>_N).
+                 <a -> b>_R
+                 ->_R <Improv.ParDance a>_R
+                 ->_R Sym (Improv.N:ParDance[0]) <b>_N) -}
+c0bb006f64ec903783409ef3ce75af18
+  $fFunctorSeqDance :: GHC.Base.Functor Improv.SeqDance
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Improv.SeqDance
+                  Improv.$fFunctorSeqDance_$cfmap
+                  Improv.$fFunctorSeqDance_$c<$ -}
+c0bb006f64ec903783409ef3ce75af18
+  $fFunctorSeqDance1 :: a -> Improv.SeqDance b -> Improv.Dance a
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a @ b (eta :: a) (eta1 :: Improv.SeqDance b) ->
+                 Improv.$fFunctorDance_$cfmap
+                   @ b
+                   @ a
+                   (\ (ds :: b) -> eta)
+                   eta1 `cast` (Improv.N:SeqDance[0] <b>_N)) -}
+c0bb006f64ec903783409ef3ce75af18
+  $fFunctorSeqDance2 ::
+    (a -> b) -> Improv.SeqDance a -> Improv.Dance b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,C(U)><S,1*U>,
+     Unfolding: InlineRule (2, True, True)
+                (\ @ a @ b (f :: a -> b) (ds :: Improv.SeqDance a) ->
+                 Improv.$fFunctorDance_$cfmap
+                   @ a
+                   @ b
+                   f
+                   ds `cast` (Improv.N:SeqDance[0] <a>_N)) -}
+c0bb006f64ec903783409ef3ce75af18
+  $fFunctorSeqDance_$c<$ ::
+    a -> Improv.SeqDance b -> Improv.SeqDance a
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Improv.$fFunctorSeqDance1
+                  `cast`
+                (forall (a :: <*>_N) (b :: <*>_N).
+                 <a>_R
+                 ->_R <Improv.SeqDance b>_R
+                 ->_R Sym (Improv.N:SeqDance[0]) <a>_N) -}
+c0bb006f64ec903783409ef3ce75af18
+  $fFunctorSeqDance_$cfmap ::
+    (a -> b) -> Improv.SeqDance a -> Improv.SeqDance b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,C(U)><S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Improv.$fFunctorSeqDance2
+                  `cast`
+                (forall (a :: <*>_N) (b :: <*>_N).
+                 <a -> b>_R
+                 ->_R <Improv.SeqDance a>_R
+                 ->_R Sym (Improv.N:SeqDance[0]) <b>_N) -}
+80ae00fe9ba36e92197d4d00e34f39b3
+  $fMonoidParDance ::
+    Improv.Parts a => GHC.Base.Monoid (Improv.ParDance a)
+  DFunId
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,A>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a ($dParts :: Improv.Parts a).
+                  @ (Improv.ParDance a)
+                  (Improv.$fMonoidParDance_$cmempty @ a $dParts)
+                  (Improv.$fMonoidParDance_$cmappend @ a $dParts)
+                  (Improv.$fMonoidParDance_$cmconcat @ a $dParts) -}
+80ae00fe9ba36e92197d4d00e34f39b3
+  $fMonoidParDance1 ::
+    Improv.Parts a =>
+    Improv.ParDance a -> Improv.ParDance a -> Improv.Dance a
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,A><L,U><L,U>m5,
+     Unfolding: InlineRule (3, True, True)
+                (\ @ a
+                   ($dParts :: Improv.Parts a)
+                   (ds :: Improv.ParDance a)
+                   (ds2 :: Improv.ParDance a) ->
+                 Improv.:||:
+                   @ a
+                   ds `cast` (Improv.N:ParDance[0] <a>_N)
+                   ds2 `cast` (Improv.N:ParDance[0] <a>_N)) -}
+09c0f2302e9cdbc33119c2bc62d8a452
+  $fMonoidParDance2 :: Improv.Parts a => Improv.Dance a
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ @ a ($dParts :: Improv.Parts a) -> Improv.Skip @ a) -}
+80ae00fe9ba36e92197d4d00e34f39b3
+  $fMonoidParDance_$cmappend ::
+    Improv.Parts a =>
+    Improv.ParDance a -> Improv.ParDance a -> Improv.ParDance a
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,A><L,U><L,U>m5,
+     Unfolding: InlineRule (0, True, True)
+                Improv.$fMonoidParDance1
+                  `cast`
+                (forall (a :: <*>_N).
+                 <Improv.Parts a>_R
+                 ->_R <Improv.ParDance a>_R
+                 ->_R <Improv.ParDance a>_R
+                 ->_R Sym (Improv.N:ParDance[0]) <a>_N) -}
+80ae00fe9ba36e92197d4d00e34f39b3
+  $fMonoidParDance_$cmconcat ::
+    Improv.Parts a => [Improv.ParDance a] -> Improv.ParDance a
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a ($dParts :: Improv.Parts a) (eta :: [Improv.ParDance a]) ->
+                 letrec {
+                   go :: [Improv.ParDance a] -> Improv.ParDance a {- Arity: 1 -}
+                   = \ (ds :: [Improv.ParDance a]) ->
+                     case ds of wild {
+                       [] -> (Improv.Skip @ a) `cast` (Sym (Improv.N:ParDance[0]) <a>_N)
+                       : y ys
+                       -> (Improv.:||:
+                             @ a
+                             y `cast` (Improv.N:ParDance[0] <a>_N)
+                             (go ys) `cast` (Improv.N:ParDance[0] <a>_N))
+                            `cast`
+                          (Sym (Improv.N:ParDance[0]) <a>_N) }
+                 } in
+                 go eta) -}
+80ae00fe9ba36e92197d4d00e34f39b3
+  $fMonoidParDance_$cmempty :: Improv.Parts a => Improv.ParDance a
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,A>,
+     Unfolding: InlineRule (0, True, True)
+                Improv.$fMonoidParDance2
+                  `cast`
+                (forall (a :: <*>_N).
+                 <Improv.Parts a>_R ->_R Sym (Improv.N:ParDance[0]) <a>_N) -}
+c0bb006f64ec903783409ef3ce75af18
+  $fMonoidSeqDance ::
+    Improv.Parts a => GHC.Base.Monoid (Improv.SeqDance a)
+  DFunId
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,A>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a ($dParts :: Improv.Parts a).
+                  @ (Improv.SeqDance a)
+                  (Improv.$fMonoidSeqDance_$cmempty @ a $dParts)
+                  (Improv.$fMonoidSeqDance_$cmappend @ a $dParts)
+                  (Improv.$fMonoidSeqDance_$cmconcat @ a $dParts) -}
+c0bb006f64ec903783409ef3ce75af18
+  $fMonoidSeqDance1 ::
+    Improv.Parts a =>
+    Improv.SeqDance a -> Improv.SeqDance a -> Improv.Dance a
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,A><L,U><L,U>m4,
+     Unfolding: InlineRule (3, True, True)
+                (\ @ a
+                   ($dParts :: Improv.Parts a)
+                   (ds :: Improv.SeqDance a)
+                   (ds2 :: Improv.SeqDance a) ->
+                 Improv.:+:
+                   @ a
+                   ds `cast` (Improv.N:SeqDance[0] <a>_N)
+                   ds2 `cast` (Improv.N:SeqDance[0] <a>_N)) -}
+c0bb006f64ec903783409ef3ce75af18
+  $fMonoidSeqDance_$cmappend ::
+    Improv.Parts a =>
+    Improv.SeqDance a -> Improv.SeqDance a -> Improv.SeqDance a
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,A><L,U><L,U>m4,
+     Unfolding: InlineRule (0, True, True)
+                Improv.$fMonoidSeqDance1
+                  `cast`
+                (forall (a :: <*>_N).
+                 <Improv.Parts a>_R
+                 ->_R <Improv.SeqDance a>_R
+                 ->_R <Improv.SeqDance a>_R
+                 ->_R Sym (Improv.N:SeqDance[0]) <a>_N) -}
+c0bb006f64ec903783409ef3ce75af18
+  $fMonoidSeqDance_$cmconcat ::
+    Improv.Parts a => [Improv.SeqDance a] -> Improv.SeqDance a
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a ($dParts :: Improv.Parts a) (eta :: [Improv.SeqDance a]) ->
+                 letrec {
+                   go :: [Improv.SeqDance a] -> Improv.SeqDance a {- Arity: 1 -}
+                   = \ (ds :: [Improv.SeqDance a]) ->
+                     case ds of wild {
+                       [] -> (Improv.Skip @ a) `cast` (Sym (Improv.N:SeqDance[0]) <a>_N)
+                       : y ys
+                       -> (Improv.:+:
+                             @ a
+                             y `cast` (Improv.N:SeqDance[0] <a>_N)
+                             (go ys) `cast` (Improv.N:SeqDance[0] <a>_N))
+                            `cast`
+                          (Sym (Improv.N:SeqDance[0]) <a>_N) }
+                 } in
+                 go eta) -}
+c0bb006f64ec903783409ef3ce75af18
+  $fMonoidSeqDance_$cmempty :: Improv.Parts a => Improv.SeqDance a
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,A>,
+     Unfolding: InlineRule (0, True, True)
+                Improv.$fMonoidParDance2
+                  `cast`
+                (forall (a :: <*>_N).
+                 <Improv.Parts a>_R ->_R Sym (Improv.N:SeqDance[0]) <a>_N) -}
+cfcc186c82ad96d72dd4088c87950f9a
+  $fPartsKineChain :: Improv.Parts (Improv.KineChain a)
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a.
+                  @ (Improv.KineChain a)
+                  (Improv.$fPartsKineChain_$ccontains @ a)
+                  (Improv.$fPartsKineChain_$corigin @ a) -}
+7bbf7b4cdf4900497cfe107c5ebff550
+  $fPartsKineChain1 :: [Improv.KineChain a] -> [Improv.KineChain a]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+ae0af665aa3cae35d24d2b9bad500988
+  $fPartsKineChain_$ccontains ::
+    Improv.KineChain a -> [Improv.KineChain a]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: (\ @ a (ds :: Improv.KineChain a) ->
+                 case ds of wild {
+                   Improv.Joint o ks -> Improv.$fPartsKineChain1 @ a ks
+                   Improv.Link o n
+                   -> GHC.Types.:
+                        @ (Improv.KineChain a)
+                        wild
+                        (GHC.Types.[] @ (Improv.KineChain a)) }) -}
+7c19641a5fecefe9f0aa803e82f92377
+  $fPartsKineChain_$corigin :: Improv.KineChain a -> Improv.Origin
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a (ds :: Improv.KineChain a) ->
+                 case ds of wild {
+                   Improv.Joint o ds2 -> o Improv.Link o ds2 -> o }) -}
+b3c40b8773f2ae772d2a3855f77a04be
+  $fReadAction :: GHC.Read.Read Improv.Action
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Improv.Action
+                  Improv.$fReadAction_$creadsPrec
+                  Improv.$fReadAction_$creadList
+                  Improv.$fReadAction_$creadPrec
+                  Improv.$fReadAction_$creadListPrec -}
+b3c40b8773f2ae772d2a3855f77a04be
+  $fReadAction1 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       ([Improv.Action] -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, Strictness: <L,U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (eta :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta1 :: [Improv.Action] -> Text.ParserCombinators.ReadP.P b) ->
+                 GHC.Read.list1
+                   @ Improv.Action
+                   Improv.$fReadAction2
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                             <Improv.Action>_R))
+                   eta
+                   @ b
+                   eta1) -}
+b3c40b8773f2ae772d2a3855f77a04be
+  $fReadAction2 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> Text.ParserCombinators.ReadP.ReadP Improv.Action
+  {- Arity: 1,
+     Unfolding: (GHC.Read.parens1
+                   @ Improv.Action
+                   Improv.$fReadAction3
+                     `cast`
+                   (Trans
+                        (<Text.ParserCombinators.ReadPrec.Prec>_R
+                         ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                       <Improv.Action>_R))
+                        (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                  <Improv.Action>_R)))) -}
+b3c40b8773f2ae772d2a3855f77a04be
+  $fReadAction3 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Improv.Action -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, Strictness: <S(S),1*U(U)><L,C(U)>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (c :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta :: Improv.Action -> Text.ParserCombinators.ReadP.P b) ->
+                 case c of wild { GHC.Types.I# x ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.<=# x 10#) of wild2 {
+                   GHC.Types.False -> Text.ParserCombinators.ReadP.Fail @ b
+                   GHC.Types.True
+                   -> Improv.$fReadAction5 Improv.$fReadAction4 @ b eta } }) -}
+ac176f593e9f6eec70dd6f26014b3700
+  $fReadAction4 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 10#) -}
+b3c40b8773f2ae772d2a3855f77a04be
+  $fReadAction5 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b1.
+       (Improv.Action -> Text.ParserCombinators.ReadP.P b1)
+       -> Text.ParserCombinators.ReadP.P b1
+  {- Arity: 2, Strictness: <L,U(U)><L,C(U)>m2, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b1
+                   (w1 :: Improv.Action -> Text.ParserCombinators.ReadP.P b1) ->
+                 case Improv.$w$creadPrec w @ b1 w1 of ww { Unit# ww1 ->
+                 Text.ParserCombinators.ReadP.Look @ b1 ww1 }) -}
+8d38166fce11300f85957fb2607569d4
+  $fReadAction6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "A"#) -}
+b3c40b8773f2ae772d2a3855f77a04be
+  $fReadAction7 :: Text.ParserCombinators.ReadP.P [Improv.Action]
+  {- Unfolding: (GHC.Read.list1
+                   @ Improv.Action
+                   Improv.$fReadAction2
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                             <Improv.Action>_R))
+                   GHC.Read.$fRead()5
+                   @ [Improv.Action]
+                   (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                      @ [Improv.Action])) -}
+b3c40b8773f2ae772d2a3855f77a04be
+  $fReadAction_$creadList ::
+    Text.ParserCombinators.ReadP.ReadS [Improv.Action]
+  {- Arity: 1,
+     Unfolding: (Text.ParserCombinators.ReadP.run
+                   @ [Improv.Action]
+                   Improv.$fReadAction7) -}
+b3c40b8773f2ae772d2a3855f77a04be
+  $fReadAction_$creadListPrec ::
+    Text.ParserCombinators.ReadPrec.ReadPrec [Improv.Action]
+  {- Arity: 2, Strictness: <L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Improv.$fReadAction1
+                  `cast`
+                (Trans
+                     (<Text.ParserCombinators.ReadPrec.Prec>_R
+                      ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                    <[Improv.Action]>_R))
+                     (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                               <[Improv.Action]>_R))) -}
+b3c40b8773f2ae772d2a3855f77a04be
+  $fReadAction_$creadPrec ::
+    Text.ParserCombinators.ReadPrec.ReadPrec Improv.Action
+  {- Arity: 1,
+     Unfolding: InlineRule (0, True, True)
+                Improv.$fReadAction2
+                  `cast`
+                (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                          <Improv.Action>_R)) -}
+b3c40b8773f2ae772d2a3855f77a04be
+  $fReadAction_$creadsPrec ::
+    GHC.Types.Int -> Text.ParserCombinators.ReadP.ReadS Improv.Action
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (eta :: GHC.Types.Int) ->
+                 Text.ParserCombinators.ReadP.run
+                   @ Improv.Action
+                   ((GHC.Read.parens1
+                       @ Improv.Action
+                       Improv.$fReadAction3
+                         `cast`
+                       (Trans
+                            (<Text.ParserCombinators.ReadPrec.Prec>_R
+                             ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                           <Improv.Action>_R))
+                            (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                      <Improv.Action>_R)))
+                       eta)
+                      `cast`
+                    (Text.ParserCombinators.ReadP.N:ReadP[0] <Improv.Action>_R)
+                      @ Improv.Action
+                      (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                         @ Improv.Action))) -}
+f6184a53ca0cf8308948476dd8039724
+  $fReadAction_optional ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> Text.ParserCombinators.ReadP.ReadP Improv.Length
+  {- Arity: 1, Strictness: <L,U> -}
+24c71ab7eafbdddf00ad0be09e4eaf92
+  $fReadAction_optional1 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> Text.ParserCombinators.ReadP.ReadP Improv.Direction
+  {- Arity: 1, Strictness: <L,U(U)> -}
+3885da4b4dd77c01efb721818c148a35
+  $fReadAngle :: GHC.Read.Read Improv.Angle
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Improv.Angle
+                  Improv.$fReadAngle_$creadsPrec
+                  Improv.$fReadAngle_$creadList
+                  Improv.$fReadAngle_$creadPrec
+                  Improv.$fReadAngle_$creadListPrec -}
+3885da4b4dd77c01efb721818c148a35
+  $fReadAngle1 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       ([Improv.Angle] -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, Strictness: <L,U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (eta :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta1 :: [Improv.Angle] -> Text.ParserCombinators.ReadP.P b) ->
+                 GHC.Read.list1
+                   @ Improv.Angle
+                   Improv.$fReadAngle2
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                             <Improv.Angle>_R))
+                   eta
+                   @ b
+                   eta1) -}
+3885da4b4dd77c01efb721818c148a35
+  $fReadAngle2 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> Text.ParserCombinators.ReadP.ReadP Improv.Angle
+  {- Arity: 1,
+     Unfolding: (GHC.Read.parens1
+                   @ Improv.Angle
+                   Improv.$fReadAngle3
+                     `cast`
+                   (Trans
+                        (<Text.ParserCombinators.ReadPrec.Prec>_R
+                         ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                       <Improv.Angle>_R))
+                        (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                  <Improv.Angle>_R)))) -}
+3885da4b4dd77c01efb721818c148a35
+  $fReadAngle3 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Improv.Angle -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, Strictness: <S(S),1*U(U)><L,C(U)>, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (w1 :: Improv.Angle -> Text.ParserCombinators.ReadP.P b) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 Improv.$w$creadPrec1 ww1 @ b w1 }) -}
+c0192ba8db7f30fef92089f427a7d7fb
+  $fReadAngle4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Angle"#) -}
+7cc92edf61568f5db928c4a23d8fc021
+  $fReadAngle5 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 11#) -}
+3885da4b4dd77c01efb721818c148a35
+  $fReadAngle6 :: Text.ParserCombinators.ReadP.P [Improv.Angle]
+  {- Unfolding: (GHC.Read.list1
+                   @ Improv.Angle
+                   Improv.$fReadAngle2
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                             <Improv.Angle>_R))
+                   GHC.Read.$fRead()5
+                   @ [Improv.Angle]
+                   (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                      @ [Improv.Angle])) -}
+3885da4b4dd77c01efb721818c148a35
+  $fReadAngle_$creadList ::
+    Text.ParserCombinators.ReadP.ReadS [Improv.Angle]
+  {- Arity: 1,
+     Unfolding: (Text.ParserCombinators.ReadP.run
+                   @ [Improv.Angle]
+                   Improv.$fReadAngle6) -}
+3885da4b4dd77c01efb721818c148a35
+  $fReadAngle_$creadListPrec ::
+    Text.ParserCombinators.ReadPrec.ReadPrec [Improv.Angle]
+  {- Arity: 2, Strictness: <L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Improv.$fReadAngle1
+                  `cast`
+                (Trans
+                     (<Text.ParserCombinators.ReadPrec.Prec>_R
+                      ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                    <[Improv.Angle]>_R))
+                     (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                               <[Improv.Angle]>_R))) -}
+3885da4b4dd77c01efb721818c148a35
+  $fReadAngle_$creadPrec ::
+    Text.ParserCombinators.ReadPrec.ReadPrec Improv.Angle
+  {- Arity: 1,
+     Unfolding: InlineRule (0, True, True)
+                Improv.$fReadAngle2
+                  `cast`
+                (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                          <Improv.Angle>_R)) -}
+3885da4b4dd77c01efb721818c148a35
+  $fReadAngle_$creadsPrec ::
+    GHC.Types.Int -> Text.ParserCombinators.ReadP.ReadS Improv.Angle
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (eta :: GHC.Types.Int) ->
+                 Text.ParserCombinators.ReadP.run
+                   @ Improv.Angle
+                   ((GHC.Read.parens1
+                       @ Improv.Angle
+                       Improv.$fReadAngle3
+                         `cast`
+                       (Trans
+                            (<Text.ParserCombinators.ReadPrec.Prec>_R
+                             ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                           <Improv.Angle>_R))
+                            (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                      <Improv.Angle>_R)))
+                       eta)
+                      `cast`
+                    (Text.ParserCombinators.ReadP.N:ReadP[0] <Improv.Angle>_R)
+                      @ Improv.Angle
+                      (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                         @ Improv.Angle))) -}
+5992ffb4256db90148fe6d921f18ab3e
+  $fReadDance :: GHC.Read.Read b => GHC.Read.Read (Improv.Dance b)
+  DFunId
+  {- Arity: 1, Strictness: <L,U(A,A,U,A)>m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ b ($dRead :: GHC.Read.Read b).
+                  @ (Improv.Dance b)
+                  (Improv.$fReadDance_$creadsPrec @ b $dRead)
+                  (Improv.$fReadDance_$creadList @ b $dRead)
+                  (Improv.$fReadDance_$creadPrec @ b $dRead)
+                  (Improv.$fReadDance_$creadListPrec @ b $dRead) -}
+5992ffb4256db90148fe6d921f18ab3e
+  $fReadDance1 ::
+    GHC.Read.Read b =>
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b1.
+       ([Improv.Dance b] -> Text.ParserCombinators.ReadP.P b1)
+       -> Text.ParserCombinators.ReadP.P b1
+  {- Arity: 3, Strictness: <L,U(A,A,U,A)><L,U><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ b
+                   ($dRead :: GHC.Read.Read b)
+                   (eta :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b1
+                   (eta1 :: [Improv.Dance b] -> Text.ParserCombinators.ReadP.P b1) ->
+                 GHC.Read.list1
+                   @ (Improv.Dance b)
+                   (Improv.$fReadDance2 @ b $dRead)
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                             <Improv.Dance b>_R))
+                   eta
+                   @ b1
+                   eta1) -}
+5992ffb4256db90148fe6d921f18ab3e
+  $fReadDance2 ::
+    GHC.Read.Read b =>
+    Text.ParserCombinators.ReadPrec.Prec
+    -> Text.ParserCombinators.ReadP.ReadP (Improv.Dance b)
+  {- Arity: 2, Strictness: <L,U(A,A,U,A)><L,U> -}
+5992ffb4256db90148fe6d921f18ab3e
+  $fReadDance_$creadList ::
+    GHC.Read.Read b =>
+    Text.ParserCombinators.ReadP.ReadS [Improv.Dance b]
+  {- Arity: 1, Strictness: <L,U(A,A,U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ b ($dRead :: GHC.Read.Read b) ->
+                 Text.ParserCombinators.ReadP.run
+                   @ [Improv.Dance b]
+                   (GHC.Read.list1
+                      @ (Improv.Dance b)
+                      (Improv.$fReadDance2 @ b $dRead)
+                        `cast`
+                      (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                <Improv.Dance b>_R))
+                      GHC.Read.$fRead()5
+                      @ [Improv.Dance b]
+                      (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                         @ [Improv.Dance b]))) -}
+5992ffb4256db90148fe6d921f18ab3e
+  $fReadDance_$creadListPrec ::
+    GHC.Read.Read b =>
+    Text.ParserCombinators.ReadPrec.ReadPrec [Improv.Dance b]
+  {- Arity: 3, Strictness: <L,U(A,A,U,A)><L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Improv.$fReadDance1
+                  `cast`
+                (forall (b :: <*>_N).
+                 <GHC.Read.Read b>_R
+                 ->_R Trans
+                          (<Text.ParserCombinators.ReadPrec.Prec>_R
+                           ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                         <[Improv.Dance b]>_R))
+                          (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                    <[Improv.Dance b]>_R))) -}
+5992ffb4256db90148fe6d921f18ab3e
+  $fReadDance_$creadPrec ::
+    GHC.Read.Read b =>
+    Text.ParserCombinators.ReadPrec.ReadPrec (Improv.Dance b)
+  {- Arity: 2, Strictness: <L,U(A,A,U,A)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Improv.$fReadDance2
+                  `cast`
+                (forall (b :: <*>_N).
+                 <GHC.Read.Read b>_R
+                 ->_R Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                               <Improv.Dance b>_R)) -}
+5992ffb4256db90148fe6d921f18ab3e
+  $fReadDance_$creadsPrec ::
+    GHC.Read.Read b =>
+    GHC.Types.Int
+    -> Text.ParserCombinators.ReadP.ReadS (Improv.Dance b)
+  {- Arity: 2, Strictness: <L,U(A,A,U,A)><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ b ($dRead :: GHC.Read.Read b) (eta :: GHC.Types.Int) ->
+                 Text.ParserCombinators.ReadP.run
+                   @ (Improv.Dance b)
+                   ((Improv.$fReadDance2 @ b $dRead eta)
+                      `cast`
+                    (Text.ParserCombinators.ReadP.N:ReadP[0] <Improv.Dance b>_R)
+                      @ (Improv.Dance b)
+                      (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                         @ (Improv.Dance b)))) -}
+cd42d7a3ee7c839c253418ccc6375089
+  $fReadDirection :: GHC.Read.Read Improv.Direction
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Improv.Direction
+                  Improv.$fReadDirection_$creadsPrec
+                  Improv.$fReadDirection_$creadList
+                  Improv.$fReadDirection_$creadPrec
+                  Improv.$fReadDirection_$creadListPrec -}
+cd42d7a3ee7c839c253418ccc6375089
+  $fReadDirection1 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       ([Improv.Direction] -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, Strictness: <L,U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (eta :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta1 :: [Improv.Direction] -> Text.ParserCombinators.ReadP.P b) ->
+                 GHC.Read.list1
+                   @ Improv.Direction
+                   Improv.$fReadDirection2
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                             <Improv.Direction>_R))
+                   eta
+                   @ b
+                   eta1) -}
+cd42d7a3ee7c839c253418ccc6375089
+  $fReadDirection2 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> Text.ParserCombinators.ReadP.ReadP Improv.Direction
+  {- Arity: 1,
+     Unfolding: (GHC.Read.parens1
+                   @ Improv.Direction
+                   Improv.$fReadDirection3
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                             <Improv.Direction>_R))) -}
+cd42d7a3ee7c839c253418ccc6375089
+  $fReadDirection3 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> Text.ParserCombinators.ReadP.ReadP Improv.Direction
+  {- Arity: 1, Strictness: <L,U(U)> -}
+cd42d7a3ee7c839c253418ccc6375089
+  $fReadDirection4 ::
+    Text.ParserCombinators.ReadP.P [Improv.Direction]
+  {- Unfolding: (GHC.Read.list1
+                   @ Improv.Direction
+                   Improv.$fReadDirection2
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                             <Improv.Direction>_R))
+                   GHC.Read.$fRead()5
+                   @ [Improv.Direction]
+                   (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                      @ [Improv.Direction])) -}
+cd42d7a3ee7c839c253418ccc6375089
+  $fReadDirection_$creadList ::
+    Text.ParserCombinators.ReadP.ReadS [Improv.Direction]
+  {- Arity: 1,
+     Unfolding: (Text.ParserCombinators.ReadP.run
+                   @ [Improv.Direction]
+                   Improv.$fReadDirection4) -}
+cd42d7a3ee7c839c253418ccc6375089
+  $fReadDirection_$creadListPrec ::
+    Text.ParserCombinators.ReadPrec.ReadPrec [Improv.Direction]
+  {- Arity: 2, Strictness: <L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Improv.$fReadDirection1
+                  `cast`
+                (Trans
+                     (<Text.ParserCombinators.ReadPrec.Prec>_R
+                      ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                    <[Improv.Direction]>_R))
+                     (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                               <[Improv.Direction]>_R))) -}
+cd42d7a3ee7c839c253418ccc6375089
+  $fReadDirection_$creadPrec ::
+    Text.ParserCombinators.ReadPrec.ReadPrec Improv.Direction
+  {- Arity: 1,
+     Unfolding: InlineRule (0, True, True)
+                Improv.$fReadDirection2
+                  `cast`
+                (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                          <Improv.Direction>_R)) -}
+cd42d7a3ee7c839c253418ccc6375089
+  $fReadDirection_$creadsPrec ::
+    GHC.Types.Int
+    -> Text.ParserCombinators.ReadP.ReadS Improv.Direction
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (eta :: GHC.Types.Int) ->
+                 Text.ParserCombinators.ReadP.run
+                   @ Improv.Direction
+                   ((GHC.Read.parens1
+                       @ Improv.Direction
+                       Improv.$fReadDirection3
+                         `cast`
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Improv.Direction>_R))
+                       eta)
+                      `cast`
+                    (Text.ParserCombinators.ReadP.N:ReadP[0] <Improv.Direction>_R)
+                      @ Improv.Direction
+                      (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                         @ Improv.Direction))) -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fReadLength :: GHC.Read.Read Improv.Length
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Improv.Length
+                  Improv.$fReadLength_$creadsPrec
+                  Improv.$fReadLength_$creadList
+                  Improv.$fReadLength_$creadPrec
+                  Improv.$fReadLength_$creadListPrec -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fReadLength1 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       ([Improv.Length] -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, Strictness: <L,U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (eta :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta1 :: [Improv.Length] -> Text.ParserCombinators.ReadP.P b) ->
+                 GHC.Read.list1
+                   @ Improv.Length
+                   Improv.$fReadLength2
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                             <Improv.Length>_R))
+                   eta
+                   @ b
+                   eta1) -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fReadLength10 ::
+    ([GHC.Types.Char],
+     Text.ParserCombinators.ReadPrec.ReadPrec Improv.Length)
+  {- Strictness: m,
+     Unfolding: ((Improv.$fReadLength12,
+                  Improv.$fReadLength11
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                      <Improv.Length>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Improv.Length>_R))))) -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fReadLength11 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Improv.Length -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><C(S),1*C1(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta :: Improv.Length -> Text.ParserCombinators.ReadP.P b) ->
+                 eta Improv.Full) -}
+1a64f35a53d0e0b324ee82eb7279cf26
+  $fReadLength12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Full"#) -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fReadLength13 ::
+    ([GHC.Types.Char],
+     Text.ParserCombinators.ReadPrec.ReadPrec Improv.Length)
+  {- Strictness: m,
+     Unfolding: ((Improv.$fReadLength15,
+                  Improv.$fReadLength14
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                      <Improv.Length>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Improv.Length>_R))))) -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fReadLength14 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Improv.Length -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><C(S),1*C1(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta :: Improv.Length -> Text.ParserCombinators.ReadP.P b) ->
+                 eta Improv.ThreeFourths) -}
+26df2b21b4b51b7ad18b5b03853f6d80
+  $fReadLength15 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "ThreeFourths"#) -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fReadLength16 ::
+    ([GHC.Types.Char],
+     Text.ParserCombinators.ReadPrec.ReadPrec Improv.Length)
+  {- Strictness: m,
+     Unfolding: ((Improv.$fReadLength18,
+                  Improv.$fReadLength17
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                      <Improv.Length>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Improv.Length>_R))))) -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fReadLength17 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Improv.Length -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><C(S),1*C1(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta :: Improv.Length -> Text.ParserCombinators.ReadP.P b) ->
+                 eta Improv.Half) -}
+41ffdfd0611330a2d086c4a32c432b93
+  $fReadLength18 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Half"#) -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fReadLength19 ::
+    ([GHC.Types.Char],
+     Text.ParserCombinators.ReadPrec.ReadPrec Improv.Length)
+  {- Strictness: m,
+     Unfolding: ((Improv.$fReadLength21,
+                  Improv.$fReadLength20
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                      <Improv.Length>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Improv.Length>_R))))) -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fReadLength2 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> Text.ParserCombinators.ReadP.ReadP Improv.Length
+  {- Arity: 1,
+     Unfolding: (GHC.Read.parens1
+                   @ Improv.Length
+                   Improv.$fReadLength3
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                             <Improv.Length>_R))) -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fReadLength20 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Improv.Length -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><C(S),1*C1(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta :: Improv.Length -> Text.ParserCombinators.ReadP.P b) ->
+                 eta Improv.Quarter) -}
+f339137b78368f640242241fe43a0d62
+  $fReadLength21 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Quarter"#) -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fReadLength22 ::
+    ([GHC.Types.Char],
+     Text.ParserCombinators.ReadPrec.ReadPrec Improv.Length)
+  {- Strictness: m,
+     Unfolding: ((Improv.$fReadLength24,
+                  Improv.$fReadLength23
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                      <Improv.Length>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Improv.Length>_R))))) -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fReadLength23 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Improv.Length -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><C(S),1*C1(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta :: Improv.Length -> Text.ParserCombinators.ReadP.P b) ->
+                 eta Improv.Eighth) -}
+1863ab5643806895ee956c913e04e445
+  $fReadLength24 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Eighth"#) -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fReadLength25 ::
+    ([GHC.Types.Char],
+     Text.ParserCombinators.ReadPrec.ReadPrec Improv.Length)
+  {- Strictness: m,
+     Unfolding: ((Improv.$fReadLength27,
+                  Improv.$fReadLength26
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                      <Improv.Length>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Improv.Length>_R))))) -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fReadLength26 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Improv.Length -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><C(S),1*C1(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta :: Improv.Length -> Text.ParserCombinators.ReadP.P b) ->
+                 eta Improv.Zero) -}
+3ec25dd2610eac8d1001af66411299da
+  $fReadLength27 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Zero"#) -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fReadLength28 :: Text.ParserCombinators.ReadP.P [Improv.Length]
+  {- Unfolding: (GHC.Read.list1
+                   @ Improv.Length
+                   Improv.$fReadLength2
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                             <Improv.Length>_R))
+                   GHC.Read.$fRead()5
+                   @ [Improv.Length]
+                   (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                      @ [Improv.Length])) -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fReadLength3 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> Text.ParserCombinators.ReadP.ReadP Improv.Length
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (eta :: Text.ParserCombinators.ReadPrec.Prec) ->
+                 GHC.Read.choose2 @ Improv.Length Improv.$fReadLength4 eta) -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fReadLength4 ::
+    [(GHC.Base.String,
+      Text.ParserCombinators.ReadPrec.ReadPrec Improv.Length)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String,
+                      Text.ParserCombinators.ReadPrec.ReadPrec Improv.Length)
+                   Improv.$fReadLength25
+                   Improv.$fReadLength5) -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fReadLength5 ::
+    [(GHC.Base.String,
+      Text.ParserCombinators.ReadPrec.ReadPrec Improv.Length)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String,
+                      Text.ParserCombinators.ReadPrec.ReadPrec Improv.Length)
+                   Improv.$fReadLength22
+                   Improv.$fReadLength6) -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fReadLength6 ::
+    [(GHC.Base.String,
+      Text.ParserCombinators.ReadPrec.ReadPrec Improv.Length)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String,
+                      Text.ParserCombinators.ReadPrec.ReadPrec Improv.Length)
+                   Improv.$fReadLength19
+                   Improv.$fReadLength7) -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fReadLength7 ::
+    [(GHC.Base.String,
+      Text.ParserCombinators.ReadPrec.ReadPrec Improv.Length)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String,
+                      Text.ParserCombinators.ReadPrec.ReadPrec Improv.Length)
+                   Improv.$fReadLength16
+                   Improv.$fReadLength8) -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fReadLength8 ::
+    [(GHC.Base.String,
+      Text.ParserCombinators.ReadPrec.ReadPrec Improv.Length)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String,
+                      Text.ParserCombinators.ReadPrec.ReadPrec Improv.Length)
+                   Improv.$fReadLength13
+                   Improv.$fReadLength9) -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fReadLength9 ::
+    [(GHC.Base.String,
+      Text.ParserCombinators.ReadPrec.ReadPrec Improv.Length)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String,
+                      Text.ParserCombinators.ReadPrec.ReadPrec Improv.Length)
+                   Improv.$fReadLength10
+                   (GHC.Types.[]
+                      @ (GHC.Base.String,
+                         Text.ParserCombinators.ReadPrec.ReadPrec Improv.Length))) -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fReadLength_$creadList ::
+    Text.ParserCombinators.ReadP.ReadS [Improv.Length]
+  {- Arity: 1,
+     Unfolding: (Text.ParserCombinators.ReadP.run
+                   @ [Improv.Length]
+                   Improv.$fReadLength28) -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fReadLength_$creadListPrec ::
+    Text.ParserCombinators.ReadPrec.ReadPrec [Improv.Length]
+  {- Arity: 2, Strictness: <L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Improv.$fReadLength1
+                  `cast`
+                (Trans
+                     (<Text.ParserCombinators.ReadPrec.Prec>_R
+                      ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                    <[Improv.Length]>_R))
+                     (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                               <[Improv.Length]>_R))) -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fReadLength_$creadPrec ::
+    Text.ParserCombinators.ReadPrec.ReadPrec Improv.Length
+  {- Arity: 1,
+     Unfolding: InlineRule (0, True, True)
+                Improv.$fReadLength2
+                  `cast`
+                (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                          <Improv.Length>_R)) -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fReadLength_$creadsPrec ::
+    GHC.Types.Int -> Text.ParserCombinators.ReadP.ReadS Improv.Length
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (eta :: GHC.Types.Int) ->
+                 Text.ParserCombinators.ReadP.run
+                   @ Improv.Length
+                   ((GHC.Read.parens1
+                       @ Improv.Length
+                       Improv.$fReadLength3
+                         `cast`
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Improv.Length>_R))
+                       eta)
+                      `cast`
+                    (Text.ParserCombinators.ReadP.N:ReadP[0] <Improv.Length>_R)
+                      @ Improv.Length
+                      (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                         @ Improv.Length))) -}
+74b1087099ab52ae48273444c7d8e08f
+  $fReadOrigin :: GHC.Read.Read Improv.Origin
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Improv.Origin
+                  Improv.$fReadOrigin_$creadsPrec
+                  Improv.$fReadOrigin_$creadList
+                  Improv.$fReadOrigin_$creadPrec
+                  Improv.$fReadOrigin_$creadListPrec -}
+74b1087099ab52ae48273444c7d8e08f
+  $fReadOrigin1 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       ([Improv.Origin] -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, Strictness: <L,U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (eta :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta1 :: [Improv.Origin] -> Text.ParserCombinators.ReadP.P b) ->
+                 GHC.Read.list1
+                   @ Improv.Origin
+                   Improv.$fReadOrigin2
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                             <Improv.Origin>_R))
+                   eta
+                   @ b
+                   eta1) -}
+74b1087099ab52ae48273444c7d8e08f
+  $fReadOrigin2 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> Text.ParserCombinators.ReadP.ReadP Improv.Origin
+  {- Arity: 1,
+     Unfolding: (GHC.Read.parens1
+                   @ Improv.Origin
+                   Improv.$fReadOrigin3
+                     `cast`
+                   (Trans
+                        (<Text.ParserCombinators.ReadPrec.Prec>_R
+                         ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                       <Improv.Origin>_R))
+                        (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                  <Improv.Origin>_R)))) -}
+74b1087099ab52ae48273444c7d8e08f
+  $fReadOrigin3 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Improv.Origin -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, Strictness: <S(S),1*U(U)><L,C(U)>, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (w1 :: Improv.Origin -> Text.ParserCombinators.ReadP.P b) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 Improv.$w$creadPrec2 ww1 @ b w1 }) -}
+72e78f435bdbfc20334e376e892e1545
+  $fReadOrigin4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "O"#) -}
+74b1087099ab52ae48273444c7d8e08f
+  $fReadOrigin5 :: Text.ParserCombinators.ReadP.P [Improv.Origin]
+  {- Unfolding: (GHC.Read.list1
+                   @ Improv.Origin
+                   Improv.$fReadOrigin2
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                             <Improv.Origin>_R))
+                   GHC.Read.$fRead()5
+                   @ [Improv.Origin]
+                   (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                      @ [Improv.Origin])) -}
+74b1087099ab52ae48273444c7d8e08f
+  $fReadOrigin_$creadList ::
+    Text.ParserCombinators.ReadP.ReadS [Improv.Origin]
+  {- Arity: 1,
+     Unfolding: (Text.ParserCombinators.ReadP.run
+                   @ [Improv.Origin]
+                   Improv.$fReadOrigin5) -}
+74b1087099ab52ae48273444c7d8e08f
+  $fReadOrigin_$creadListPrec ::
+    Text.ParserCombinators.ReadPrec.ReadPrec [Improv.Origin]
+  {- Arity: 2, Strictness: <L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Improv.$fReadOrigin1
+                  `cast`
+                (Trans
+                     (<Text.ParserCombinators.ReadPrec.Prec>_R
+                      ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                    <[Improv.Origin]>_R))
+                     (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                               <[Improv.Origin]>_R))) -}
+74b1087099ab52ae48273444c7d8e08f
+  $fReadOrigin_$creadPrec ::
+    Text.ParserCombinators.ReadPrec.ReadPrec Improv.Origin
+  {- Arity: 1,
+     Unfolding: InlineRule (0, True, True)
+                Improv.$fReadOrigin2
+                  `cast`
+                (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                          <Improv.Origin>_R)) -}
+74b1087099ab52ae48273444c7d8e08f
+  $fReadOrigin_$creadsPrec ::
+    GHC.Types.Int -> Text.ParserCombinators.ReadP.ReadS Improv.Origin
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (eta :: GHC.Types.Int) ->
+                 Text.ParserCombinators.ReadP.run
+                   @ Improv.Origin
+                   ((GHC.Read.parens1
+                       @ Improv.Origin
+                       Improv.$fReadOrigin3
+                         `cast`
+                       (Trans
+                            (<Text.ParserCombinators.ReadPrec.Prec>_R
+                             ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                           <Improv.Origin>_R))
+                            (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                      <Improv.Origin>_R)))
+                       eta)
+                      `cast`
+                    (Text.ParserCombinators.ReadP.N:ReadP[0] <Improv.Origin>_R)
+                      @ Improv.Origin
+                      (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                         @ Improv.Origin))) -}
+80ae00fe9ba36e92197d4d00e34f39b3
+  $fReadParDance ::
+    GHC.Read.Read a => GHC.Read.Read (Improv.ParDance a)
+  DFunId
+  {- Arity: 1, Strictness: <L,U(A,A,U,A)>m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a ($dRead :: GHC.Read.Read a).
+                  @ (Improv.ParDance a)
+                  (Improv.$fReadParDance_$creadsPrec @ a $dRead)
+                  (Improv.$fReadParDance_$creadList @ a $dRead)
+                  (Improv.$fReadParDance_$creadPrec @ a $dRead)
+                  (Improv.$fReadParDance_$creadListPrec @ a $dRead) -}
+80ae00fe9ba36e92197d4d00e34f39b3
+  $fReadParDance1 ::
+    GHC.Read.Read a =>
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       ([Improv.ParDance a] -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 3, Strictness: <L,U(A,A,U,A)><L,U><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   ($dRead :: GHC.Read.Read a)
+                   (eta :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta1 :: [Improv.ParDance a]
+                            -> Text.ParserCombinators.ReadP.P b) ->
+                 GHC.Read.list1
+                   @ (Improv.ParDance a)
+                   (Improv.$fReadParDance2 @ a $dRead)
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                             <Improv.ParDance a>_R))
+                   eta
+                   @ b
+                   eta1) -}
+80ae00fe9ba36e92197d4d00e34f39b3
+  $fReadParDance2 ::
+    GHC.Read.Read a =>
+    Text.ParserCombinators.ReadPrec.Prec
+    -> Text.ParserCombinators.ReadP.ReadP (Improv.ParDance a)
+  {- Arity: 2, Strictness: <L,U(A,A,U,A)><L,U> -}
+80ae00fe9ba36e92197d4d00e34f39b3
+  $fReadParDance_$creadList ::
+    GHC.Read.Read a =>
+    Text.ParserCombinators.ReadP.ReadS [Improv.ParDance a]
+  {- Arity: 1, Strictness: <L,U(A,A,U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a ($dRead :: GHC.Read.Read a) ->
+                 Text.ParserCombinators.ReadP.run
+                   @ [Improv.ParDance a]
+                   (GHC.Read.list1
+                      @ (Improv.ParDance a)
+                      (Improv.$fReadParDance2 @ a $dRead)
+                        `cast`
+                      (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                <Improv.ParDance a>_R))
+                      GHC.Read.$fRead()5
+                      @ [Improv.ParDance a]
+                      (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                         @ [Improv.ParDance a]))) -}
+80ae00fe9ba36e92197d4d00e34f39b3
+  $fReadParDance_$creadListPrec ::
+    GHC.Read.Read a =>
+    Text.ParserCombinators.ReadPrec.ReadPrec [Improv.ParDance a]
+  {- Arity: 3, Strictness: <L,U(A,A,U,A)><L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Improv.$fReadParDance1
+                  `cast`
+                (forall (a :: <*>_N).
+                 <GHC.Read.Read a>_R
+                 ->_R Trans
+                          (<Text.ParserCombinators.ReadPrec.Prec>_R
+                           ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                         <[Improv.ParDance a]>_R))
+                          (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                    <[Improv.ParDance a]>_R))) -}
+80ae00fe9ba36e92197d4d00e34f39b3
+  $fReadParDance_$creadPrec ::
+    GHC.Read.Read a =>
+    Text.ParserCombinators.ReadPrec.ReadPrec (Improv.ParDance a)
+  {- Arity: 2, Strictness: <L,U(A,A,U,A)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Improv.$fReadParDance2
+                  `cast`
+                (forall (a :: <*>_N).
+                 <GHC.Read.Read a>_R
+                 ->_R Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                               <Improv.ParDance a>_R)) -}
+80ae00fe9ba36e92197d4d00e34f39b3
+  $fReadParDance_$creadsPrec ::
+    GHC.Read.Read a =>
+    GHC.Types.Int
+    -> Text.ParserCombinators.ReadP.ReadS (Improv.ParDance a)
+  {- Arity: 2, Strictness: <L,U(A,A,U,A)><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a ($dRead :: GHC.Read.Read a) (eta :: GHC.Types.Int) ->
+                 Text.ParserCombinators.ReadP.run
+                   @ (Improv.ParDance a)
+                   ((Improv.$fReadParDance2 @ a $dRead eta)
+                      `cast`
+                    (Text.ParserCombinators.ReadP.N:ReadP[0] <Improv.ParDance a>_R)
+                      @ (Improv.ParDance a)
+                      (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                         @ (Improv.ParDance a)))) -}
+a6f94362a12c590afaec989b2af33551
+  $fReadPlane :: GHC.Read.Read Improv.Plane
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Improv.Plane
+                  Improv.$fReadPlane_$creadsPrec
+                  Improv.$fReadPlane_$creadList
+                  Improv.$fReadPlane_$creadPrec
+                  Improv.$fReadPlane_$creadListPrec -}
+a6f94362a12c590afaec989b2af33551
+  $fReadPlane1 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       ([Improv.Plane] -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, Strictness: <L,U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (eta :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta1 :: [Improv.Plane] -> Text.ParserCombinators.ReadP.P b) ->
+                 GHC.Read.list1
+                   @ Improv.Plane
+                   Improv.$fReadPlane2
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                             <Improv.Plane>_R))
+                   eta
+                   @ b
+                   eta1) -}
+a6f94362a12c590afaec989b2af33551
+  $fReadPlane10 ::
+    ([GHC.Types.Char],
+     Text.ParserCombinators.ReadPrec.ReadPrec Improv.Plane)
+  {- Strictness: m,
+     Unfolding: ((Improv.$fReadPlane12,
+                  Improv.$fReadPlane11
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                      <Improv.Plane>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Improv.Plane>_R))))) -}
+a6f94362a12c590afaec989b2af33551
+  $fReadPlane11 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Improv.Plane -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><C(S),1*C1(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta :: Improv.Plane -> Text.ParserCombinators.ReadP.P b) ->
+                 eta Improv.YZ) -}
+e5a11593f5e9a833022b2659e08bc3c6
+  $fReadPlane12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "YZ"#) -}
+a6f94362a12c590afaec989b2af33551
+  $fReadPlane13 ::
+    ([GHC.Types.Char],
+     Text.ParserCombinators.ReadPrec.ReadPrec Improv.Plane)
+  {- Strictness: m,
+     Unfolding: ((Improv.$fReadPlane15,
+                  Improv.$fReadPlane14
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                      <Improv.Plane>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Improv.Plane>_R))))) -}
+a6f94362a12c590afaec989b2af33551
+  $fReadPlane14 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Improv.Plane -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><C(S),1*C1(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta :: Improv.Plane -> Text.ParserCombinators.ReadP.P b) ->
+                 eta Improv.XY) -}
+fe170f23b1e44060d1dde801c3ae7aa7
+  $fReadPlane15 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "XY"#) -}
+a6f94362a12c590afaec989b2af33551
+  $fReadPlane16 :: Text.ParserCombinators.ReadP.P [Improv.Plane]
+  {- Unfolding: (GHC.Read.list1
+                   @ Improv.Plane
+                   Improv.$fReadPlane2
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                             <Improv.Plane>_R))
+                   GHC.Read.$fRead()5
+                   @ [Improv.Plane]
+                   (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                      @ [Improv.Plane])) -}
+a6f94362a12c590afaec989b2af33551
+  $fReadPlane2 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> Text.ParserCombinators.ReadP.ReadP Improv.Plane
+  {- Arity: 1,
+     Unfolding: (GHC.Read.parens1
+                   @ Improv.Plane
+                   Improv.$fReadPlane3
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                             <Improv.Plane>_R))) -}
+a6f94362a12c590afaec989b2af33551
+  $fReadPlane3 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> Text.ParserCombinators.ReadP.ReadP Improv.Plane
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (eta :: Text.ParserCombinators.ReadPrec.Prec) ->
+                 GHC.Read.choose2 @ Improv.Plane Improv.$fReadPlane4 eta) -}
+a6f94362a12c590afaec989b2af33551
+  $fReadPlane4 ::
+    [(GHC.Base.String,
+      Text.ParserCombinators.ReadPrec.ReadPrec Improv.Plane)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String,
+                      Text.ParserCombinators.ReadPrec.ReadPrec Improv.Plane)
+                   Improv.$fReadPlane13
+                   Improv.$fReadPlane5) -}
+a6f94362a12c590afaec989b2af33551
+  $fReadPlane5 ::
+    [(GHC.Base.String,
+      Text.ParserCombinators.ReadPrec.ReadPrec Improv.Plane)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String,
+                      Text.ParserCombinators.ReadPrec.ReadPrec Improv.Plane)
+                   Improv.$fReadPlane10
+                   Improv.$fReadPlane6) -}
+a6f94362a12c590afaec989b2af33551
+  $fReadPlane6 ::
+    [(GHC.Base.String,
+      Text.ParserCombinators.ReadPrec.ReadPrec Improv.Plane)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String,
+                      Text.ParserCombinators.ReadPrec.ReadPrec Improv.Plane)
+                   Improv.$fReadPlane7
+                   (GHC.Types.[]
+                      @ (GHC.Base.String,
+                         Text.ParserCombinators.ReadPrec.ReadPrec Improv.Plane))) -}
+a6f94362a12c590afaec989b2af33551
+  $fReadPlane7 ::
+    ([GHC.Types.Char],
+     Text.ParserCombinators.ReadPrec.ReadPrec Improv.Plane)
+  {- Strictness: m,
+     Unfolding: ((Improv.$fReadPlane9,
+                  Improv.$fReadPlane8
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                      <Improv.Plane>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Improv.Plane>_R))))) -}
+a6f94362a12c590afaec989b2af33551
+  $fReadPlane8 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Improv.Plane -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><C(S),1*C1(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta :: Improv.Plane -> Text.ParserCombinators.ReadP.P b) ->
+                 eta Improv.XZ) -}
+0586b44544b16676d639589d7e5a72c9
+  $fReadPlane9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "XZ"#) -}
+a6f94362a12c590afaec989b2af33551
+  $fReadPlane_$creadList ::
+    Text.ParserCombinators.ReadP.ReadS [Improv.Plane]
+  {- Arity: 1,
+     Unfolding: (Text.ParserCombinators.ReadP.run
+                   @ [Improv.Plane]
+                   Improv.$fReadPlane16) -}
+a6f94362a12c590afaec989b2af33551
+  $fReadPlane_$creadListPrec ::
+    Text.ParserCombinators.ReadPrec.ReadPrec [Improv.Plane]
+  {- Arity: 2, Strictness: <L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Improv.$fReadPlane1
+                  `cast`
+                (Trans
+                     (<Text.ParserCombinators.ReadPrec.Prec>_R
+                      ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                    <[Improv.Plane]>_R))
+                     (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                               <[Improv.Plane]>_R))) -}
+a6f94362a12c590afaec989b2af33551
+  $fReadPlane_$creadPrec ::
+    Text.ParserCombinators.ReadPrec.ReadPrec Improv.Plane
+  {- Arity: 1,
+     Unfolding: InlineRule (0, True, True)
+                Improv.$fReadPlane2
+                  `cast`
+                (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                          <Improv.Plane>_R)) -}
+a6f94362a12c590afaec989b2af33551
+  $fReadPlane_$creadsPrec ::
+    GHC.Types.Int -> Text.ParserCombinators.ReadP.ReadS Improv.Plane
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (eta :: GHC.Types.Int) ->
+                 Text.ParserCombinators.ReadP.run
+                   @ Improv.Plane
+                   ((GHC.Read.parens1
+                       @ Improv.Plane
+                       Improv.$fReadPlane3
+                         `cast`
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Improv.Plane>_R))
+                       eta)
+                      `cast`
+                    (Text.ParserCombinators.ReadP.N:ReadP[0] <Improv.Plane>_R)
+                      @ Improv.Plane
+                      (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                         @ Improv.Plane))) -}
+c0bb006f64ec903783409ef3ce75af18
+  $fReadSeqDance ::
+    GHC.Read.Read a => GHC.Read.Read (Improv.SeqDance a)
+  DFunId
+  {- Arity: 1, Strictness: <L,U(A,A,U,A)>m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a ($dRead :: GHC.Read.Read a).
+                  @ (Improv.SeqDance a)
+                  (Improv.$fReadSeqDance_$creadsPrec @ a $dRead)
+                  (Improv.$fReadSeqDance_$creadList @ a $dRead)
+                  (Improv.$fReadSeqDance_$creadPrec @ a $dRead)
+                  (Improv.$fReadSeqDance_$creadListPrec @ a $dRead) -}
+c0bb006f64ec903783409ef3ce75af18
+  $fReadSeqDance1 ::
+    GHC.Read.Read a =>
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       ([Improv.SeqDance a] -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 3, Strictness: <L,U(A,A,U,A)><L,U><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   ($dRead :: GHC.Read.Read a)
+                   (eta :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta1 :: [Improv.SeqDance a]
+                            -> Text.ParserCombinators.ReadP.P b) ->
+                 GHC.Read.list1
+                   @ (Improv.SeqDance a)
+                   (Improv.$fReadSeqDance2 @ a $dRead)
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                             <Improv.SeqDance a>_R))
+                   eta
+                   @ b
+                   eta1) -}
+c0bb006f64ec903783409ef3ce75af18
+  $fReadSeqDance2 ::
+    GHC.Read.Read a =>
+    Text.ParserCombinators.ReadPrec.Prec
+    -> Text.ParserCombinators.ReadP.ReadP (Improv.SeqDance a)
+  {- Arity: 2, Strictness: <L,U(A,A,U,A)><L,U> -}
+c0bb006f64ec903783409ef3ce75af18
+  $fReadSeqDance_$creadList ::
+    GHC.Read.Read a =>
+    Text.ParserCombinators.ReadP.ReadS [Improv.SeqDance a]
+  {- Arity: 1, Strictness: <L,U(A,A,U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a ($dRead :: GHC.Read.Read a) ->
+                 Text.ParserCombinators.ReadP.run
+                   @ [Improv.SeqDance a]
+                   (GHC.Read.list1
+                      @ (Improv.SeqDance a)
+                      (Improv.$fReadSeqDance2 @ a $dRead)
+                        `cast`
+                      (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                <Improv.SeqDance a>_R))
+                      GHC.Read.$fRead()5
+                      @ [Improv.SeqDance a]
+                      (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                         @ [Improv.SeqDance a]))) -}
+c0bb006f64ec903783409ef3ce75af18
+  $fReadSeqDance_$creadListPrec ::
+    GHC.Read.Read a =>
+    Text.ParserCombinators.ReadPrec.ReadPrec [Improv.SeqDance a]
+  {- Arity: 3, Strictness: <L,U(A,A,U,A)><L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Improv.$fReadSeqDance1
+                  `cast`
+                (forall (a :: <*>_N).
+                 <GHC.Read.Read a>_R
+                 ->_R Trans
+                          (<Text.ParserCombinators.ReadPrec.Prec>_R
+                           ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                         <[Improv.SeqDance a]>_R))
+                          (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                    <[Improv.SeqDance a]>_R))) -}
+c0bb006f64ec903783409ef3ce75af18
+  $fReadSeqDance_$creadPrec ::
+    GHC.Read.Read a =>
+    Text.ParserCombinators.ReadPrec.ReadPrec (Improv.SeqDance a)
+  {- Arity: 2, Strictness: <L,U(A,A,U,A)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Improv.$fReadSeqDance2
+                  `cast`
+                (forall (a :: <*>_N).
+                 <GHC.Read.Read a>_R
+                 ->_R Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                               <Improv.SeqDance a>_R)) -}
+c0bb006f64ec903783409ef3ce75af18
+  $fReadSeqDance_$creadsPrec ::
+    GHC.Read.Read a =>
+    GHC.Types.Int
+    -> Text.ParserCombinators.ReadP.ReadS (Improv.SeqDance a)
+  {- Arity: 2, Strictness: <L,U(A,A,U,A)><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a ($dRead :: GHC.Read.Read a) (eta :: GHC.Types.Int) ->
+                 Text.ParserCombinators.ReadP.run
+                   @ (Improv.SeqDance a)
+                   ((Improv.$fReadSeqDance2 @ a $dRead eta)
+                      `cast`
+                    (Text.ParserCombinators.ReadP.N:ReadP[0] <Improv.SeqDance a>_R)
+                      @ (Improv.SeqDance a)
+                      (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                         @ (Improv.SeqDance a)))) -}
+b3c40b8773f2ae772d2a3855f77a04be
+  $fShowAction :: GHC.Show.Show Improv.Action
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Improv.Action
+                  Improv.$fShowAction_$cshowsPrec1
+                  Improv.$fShowAction_$cshow
+                  Improv.$fShowAction_$cshowList -}
+b3c40b8773f2ae772d2a3855f77a04be
+  $fShowAction1 :: Improv.Action -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ (w :: Improv.Action) (w1 :: GHC.Base.String) ->
+                 case w of ww { Improv.A ww1 ww2 ->
+                 Improv.$w$cshowsPrec 0# ww1 ww2 w1 }) -}
+2da03a6acdd5f6062cdd9cda39b31c0e
+  $fShowAction2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "A "#) -}
+b3c40b8773f2ae772d2a3855f77a04be
+  $fShowAction_$cshow :: Improv.Action -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(1*U,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Improv.Action) ->
+                 Improv.$fShowAction_$cshowsPrec1
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+b3c40b8773f2ae772d2a3855f77a04be
+  $fShowAction_$cshowList :: [Improv.Action] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Improv.Action
+                   Improv.$fShowAction1) -}
+cd42d7a3ee7c839c253418ccc6375089
+  $fShowAction_$cshowsPrec ::
+    GHC.Types.Int -> Improv.Direction -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,1*U(U)><S,1*U><L,U> -}
+b3c40b8773f2ae772d2a3855f77a04be
+  $fShowAction_$cshowsPrec1 ::
+    GHC.Types.Int -> Improv.Action -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <S(S),1*U(U)><S,1*U(1*U,1*U)><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: Improv.Action)
+                   (w2 :: GHC.Base.String) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Improv.A ww3 ww4 ->
+                 Improv.$w$cshowsPrec ww1 ww3 ww4 w2 } }) -}
+3885da4b4dd77c01efb721818c148a35
+  $fShowAngle :: GHC.Show.Show Improv.Angle
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Improv.Angle
+                  Improv.$fShowAngle_$cshowsPrec
+                  Improv.$fShowAngle_$cshow
+                  Improv.$fShowAngle_$cshowList -}
+3885da4b4dd77c01efb721818c148a35
+  $fShowAngle1 :: Improv.Angle -> GHC.Show.ShowS
+  {- Arity: 1,
+     Unfolding: (\ (w :: Improv.Angle) ->
+                 case w of ww { Improv.Angle ww1 ->
+                 Improv.$w$cshowsPrec2 0# ww1 }) -}
+ec0e9dbe11111e165aab4d25283bcd56
+  $fShowAngle2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Angle "#) -}
+3885da4b4dd77c01efb721818c148a35
+  $fShowAngle_$cshow :: Improv.Angle -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(1*U(U))>, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Improv.Angle) ->
+                 case w of ww { Improv.Angle ww1 -> Improv.$w$cshow ww1 }) -}
+3885da4b4dd77c01efb721818c148a35
+  $fShowAngle_$cshowList :: [Improv.Angle] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Improv.Angle
+                   Improv.$fShowAngle1) -}
+3885da4b4dd77c01efb721818c148a35
+  $fShowAngle_$cshowsPrec ::
+    GHC.Types.Int -> Improv.Angle -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S(S),1*U(U)><S,1*U(1*U(U))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: GHC.Types.Int) (w1 :: Improv.Angle) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Improv.Angle ww3 ->
+                 Improv.$w$cshowsPrec2 ww1 ww3 } }) -}
+5992ffb4256db90148fe6d921f18ab3e
+  $fShowDance :: GHC.Show.Show b => GHC.Show.Show (Improv.Dance b)
+  DFunId
+  {- Arity: 1, Strictness: <L,U(C(C1(U)),A,A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ b ($dShow :: GHC.Show.Show b).
+                  @ (Improv.Dance b)
+                  (Improv.$fShowDance_$cshowsPrec @ b $dShow)
+                  (Improv.$fShowDance_$cshow @ b $dShow)
+                  (Improv.$fShowDance_$cshowList @ b $dShow) -}
+7adfe9383f767bdba9fc03d395eb8b65
+  $fShowDance1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
+5992ffb4256db90148fe6d921f18ab3e
+  $fShowDance_$cshow ::
+    GHC.Show.Show b => Improv.Dance b -> GHC.Base.String
+  {- Arity: 2, Strictness: <L,U(C(C1(U)),A,A)><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ b ($dShow :: GHC.Show.Show b) (x :: Improv.Dance b) ->
+                 Improv.$fShowDance_$cshowsPrec
+                   @ b
+                   $dShow
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+5992ffb4256db90148fe6d921f18ab3e
+  $fShowDance_$cshowList ::
+    GHC.Show.Show b => [Improv.Dance b] -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><S,1*U><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ b
+                   ($dShow :: GHC.Show.Show b)
+                   (eta :: [Improv.Dance b])
+                   (eta1 :: GHC.Base.String) ->
+                 GHC.Show.showList__
+                   @ (Improv.Dance b)
+                   (Improv.$fShowDance_$cshowsPrec @ b $dShow Improv.$fShowDance1)
+                   eta
+                   eta1) -}
+5992ffb4256db90148fe6d921f18ab3e
+  $fShowDance_$cshowsPrec ::
+    GHC.Show.Show b =>
+    GHC.Types.Int -> Improv.Dance b -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><L,1*U(U)><S,1*U> -}
+cd42d7a3ee7c839c253418ccc6375089
+  $fShowDirection :: GHC.Show.Show Improv.Direction
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Improv.Direction
+                  Improv.$fShowAction_$cshowsPrec
+                  Improv.$fShowDirection_$cshow
+                  Improv.$fShowDirection_$cshowList -}
+cd42d7a3ee7c839c253418ccc6375089
+  $fShowDirection1 :: Improv.Direction -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (Improv.$fShowAction_$cshowsPrec Improv.$fShowDance1) -}
+cd42d7a3ee7c839c253418ccc6375089
+  $fShowDirection_$cshow :: Improv.Direction -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Improv.Direction) ->
+                 Improv.$fShowAction_$cshowsPrec
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+cd42d7a3ee7c839c253418ccc6375089
+  $fShowDirection_$cshowList :: [Improv.Direction] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Improv.Direction
+                   Improv.$fShowDirection1) -}
+3617223d3d7e4df57a39d0937c26b626
+  $fShowKineChain ::
+    GHC.Show.Show a => GHC.Show.Show (Improv.KineChain a)
+  DFunId
+  {- Arity: 1, Strictness: <L,U(C(C1(U)),A,A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a ($dShow :: GHC.Show.Show a).
+                  @ (Improv.KineChain a)
+                  (Improv.$fShowKineChain_$cshowsPrec @ a $dShow)
+                  (Improv.$fShowKineChain_$cshow @ a $dShow)
+                  (Improv.$fShowKineChain_$cshowList @ a $dShow) -}
+3617223d3d7e4df57a39d0937c26b626
+  $fShowKineChain_$cshow ::
+    GHC.Show.Show a => Improv.KineChain a -> GHC.Base.String
+  {- Arity: 2, Strictness: <L,U(C(C1(U)),A,A)><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a ($dShow :: GHC.Show.Show a) (x :: Improv.KineChain a) ->
+                 Improv.$fShowKineChain_$cshowsPrec
+                   @ a
+                   $dShow
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+3617223d3d7e4df57a39d0937c26b626
+  $fShowKineChain_$cshowList ::
+    GHC.Show.Show a => [Improv.KineChain a] -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><S,1*U><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   ($dShow :: GHC.Show.Show a)
+                   (eta :: [Improv.KineChain a])
+                   (eta1 :: GHC.Base.String) ->
+                 GHC.Show.showList__
+                   @ (Improv.KineChain a)
+                   (Improv.$fShowKineChain_$cshowsPrec @ a $dShow Improv.$fShowDance1)
+                   eta
+                   eta1) -}
+3617223d3d7e4df57a39d0937c26b626
+  $fShowKineChain_$cshowsPrec ::
+    GHC.Show.Show a =>
+    GHC.Types.Int -> Improv.KineChain a -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><S(S),1*U(U)><S,1*U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   (w :: GHC.Show.Show a)
+                   (w1 :: GHC.Types.Int)
+                   (w2 :: Improv.KineChain a) ->
+                 case w1 of ww { GHC.Types.I# ww1 ->
+                 Improv.$w$cshowsPrec3 @ a w ww1 w2 }) -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fShowLength :: GHC.Show.Show Improv.Length
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Improv.Length
+                  Improv.$fShowLength_$cshowsPrec
+                  Improv.$fShowLength_$cshow
+                  Improv.$fShowLength_$cshowList -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fShowLength_$cshow :: Improv.Length -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Improv.Length) ->
+                 Improv.$fShowLength_$cshowsPrec
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fShowLength_$cshowList :: [Improv.Length] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Improv.Length
+                   Improv.$w$cshowsPrec1) -}
+f60fce186449f8dbb1757a1670bd3f79
+  $fShowLength_$cshowsPrec ::
+    GHC.Types.Int -> Improv.Length -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, True)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: Improv.Length)
+                   (w2 :: GHC.Base.String) ->
+                 Improv.$w$cshowsPrec1 w1 w2) -}
+74b1087099ab52ae48273444c7d8e08f
+  $fShowOrigin :: GHC.Show.Show Improv.Origin
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Improv.Origin
+                  Improv.$fShowOrigin_$cshowsPrec
+                  Improv.$fShowOrigin_$cshow
+                  Improv.$fShowOrigin_$cshowList -}
+74b1087099ab52ae48273444c7d8e08f
+  $fShowOrigin1 :: Improv.Origin -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ (w :: Improv.Origin) (w1 :: GHC.Base.String) ->
+                 case w of ww { Improv.O ww1 ->
+                 Improv.$w$cshowsPrec4 0# ww1 w1 }) -}
+46ce28dd8c182d60766cbccac7cd33c3
+  $fShowOrigin2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "O "#) -}
+74b1087099ab52ae48273444c7d8e08f
+  $fShowOrigin_$cshow :: Improv.Origin -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(1*U(U))>, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Improv.Origin) ->
+                 case w of ww { Improv.O ww1 -> Improv.$w$cshow1 ww1 }) -}
+74b1087099ab52ae48273444c7d8e08f
+  $fShowOrigin_$cshowList :: [Improv.Origin] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Improv.Origin
+                   Improv.$fShowOrigin1) -}
+74b1087099ab52ae48273444c7d8e08f
+  $fShowOrigin_$cshowsPrec ::
+    GHC.Types.Int -> Improv.Origin -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <S(S),1*U(U)><S,1*U(1*U(U))><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: Improv.Origin)
+                   (w2 :: GHC.Base.String) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Improv.O ww3 ->
+                 Improv.$w$cshowsPrec4 ww1 ww3 w2 } }) -}
+80ae00fe9ba36e92197d4d00e34f39b3
+  $fShowParDance ::
+    GHC.Show.Show a => GHC.Show.Show (Improv.ParDance a)
+  DFunId
+  {- Arity: 1, Strictness: <L,U(C(C1(U)),A,A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a ($dShow :: GHC.Show.Show a).
+                  @ (Improv.ParDance a)
+                  (Improv.$fShowParDance_$cshowsPrec @ a $dShow)
+                  (Improv.$fShowParDance_$cshow @ a $dShow)
+                  (Improv.$fShowParDance_$cshowList @ a $dShow) -}
+4cb94b55f1ecfaba3e8ff650873c129a
+  $fShowParDance1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "}"#) -}
+16f3759ff3d40b2e189cdcf79699ef0a
+  $fShowParDance2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "getPar = "#) -}
+3c39354583544ecd30bfa421eb0c4360
+  $fShowParDance3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "ParDance {"#) -}
+03bc665bb11b1d4e9e014f0dafafec47
+  $fShowParDance4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.Base.++
+                   @ GHC.Types.Char
+                   Improv.$fShowParDance1
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+80ae00fe9ba36e92197d4d00e34f39b3
+  $fShowParDance_$cshow ::
+    GHC.Show.Show a => Improv.ParDance a -> GHC.Base.String
+  {- Arity: 2, Strictness: <L,U(C(C1(U)),A,A)><L,1*U>,
+     Unfolding: (\ @ a
+                   ($dShow :: GHC.Show.Show a)
+                   (x :: Improv.ParDance a) ->
+                 GHC.Base.++
+                   @ GHC.Types.Char
+                   Improv.$fShowParDance3
+                   (GHC.Base.++
+                      @ GHC.Types.Char
+                      Improv.$fShowParDance2
+                      (Improv.$fShowDance_$cshowsPrec
+                         @ a
+                         $dShow
+                         Improv.$fShowDance1
+                         x `cast` (Improv.N:ParDance[0] <a>_N)
+                         Improv.$fShowParDance4))) -}
+80ae00fe9ba36e92197d4d00e34f39b3
+  $fShowParDance_$cshowList ::
+    GHC.Show.Show a => [Improv.ParDance a] -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><S,1*U><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   ($dShow :: GHC.Show.Show a)
+                   (eta :: [Improv.ParDance a])
+                   (eta1 :: GHC.Base.String) ->
+                 GHC.Show.showList__
+                   @ (Improv.ParDance a)
+                   (Improv.$fShowParDance_$cshowsPrec @ a $dShow Improv.$fShowDance1)
+                   eta
+                   eta1) -}
+80ae00fe9ba36e92197d4d00e34f39b3
+  $fShowParDance_$cshowsPrec ::
+    GHC.Show.Show a =>
+    GHC.Types.Int -> Improv.ParDance a -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><S(S),1*U(U)><L,1*U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   (w :: GHC.Show.Show a)
+                   (w1 :: GHC.Types.Int)
+                   (w2 :: Improv.ParDance a) ->
+                 case w1 of ww { GHC.Types.I# ww1 ->
+                 Improv.$w$cshowsPrec5 @ a w ww1 w2 }) -}
+a6f94362a12c590afaec989b2af33551
+  $fShowPlane :: GHC.Show.Show Improv.Plane
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Improv.Plane
+                  Improv.$fShowPlane_$cshowsPrec
+                  Improv.$fShowPlane_$cshow
+                  Improv.$fShowPlane_$cshowList -}
+a6f94362a12c590afaec989b2af33551
+  $fShowPlane_$cshow :: Improv.Plane -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Improv.Plane) ->
+                 case x of wild {
+                   Improv.XY -> Improv.$fReadPlane15
+                   Improv.YZ -> Improv.$fReadPlane12
+                   Improv.XZ -> Improv.$fReadPlane9 }) -}
+a6f94362a12c590afaec989b2af33551
+  $fShowPlane_$cshowList :: [Improv.Plane] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Improv.Plane
+                   Improv.$w$cshowsPrec6) -}
+a6f94362a12c590afaec989b2af33551
+  $fShowPlane_$cshowsPrec ::
+    GHC.Types.Int -> Improv.Plane -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, True)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: Improv.Plane)
+                   (w2 :: GHC.Base.String) ->
+                 Improv.$w$cshowsPrec6 w1 w2) -}
+c0bb006f64ec903783409ef3ce75af18
+  $fShowSeqDance ::
+    GHC.Show.Show a => GHC.Show.Show (Improv.SeqDance a)
+  DFunId
+  {- Arity: 1, Strictness: <L,U(C(C1(U)),A,A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a ($dShow :: GHC.Show.Show a).
+                  @ (Improv.SeqDance a)
+                  (Improv.$fShowSeqDance_$cshowsPrec @ a $dShow)
+                  (Improv.$fShowSeqDance_$cshow @ a $dShow)
+                  (Improv.$fShowSeqDance_$cshowList @ a $dShow) -}
+8c3a81911d261920b60cb45c20ad970b
+  $fShowSeqDance1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "getSeq = "#) -}
+5b59eb7e6102f69b45fb930d39fd2220
+  $fShowSeqDance2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "SeqDance {"#) -}
+c0bb006f64ec903783409ef3ce75af18
+  $fShowSeqDance_$cshow ::
+    GHC.Show.Show a => Improv.SeqDance a -> GHC.Base.String
+  {- Arity: 2, Strictness: <L,U(C(C1(U)),A,A)><L,1*U>,
+     Unfolding: (\ @ a
+                   ($dShow :: GHC.Show.Show a)
+                   (x :: Improv.SeqDance a) ->
+                 GHC.Base.++
+                   @ GHC.Types.Char
+                   Improv.$fShowSeqDance2
+                   (GHC.Base.++
+                      @ GHC.Types.Char
+                      Improv.$fShowSeqDance1
+                      (Improv.$fShowDance_$cshowsPrec
+                         @ a
+                         $dShow
+                         Improv.$fShowDance1
+                         x `cast` (Improv.N:SeqDance[0] <a>_N)
+                         Improv.$fShowParDance4))) -}
+c0bb006f64ec903783409ef3ce75af18
+  $fShowSeqDance_$cshowList ::
+    GHC.Show.Show a => [Improv.SeqDance a] -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><S,1*U><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   ($dShow :: GHC.Show.Show a)
+                   (eta :: [Improv.SeqDance a])
+                   (eta1 :: GHC.Base.String) ->
+                 GHC.Show.showList__
+                   @ (Improv.SeqDance a)
+                   (Improv.$fShowSeqDance_$cshowsPrec @ a $dShow Improv.$fShowDance1)
+                   eta
+                   eta1) -}
+c0bb006f64ec903783409ef3ce75af18
+  $fShowSeqDance_$cshowsPrec ::
+    GHC.Show.Show a =>
+    GHC.Types.Int -> Improv.SeqDance a -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><S(S),1*U(U)><L,1*U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   (w :: GHC.Show.Show a)
+                   (w1 :: GHC.Types.Int)
+                   (w2 :: Improv.SeqDance a) ->
+                 case w1 of ww { GHC.Types.I# ww1 ->
+                 Improv.$w$cshowsPrec7 @ a w ww1 w2 }) -}
+cafa6732edc7563d04a5b7f2b3001cd0
+  $fSymmetricAction :: Improv.Symmetric Improv.Action
+  DFunId
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U(1*U,U)>m,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Improv.$fSymmetricAction_$crefl
+                  `cast`
+                (Sym (Improv.N:Symmetric[0] <Improv.Action>_N)) -}
+f71d6019164a4bdc66b59ece9c5aba83
+  $fSymmetricAction_$crefl ::
+    Improv.Plane -> Improv.Action -> Improv.Action
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U(1*U,U)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ (pl :: Improv.Plane) (ds :: Improv.Action) ->
+                 case ds of wild { Improv.A dir len ->
+                 Improv.A (Improv.$fSymmetricAction_$crefl1 pl dir) len }) -}
+de1c250eeb4de6993b9a1de0469774ea
+  $fSymmetricAction_$crefl1 ::
+    Improv.Plane -> Improv.Direction -> Improv.Direction
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U> -}
+cafa6732edc7563d04a5b7f2b3001cd0
+  $fSymmetricAngle :: Improv.Symmetric Improv.Angle
+  DFunId
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><S,1*U(1*U(U))>m,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Improv.$fSymmetricAngle_$crefl
+                  `cast`
+                (Sym (Improv.N:Symmetric[0] <Improv.Angle>_N)) -}
+442380ecd5c93c2f6689601a8651bf26
+  $fSymmetricAngle_$crefl ::
+    Improv.Plane -> Improv.Angle -> Improv.Angle
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><S,1*U(1*U(U))>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: Improv.Plane) (ds2 :: Improv.Angle) ->
+                 case ds2 of wild { Improv.Angle x ->
+                 Improv.Angle (GHC.Float.negateDouble x) }) -}
+cafa6732edc7563d04a5b7f2b3001cd0
+  $fSymmetricDirection :: Improv.Symmetric Improv.Direction
+  DFunId
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U>,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Improv.$fSymmetricAction_$crefl1
+                  `cast`
+                (Sym (Improv.N:Symmetric[0] <Improv.Direction>_N)) -}
+9e4bc64f284fd4cbc972f4cd198d5f38
+  $tc':*: :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   4752894460834437887##
+                   1303012858884008376##
+                   Improv.$trModule
+                   Improv.$tc':*:1) -}
+65aed3bb55476868df9a6434b809ede6
+  $tc':*:1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "':*:"#) -}
+1fa7b574679356d60ecfbee9e9a0b208
+  $tc':+: :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   1797463969369884194##
+                   17734411637238130631##
+                   Improv.$trModule
+                   Improv.$tc':+:1) -}
+635df147923ae773e3b854c941e7669d
+  $tc':+:1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "':+:"#) -}
+f5e017a98d1619c34dc69a3f128f68dc
+  $tc':||: :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   11907503941308003894##
+                   208046951650439209##
+                   Improv.$trModule
+                   Improv.$tc':||:1) -}
+4502a6ee402519e253d9975270680ff5
+  $tc':||:1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "':||:"#) -}
+9b041d208432eda8c2167fb3c869519c
+  $tc'A :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   2026630845208021152##
+                   9900455720643147605##
+                   Improv.$trModule
+                   Improv.$tc'A1) -}
+9f4e211a2c05cbea44d1399ba1fdd5de
+  $tc'A1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'A"#) -}
+db1aff846f6f0cfd255ef4bca4c28fa1
+  $tc'Angle :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   6927035451961102346##
+                   6053095875512900232##
+                   Improv.$trModule
+                   Improv.$tc'Angle1) -}
+5cc8036e864dbe0f66ea28268fef986d
+  $tc'Angle1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Angle"#) -}
+2b64ec173c1e3130b17a149b1274d0f1
+  $tc'Backward :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   12426334953295931190##
+                   6282695519403888384##
+                   Improv.$trModule
+                   Improv.$tc'Backward1) -}
+94bf8ca536f9d803ad86171eb7348a74
+  $tc'Backward1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Backward"#) -}
+e0479679ddf39cc18e472273e4b392f8
+  $tc'C:Parts :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   10759531082495238197##
+                   3250328370220567140##
+                   Improv.$trModule
+                   Improv.$tc'C:Parts1) -}
+bbdddb338f50ad36d8af585cb7e0e9f4
+  $tc'C:Parts1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'C:Parts"#) -}
+d667de902d2be9e09b4408016e017b02
+  $tc'C:Symmetric :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   3063805946800413669##
+                   17609299220573964713##
+                   Improv.$trModule
+                   Improv.$tc'C:Symmetric1) -}
+f570d97097394e2cf574363f73b04c46
+  $tc'C:Symmetric1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'C:Symmetric"#) -}
+686e1d968c641d68a9f436e97d6d9f8c
+  $tc'Center :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   15636387584928622103##
+                   15903685216745386946##
+                   Improv.$trModule
+                   Improv.$tc'Center1) -}
+ac4c58d4e7148bcf24c1faca7068d7a2
+  $tc'Center1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Center"#) -}
+ec929689187a2eb8bc2ae7b9888b01f0
+  $tc'Eighth :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   11150855839825460276##
+                   7511528105782566602##
+                   Improv.$trModule
+                   Improv.$tc'Eighth1) -}
+9e45e70bc4ad6704bf62c1ed9d819d53
+  $tc'Eighth1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Eighth"#) -}
+2f79898d3edb13e434616e8bff9d5c42
+  $tc'Forward :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   12486544853738587726##
+                   10614714133134301180##
+                   Improv.$trModule
+                   Improv.$tc'Forward1) -}
+0614aeeec73791b1730758044dd4a07f
+  $tc'Forward1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Forward"#) -}
+29ec0295cd22e31b19d7726bb3cfae2c
+  $tc'Full :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   1313974463995959043##
+                   8882607887394498629##
+                   Improv.$trModule
+                   Improv.$tc'Full1) -}
+e012f75ef5de7bfcb4b50ee4917014a1
+  $tc'Full1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Full"#) -}
+e7ebbe80a8ad7d59df9300d2cc867e8d
+  $tc'Half :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   2728599935849157148##
+                   17915105172066251294##
+                   Improv.$trModule
+                   Improv.$tc'Half1) -}
+13fb6954f3a1c7a316c2423a4c6cd495
+  $tc'Half1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Half"#) -}
+8a4b29b6b4c5d0366a77e648bd038fb8
+  $tc'High :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   5732833621611019116##
+                   4314628329230519467##
+                   Improv.$trModule
+                   Improv.$tc'High1) -}
+408e83d81609380336fd93fb6aa995ba
+  $tc'High1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'High"#) -}
+bd730bf9d804b5a43546dce90d1835e3
+  $tc'Joint :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   10268841041981077086##
+                   15287502984646244467##
+                   Improv.$trModule
+                   Improv.$tc'Joint1) -}
+1f7a472e3bbf22fcd8a9b53c9b77347c
+  $tc'Joint1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Joint"#) -}
+7992f4b73d15177ba1bf2288cb8cd7d5
+  $tc'Lef :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   16022740604432894999##
+                   14604486226769159994##
+                   Improv.$trModule
+                   Improv.$tc'Lef1) -}
+eb585568d33eaab8a8991d9428e497b2
+  $tc'Lef1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Lef"#) -}
+88171bd0003c998af02746bfcf5088d0
+  $tc'Link :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   17622476953718636184##
+                   1165172419972433734##
+                   Improv.$trModule
+                   Improv.$tc'Link1) -}
+33c98d029aca277c7dc14a6ee4cf553d
+  $tc'Link1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Link"#) -}
+61a299f7f191e14d9221ec4568d159f7
+  $tc'Low :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   16032461881400976277##
+                   6208452087228644975##
+                   Improv.$trModule
+                   Improv.$tc'Low1) -}
+799fa21b2dc47022a97093d29d4583f8
+  $tc'Low1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Low"#) -}
+20aa2f5501f3ce3650b46ed153896403
+  $tc'Mid :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   16753966404934553998##
+                   6680652419542497316##
+                   Improv.$trModule
+                   Improv.$tc'Mid1) -}
+943118804db999e0348ecf3e8526c7f6
+  $tc'Mid1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Mid"#) -}
+3c90434a2bacddedf218136eda95c89a
+  $tc'O :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   3192153579519199890##
+                   6366841614580459410##
+                   Improv.$trModule
+                   Improv.$tc'O1) -}
+3e50e630fb7af8220594a9a4147ea46d
+  $tc'O1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'O"#) -}
+0c7c3f10a602fe298f479b36feee6f4a
+  $tc'ParDance :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   2847655070600716712##
+                   3228333891466354861##
+                   Improv.$trModule
+                   Improv.$tc'ParDance1) -}
+45eb217ef804f5096fa2a77b8af5486d
+  $tc'ParDance1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'ParDance"#) -}
+f86a6b521876b417631b696d4ee9b4f2
+  $tc'Prim :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   10242808426074922380##
+                   1173736703770563271##
+                   Improv.$trModule
+                   Improv.$tc'Prim1) -}
+357f2fcc9436244a419bd0a5bef819dd
+  $tc'Prim1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Prim"#) -}
+d83f268f08238cb1eb0a264eb748e2a0
+  $tc'Quarter :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   15557536695885414416##
+                   15122094084319532896##
+                   Improv.$trModule
+                   Improv.$tc'Quarter1) -}
+48dc57fdb0031b4e45102ea4ed4cf2e5
+  $tc'Quarter1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Quarter"#) -}
+85da5ca3651022aa6218fcfaf6017823
+  $tc'Rest :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   1297377305794592219##
+                   13039181902640181286##
+                   Improv.$trModule
+                   Improv.$tc'Rest1) -}
+762acb4464a343bb041f7bb6351d6345
+  $tc'Rest1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Rest"#) -}
+623f669bab348da81961c60dc8f4903c
+  $tc'Righ :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   409330118786419016##
+                   5283506800062318128##
+                   Improv.$trModule
+                   Improv.$tc'Righ1) -}
+767a3d60c3eb4d4afd1d82790daccc25
+  $tc'Righ1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Righ"#) -}
+f62f857c195a5c114116ecafb2db5418
+  $tc'SeqDance :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   12425272797673081397##
+                   17494924024461027169##
+                   Improv.$trModule
+                   Improv.$tc'SeqDance1) -}
+54440ada472ddc6c609d5e73f4a79d16
+  $tc'SeqDance1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'SeqDance"#) -}
+5ad2de8c9d3150a334d84b309052cb8f
+  $tc'Skip :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   9231940426772722384##
+                   14468833164424971233##
+                   Improv.$trModule
+                   Improv.$tc'Skip1) -}
+9230f66251107a2ca01ffab34fb5c23e
+  $tc'Skip1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Skip"#) -}
+c54792c4327272acedeb28012b613795
+  $tc'ThreeFourths :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   6932705351874836854##
+                   2750085184398050771##
+                   Improv.$trModule
+                   Improv.$tc'ThreeFourths1) -}
+6c17480c2de9548cca4f1c66332b6b1a
+  $tc'ThreeFourths1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'ThreeFourths"#) -}
+88934932983caf1a70edd412f3fa030e
+  $tc'XY :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   4543766477286909772##
+                   7162298781548352181##
+                   Improv.$trModule
+                   Improv.$tc'XY1) -}
+c619e2a51a40a6c8813b31e6f24a8cd2
+  $tc'XY1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'XY"#) -}
+1f099455e23f0835eff7f8d068979be8
+  $tc'XZ :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   17232127508497663405##
+                   16806955558458509198##
+                   Improv.$trModule
+                   Improv.$tc'XZ1) -}
+033af26437b815517ccd820ef9a26523
+  $tc'XZ1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'XZ"#) -}
+98df1cc588f079144b3a10575f0793de
+  $tc'YZ :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   4466466852862755933##
+                   11889776971834861422##
+                   Improv.$trModule
+                   Improv.$tc'YZ1) -}
+e826a1e3dce0fdaf567020988f129c6f
+  $tc'YZ1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'YZ"#) -}
+95f92e3204eca7bd0207aa7e942187bc
+  $tc'Zero :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   11080076481227205319##
+                   1409685939371187685##
+                   Improv.$trModule
+                   Improv.$tc'Zero1) -}
+af2298879239242cadb78e46d1861860
+  $tc'Zero1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Zero"#) -}
+febe6d34e6b72c4b77afcc7bbaada9eb
+  $tcAction :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   12269888993049518193##
+                   312356635094983954##
+                   Improv.$trModule
+                   Improv.$tcAction1) -}
+b7496ba5833c1689088a1b160a5d9d9c
+  $tcAction1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Action"#) -}
+6a98bc748427dd828b7bb99b011e8165
+  $tcAngle :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   18249684372478672782##
+                   7436337337878955707##
+                   Improv.$trModule
+                   Improv.$tcAngle1) -}
+9e2ca8d4ff8ae4a111a1fd3cb2852631
+  $tcAngle1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Angle"#) -}
+26d671f9597d17731f5a36ec04d80b45
+  $tcDance :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   4756681317432884648##
+                   12985572879184023362##
+                   Improv.$trModule
+                   Improv.$tcDance1) -}
+24b42303251fe176055b1ec4481546fe
+  $tcDance1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Dance"#) -}
+2d2a5f27f202bc926ed54cc693b909ff
+  $tcDirection :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   5842279950213797758##
+                   15419983575535054136##
+                   Improv.$trModule
+                   Improv.$tcDirection1) -}
+1cc421a076203ec5d3ec11df101c64bd
+  $tcDirection1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Direction"#) -}
+3cfe99acbf5fb4a3b33aaf852e624b04
+  $tcKineChain :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   15639514650104186672##
+                   8574310667581529698##
+                   Improv.$trModule
+                   Improv.$tcKineChain1) -}
+ebf6b05e067baa35c129f8a6b9a28575
+  $tcKineChain1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "KineChain"#) -}
+71357f7d566dc436650d77299522d024
+  $tcLength :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   14045397910572564079##
+                   17860782306963078018##
+                   Improv.$trModule
+                   Improv.$tcLength1) -}
+c3b4fe0defce5f47abc5c259053d1bf1
+  $tcLength1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Length"#) -}
+c8afcd898a8cf1d74f703c5f46bfda0c
+  $tcOrigin :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   13056219952614401243##
+                   12680828222212764054##
+                   Improv.$trModule
+                   Improv.$tcOrigin1) -}
+4245eed0b21203559b7a9cda2e69e64b
+  $tcOrigin1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Origin"#) -}
+dc05b32a39bee898b630f3aa652d4a31
+  $tcParDance :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   353538438602096937##
+                   14260643433117647761##
+                   Improv.$trModule
+                   Improv.$tcParDance1) -}
+e558ffb2b754a8a1c9eb169935f60b53
+  $tcParDance1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "ParDance"#) -}
+e58463572ea7b9ad15ffbce268083b30
+  $tcParts :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   15478363845113834559##
+                   9906418741333398043##
+                   Improv.$trModule
+                   Improv.$tcParts1) -}
+5caa067f60bf661bdaae9fff73596ed5
+  $tcParts1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Parts"#) -}
+6e2e0b13e666d9e5f0255eed4d80fc97
+  $tcPlane :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   9356895052230722958##
+                   2793545931867338364##
+                   Improv.$trModule
+                   Improv.$tcPlane1) -}
+b30535c7f2ce05848bed160e16d185e7
+  $tcPlane1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Plane"#) -}
+fb39e6ae10df4648e21b4c5513ce2111
+  $tcSeqDance :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   11822516344757822776##
+                   9197313557493283908##
+                   Improv.$trModule
+                   Improv.$tcSeqDance1) -}
+688e60a68e5b87155e9a15975f665ef5
+  $tcSeqDance1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "SeqDance"#) -}
+e56f80ced5efdfe09daf0d2f0b822823
+  $tcSymmetric :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   10274746355219485236##
+                   16516245559903243758##
+                   Improv.$trModule
+                   Improv.$tcSymmetric1) -}
+4fc3f8caea5b669166868643069c9d4f
+  $tcSymmetric1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Symmetric"#) -}
+d6950ddcf6cc5fe56a82b74f3e358a88
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Improv.$trModule2
+                   Improv.$trModule1) -}
+186a3d2517e9f5394082243fa8fd73ca
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Improv"#) -}
+3e43654bb5fc0111c916552d71a33cb6
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "improv-0.1.0.0-SK2koE1cQA7mN0X0IxqKL"#) -}
+0b2f3fc178ce5d3eb93b6bcc4a706ac6
+  $w$c/= ::
+    Improv.Direction
+    -> Improv.Length
+    -> Improv.Direction
+    -> Improv.Length
+    -> GHC.Types.Bool
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <S,1*U><L,1*U><S,1*U><L,1*U>, Inline: [0],
+     Unfolding: (\ (ww :: Improv.Direction)
+                   (ww1 :: Improv.Length)
+                   (ww2 :: Improv.Direction)
+                   (ww3 :: Improv.Length) ->
+                 case Improv.$fEqAction_$c== ww ww2 of wild {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True
+                   -> case ww1 of wild1 {
+                        Improv.Zero
+                        -> case ww3 of wild2 {
+                             DEFAULT -> GHC.Types.True Improv.Zero -> GHC.Types.False }
+                        Improv.Eighth
+                        -> case ww3 of wild2 {
+                             DEFAULT -> GHC.Types.True Improv.Eighth -> GHC.Types.False }
+                        Improv.Quarter
+                        -> case ww3 of wild2 {
+                             DEFAULT -> GHC.Types.True Improv.Quarter -> GHC.Types.False }
+                        Improv.Half
+                        -> case ww3 of wild2 {
+                             DEFAULT -> GHC.Types.True Improv.Half -> GHC.Types.False }
+                        Improv.ThreeFourths
+                        -> case ww3 of wild2 {
+                             DEFAULT -> GHC.Types.True Improv.ThreeFourths -> GHC.Types.False }
+                        Improv.Full
+                        -> case ww3 of wild2 {
+                             DEFAULT -> GHC.Types.True Improv.Full -> GHC.Types.False } } }) -}
+706d763267def5554a5fbceff37fe00c
+  $w$c== ::
+    Improv.Direction
+    -> Improv.Length
+    -> Improv.Direction
+    -> Improv.Length
+    -> GHC.Types.Bool
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <S,1*U><L,1*U><S,1*U><L,1*U>, Inline: [0],
+     Unfolding: (\ (ww :: Improv.Direction)
+                   (ww1 :: Improv.Length)
+                   (ww2 :: Improv.Direction)
+                   (ww3 :: Improv.Length) ->
+                 case Improv.$fEqAction_$c== ww ww2 of wild {
+                   GHC.Types.False -> GHC.Types.False
+                   GHC.Types.True -> Improv.$fEqAction_$c==2 ww1 ww3 }) -}
+b3c40b8773f2ae772d2a3855f77a04be
+  $w$creadPrec ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b1.
+       (Improv.Action -> Text.ParserCombinators.ReadP.P b1)
+       -> (# GHC.Base.String -> Text.ParserCombinators.ReadP.P b1 #)
+  {- Arity: 2, Strictness: <L,U(U)><L,C(U)>, Inline: [0],
+     Unfolding: (\ (w :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b1
+                   (w1 :: Improv.Action -> Text.ParserCombinators.ReadP.P b1) ->
+                 let {
+                   lvl81 :: Text.ParserCombinators.ReadP.P b1
+                   = let {
+                       lvl82 :: Text.ParserCombinators.ReadP.P b1
+                       = let {
+                           lvl22 :: Text.ParserCombinators.ReadPrec.Prec
+                           = case w of wild { GHC.Types.I# x ->
+                             GHC.Types.I# (GHC.Prim.+# x 1#) }
+                         } in
+                         (Improv.$fReadAction_optional1 lvl22)
+                           `cast`
+                         (Text.ParserCombinators.ReadP.N:ReadP[0] <Improv.Direction>_R)
+                           @ b1
+                           (\ (a1 :: Improv.Direction) ->
+                            (Improv.$fReadAction_optional lvl22)
+                              `cast`
+                            (Text.ParserCombinators.ReadP.N:ReadP[0] <Improv.Length>_R)
+                              @ b1
+                              (\ (a2 :: Improv.Length) -> w1 (Improv.A a1 a2)))
+                     } in
+                     Text.Read.Lex.expect2
+                       @ b1
+                       (\ (a1 :: Text.Read.Lex.Lexeme) ->
+                        case a1 of wild {
+                          DEFAULT -> Text.ParserCombinators.ReadP.Fail @ b1
+                          Text.Read.Lex.Ident a2
+                          -> case GHC.Base.eqString a2 Improv.$fReadAction6 of wild1 {
+                               GHC.Types.False -> Text.ParserCombinators.ReadP.Fail @ b1
+                               GHC.Types.True -> lvl82 } })
+                 } in
+                 let {
+                   k :: () -> Text.ParserCombinators.ReadP.P b1
+                     {- Arity: 1, Strictness: <L,A>, Inline: INLINE[0],
+                        Unfolding: InlineRule (1, True, True) (\ (w4 :: ()) -> lvl81) -}
+                   = \ (w4 :: ()) -> lvl81
+                 } in
+                 (# \ (a :: GHC.Base.String) ->
+                    (Text.ParserCombinators.ReadP.skipSpaces_skip a)
+                      `cast`
+                    (Text.ParserCombinators.ReadP.N:ReadP[0] <()>_R)
+                      @ b1
+                      k #)) -}
+3885da4b4dd77c01efb721818c148a35
+  $w$creadPrec1 ::
+    GHC.Prim.Int#
+    -> forall b.
+       (Improv.Angle -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, Strictness: <S,U><L,C(U)>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   @ b
+                   (w :: Improv.Angle -> Text.ParserCombinators.ReadP.P b) ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.<=# ww 10#) of wild2 {
+                   GHC.Types.False -> Text.ParserCombinators.ReadP.Fail @ b
+                   GHC.Types.True
+                   -> let {
+                        lvl81 :: Text.ParserCombinators.ReadP.P b
+                        = let {
+                            lvl82 :: Text.ParserCombinators.ReadP.P b
+                            = GHC.Read.$fReadDouble9
+                                GHC.Read.$fReadDouble_$sconvertFrac
+                                Improv.$fReadAngle5
+                                @ b
+                                (\ (a1 :: GHC.Types.Double) -> w (Improv.Angle a1))
+                          } in
+                          Text.Read.Lex.expect2
+                            @ b
+                            (\ (a1 :: Text.Read.Lex.Lexeme) ->
+                             case a1 of wild {
+                               DEFAULT -> Text.ParserCombinators.ReadP.Fail @ b
+                               Text.Read.Lex.Ident a2
+                               -> case GHC.Base.eqString a2 Improv.$fReadAngle4 of wild1 {
+                                    GHC.Types.False -> Text.ParserCombinators.ReadP.Fail @ b
+                                    GHC.Types.True -> lvl82 } })
+                      } in
+                      let {
+                        k :: () -> Text.ParserCombinators.ReadP.P b
+                          {- Arity: 1, Strictness: <L,A>, Inline: INLINE[0],
+                             Unfolding: InlineRule (1, True, True) (\ (w4 :: ()) -> lvl81) -}
+                        = \ (w4 :: ()) -> lvl81
+                      } in
+                      Text.ParserCombinators.ReadP.Look
+                        @ b
+                        (\ (a :: GHC.Base.String) ->
+                         (Text.ParserCombinators.ReadP.skipSpaces_skip a)
+                           `cast`
+                         (Text.ParserCombinators.ReadP.N:ReadP[0] <()>_R)
+                           @ b
+                           k) }) -}
+74b1087099ab52ae48273444c7d8e08f
+  $w$creadPrec2 ::
+    GHC.Prim.Int#
+    -> forall b.
+       (Improv.Origin -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, Strictness: <S,U><L,C(U)>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   @ b
+                   (w :: Improv.Origin -> Text.ParserCombinators.ReadP.P b) ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.<=# ww 10#) of wild2 {
+                   GHC.Types.False -> Text.ParserCombinators.ReadP.Fail @ b
+                   GHC.Types.True
+                   -> let {
+                        lvl81 :: Text.ParserCombinators.ReadP.P b
+                        = let {
+                            lvl82 :: Text.ParserCombinators.ReadP.P b
+                            = GHC.Read.$fReadInt3
+                                GHC.Read.$fReadInt_$sconvertInt
+                                Improv.$fReadAngle5
+                                @ b
+                                (\ (a1 :: GHC.Types.Int) -> w (Improv.O a1))
+                          } in
+                          Text.Read.Lex.expect2
+                            @ b
+                            (\ (a1 :: Text.Read.Lex.Lexeme) ->
+                             case a1 of wild {
+                               DEFAULT -> Text.ParserCombinators.ReadP.Fail @ b
+                               Text.Read.Lex.Ident a2
+                               -> case GHC.Base.eqString a2 Improv.$fReadOrigin4 of wild1 {
+                                    GHC.Types.False -> Text.ParserCombinators.ReadP.Fail @ b
+                                    GHC.Types.True -> lvl82 } })
+                      } in
+                      let {
+                        k :: () -> Text.ParserCombinators.ReadP.P b
+                          {- Arity: 1, Strictness: <L,A>, Inline: INLINE[0],
+                             Unfolding: InlineRule (1, True, True) (\ (w4 :: ()) -> lvl81) -}
+                        = \ (w4 :: ()) -> lvl81
+                      } in
+                      Text.ParserCombinators.ReadP.Look
+                        @ b
+                        (\ (a :: GHC.Base.String) ->
+                         (Text.ParserCombinators.ReadP.skipSpaces_skip a)
+                           `cast`
+                         (Text.ParserCombinators.ReadP.N:ReadP[0] <()>_R)
+                           @ b
+                           k) }) -}
+8861e97397cbf830ab61162fbcf329dd
+  $w$cshow :: GHC.Types.Double -> GHC.Base.String
+  {- Arity: 1, Strictness: <L,1*U(U)>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Types.Double) ->
+                 GHC.Base.++
+                   @ GHC.Types.Char
+                   Improv.$fShowAngle2
+                   (case ww of ww1 { GHC.Types.D# ww2 ->
+                    GHC.Float.$w$sshowSignedFloat
+                      GHC.Float.$fShowDouble_$sshowFloat
+                      Improv.$fReadAngle5
+                      ww2
+                      (GHC.Types.[] @ GHC.Types.Char) })) -}
+fb0ca8f63f9376128fc2a147bbcdf600
+  $w$cshow1 :: GHC.Types.Int -> GHC.Base.String
+  {- Arity: 1, Strictness: <L,1*U(U)>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Types.Int) ->
+                 GHC.Base.++
+                   @ GHC.Types.Char
+                   Improv.$fShowOrigin2
+                   (case ww of ww2 { GHC.Types.I# ww3 ->
+                    case GHC.Show.$wshowSignedInt
+                           11#
+                           ww3
+                           (GHC.Types.[] @ GHC.Types.Char) of ww4 { (#,#) ww5 ww6 ->
+                    GHC.Types.: @ GHC.Types.Char ww5 ww6 } })) -}
+bd3495300ec7ea0193b84b9c7bbabbca
+  $w$cshowsPrec ::
+    GHC.Prim.Int#
+    -> Improv.Direction
+    -> Improv.Length
+    -> GHC.Base.String
+    -> GHC.Base.String
+  {- Arity: 4, Strictness: <S,U><L,1*U><L,1*U><L,U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (ww1 :: Improv.Direction)
+                   (ww2 :: Improv.Length)
+                   (w :: GHC.Base.String) ->
+                 let {
+                   p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,1*U> -}
+                   = \ (x :: GHC.Base.String)[OneShot] ->
+                     GHC.Base.++
+                       @ GHC.Types.Char
+                       Improv.$fShowAction2
+                       (Improv.$fShowAction_$cshowsPrec
+                          Improv.$fReadAngle5
+                          ww1
+                          (GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.showSpace1
+                             (Improv.$w$cshowsPrec1 ww2 x)))
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11#) of wild {
+                   GHC.Types.False -> p w
+                   GHC.Types.True
+                   -> GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows7
+                        (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows4 w)) }) -}
+f60fce186449f8dbb1757a1670bd3f79
+  $w$cshowsPrec1 ::
+    Improv.Length -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
+     Unfolding: (\ (w :: Improv.Length) (w1 :: GHC.Base.String) ->
+                 case w of wild {
+                   Improv.Zero
+                   -> GHC.Base.++ @ GHC.Types.Char Improv.$fReadLength27 w1
+                   Improv.Eighth
+                   -> GHC.Base.++ @ GHC.Types.Char Improv.$fReadLength24 w1
+                   Improv.Quarter
+                   -> GHC.Base.++ @ GHC.Types.Char Improv.$fReadLength21 w1
+                   Improv.Half
+                   -> GHC.Base.++ @ GHC.Types.Char Improv.$fReadLength18 w1
+                   Improv.ThreeFourths
+                   -> GHC.Base.++ @ GHC.Types.Char Improv.$fReadLength15 w1
+                   Improv.Full
+                   -> GHC.Base.++ @ GHC.Types.Char Improv.$fReadLength12 w1 }) -}
+9c5032375c5c3b1b1faf160dce229bdf
+  $w$cshowsPrec2 ::
+    GHC.Prim.Int# -> GHC.Types.Double -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,U><L,1*U(U)>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#) (ww1 :: GHC.Types.Double) ->
+                 let {
+                   g :: GHC.Base.String -> GHC.Base.String
+                   = case ww1 of ww2 { GHC.Types.D# ww3 ->
+                     GHC.Float.$w$sshowSignedFloat
+                       GHC.Float.$fShowDouble_$sshowFloat
+                       Improv.$fReadAngle5
+                       ww3 }
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11#) of wild {
+                   GHC.Types.False
+                   -> \ (x :: GHC.Base.String) ->
+                      GHC.Base.++ @ GHC.Types.Char Improv.$fShowAngle2 (g x)
+                   GHC.Types.True
+                   -> \ (x :: GHC.Base.String) ->
+                      GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows7
+                        (GHC.Base.++
+                           @ GHC.Types.Char
+                           Improv.$fShowAngle2
+                           (g (GHC.Types.: @ GHC.Types.Char GHC.Show.shows4 x))) }) -}
+3617223d3d7e4df57a39d0937c26b626
+  $w$cshowsPrec3 ::
+    GHC.Show.Show a =>
+    GHC.Prim.Int# -> Improv.KineChain a -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><S,U><S,1*U>,
+     Inline: [0] -}
+bcb0b2aa293d113bc0d7b9b6fa08514c
+  $w$cshowsPrec4 ::
+    GHC.Prim.Int#
+    -> GHC.Types.Int -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 3, Strictness: <S,U><L,1*U(U)><L,U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (ww1 :: GHC.Types.Int)
+                   (w :: GHC.Base.String) ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11#) of wild {
+                   GHC.Types.False
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        Improv.$fShowOrigin2
+                        (case ww1 of ww2 { GHC.Types.I# ww3 ->
+                         case GHC.Show.$wshowSignedInt 11# ww3 w of ww4 { (#,#) ww5 ww6 ->
+                         GHC.Types.: @ GHC.Types.Char ww5 ww6 } })
+                   GHC.Types.True
+                   -> GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows7
+                        (GHC.Base.++
+                           @ GHC.Types.Char
+                           Improv.$fShowOrigin2
+                           (case ww1 of ww2 { GHC.Types.I# ww3 ->
+                            case GHC.Show.$wshowSignedInt
+                                   11#
+                                   ww3
+                                   (GHC.Types.:
+                                      @ GHC.Types.Char
+                                      GHC.Show.shows4
+                                      w) of ww4 { (#,#) ww5 ww6 ->
+                            GHC.Types.: @ GHC.Types.Char ww5 ww6 } })) }) -}
+80ae00fe9ba36e92197d4d00e34f39b3
+  $w$cshowsPrec5 ::
+    GHC.Show.Show a =>
+    GHC.Prim.Int# -> Improv.ParDance a -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><S,U><L,1*U>,
+     Inline: [0],
+     Unfolding: (\ @ a
+                   (w :: GHC.Show.Show a)
+                   (ww :: GHC.Prim.Int#)
+                   (w1 :: Improv.ParDance a) ->
+                 let {
+                   f :: GHC.Base.String -> GHC.Base.String
+                   = Improv.$fShowDance_$cshowsPrec
+                       @ a
+                       w
+                       Improv.$fShowDance1
+                       w1 `cast` (Improv.N:ParDance[0] <a>_N)
+                 } in
+                 let {
+                   p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,1*U> -}
+                   = \ (x :: GHC.Base.String) ->
+                     GHC.Base.++
+                       @ GHC.Types.Char
+                       Improv.$fShowParDance3
+                       (GHC.Base.++
+                          @ GHC.Types.Char
+                          Improv.$fShowParDance2
+                          (f (GHC.Base.++ @ GHC.Types.Char Improv.$fShowParDance1 x)))
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11#) of wild {
+                   GHC.Types.False -> p
+                   GHC.Types.True
+                   -> \ (x :: GHC.Base.String) ->
+                      GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows7
+                        (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows4 x)) }) -}
+a6f94362a12c590afaec989b2af33551
+  $w$cshowsPrec6 ::
+    Improv.Plane -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
+     Unfolding: (\ (w :: Improv.Plane) (w1 :: GHC.Base.String) ->
+                 case w of wild {
+                   Improv.XY -> GHC.Base.++ @ GHC.Types.Char Improv.$fReadPlane15 w1
+                   Improv.YZ -> GHC.Base.++ @ GHC.Types.Char Improv.$fReadPlane12 w1
+                   Improv.XZ
+                   -> GHC.Base.++ @ GHC.Types.Char Improv.$fReadPlane9 w1 }) -}
+c0bb006f64ec903783409ef3ce75af18
+  $w$cshowsPrec7 ::
+    GHC.Show.Show a =>
+    GHC.Prim.Int# -> Improv.SeqDance a -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><S,U><L,1*U>,
+     Inline: [0],
+     Unfolding: (\ @ a
+                   (w :: GHC.Show.Show a)
+                   (ww :: GHC.Prim.Int#)
+                   (w1 :: Improv.SeqDance a) ->
+                 let {
+                   f :: GHC.Base.String -> GHC.Base.String
+                   = Improv.$fShowDance_$cshowsPrec
+                       @ a
+                       w
+                       Improv.$fShowDance1
+                       w1 `cast` (Improv.N:SeqDance[0] <a>_N)
+                 } in
+                 let {
+                   p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,1*U> -}
+                   = \ (x :: GHC.Base.String) ->
+                     GHC.Base.++
+                       @ GHC.Types.Char
+                       Improv.$fShowSeqDance2
+                       (GHC.Base.++
+                          @ GHC.Types.Char
+                          Improv.$fShowSeqDance1
+                          (f (GHC.Base.++ @ GHC.Types.Char Improv.$fShowParDance1 x)))
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11#) of wild {
+                   GHC.Types.False -> p
+                   GHC.Types.True
+                   -> \ (x :: GHC.Base.String) ->
+                      GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows7
+                        (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows4 x)) }) -}
+935d231c06ccd0a2abe7080cf64eaf0a
+  $wchangeTiming :: Improv.Mult -> Improv.Dance a -> Improv.Dance a
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U(U)><S,1*U>,
+     Inline: [0] -}
+667ad56206ecbd252cbc2afd3b3ea127
+  $wrepeatn :: GHC.Prim.Int# -> Improv.Dance a -> Improv.Dance a
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,U><L,U>, Inline: [0],
+     Unfolding: (\ @ a (ww :: GHC.Prim.Int#) (w :: Improv.Dance a) ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.<# 0# ww) of wild {
+                   GHC.Types.False -> Improv.Skip @ a
+                   GHC.Types.True
+                   -> let {
+                        lvl22 :: Improv.Dance a = Improv.:+: @ a w (Improv.Skip @ a)
+                      } in
+                      letrec {
+                        $wxs :: GHC.Prim.Int# -> Improv.Dance a
+                          {- Arity: 1, Strictness: <S,1*U>, Inline: [0] -}
+                        = \ (ww1 :: GHC.Prim.Int#) ->
+                          case ww1 of ds2 {
+                            DEFAULT -> Improv.:+: @ a w ($wxs (GHC.Prim.-# ds2 1#))
+                            1# -> lvl22 }
+                      } in
+                      $wxs ww }) -}
+e0f5faf146a6a3c74d79c715d82770cc
+  $wretrogradeDance :: Improv.Dance a -> Improv.Dance a
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>, Inline: [0],
+     Unfolding: (\ @ a (w :: Improv.Dance a) ->
+                 Improv.$wtransform
+                   @ a
+                   Improv.retrogradeDance3
+                   (Improv.$wtransform
+                      @ a
+                      Improv.retrogradeDance2
+                      (Improv.$wtransform @ a Improv.retrogradeDance1 w))) -}
+4dc643da50c3427dd9e77ab34edf8f9e
+  $wreverseDance :: Improv.Dance a -> Improv.Dance a
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>, Inline: [0] -}
+bb56f94633fc17d14e84e06f33f595d5
+  $wseqL :: [Improv.Dance a] -> Improv.SeqDance a
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,U>, Inline: [0],
+     Unfolding: (\ @ a (w :: [Improv.Dance a]) ->
+                 let {
+                   g :: Improv.Mult
+                   = case GHC.List.$wlenAcc
+                            @ (Improv.Dance a)
+                            w
+                            0# of ww2 { DEFAULT ->
+                     GHC.Types.D# (GHC.Prim.int2Double# ww2) }
+                 } in
+                 letrec {
+                   go :: [Improv.Dance a] -> Improv.SeqDance a
+                     {- Arity: 1, Strictness: <S,1*U> -}
+                   = \ (ds :: [Improv.Dance a]) ->
+                     case ds of wild {
+                       [] -> (Improv.Skip @ a) `cast` (Sym (Improv.N:SeqDance[0]) <a>_N)
+                       : y ys
+                       -> (Improv.:+:
+                             @ a
+                             (Improv.$wchangeTiming @ a g y)
+                             (go ys) `cast` (Improv.N:SeqDance[0] <a>_N))
+                            `cast`
+                          (Sym (Improv.N:SeqDance[0]) <a>_N) }
+                 } in
+                 go w) -}
+6dc02f4ec7b96d8a9329eb50499eb0fb
+  $wtransform ::
+    (Improv.Action -> Improv.Action)
+    -> Improv.Dance a -> Improv.Dance a
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,C(U)><S,1*U>,
+     Inline: [0] -}
+b3c40b8773f2ae772d2a3855f77a04be
+  data Action = A Improv.Direction Improv.Length
+3885da4b4dd77c01efb721818c148a35
+  data Angle = Angle GHC.Types.Double
+5992ffb4256db90148fe6d921f18ab3e
+  data Dance b
+    = Prim Improv.Action Improv.Mult b
+    | Rest Improv.Mult
+    | Skip
+    | (Improv.Dance b) :+: (Improv.Dance b)
+    | (Improv.Dance b) :||: (Improv.Dance b)
+cd42d7a3ee7c839c253418ccc6375089
+  data Direction
+    = Lef
+    | Righ
+    | Forward
+    | Backward
+    | Center
+    | Low
+    | Mid
+    | High
+    | Improv.Direction :*: Improv.Direction
+1e3d37da1059c133f9e475f675e2cb82
+  type Duration = GHC.Types.Double
+3617223d3d7e4df57a39d0937c26b626
+  data KineChain a
+    = Joint Improv.Origin (Improv.KineChains a) | Link Improv.Origin a
+3617223d3d7e4df57a39d0937c26b626
+  type KineChains a = [Improv.KineChain a]
+f60fce186449f8dbb1757a1670bd3f79
+  data Length = Zero | Eighth | Quarter | Half | ThreeFourths | Full
+283745cc931d9bef7940ffc468560ac8
+  type Mult = GHC.Types.Double
+74b1087099ab52ae48273444c7d8e08f
+  data Origin = O GHC.Types.Int
+80ae00fe9ba36e92197d4d00e34f39b3
+  newtype ParDance a = ParDance {getPar :: Improv.Dance a}
+cfcc186c82ad96d72dd4088c87950f9a
+  class Parts b where
+    contains :: b -> [b]
+    origin :: b -> Improv.Origin
+    {-# MINIMAL contains, origin #-}
+a6f94362a12c590afaec989b2af33551
+  data Plane = XY | YZ | XZ
+7e73e49dc3d60b376052d80c7904ec2c
+  type Robot a = Improv.KineChain a
+c0bb006f64ec903783409ef3ce75af18
+  newtype SeqDance a = SeqDance {getSeq :: Improv.Dance a}
+cafa6732edc7563d04a5b7f2b3001cd0
+  class Symmetric a where
+    refl :: Improv.Plane -> a -> a
+    {-# MINIMAL refl #-}
+a6efcfa51ff27529e285813e940e5a21
+  changeTiming ::
+    Improv.Parts a => Improv.Mult -> Improv.Dance a -> Improv.Dance a
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,A><L,U(U)><S,1*U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, True)
+                (\ @ a
+                   (w :: Improv.Parts a)
+                   (w1 :: Improv.Mult)
+                   (w2 :: Improv.Dance a) ->
+                 Improv.$wchangeTiming @ a w1 w2) -}
+9393861c6ae7098886395583aabc7b03
+  getPar :: Improv.ParDance a -> Improv.Dance a
+  RecSel Left Improv.ParDance
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Improv.getPar1
+                  `cast`
+                (forall (a :: <*>_N).
+                 <Improv.ParDance a>_R ->_R Improv.N:ParDance[0] <a>_N) -}
+436126e9e0efb535d0c061e29827c5ff
+  getPar1 :: Improv.ParDance a -> Improv.ParDance a
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, True)
+                (\ @ a (ds :: Improv.ParDance a) -> ds) -}
+82e8e3c2f4af721d119556f762d16b3d
+  getSeq :: Improv.SeqDance a -> Improv.Dance a
+  RecSel Left Improv.SeqDance
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Improv.getSeq1
+                  `cast`
+                (forall (a :: <*>_N).
+                 <Improv.SeqDance a>_R ->_R Improv.N:SeqDance[0] <a>_N) -}
+7291d2d24f0fd6c2f73d67389514e1da
+  getSeq1 :: Improv.SeqDance a -> Improv.SeqDance a
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, True)
+                (\ @ a (ds :: Improv.SeqDance a) -> ds) -}
+82fce940ddf84363393acdb8becc1f7e
+  parL :: Improv.Parts a => [Improv.Dance a] -> Improv.Dance a
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Improv.parL1
+                  `cast`
+                (forall (a :: <*>_N).
+                 <Improv.Parts a>_R
+                 ->_R <[Improv.Dance a]>_R
+                 ->_R Improv.N:ParDance[0] <a>_N) -}
+a65bc3ddcec0293a3b7ffc574c86d2e2
+  parL1 :: Improv.Parts a => [Improv.Dance a] -> Improv.ParDance a
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a ($dParts :: Improv.Parts a) (x :: [Improv.Dance a]) ->
+                 letrec {
+                   go :: [Improv.Dance a] -> Improv.ParDance a {- Arity: 1 -}
+                   = \ (ds :: [Improv.Dance a]) ->
+                     case ds of wild {
+                       [] -> (Improv.Skip @ a) `cast` (Sym (Improv.N:ParDance[0]) <a>_N)
+                       : y ys
+                       -> (Improv.:||: @ a y (go ys) `cast` (Improv.N:ParDance[0] <a>_N))
+                            `cast`
+                          (Sym (Improv.N:ParDance[0]) <a>_N) }
+                 } in
+                 go x) -}
+a40287e39c7e0b8e671cc3e63604f62e
+  repeatn ::
+    Improv.Parts a => GHC.Types.Int -> Improv.Dance a -> Improv.Dance a
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,A><S(S),1*U(U)><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   (w :: Improv.Parts a)
+                   (w1 :: GHC.Types.Int)
+                   (w2 :: Improv.Dance a) ->
+                 case w1 of ww { GHC.Types.I# ww1 ->
+                 Improv.$wrepeatn @ a ww1 w2 }) -}
+e3c81014724d7b48f4952723977121d2
+  retrogradeDance ::
+    Improv.Parts a => Improv.Dance a -> Improv.Dance a
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><S,1*U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, True)
+                (\ @ a (w :: Improv.Parts a) (w1 :: Improv.Dance a) ->
+                 Improv.$wretrogradeDance @ a w1) -}
+93ff8e757cb76c389fa149b782c8c6f6
+  retrogradeDance1 :: Improv.Action -> Improv.Action
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U(1*U,U)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Improv.Action) ->
+                 case ds of wild { Improv.A dir len ->
+                 Improv.A (Improv.$fSymmetricAction_$crefl1 Improv.XY dir) len }) -}
+531758f4008d30249e828cbc7e9dd6b7
+  retrogradeDance2 :: Improv.Action -> Improv.Action
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U(1*U,U)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Improv.Action) ->
+                 case ds of wild { Improv.A dir len ->
+                 Improv.A (Improv.$fSymmetricAction_$crefl1 Improv.XZ dir) len }) -}
+8febe0999394f42c7c267935167ce43d
+  retrogradeDance3 :: Improv.Action -> Improv.Action
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U(1*U,U)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Improv.Action) ->
+                 case ds of wild { Improv.A dir len ->
+                 Improv.A (Improv.$fSymmetricAction_$crefl1 Improv.YZ dir) len }) -}
+9b230f3081551683f5296068e56e2de1
+  reverseDance :: Improv.Parts a => Improv.Dance a -> Improv.Dance a
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><S,1*U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, True)
+                (\ @ a (w :: Improv.Parts a) (w1 :: Improv.Dance a) ->
+                 Improv.$wreverseDance @ a w1) -}
+617c2544894192868b0523bab0f001fc
+  seqL :: Improv.Parts a => [Improv.Dance a] -> Improv.Dance a
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Improv.seqL1
+                  `cast`
+                (forall (a :: <*>_N).
+                 <Improv.Parts a>_R
+                 ->_R <[Improv.Dance a]>_R
+                 ->_R Improv.N:SeqDance[0] <a>_N) -}
+4c0b65dadb0f017688db4cebfa422708
+  seqL1 :: Improv.Parts a => [Improv.Dance a] -> Improv.SeqDance a
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><S,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, True)
+                (\ @ a (w :: Improv.Parts a) (w1 :: [Improv.Dance a]) ->
+                 Improv.$wseqL @ a w1) -}
+c2ca1c37b275fa7dce4f60c51bf38f85
+  transform ::
+    Improv.Parts a =>
+    (Improv.Action -> Improv.Action)
+    -> Improv.Dance a -> Improv.Dance a
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,A><L,C(U)><S,1*U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, True)
+                (\ @ a
+                   (w :: Improv.Parts a)
+                   (w1 :: Improv.Action -> Improv.Action)
+                   (w2 :: Improv.Dance a) ->
+                 Improv.$wtransform @ a w1 w2) -}
+instance [safe] GHC.Classes.Eq [Improv.Action] = Improv.$fEqAction
+instance [safe] GHC.Classes.Eq [Improv.Angle] = Improv.$fEqAngle
+instance [safe] GHC.Classes.Eq [Improv.Dance] = Improv.$fEqDance
+instance [safe] GHC.Classes.Eq [Improv.Direction]
+  = Improv.$fEqDirection
+instance [safe] GHC.Classes.Eq [Improv.KineChain]
+  = Improv.$fEqKineChain
+instance [safe] GHC.Classes.Eq [Improv.Length] = Improv.$fEqLength
+instance [safe] GHC.Classes.Eq [Improv.Origin] = Improv.$fEqOrigin
+instance [safe] GHC.Classes.Eq [Improv.ParDance]
+  = Improv.$fEqParDance
+instance [safe] GHC.Classes.Eq [Improv.Plane] = Improv.$fEqPlane
+instance [safe] GHC.Classes.Eq [Improv.SeqDance]
+  = Improv.$fEqSeqDance
+instance [safe] GHC.Base.Functor [Improv.Dance]
+  = Improv.$fFunctorDance
+instance [safe] GHC.Base.Functor [Improv.ParDance]
+  = Improv.$fFunctorParDance
+instance [safe] GHC.Base.Functor [Improv.SeqDance]
+  = Improv.$fFunctorSeqDance
+instance [safe] GHC.Base.Monoid [Improv.ParDance]
+  = Improv.$fMonoidParDance
+instance [safe] GHC.Base.Monoid [Improv.SeqDance]
+  = Improv.$fMonoidSeqDance
+instance [safe] Improv.Parts [Improv.KineChain]
+  = Improv.$fPartsKineChain
+instance [safe] GHC.Read.Read [Improv.Action] = Improv.$fReadAction
+instance [safe] GHC.Read.Read [Improv.Angle] = Improv.$fReadAngle
+instance [safe] GHC.Read.Read [Improv.Dance] = Improv.$fReadDance
+instance [safe] GHC.Read.Read [Improv.Direction]
+  = Improv.$fReadDirection
+instance [safe] GHC.Read.Read [Improv.Length] = Improv.$fReadLength
+instance [safe] GHC.Read.Read [Improv.Origin] = Improv.$fReadOrigin
+instance [safe] GHC.Read.Read [Improv.ParDance]
+  = Improv.$fReadParDance
+instance [safe] GHC.Read.Read [Improv.Plane] = Improv.$fReadPlane
+instance [safe] GHC.Read.Read [Improv.SeqDance]
+  = Improv.$fReadSeqDance
+instance [safe] GHC.Show.Show [Improv.Action] = Improv.$fShowAction
+instance [safe] GHC.Show.Show [Improv.Angle] = Improv.$fShowAngle
+instance [safe] GHC.Show.Show [Improv.Dance] = Improv.$fShowDance
+instance [safe] GHC.Show.Show [Improv.Direction]
+  = Improv.$fShowDirection
+instance [safe] GHC.Show.Show [Improv.KineChain]
+  = Improv.$fShowKineChain
+instance [safe] GHC.Show.Show [Improv.Length] = Improv.$fShowLength
+instance [safe] GHC.Show.Show [Improv.Origin] = Improv.$fShowOrigin
+instance [safe] GHC.Show.Show [Improv.ParDance]
+  = Improv.$fShowParDance
+instance [safe] GHC.Show.Show [Improv.Plane] = Improv.$fShowPlane
+instance [safe] GHC.Show.Show [Improv.SeqDance]
+  = Improv.$fShowSeqDance
+instance [safe] Improv.Symmetric [Improv.Action]
+  = Improv.$fSymmetricAction
+instance [safe] Improv.Symmetric [Improv.Angle]
+  = Improv.$fSymmetricAngle
+instance [safe] Improv.Symmetric [Improv.Direction]
+  = Improv.$fSymmetricDirection
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

@@ -1,0 +1,31 @@
+Configuring aeson-1.0.2.1...
+Building aeson-1.0.2.1...
+Preprocessing library aeson-1.0.2.1...
+[ 1 of 20] Compiling Data.Aeson.Types.Internal ( Data/Aeson/Types/Internal.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Aeson/Types/Internal.o )
+[ 2 of 20] Compiling Data.Aeson.Types.Generic ( Data/Aeson/Types/Generic.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Aeson/Types/Generic.o )
+[ 3 of 20] Compiling Data.Aeson.Parser.Unescape ( Data/Aeson/Parser/Unescape.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Aeson/Parser/Unescape.o )
+[ 4 of 20] Compiling Data.Aeson.Parser.Internal ( Data/Aeson/Parser/Internal.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Aeson/Parser/Internal.o )
+[ 5 of 20] Compiling Data.Aeson.Parser ( Data/Aeson/Parser.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Aeson/Parser.o )
+[ 6 of 20] Compiling Data.Aeson.Internal.Time ( Data/Aeson/Internal/Time.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Aeson/Internal/Time.o )
+[ 7 of 20] Compiling Data.Aeson.Parser.Time ( Data/Aeson/Parser/Time.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Aeson/Parser/Time.o )
+[ 8 of 20] Compiling Data.Aeson.Internal.Functions ( Data/Aeson/Internal/Functions.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Aeson/Internal/Functions.o )
+[ 9 of 20] Compiling Data.Aeson.Types.FromJSON ( Data/Aeson/Types/FromJSON.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Aeson/Types/FromJSON.o )
+
+Data/Aeson/Types/FromJSON.hs:446:3: warning: [-Winline-rule-shadowing]
+    Rule "FromJSONKeyCoerce: fmap id" may never fire
+      because ‘id’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘id’
+[10 of 20] Compiling Data.Aeson.Internal ( Data/Aeson/Internal.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Aeson/Internal.o )
+[11 of 20] Compiling Data.Aeson.Encoding.Builder ( Data/Aeson/Encoding/Builder.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Aeson/Encoding/Builder.o )
+[12 of 20] Compiling Data.Aeson.Encoding.Internal ( Data/Aeson/Encoding/Internal.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Aeson/Encoding/Internal.o )
+[13 of 20] Compiling Data.Aeson.Encoding ( Data/Aeson/Encoding.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Aeson/Encoding.o )
+[14 of 20] Compiling Data.Aeson.Types.ToJSON ( Data/Aeson/Types/ToJSON.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Aeson/Types/ToJSON.o )
+[15 of 20] Compiling Data.Aeson.Types.Class ( Data/Aeson/Types/Class.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Aeson/Types/Class.o )
+[16 of 20] Compiling Data.Aeson.Types ( Data/Aeson/Types.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Aeson/Types.o )
+[17 of 20] Compiling Data.Aeson.Text  ( Data/Aeson/Text.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Aeson/Text.o )
+[18 of 20] Compiling Data.Aeson       ( Data/Aeson.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Aeson.o )
+[19 of 20] Compiling Data.Aeson.Encode ( Data/Aeson/Encode.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Aeson/Encode.o )
+[20 of 20] Compiling Data.Aeson.TH    ( Data/Aeson/TH.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Aeson/TH.o )
+Installing library in
+/home/thomas/.stack/snapshots/x86_64-linux/lts-8.5/8.0.2/lib/x86_64-linux-ghc-8.0.2/aeson-1.0.2.1-1PgNnQdZpa7BG8cq9P3bMU
+Registering aeson-1.0.2.1...
