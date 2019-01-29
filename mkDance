@@ -1,6 +1,12 @@
 echo "killing old node"
 pkill improv-exe
+
+if [ "$SIM" = "$GAZEBO" ]; then
+    rosservice call /gazebo/reset_world
+    rosservice call /gazebo/reset_simulation
+else
+    rosservice call /reset
+fi
+
 echo "running new node"
-rosservice call /gazebo/reset_world
-rosservice call /gazebo/reset_simulation
 stack exec -- improv-exe &
