@@ -1,7 +1,7 @@
-beat 25
+beat 30
 
 x = forward || left
 
 circle = repeat 4 x
 
-robot $ circle circle
+turtle1 $ circle
