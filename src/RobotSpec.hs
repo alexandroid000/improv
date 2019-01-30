@@ -92,7 +92,6 @@ rotate ang =
 translate :: Double -> VelCmd Double
 translate d = VelCmd d 0
 
-
 moveCommands :: [VelCmd Double] -> Topic IO Twist
 moveCommands cfs = concats $ repeatM $ twisties
     where twisties = return $ (map mkTwist cfs) ++ (repeat $ mkTwist (VelCmd 0 0))
