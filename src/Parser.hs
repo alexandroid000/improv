@@ -26,9 +26,9 @@ type CommandState = Map String Tree
 data ParseErr = ParseErr Integer String -- line # (-1 for parsec errors) and error string
 data Expr = Var String | Uno Unop Expr | Duo Duop Expr Expr
     deriving Show
-data Unop = Reverse | Retrograde | Repeat | Reflect | RepeatN
+data Unop = Reverse | Retrograde | Repeat | Reflect
     deriving Show
-data Duop = Sequ | Para
+data Duop = Sequ | Para | RepeatN
     deriving Show
 data Stmt = String := Expr | Beat String | RoboCmd RoboName Expr
     deriving Show
@@ -39,7 +39,7 @@ data Tree = Node [Tree]
           | Leaf String
     deriving (Show,Eq)
 
-def = emptyDef{   identStart = letter
+def = emptyDef{   identStart = alphaNum
 		, identLetter = alphaNum
 		, opStart = oneOf "|=$"
 		, reservedOpNames = ["||","=","reverse","retrograde","repeat","repeatN","reflect"]
@@ -56,17 +56,25 @@ TokenParser{ parens = m_parens
 
 
 exprparser :: Parser Expr
-exprparser = buildExpressionParser table term <?> "expression"
+exprparser = choice [ parseRepeatN
+		    , (buildExpressionParser table term <?> "expression")
+		    ]
 table = [ [Prefix (m_reservedOp "reverse" >> return (Uno Reverse))]
 	, [Prefix (m_reservedOp "retrograde" >> return (Uno Retrograde))]
 	, [Prefix (m_reservedOp "repeat" >> return (Uno Repeat))]
-	, [Prefix (m_reservedOp "repeatN" >> return (Uno RepeatN))]
 	, [Prefix (m_reservedOp "reflect" >> return (Uno Reflect))]
 	, [Infix  (m_reservedOp "||" >> return (Duo Para)) AssocLeft]
 	]
 term =  m_parens exprparser
 	<|> m_brackets exprparser
 	<|> fmap Var m_identifier
+
+parseRepeatN :: Parser Expr
+parseRepeatN = do { m_reservedOp "repeatN"
+                  ; n <- exprparser
+                  ; exp <- exprparser
+                  ; return $ Duo RepeatN n exp
+                  }
 
 parseBeat :: Parser Stmt
 parseBeat = do { m_reserved "beat"
@@ -177,13 +185,13 @@ convertCommands robos (Leaf commandStr) =
                 Just commands -> convertCommands robos commands
                 Nothing -> return $ Left ("Invalid command: " ++ commandStr)
 
-----Node base cases----                                   
-convertCommands robos (Node []) = return $ Right $ take (length robos) $ repeat Skip
+----Node base cases----
+--convertCommands robos [] = return $ Right $ take (length robos) $ repeat Skip
 ----repeat commands or repeat n commands
-convertCommands robos (Node [Leaf "repeat", x])  = convertCommands robos x >>= \eitherDances -> return $ eitherDances >>= return . map (foldr (:+:) Skip) . map repeat
-convertCommands robos (Node [Leaf "repeat", Leaf numStr, x]) = case reads numStr of
-    [(num, [])] ->  convertCommands robos x >>= \eitherDances -> return $ eitherDances >>= return . map (repeatn num)
-    _ -> throwErr $ "Invalid argument to repeat: " ++ numStr
+--convertCommands robos (Uno Repeat x)  = convertCommands robos x >>= \eitherDances -> return $ eitherDances >>= return . map (foldr (:+:) Skip) . map repeat
+--convertCommands robos ((Uno RepeatN numStr) x) = case reads numStr of
+--    [(num, [])] ->  convertCommands robos x >>= \eitherDances -> return $ eitherDances >>= return . map (repeatn num)
+--    _ -> throwErr $ "Invalid argument to repeat: " ++ numStr
 ----reflect axis commands----
 convertCommands robos (Node [Leaf "reflect", Leaf axStr, x]) = case Map.lookup axStr axes of
     Just axis -> convertCommands robos x >>= \eitherDances -> return $ eitherDances >>= return . map (transform (refl axis))
