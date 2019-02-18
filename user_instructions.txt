@@ -1,7 +1,3 @@
 beat 30
 
-x = forward || left
-
-circle = repeat 4 x
-
-turtle1 $ circle
+turtle1 $ left right left
