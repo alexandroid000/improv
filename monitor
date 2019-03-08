@@ -7,6 +7,10 @@ ATTEMPT=0
 OLD_MD5=""
 NEW_MD5=""
 
+timestamp() {
+    date +"%T"
+}
+
 FILENAME="$1" && shift
 echo "$FILENAME"
 if [[ ! -f "$FILENAME" ]]; then
@@ -31,7 +35,9 @@ while true; do
             echo "READY: $@"
         fi
         if "$LOG_DATA"; then
-            printf "ATTEMPT $ATTEMPT\n=========\n\n" >> "$LOG_FILE"
+            printf "ATTEMPT $ATTEMPT\n" >> "$LOG_FILE"
+            printf "$(timestamp)\n" >> "$LOG_FILE"
+            printf "=========\n\n" >> "$LOG_FILE"
             cat "$FILENAME" >> "$LOG_FILE"
             printf "\n\n" >> "$LOG_FILE"
             ((++ATTEMPT))
