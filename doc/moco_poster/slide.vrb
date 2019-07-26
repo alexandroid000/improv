@@ -1,0 +1,51 @@
+\frametitle{Improv: Live Coding for Robot Motion Design \\ {\small Alexandra Nilles, Chase Gladish, Mattox Beckman, Amy LaViers}}
+
+
+\vspace{-5em}
+
+
+\begin{picture}(0,0)
+\put(-15,-80){%
+    \includegraphics[width=7cm]{./contact_improv.jpg}
+}
+\end{picture}
+
+ \begin{picture}(0,0)
+            \put(120,-150){%
+\includegraphics[width=7.00000cm]{./improv_close_up.jpg}
+            }
+        \end{picture}
+
+\begin{picture}(0,0)
+\put(130,0){%
+    \begin{tcolorbox}[text width=6cm,halign=flush center,colback=green!10!white,every float=centering,left=0mm,right=0mm,top=0mm,bottom=0mm,]{
+        \textbf{How to Make The Process of Programming Robots
+        More Improvisational?}
+    }
+    \end{tcolorbox}
+}
+\end{picture}
+
+\begin{picture}(0,0)
+\put(-15,-95){%
+    \begin{tcolorbox}[text width=4cm,halign=flush center,colback=green!10!white,every float=centering,left=0mm,right=0mm,top=0mm,bottom=0mm,]{
+        \textbf{Live-Coding with
+        Choreographic Language Constructs}
+    }
+    \end{tcolorbox}
+}
+\end{picture}
+
+
+
+%\cend
+
+%\centering
+
+
+ \begin{picture}(0,0)
+            \put(-20,-140){%
+              \includegraphics[width=2.00000cm]{RAD_lab_logo.png}%
+            }
+        \end{picture}
+

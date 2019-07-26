@@ -1,0 +1,95 @@
+Robot programming methods for inexperienced users use several techniques to make
+the process more approachable, with an emphasis on reconfigurability of programs
+for industrial applications \cite{rossando2013easy}. These include visual (icon
+and data flow) languages, tangible interfaces \cite{sefidgar2017situated}, CAD
+and VR interfaces \cite{whitney17a}, natural language instructions
+\cite{tellex2011understanding}, as well as lead-through or "learning by
+demonstration" \cite{argall2009survey}. Research into human-robot collaboration
+often combines natural language commands with social cues such as direction of
+gaze and posturing of the body (such as pointing) \cite{whitney17}. In general,
+there is a trade-off between the simplicity and ease-of-use of a language or
+interface and its expressivity - the size of the sets of robot configurations
+and/or paths that it can specify. Abstractions, such as instructions about
+repeating movements and modifying stored movements in time, space, and
+resulting style, can help increase the expressivity of a language or interface
+while maintaining a compact, understandable specificiation. Similarly, in
+choregraphic notation, there is a range of media and languages used for
+specifying movement - from raw video, to Motif and the more explicit full
+Labanotation \cite{labanotation}, to style modifiers such as level and Effort
+changes. Robot programming similarly requires a range of tools for different use
+cases, informed by an understanding of the choregraphic (aka movement design)
+context and task requirements. Somatic methods can help roboticists understand
+the subtleties of movement differences (for example, between a chop and a point
+gesture), and to help define design criteria for robotics tools (for example,
+the desire for a tight development loop to encourage improvisation and fast
+prototyping of robot motion).
+
+@book{labanotation,
+  title={Labanotation: Or, Kinetography Laban : the System of Analyzing and Recording Movement},
+  author={Guest, A.H.},
+  series={TAB paperback},
+  year={1977},
+  publisher={Theatre Arts Books}
+}
+
+@inproceedings{sefidgar2017situated,
+  title={Situated Tangible Robot Programming},
+  author={Sefidgar, Yasaman S and Agarwal, Prerna and Cakmak, Maya},
+  booktitle={Proceedings of the 2017 ACM/IEEE International Conference on
+Human-Robot Interaction},
+  pages={473--482},
+  year={2017},
+  organization={ACM}
+}
+
+@article{argall2009survey,
+  title={A survey of robot learning from demonstration},
+  author={Argall, Brenna D and Chernova, Sonia and Veloso, Manuela and Browning,
+Brett},
+  journal={Robotics and autonomous systems},
+  volume={57},
+  number={5},
+  pages={469--483},
+  year={2009},
+  publisher={Elsevier}
+}
+
+@inproceedings{tellex2011understanding,
+  title={Understanding Natural Language Commands for Robotic Navigation and
+Mobile Manipulation.},
+  author={Tellex, Stefanie and Kollar, Thomas and Dickerson, Steven and Walter,
+Matthew R and Banerjee, Ashis Gopal and Teller, Seth J and Roy, Nicholas},
+  booktitle={AAAI},
+  volume={1},
+  pages={2},
+  year={2011}
+}
+
+@INPROCEEDINGS{whitney17,
+author = {Whitney, David and Rosen, Eric and MacGlashan, James, and Wong, Lawson
+and Tellex, Stefanie},
+title = {{Reducing Errors in Object-Fetching Interactions through Social
+Feedback}},
+booktitle = {{International Conference on Robotics and Automation}},
+year = {2017}
+}
+
+@inproceedings{rossano2013easy,
+  title={Easy robot programming concepts: An industrial perspective},
+  author={Rossano, Gregory F and Martinez, Carlos and Hedelind, Mikael and
+Murphy, Steve and Fuhlbrigge, Thomas A},
+  booktitle={Automation Science and Engineering (CASE), 2013 IEEE International
+Conference on},
+  pages={1119--1126},
+  year={2013},
+  organization={IEEE}
+}
+
+@inproceedings{whitney17a,
+author = {David Whitney and Eric Rosen and Elizabeth Phillips and George
+Konidaris and Stefanie Tellex},
+title = {{Comparing Robot Grasping Teleoperation across Desktop and Virtual
+Reality with ROS Reality}},
+booktitle = {{International Symposium on Robotics Research}},
+year = {2017 in press}
+}
